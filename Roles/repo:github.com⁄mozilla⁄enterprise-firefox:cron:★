@@ -70,6 +70,7 @@
     "queue:route:tc-treeherder-stage.enterprise-firefox.*",
     "queue:route:tc-treeherder-stage.v2.enterprise-firefox.*",
     "queue:route:tc-treeherder.enterprise-firefox.*",
+    "queue:route:tc-treeherder.v2.enterprise-beta.*",
     "queue:route:tc-treeherder.v2.enterprise-firefox.*",
     "queue:route:tc-treeherder.v2.enterprise-main.*",
     "queue:route:tc-treeherder.v2.enterprise-release.*",
@@ -94,7 +95,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-03-20T10:42:03.260Z",
+  "lastModified": "2026-04-24T20:36:25.657Z",
   "roleId": "repo:github.com/mozilla/enterprise-firefox:cron:*",
   "scopes": [
     "assume:project:taskcluster:enterprise:level-3-sccache-buckets",
@@ -143,6 +144,7 @@
     "queue:route:tc-treeherder-stage.enterprise-firefox.*",
     "queue:route:tc-treeherder-stage.v2.enterprise-firefox.*",
     "queue:route:tc-treeherder.enterprise-firefox.*",
+    "queue:route:tc-treeherder.v2.enterprise-beta.*",
     "queue:route:tc-treeherder.v2.enterprise-firefox.*",
     "queue:route:tc-treeherder.v2.enterprise-main.*",
     "queue:route:tc-treeherder.v2.enterprise-release.*",
