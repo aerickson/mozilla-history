@@ -9,7 +9,7 @@
     "in-tree:hook-action:project-xpi/in-tree-action-3-*",
     "index:insert-task:xpi.cache.level-3.*",
     "index:insert-task:xpi.v2.xpi-manifest.*",
-    "project:releng:lando:action:extension_manifest_version_bump",
+    "project:releng:lando:action:version_bump",
     "project:releng:lando:repo:firefox-main",
     "project:xpi:balrog:action:*",
     "project:xpi:balrog:channel:*",
@@ -56,10 +56,10 @@
     "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ],
-  "lastModified": "2026-03-30T16:51:00.134Z",
+  "lastModified": "2026-05-06T15:30:53.083Z",
   "roleId": "repo:github.com/mozilla-extensions/xpi-manifest:action:release-promotion",
   "scopes": [
-    "project:releng:lando:action:extension_manifest_version_bump",
+    "project:releng:lando:action:version_bump",
     "project:releng:lando:repo:firefox-main",
     "project:xpi:releng:ship-it:action:mark-as-shipped",
     "project:xpi:releng:ship-it:server:production"

@@ -2,6 +2,7 @@
   "created": "2019-10-30T19:31:13.326Z",
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nScopes in this role are defined in [fxci-config/grants.d](https://github.com/mozilla-releng/fxci-config/blob/main/grants.d).",
   "expandedScopes": [
+    "assume:anonymous",
     "assume:github-admin:*",
     "assume:hook-id:*",
     "assume:login-identity:*",
@@ -27,6 +28,7 @@
     "queue:*",
     "scheduler:*",
     "secrets:*",
+    "web:read-pulse",
     "worker-manager:*",
     "worker:*"
   ],

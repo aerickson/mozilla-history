@@ -1,0 +1,175 @@
+{
+  "bindings": [
+    {
+      "exchange": "exchange/taskcluster-github/v1/pull-request",
+      "routingKeyPattern": "#"
+    },
+    {
+      "exchange": "exchange/taskcluster-github/v1/push",
+      "routingKeyPattern": "#"
+    }
+  ],
+  "hookGroupId": "lint",
+  "hookId": "pre-commit-v1",
+  "metadata": {
+    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nRun pre-commit checks",
+    "emailOnError": true,
+    "name": "pre-commit (v1)",
+    "owner": "release+hooks@mozilla.com"
+  },
+  "schedule": [],
+  "task": {
+    "in": {
+      "$if": "(payload.tasks_for == \"github-push\") || (isPullRequest \u0026\u0026 pullRequestAction in [\"opened\", \"reopened\", \"synchronize\"])\n",
+      "then": {
+        "in": {
+          "routes": [
+            "checks"
+          ],
+          "scopes": [
+            "assume:hook-id:lint/pre-commit-v1"
+          ],
+          "created": {
+            "$fromNow": "0 seconds"
+          },
+          "expires": {
+            "$fromNow": "1 month"
+          },
+          "payload": {
+            "env": {
+              "REPOSITORIES": {
+                "$json": {
+                  "src": "Source"
+                }
+              },
+              "SRC_HEAD_REF": "${headRef}",
+              "SRC_HEAD_REV": "${headSha}",
+              "UV_CACHE_DIR": "/builds/worker/.cache/uv",
+              "PRE_COMMIT_HOME": "/builds/worker/.cache/pre-commit",
+              "TASKCLUSTER_CACHES": "/builds/worker/.cache/uv;/builds/worker/.cache/pre-commit;/builds/worker/checkouts",
+              "SRC_HEAD_REPOSITORY": "${repoUrl}",
+              "SRC_REPOSITORY_TYPE": "git"
+            },
+            "cache": {
+              "lint-pre-commit-uv-v1": "/builds/worker/.cache/uv",
+              "lint-pre-commit-repos-v1": "/builds/worker/.cache/pre-commit",
+              "lint-pre-commit-checkout-${repoName}-v1": "/builds/worker/checkouts"
+            },
+            "image": "mozillareleases/taskgraph:run-task-v20.0.0@sha256:a905d5e14a97f0d313319b6bec4e5d670cf4505747e0cbaf360226046c1d4511",
+            "command": [
+              "run-task",
+              "--src-checkout=/builds/worker/checkouts/src",
+              "--task-cwd=/builds/worker/checkouts/src",
+              "--",
+              "bash",
+              "-c",
+              "uv tool install ${preCommitInstallSpec} \u0026\u0026 /builds/worker/.local/bin/pre-commit run --all-files"
+            ],
+            "features": {
+              "taskclusterProxy": true
+            },
+            "maxRunTime": 3600,
+            "capabilities": {}
+          },
+          "deadline": {
+            "$fromNow": "2 hours"
+          },
+          "metadata": {
+            "name": "pre-commit-v1",
+            "owner": "release+hooks@mozilla.com",
+            "source": "${repoUrl}",
+            "description": "Run pre-commit checks"
+          },
+          "priority": "lowest",
+          "workerType": "pre-commit",
+          "schedulerId": "lint",
+          "provisionerId": "mozilla-t"
+        },
+        "$let": {
+          "shortHeadRef": {
+            "$switch": {
+              "$default": "${headRef}",
+              "headRef[:10] == \"refs/tags/\"": "${headRef[10:]}",
+              "headRef[:11] == \"refs/heads/\"": "${headRef[11:]}"
+            }
+          },
+          "preCommitInstallSpec": {
+            "$if": "'context' in payload \u0026\u0026 'pre-commit-version' in payload.context",
+            "else": "pre-commit",
+            "then": {
+              "$eval": "'pre-commit==' + payload.context['pre-commit-version']"
+            }
+          }
+        }
+      }
+    },
+    "$let": {
+      "$switch": {
+        "payload.tasks_for == \"github-push\"": {
+          "headRef": {
+            "$eval": "payload.event.ref"
+          },
+          "headSha": {
+            "$eval": "payload.event.after"
+          },
+          "repoUrl": {
+            "$eval": "payload.event.repository.html_url"
+          },
+          "repoName": {
+            "$eval": "join(split(payload.event.repository.full_name, '/'), '-')"
+          },
+          "isPullRequest": false,
+          "pullRequestAction": "UNDEFINED"
+        },
+        "payload.tasks_for[:19] == \"github-pull-request\"": {
+          "headRef": {
+            "$eval": "payload.event.pull_request.head.ref"
+          },
+          "headSha": {
+            "$eval": "payload.event.pull_request.head.sha"
+          },
+          "repoUrl": {
+            "$eval": "payload.event.pull_request.head.repo.html_url"
+          },
+          "repoName": {
+            "$eval": "join(split(payload.event.repository.full_name, '/'), '-')"
+          },
+          "isPullRequest": true,
+          "pullRequestAction": "payload.event.action"
+        }
+      }
+    }
+  },
+  "triggerSchema": {
+    "type": "object",
+    "properties": {
+      "now": {
+        "type": "string"
+      },
+      "event": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "taskId": {
+        "type": "string"
+      },
+      "context": {
+        "type": "object",
+        "properties": {
+          "pre-commit-version": {
+            "type": "string",
+            "description": "Version of pre-commit to install (e.g. \"4.0.0\"). Defaults to latest."
+          }
+        },
+        "additionalProperties": false
+      },
+      "tasks_for": {
+        "type": "string"
+      },
+      "taskcluster_root_url": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": false
+  }
+}

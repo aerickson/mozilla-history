@@ -18,7 +18,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-03-05"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -74,7 +74,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-06264282970dc78db54b",
+          "launchConfigId": "lc-1c0e120428dfd2dc13d5",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -96,7 +96,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-03-05"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -152,7 +152,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-5e7417da5c8a2d2e5456",
+          "launchConfigId": "lc-464f72651f32457e3c6c",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -174,7 +174,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-03-05"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -230,7 +230,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-ff8eead9888c04ead68a",
+          "launchConfigId": "lc-b6103de43aa960f014a8",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -252,7 +252,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-03-05"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -308,7 +308,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-4a5f34a1f76413adde20",
+          "launchConfigId": "lc-6ff97b28767f4d222c36",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -327,7 +327,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nWorker for test tasks.",
   "emailOnError": true,
-  "lastModified": "2026-03-10T18:49:30.111Z",
+  "lastModified": "2026-05-05T15:12:16.491Z",
   "owner": "release+tc-workers@mozilla.com",
   "providerId": "fxci-level1-gcp",
   "requestedCapacity": 0,
