@@ -5,7 +5,7 @@
       "reregistrationTimeout": 345600,
       "queueInactivityTimeout": 14400
     },
-    "maxCapacity": 300,
+    "maxCapacity": 200,
     "minCapacity": 0,
     "scalingRatio": 1,
     "launchConfigs": [
@@ -141,8 +141,8 @@
           }
         },
         "workerManager": {
-          "initialWeight": 0.3,
-          "launchConfigId": "lc-b768b94ceec7d4270927",
+          "initialWeight": 0.1,
+          "launchConfigId": "lc-287f7b40ce84435c092e",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-enterprise-t-win11-64-24h2-alpha"
@@ -210,8 +210,8 @@
           }
         },
         "workerManager": {
-          "initialWeight": 0.4,
-          "launchConfigId": "lc-60c7875198cd6e7443bf",
+          "initialWeight": 0.8,
+          "launchConfigId": "lc-827133ad899cc58b6924",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-enterprise-t-win11-64-24h2-alpha"
@@ -279,8 +279,8 @@
           }
         },
         "workerManager": {
-          "initialWeight": 0.5,
-          "launchConfigId": "lc-2d4b7b45992b8272901a",
+          "initialWeight": 0.3,
+          "launchConfigId": "lc-3fe1b48ab3253bcfcc34",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-enterprise-t-win11-64-24h2-alpha"
@@ -360,7 +360,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\n",
   "emailOnError": true,
-  "lastModified": "2026-04-30T21:42:05.248Z",
+  "lastModified": "2026-05-12T20:33:34.404Z",
   "owner": "relops-azure-provisioning@mozilla.com",
   "providerId": "azure2",
   "requestedCapacity": 0,

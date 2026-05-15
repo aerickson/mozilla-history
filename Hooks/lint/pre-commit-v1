@@ -1,14 +1,4 @@
 {
-  "bindings": [
-    {
-      "exchange": "exchange/taskcluster-github/v1/pull-request",
-      "routingKeyPattern": "#"
-    },
-    {
-      "exchange": "exchange/taskcluster-github/v1/push",
-      "routingKeyPattern": "#"
-    }
-  ],
   "hookGroupId": "lint",
   "hookId": "pre-commit-v1",
   "metadata": {
@@ -135,7 +125,9 @@
             "$eval": "join(split(payload.event.repository.full_name, '/'), '-')"
           },
           "isPullRequest": true,
-          "pullRequestAction": "payload.event.action"
+          "pullRequestAction": {
+            "$eval": "payload.event.action"
+          }
         }
       }
     }

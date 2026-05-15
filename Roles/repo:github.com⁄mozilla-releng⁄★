@@ -280,6 +280,7 @@
     "purge-cache:gecko-t/*",
     "queue:cancel-task-group:adhoc-level-1/*",
     "queue:cancel-task-group:app-services-level-1/*",
+    "queue:cancel-task-group:lint/*",
     "queue:cancel-task-group:mobile-level-1/*",
     "queue:cancel-task-group:mozilla-level-1/*",
     "queue:cancel-task-group:mozillavpn-level-1/*",
@@ -641,7 +642,7 @@
     "secrets:get:repo:github.com/mozilla-releng/scriptworker:coveralls",
     "secrets:get:repo:github.com/mozilla-releng/scriptworker:github"
   ],
-  "lastModified": "2026-05-05T13:29:11.349Z",
+  "lastModified": "2026-05-08T14:44:50.428Z",
   "roleId": "repo:github.com/mozilla-releng/*",
   "scopes": [
     "docker-worker:cache:mozilla-level-1-*",
@@ -653,6 +654,7 @@
     "index:insert-task:mozilla.cache.pr.*",
     "index:insert-task:mozilla.v2.mozilla-releng-pr.*",
     "index:insert-task:mozilla.v2.mozilla-releng.*",
+    "queue:cancel-task-group:lint/*",
     "queue:cancel-task-group:mozilla-level-1/*",
     "queue:cancel-task:mozilla-level-1/*",
     "queue:create-task:low:built-in/*",

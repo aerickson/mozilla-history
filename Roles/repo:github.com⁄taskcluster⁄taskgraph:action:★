@@ -9,6 +9,7 @@
     "in-tree:hook-action:project-taskgraph/in-tree-action-3-*",
     "index:insert-task:taskgraph.cache.level-3.*",
     "index:insert-task:taskgraph.v2.taskgraph.*",
+    "queue:cancel-task-group:lint/*",
     "queue:cancel-task:taskgraph-level-3/*",
     "queue:create-task:highest:built-in/*",
     "queue:create-task:highest:releng-hardware/taskgraph-b-3-*",
@@ -30,7 +31,7 @@
     "secrets:get:project/taskgraph/level-3/*",
     "secrets:get:project/taskgraph/level-any/*"
   ],
-  "lastModified": "2026-05-06T13:35:21.981Z",
+  "lastModified": "2026-05-08T14:44:51.432Z",
   "roleId": "repo:github.com/taskcluster/taskgraph:action:*",
   "scopes": [
     "docker-worker:cache:taskgraph-level-3-*",
@@ -39,6 +40,7 @@
     "in-tree:hook-action:project-taskgraph/in-tree-action-3-*",
     "index:insert-task:taskgraph.cache.level-3.*",
     "index:insert-task:taskgraph.v2.taskgraph.*",
+    "queue:cancel-task-group:lint/*",
     "queue:cancel-task:taskgraph-level-3/*",
     "queue:create-task:highest:built-in/*",
     "queue:create-task:highest:releng-hardware/taskgraph-b-3-*",

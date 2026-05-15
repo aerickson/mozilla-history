@@ -49,6 +49,8 @@
     "generic-worker:cache:mozilla-project-fx-desktop-qa-automation-level-3-*",
     "generic-worker:cache:translations-level-1-*",
     "generic-worker:feature:allowPtrace",
+    "generic-worker:os-group:enterprise-t/t-linux-2204-wayland-snap/snap_sudo",
+    "generic-worker:os-group:enterprise-t/t-linux-2404-wayland-snap/snap_sudo",
     "hooks:trigger-hook:lint/pre-commit-*",
     "in-tree:hook-action:project-app-services/in-tree-action-1-*",
     "in-tree:hook-action:project-app-services/in-tree-action-3-*",
@@ -140,6 +142,7 @@
     "queue:cancel-task-group:code-analysis-level-1/*",
     "queue:cancel-task-group:enterprise-level-1/*",
     "queue:cancel-task-group:glean-level-1/*",
+    "queue:cancel-task-group:lint/*",
     "queue:cancel-task-group:mozilla-level-1/*",
     "queue:cancel-task-group:translations-level-1/*",
     "queue:cancel-task:app-services-level-1/*",
@@ -360,7 +363,7 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2026-05-06T13:35:21.003Z",
+  "lastModified": "2026-05-08T14:44:47.592Z",
   "roleId": "repo:github.com/mozilla/*",
   "scopes": [
     "docker-worker:cache:mozilla-level-1-*",
@@ -372,6 +375,7 @@
     "index:insert-task:mozilla.cache.pr.*",
     "index:insert-task:mozilla.v2.mozilla-pr.*",
     "index:insert-task:mozilla.v2.mozilla.*",
+    "queue:cancel-task-group:lint/*",
     "queue:cancel-task-group:mozilla-level-1/*",
     "queue:cancel-task:mozilla-level-1/*",
     "queue:create-task:low:built-in/*",

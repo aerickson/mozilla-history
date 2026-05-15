@@ -50,12 +50,13 @@
     "worker-manager:list-worker-pools",
     "worker-manager:list-workers:*"
   ],
-  "lastModified": "2026-05-05T18:24:42.159Z",
+  "lastModified": "2026-05-14T20:53:48.685Z",
   "roleId": "hook-id:lint/pre-commit-v1",
   "scopes": [
     "assume:anonymous",
     "generic-worker:cache:lint-pre-commit-*",
     "queue:create-task:low:mozilla-t/pre-commit",
+    "queue:get-artifact:public/*",
     "queue:route:checks",
     "queue:scheduler-id:lint"
   ]
