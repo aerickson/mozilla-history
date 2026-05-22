@@ -11,7 +11,7 @@
     "launchConfigs": [
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "windows",
           "sourceScript": "provisioners/windows/azure/2022-azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -34,7 +34,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -54,7 +54,7 @@
               "value": "Standard_D32ads_v5"
             },
             "imageId": {
-              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.3"
+              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.4"
             },
             "location": {
               "value": "centralindia"
@@ -72,82 +72,14 @@
         },
         "workerManager": {
           "initialWeight": 1,
-          "launchConfigId": "lc-d00bff3b22349da0198f",
+          "launchConfigId": "lc-92b04c4f467bba68ddcc",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-3-b-win2022-headless"
       },
       {
         "tags": {
-          "deploymentId": "71b0588",
-          "sourceBranch": "windows",
-          "sourceScript": "provisioners/windows/azure/2022-azure-bootstrap.ps1",
-          "sourceRepository": "ronin_puppet",
-          "sourceOrganisation": "mozilla-platform-ops"
-        },
-        "location": "eastus2",
-        "workerConfig": {
-          "genericWorker": {
-            "config": {
-              "tasksDir": "D:\\",
-              "cachesDir": "D:\\caches",
-              "wstAudience": "firefoxcitc",
-              "downloadsDir": "D:\\downloads",
-              "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
-              "headlessTasks": true,
-              "sentryProject": "generic-worker",
-              "disableReboots": true,
-              "cleanUpTaskDirs": true,
-              "idleTimeoutSecs": 150,
-              "livelogExecutable": "C:\\generic-worker\\livelog.exe",
-              "numberOfTasksToRun": 0,
-              "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.3.md"
-              },
-              "disableOOMProtection": true,
-              "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
-              "taskclusterProxyPort": 80,
-              "shutdownMachineOnIdle": true,
-              "ed25519SigningKeyLocation": "C:\\generic-worker\\ed25519-private.key",
-              "enableRunTaskAsCurrentUser": false,
-              "taskclusterProxyExecutable": "C:\\generic-worker\\taskcluster-proxy.exe",
-              "shutdownMachineOnInternalError": true
-            }
-          }
-        },
-        "armDeployment": {
-          "mode": "Incremental",
-          "parameters": {
-            "vmSize": {
-              "value": "Standard_D32ads_v5"
-            },
-            "imageId": {
-              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.3"
-            },
-            "location": {
-              "value": "eastus2"
-            },
-            "priority": {
-              "value": "Spot"
-            },
-            "subnetId": {
-              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-east-us-2-gecko-3/providers/Microsoft.Network/virtualNetworks/vn-east-us-2-gecko-3/subnets/sn-east-us-2-gecko-3"
-            }
-          },
-          "templateLink": {
-            "id": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/template-spec/providers/Microsoft.Resources/templateSpecs/taskcluster-arm-template/versions/1.0"
-          }
-        },
-        "workerManager": {
-          "initialWeight": 0.8,
-          "launchConfigId": "lc-189c3aed76c0ee97c983",
-          "capacityPerInstance": 1
-        },
-        "armDeploymentResourceGroup": "rg-tc-gecko-3-b-win2022-headless"
-      },
-      {
-        "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "windows",
           "sourceScript": "provisioners/windows/azure/2022-azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -170,7 +102,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -190,7 +122,7 @@
               "value": "Standard_D32ads_v5"
             },
             "imageId": {
-              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.3"
+              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.4"
             },
             "location": {
               "value": "northcentralus"
@@ -208,7 +140,75 @@
         },
         "workerManager": {
           "initialWeight": 0.9,
-          "launchConfigId": "lc-a224ac66203966370bf4",
+          "launchConfigId": "lc-4d0fc3d120585c07f40d",
+          "capacityPerInstance": 1
+        },
+        "armDeploymentResourceGroup": "rg-tc-gecko-3-b-win2022-headless"
+      },
+      {
+        "tags": {
+          "deploymentId": "757b34d",
+          "sourceBranch": "windows",
+          "sourceScript": "provisioners/windows/azure/2022-azure-bootstrap.ps1",
+          "sourceRepository": "ronin_puppet",
+          "sourceOrganisation": "mozilla-platform-ops"
+        },
+        "location": "southcentralus",
+        "workerConfig": {
+          "genericWorker": {
+            "config": {
+              "tasksDir": "D:\\",
+              "cachesDir": "D:\\caches",
+              "wstAudience": "firefoxcitc",
+              "downloadsDir": "D:\\downloads",
+              "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
+              "headlessTasks": true,
+              "sentryProject": "generic-worker",
+              "disableReboots": true,
+              "cleanUpTaskDirs": true,
+              "idleTimeoutSecs": 150,
+              "livelogExecutable": "C:\\generic-worker\\livelog.exe",
+              "numberOfTasksToRun": 0,
+              "workerTypeMetaData": {
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.4.md"
+              },
+              "disableOOMProtection": true,
+              "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
+              "taskclusterProxyPort": 80,
+              "shutdownMachineOnIdle": true,
+              "ed25519SigningKeyLocation": "C:\\generic-worker\\ed25519-private.key",
+              "enableRunTaskAsCurrentUser": false,
+              "taskclusterProxyExecutable": "C:\\generic-worker\\taskcluster-proxy.exe",
+              "shutdownMachineOnInternalError": true
+            }
+          }
+        },
+        "armDeployment": {
+          "mode": "Incremental",
+          "parameters": {
+            "vmSize": {
+              "value": "Standard_D32ads_v5"
+            },
+            "imageId": {
+              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.4"
+            },
+            "location": {
+              "value": "southcentralus"
+            },
+            "priority": {
+              "value": "Spot"
+            },
+            "subnetId": {
+              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-south-central-us-gecko-3/providers/Microsoft.Network/virtualNetworks/vn-south-central-us-gecko-3/subnets/sn-south-central-us-gecko-3"
+            }
+          },
+          "templateLink": {
+            "id": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/template-spec/providers/Microsoft.Resources/templateSpecs/taskcluster-arm-template/versions/1.0"
+          }
+        },
+        "workerManager": {
+          "initialWeight": 0.8,
+          "launchConfigId": "lc-7c651ac1bf9484e62ca9",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-3-b-win2022-headless"
@@ -219,7 +219,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\n",
   "emailOnError": true,
-  "lastModified": "2026-05-06T20:41:31.113Z",
+  "lastModified": "2026-05-21T20:58:05.493Z",
   "owner": "relops-azure-provisioning@mozilla.com",
   "providerId": "azure_trusted",
   "requestedCapacity": 0,

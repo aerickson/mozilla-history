@@ -11,7 +11,7 @@
     "launchConfigs": [
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "master",
           "sourceScript": "provisioners/windows/azure/azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -35,7 +35,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -55,7 +55,7 @@
               "value": "Standard_F8s_v2"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.3"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.4"
             },
             "location": {
               "value": "canadacentral"
@@ -73,14 +73,14 @@
         },
         "workerManager": {
           "initialWeight": 0.3,
-          "launchConfigId": "lc-bbb55cc2041534633e37",
+          "launchConfigId": "lc-66d8c847579134e2a986",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-comm-t-win11-64-25h2"
       },
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "master",
           "sourceScript": "provisioners/windows/azure/azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -104,7 +104,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -124,7 +124,7 @@
               "value": "Standard_F8s_v2"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.3"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.4"
             },
             "location": {
               "value": "centralus"
@@ -142,14 +142,14 @@
         },
         "workerManager": {
           "initialWeight": 0.5,
-          "launchConfigId": "lc-ee41efa7e77df14d05ad",
+          "launchConfigId": "lc-e87104b1ca0afccc0043",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-comm-t-win11-64-25h2"
       },
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "master",
           "sourceScript": "provisioners/windows/azure/azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -173,7 +173,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -193,7 +193,7 @@
               "value": "Standard_F8s_v2"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.3"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.4"
             },
             "location": {
               "value": "eastus"
@@ -211,14 +211,14 @@
         },
         "workerManager": {
           "initialWeight": 0.5,
-          "launchConfigId": "lc-098bd93f62375d1efe36",
+          "launchConfigId": "lc-b94771013adc9c30ea83",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-comm-t-win11-64-25h2"
       },
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "master",
           "sourceScript": "provisioners/windows/azure/azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -242,7 +242,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -262,7 +262,7 @@
               "value": "Standard_F8s_v2"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.3"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.4"
             },
             "location": {
               "value": "eastus2"
@@ -280,14 +280,14 @@
         },
         "workerManager": {
           "initialWeight": 0.1,
-          "launchConfigId": "lc-c8643c35dd862430155a",
+          "launchConfigId": "lc-926240d7ea9add3e0fff",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-comm-t-win11-64-25h2"
       },
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "master",
           "sourceScript": "provisioners/windows/azure/azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -311,7 +311,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -331,7 +331,7 @@
               "value": "Standard_F8s_v2"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.3"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.4"
             },
             "location": {
               "value": "northcentralus"
@@ -349,14 +349,14 @@
         },
         "workerManager": {
           "initialWeight": 0.95,
-          "launchConfigId": "lc-9227e8bb4ba422359202",
+          "launchConfigId": "lc-2a103c99630c2cb80110",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-comm-t-win11-64-25h2"
       },
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "master",
           "sourceScript": "provisioners/windows/azure/azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -380,7 +380,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -400,7 +400,7 @@
               "value": "Standard_F8s_v2"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.3"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.4"
             },
             "location": {
               "value": "northeurope"
@@ -418,14 +418,14 @@
         },
         "workerManager": {
           "initialWeight": 0.4,
-          "launchConfigId": "lc-d0765f758de5ba39910c",
+          "launchConfigId": "lc-f803c3f68b3d89ef902d",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-comm-t-win11-64-25h2"
       },
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "master",
           "sourceScript": "provisioners/windows/azure/azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -449,7 +449,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -469,7 +469,7 @@
               "value": "Standard_F8s_v2"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.3"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.4"
             },
             "location": {
               "value": "southindia"
@@ -487,14 +487,14 @@
         },
         "workerManager": {
           "initialWeight": 0.8,
-          "launchConfigId": "lc-b9ed09b6a123e2865443",
+          "launchConfigId": "lc-e24e8c6ae6143a4ffa3a",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-comm-t-win11-64-25h2"
       },
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "master",
           "sourceScript": "provisioners/windows/azure/azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -518,7 +518,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -538,7 +538,7 @@
               "value": "Standard_F8s_v2"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.3"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.4"
             },
             "location": {
               "value": "westus"
@@ -556,14 +556,14 @@
         },
         "workerManager": {
           "initialWeight": 0.8,
-          "launchConfigId": "lc-99de696cd3cf220eba28",
+          "launchConfigId": "lc-d121ac7e185829bd9524",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-comm-t-win11-64-25h2"
       },
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "master",
           "sourceScript": "provisioners/windows/azure/azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -587,7 +587,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -607,7 +607,7 @@
               "value": "Standard_F8s_v2"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.3"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.4"
             },
             "location": {
               "value": "westus2"
@@ -625,14 +625,14 @@
         },
         "workerManager": {
           "initialWeight": 0.3,
-          "launchConfigId": "lc-44c8c07ac0edf0be3107",
+          "launchConfigId": "lc-22a3b88b32ce430161fe",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-comm-t-win11-64-25h2"
       },
       {
         "tags": {
-          "deploymentId": "71b0588",
+          "deploymentId": "757b34d",
           "sourceBranch": "master",
           "sourceScript": "provisioners/windows/azure/azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -656,7 +656,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.3.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/win11-64-25h2-1.0.4.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -676,7 +676,7 @@
               "value": "Standard_F8s_v2"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.3"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.4"
             },
             "location": {
               "value": "westus3"
@@ -694,7 +694,7 @@
         },
         "workerManager": {
           "initialWeight": 1,
-          "launchConfigId": "lc-3b5a40884e49331a806d",
+          "launchConfigId": "lc-6f7ffd4c958eb0906bbc",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-comm-t-win11-64-25h2"
@@ -705,7 +705,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\n",
   "emailOnError": true,
-  "lastModified": "2026-05-12T16:44:02.473Z",
+  "lastModified": "2026-05-21T20:58:12.256Z",
   "owner": "relops-azure-provisioning@mozilla.com",
   "providerId": "azure2",
   "requestedCapacity": 0,

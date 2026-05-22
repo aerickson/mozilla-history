@@ -15,6 +15,7 @@
     "generic-worker:cache:relops-level-3-*",
     "generic-worker:cache:relops-project-worker-images-level-3-*",
     "generic-worker:cache:translations-level-1-*",
+    "generic-worker:os-group:gecko-t/t-linux-2404-wayland-snap-alpha/snap_sudo",
     "hooks:trigger-hook:lint/pre-commit-*",
     "in-tree:hook-action:project-mozilla/in-tree-action-1-*",
     "in-tree:hook-action:project-relops/in-tree-action-3-*",
@@ -87,17 +88,17 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2025-09-04T13:17:10.106Z",
+  "lastModified": "2026-05-20T08:38:01.545Z",
   "roleId": "repo:github.com/mozilla-platform-ops/worker-images:cron:run-integration-tests",
   "scopes": [
     "assume:repo:github.com/mozilla/translations:action:train",
     "docker-worker:capability:device:kvm",
     "docker-worker:capability:device:loopbackVideo",
     "docker-worker:feature:allowPtrace",
+    "generic-worker:os-group:gecko-t/t-linux-2404-wayland-snap-alpha/snap_sudo",
     "project:releng:services/tooltool/api/download/internal",
     "project:releng:services/tooltool/api/download/public",
     "queue:create-task:low:gecko-t/*",
-    "queue:create-task:low:translations-1/decision-gcp",
     "queue:get-artifact:project/gecko/android-emulator/*",
     "queue:get-artifact:project/gecko/android-system-images/*"
   ]
