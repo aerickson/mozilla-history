@@ -45,14 +45,12 @@
     "queue:scheduler-id:mozilla-level-1",
     "queue:seal-task-group:lint/*",
     "queue:seal-task-group:mozilla-level-1/*",
-    "secrets:get:project/mozilla/fx-desktop-qa-automation/level-1/*",
-    "secrets:get:project/mozilla/fx-desktop-qa-automation/level-any/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:06:54.315Z",
+  "lastModified": "2026-05-25T17:41:12.186Z",
   "roleId": "repo:github.com/mozilla/fx-desktop-qa-automation:pull-request",
   "scopes": [
     "docker-worker:cache:mozilla-level-1-*",
@@ -80,10 +78,6 @@
     "queue:route:notify.slack-channel.*",
     "queue:scheduler-id:mozilla-level-1",
     "queue:seal-task-group:mozilla-level-1/*",
-    "secrets:get:project/mozilla/fx-desktop-qa-automation/level-1/*",
-    "secrets:get:project/mozilla/fx-desktop-qa-automation/level-any/*",
-    "secrets:get:project/mozilla/level-1/*",
-    "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

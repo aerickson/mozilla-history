@@ -58,15 +58,11 @@
     "queue:seal-task-group:releng-level-1/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
-    "secrets:get:project/releng/level-1/*",
-    "secrets:get:project/releng/level-any/*",
     "secrets:get:project/releng/tooltool/ci",
-    "secrets:get:project/releng/tooltool/level-1/*",
-    "secrets:get:project/releng/tooltool/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-11-28T15:42:59.806Z",
+  "lastModified": "2026-05-25T17:41:17.758Z",
   "roleId": "repo:github.com/mozilla-releng/tooltool:pull-request",
   "scopes": [
     "docker-worker:cache:releng-level-1-*",
@@ -97,11 +93,7 @@
     "queue:scheduler-id:releng-level-1",
     "queue:scheduler-id:taskcluster-github",
     "queue:seal-task-group:releng-level-1/*",
-    "secrets:get:project/releng/level-1/*",
-    "secrets:get:project/releng/level-any/*",
     "secrets:get:project/releng/tooltool/ci",
-    "secrets:get:project/releng/tooltool/level-1/*",
-    "secrets:get:project/releng/tooltool/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

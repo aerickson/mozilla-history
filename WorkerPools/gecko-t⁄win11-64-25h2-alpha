@@ -52,7 +52,7 @@
           "mode": "Incremental",
           "parameters": {
             "vmSize": {
-              "value": "Standard_F8s_v2"
+              "value": "Standard_D8ads_v5"
             },
             "imageId": {
               "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2_alpha/images/win11_64_25h2_alpha/versions/1.0.0"
@@ -73,7 +73,7 @@
         },
         "workerManager": {
           "initialWeight": 0.5,
-          "launchConfigId": "lc-17eaee0c2d10602cb9b1",
+          "launchConfigId": "lc-8579d1f19e6a4db2d121",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-t-win11-64-25h2-alpha"
@@ -121,7 +121,7 @@
           "mode": "Incremental",
           "parameters": {
             "vmSize": {
-              "value": "Standard_F8s_v2"
+              "value": "Standard_D8ads_v5"
             },
             "imageId": {
               "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2_alpha/images/win11_64_25h2_alpha/versions/1.0.0"
@@ -142,7 +142,7 @@
         },
         "workerManager": {
           "initialWeight": 0.1,
-          "launchConfigId": "lc-4b5b88e90aeb47f6f10e",
+          "launchConfigId": "lc-3519fa54d41754b6bebd",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-t-win11-64-25h2-alpha"
@@ -190,7 +190,7 @@
           "mode": "Incremental",
           "parameters": {
             "vmSize": {
-              "value": "Standard_F8s_v2"
+              "value": "Standard_D8ads_v5"
             },
             "imageId": {
               "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2_alpha/images/win11_64_25h2_alpha/versions/1.0.0"
@@ -211,7 +211,7 @@
         },
         "workerManager": {
           "initialWeight": 0.8,
-          "launchConfigId": "lc-57fe81d192dc95676cbe",
+          "launchConfigId": "lc-7346cf9c9aa78c4edb73",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-t-win11-64-25h2-alpha"
@@ -259,7 +259,7 @@
           "mode": "Incremental",
           "parameters": {
             "vmSize": {
-              "value": "Standard_F8s_v2"
+              "value": "Standard_D8ads_v5"
             },
             "imageId": {
               "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2_alpha/images/win11_64_25h2_alpha/versions/1.0.0"
@@ -280,7 +280,7 @@
         },
         "workerManager": {
           "initialWeight": 0.3,
-          "launchConfigId": "lc-4a961daa715a499076b8",
+          "launchConfigId": "lc-fe0e0da72f0c8f430e77",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-t-win11-64-25h2-alpha"
@@ -328,7 +328,7 @@
           "mode": "Incremental",
           "parameters": {
             "vmSize": {
-              "value": "Standard_F8s_v2"
+              "value": "Standard_D8ads_v5"
             },
             "imageId": {
               "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2_alpha/images/win11_64_25h2_alpha/versions/1.0.0"
@@ -349,7 +349,7 @@
         },
         "workerManager": {
           "initialWeight": 1,
-          "launchConfigId": "lc-6fa173263d6e9d65a837",
+          "launchConfigId": "lc-dd279eccc2954cdbcb28",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-t-win11-64-25h2-alpha"
@@ -360,7 +360,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\n",
   "emailOnError": true,
-  "lastModified": "2026-05-12T16:44:05.798Z",
+  "lastModified": "2026-05-27T20:46:03.984Z",
   "owner": "relops-azure-provisioning@mozilla.com",
   "providerId": "azure2",
   "requestedCapacity": 0,

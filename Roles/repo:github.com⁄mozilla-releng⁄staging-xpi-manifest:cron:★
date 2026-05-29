@@ -60,7 +60,7 @@
     "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ],
-  "lastModified": "2025-09-04T13:13:25.493Z",
+  "lastModified": "2026-05-25T17:41:53.933Z",
   "roleId": "repo:github.com/mozilla-releng/staging-xpi-manifest:cron:*",
   "scopes": [
     "docker-worker:cache:xpi-level-1-*",
@@ -80,6 +80,8 @@
     "queue:scheduler-id:xpi-level-1",
     "queue:seal-task-group:xpi-level-1/*",
     "secrets:get:project/releng/mobile/github-cron-token",
+    "secrets:get:project/xpi/level-1/*",
+    "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ]
 }

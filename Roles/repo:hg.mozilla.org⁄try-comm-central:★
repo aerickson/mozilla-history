@@ -75,7 +75,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-03-20T10:42:37.256Z",
+  "lastModified": "2026-05-25T17:42:23.434Z",
   "roleId": "repo:hg.mozilla.org/try-comm-central:*",
   "scopes": [
     "assume:project:taskcluster:comm:level-1-sccache-buckets",
@@ -137,8 +137,6 @@
     "queue:route:tc-treeherder.try-comm-central.*",
     "queue:route:tc-treeherder.v2.try-comm-central.*",
     "queue:scheduler-id:comm-level-1",
-    "secrets:get:project/comm/level-1/*",
-    "secrets:get:project/comm/level-any/*",
     "secrets:get:project/comm/thunderbird/releng/build/level-1/*",
     "secrets:get:project/perftest/gecko/level-1/*",
     "secrets:get:project/releng/comm/build/level-1/*",

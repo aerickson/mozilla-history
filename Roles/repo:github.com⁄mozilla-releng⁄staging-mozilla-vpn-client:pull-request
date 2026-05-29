@@ -87,7 +87,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:17:24.583Z",
+  "lastModified": "2026-05-25T17:42:58.155Z",
   "roleId": "repo:github.com/mozilla-releng/staging-mozilla-vpn-client:pull-request",
   "scopes": [
     "index:insert-task:mozillavpn.cache.head.*",
@@ -122,6 +122,8 @@
     "queue:route:index.mozillavpn.v2.staging-mozilla-vpn-client-pr.*",
     "queue:route:tc-treeherder-stage.v2.staging-mozilla-vpn-client-pr.*",
     "queue:route:tc-treeherder.v2.staging-mozilla-vpn-client-pr.*",
-    "queue:seal-task-group:mozillavpn-level-1/*"
+    "queue:seal-task-group:mozillavpn-level-1/*",
+    "secrets:get:project/mozillavpn/level-1/*",
+    "secrets:get:project/mozillavpn/level-any/*"
   ]
 }

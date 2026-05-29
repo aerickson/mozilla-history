@@ -104,7 +104,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-03-30T16:53:20.059Z",
+  "lastModified": "2026-05-25T17:39:47.368Z",
   "roleId": "repo:github.com/mozilla/enterprise-firefox-try:pull-request",
   "scopes": [
     "in-tree:hook-action:project-enterprise/in-tree-pr-action-1-*",
@@ -118,6 +118,8 @@
     "queue:route:index.enterprise.v2.enterprise-firefox-try-pr.*",
     "queue:route:tc-treeherder-stage.v2.enterprise-firefox-try-pr.*",
     "queue:route:tc-treeherder.v2.enterprise-firefox-try-pr.*",
-    "queue:seal-task-group:enterprise-level-1/*"
+    "queue:seal-task-group:enterprise-level-1/*",
+    "secrets:get:project/enterprise/level-1/*",
+    "secrets:get:project/enterprise/level-any/*"
   ]
 }

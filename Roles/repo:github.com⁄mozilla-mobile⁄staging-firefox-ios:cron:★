@@ -57,7 +57,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:12:33.427Z",
+  "lastModified": "2026-05-25T17:42:54.937Z",
   "roleId": "repo:github.com/mozilla-mobile/staging-firefox-ios:cron:*",
   "scopes": [
     "project:mobile:firefox-ios:releng:bitrise:app:staging-firefox-ios",
@@ -74,6 +74,10 @@
     "queue:create-task:highest:scriptworker-k8s/mobile-1-*",
     "queue:create-task:low:releng-hardware/mozilla-b-1-osx",
     "secrets:get:project/mobile/ci/testrail",
+    "secrets:get:project/mobile/firefox-ios/level-1/*",
+    "secrets:get:project/mobile/firefox-ios/level-any/*",
+    "secrets:get:project/mobile/level-1/*",
+    "secrets:get:project/mobile/level-any/*",
     "secrets:get:project/releng/mobile/github-cron-token"
   ]
 }

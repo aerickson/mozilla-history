@@ -76,7 +76,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:07:12.972Z",
+  "lastModified": "2026-05-25T17:41:39.188Z",
   "roleId": "repo:github.com/mozilla-releng/staging-application-services:*",
   "scopes": [
     "docker-worker:cache:app-services-level-1-*",
@@ -108,8 +108,6 @@
     "queue:route:index.app-services.cache.level-1.*",
     "queue:route:index.app-services.v2.staging-application-services.*",
     "queue:scheduler-id:app-services-level-1",
-    "secrets:get:project/app-services/level-1/*",
-    "secrets:get:project/app-services/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

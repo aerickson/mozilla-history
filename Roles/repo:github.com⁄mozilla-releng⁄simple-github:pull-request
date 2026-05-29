@@ -42,7 +42,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:17:53.676Z",
+  "lastModified": "2026-05-25T17:40:01.045Z",
   "roleId": "repo:github.com/mozilla-releng/simple-github:pull-request",
   "scopes": [
     "index:insert-task:mozilla.v2.simple-github-pr.*",
@@ -52,6 +52,10 @@
     "queue:route:index.mozilla.v2.simple-github-pr.*",
     "queue:route:index.mozilla.v2.simple-github.cache.head.*",
     "queue:route:index.mozilla.v2.simple-github.cache.pr.*",
-    "queue:seal-task-group:mozilla-level-1/*"
+    "queue:seal-task-group:mozilla-level-1/*",
+    "secrets:get:project/mozilla/level-1/*",
+    "secrets:get:project/mozilla/level-any/*",
+    "secrets:get:project/mozilla/simple-github/level-1/*",
+    "secrets:get:project/mozilla/simple-github/level-any/*"
   ]
 }

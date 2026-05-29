@@ -76,7 +76,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-03-20T10:44:01.682Z",
+  "lastModified": "2026-05-25T17:41:04.609Z",
   "roleId": "repo:hg.mozilla.org/projects/ash:*",
   "scopes": [
     "assume:project:taskcluster:comm:level-2-sccache-buckets",
@@ -138,8 +138,6 @@
     "queue:route:tc-treeherder.v2.ash.*",
     "queue:scheduler-id:comm-level-2",
     "secrets:get:project/civet/github-deploy-key",
-    "secrets:get:project/comm/level-2/*",
-    "secrets:get:project/comm/level-any/*",
     "secrets:get:project/comm/thunderbird/releng/build/level-1/*",
     "secrets:get:project/perftest/gecko/level-2/*",
     "secrets:get:project/releng/comm/build/level-2/*",

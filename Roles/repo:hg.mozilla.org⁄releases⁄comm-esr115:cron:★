@@ -84,9 +84,11 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:09:29.030Z",
+  "lastModified": "2026-05-25T17:42:44.385Z",
   "roleId": "repo:hg.mozilla.org/releases/comm-esr115:cron:*",
   "scopes": [
-    "in-tree:hook-action:project-comm/in-tree-action-3-*"
+    "in-tree:hook-action:project-comm/in-tree-action-3-*",
+    "secrets:get:project/comm/level-3/*",
+    "secrets:get:project/comm/level-any/*"
   ]
 }

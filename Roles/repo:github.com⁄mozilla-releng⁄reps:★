@@ -42,7 +42,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:13:54.369Z",
+  "lastModified": "2026-05-25T17:41:30.433Z",
   "roleId": "repo:github.com/mozilla-releng/reps:*",
   "scopes": [
     "docker-worker:cache:mozilla-level-1-*",
@@ -60,10 +60,6 @@
     "queue:route:checks",
     "queue:route:index.mozilla.v2.reps.*",
     "queue:scheduler-id:mozilla-level-1",
-    "secrets:get:project/mozilla/level-1/*",
-    "secrets:get:project/mozilla/level-any/*",
-    "secrets:get:project/mozilla/reps/level-1/*",
-    "secrets:get:project/mozilla/reps/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

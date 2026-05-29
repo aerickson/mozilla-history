@@ -65,7 +65,7 @@
     "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ],
-  "lastModified": "2025-09-04T13:14:52.716Z",
+  "lastModified": "2026-05-25T17:42:32.418Z",
   "roleId": "repo:github.com/mozilla-releng/staging-xpi-manifest:pull-request",
   "scopes": [
     "docker-worker:cache:xpi-level-1-*",
@@ -90,6 +90,8 @@
     "queue:scheduler-id:taskcluster-github",
     "queue:scheduler-id:xpi-level-1",
     "queue:seal-task-group:xpi-level-1/*",
+    "secrets:get:project/xpi/level-1/*",
+    "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ]
 }

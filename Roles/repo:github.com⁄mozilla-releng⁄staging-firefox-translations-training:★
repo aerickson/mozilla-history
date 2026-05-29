@@ -67,7 +67,7 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2025-09-04T13:06:22.177Z",
+  "lastModified": "2026-05-25T17:42:37.271Z",
   "roleId": "repo:github.com/mozilla-releng/staging-firefox-translations-training:*",
   "scopes": [
     "docker-worker:cache:translations-level-1-*",
@@ -92,8 +92,6 @@
     "queue:route:tc-treeherder.v2.staging-firefox-translations-training.*",
     "queue:scheduler-id:translations-level-1",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
-    "secrets:get:project/taskcluster/gecko/hgmointernal",
-    "secrets:get:project/translations/level-1/*",
-    "secrets:get:project/translations/level-any/*"
+    "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]
 }

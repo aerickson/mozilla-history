@@ -23,7 +23,6 @@
     "generic-worker:os-group:gecko-t/win11-64-2009-alpha/Administrators",
     "generic-worker:os-group:gecko-t/win11-64-2009/Administrators",
     "generic-worker:os-group:gecko-t/win11-64-24h2-alpha/Administrators",
-    "generic-worker:os-group:gecko-t/win11-64-24h2-amd/Administrators",
     "generic-worker:os-group:gecko-t/win11-64-24h2-privileged-alpha/Administrators",
     "generic-worker:os-group:gecko-t/win11-64-24h2-privileged/Administrators",
     "generic-worker:os-group:gecko-t/win11-64-24h2-source/Administrators",
@@ -37,7 +36,6 @@
     "generic-worker:run-as-administrator:gecko-t/win11-64-2009-alpha",
     "generic-worker:run-as-administrator:gecko-t/win11-64-24h2",
     "generic-worker:run-as-administrator:gecko-t/win11-64-24h2-alpha",
-    "generic-worker:run-as-administrator:gecko-t/win11-64-24h2-amd",
     "generic-worker:run-as-administrator:gecko-t/win11-64-24h2-privileged",
     "generic-worker:run-as-administrator:gecko-t/win11-64-24h2-privileged-alpha",
     "generic-worker:run-as-administrator:gecko-t/win11-64-24h2-source",
@@ -152,9 +150,11 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:07:19.765Z",
+  "lastModified": "2026-05-25T17:41:07.903Z",
   "roleId": "repo:hg.mozilla.org/integration/autoland:cron:*",
   "scopes": [
-    "in-tree:hook-action:project-gecko/in-tree-action-3-*"
+    "in-tree:hook-action:project-gecko/in-tree-action-3-*",
+    "secrets:get:project/gecko/level-3/*",
+    "secrets:get:project/gecko/level-any/*"
   ]
 }

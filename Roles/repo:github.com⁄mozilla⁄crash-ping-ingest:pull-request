@@ -43,7 +43,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:19:33.120Z",
+  "lastModified": "2026-05-25T17:42:21.794Z",
   "roleId": "repo:github.com/mozilla/crash-ping-ingest:pull-request",
   "scopes": [
     "index:insert-task:mozilla.v2.crash-ping-ingest-pr.*",
@@ -54,6 +54,10 @@
     "queue:route:index.mozilla.v2.crash-ping-ingest.cache.head.*",
     "queue:route:index.mozilla.v2.crash-ping-ingest.cache.pr.*",
     "queue:seal-task-group:mozilla-level-1/*",
-    "secrets:get:project/mozilla/crash-ping-ingest/ci"
+    "secrets:get:project/mozilla/crash-ping-ingest/ci",
+    "secrets:get:project/mozilla/crash-ping-ingest/level-1/*",
+    "secrets:get:project/mozilla/crash-ping-ingest/level-any/*",
+    "secrets:get:project/mozilla/level-1/*",
+    "secrets:get:project/mozilla/level-any/*"
   ]
 }

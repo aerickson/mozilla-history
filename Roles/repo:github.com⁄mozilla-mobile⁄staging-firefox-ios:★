@@ -74,7 +74,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:16:49.802Z",
+  "lastModified": "2026-05-25T17:42:31.555Z",
   "roleId": "repo:github.com/mozilla-mobile/staging-firefox-ios:*",
   "scopes": [
     "docker-worker:cache:mobile-level-1-*",
@@ -107,10 +107,6 @@
     "queue:route:tc-treeherder.staging-firefox-ios.*",
     "queue:route:tc-treeherder.v2.staging-firefox-ios.*",
     "queue:scheduler-id:mobile-level-1",
-    "secrets:get:project/mobile/firefox-ios/level-1/*",
-    "secrets:get:project/mobile/firefox-ios/level-any/*",
-    "secrets:get:project/mobile/level-1/*",
-    "secrets:get:project/mobile/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

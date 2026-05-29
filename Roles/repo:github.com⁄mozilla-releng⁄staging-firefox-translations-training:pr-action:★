@@ -59,12 +59,14 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2026-02-11T15:13:28.155Z",
+  "lastModified": "2026-05-25T17:40:54.974Z",
   "roleId": "repo:github.com/mozilla-releng/staging-firefox-translations-training:pr-action:*",
   "scopes": [
     "index:insert-task:translations.v2.staging-firefox-translations-training-pr.*",
     "queue:route:index.translations.v2.staging-firefox-translations-training-pr.*",
     "queue:route:tc-treeherder-stage.v2.staging-firefox-translations-training-pr.*",
-    "queue:route:tc-treeherder.v2.staging-firefox-translations-training-pr.*"
+    "queue:route:tc-treeherder.v2.staging-firefox-translations-training-pr.*",
+    "secrets:get:project/translations/level-1/*",
+    "secrets:get:project/translations/level-any/*"
   ]
 }

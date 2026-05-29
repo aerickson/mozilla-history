@@ -26,9 +26,13 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:06:40.121Z",
+  "lastModified": "2026-05-25T17:40:51.471Z",
   "roleId": "repo:github.com/afranchuk/process-top-crashes:action:*",
   "scopes": [
-    "secrets:get:project/mozilla/process-top-crashes/ci"
+    "secrets:get:project/mozilla/level-1/*",
+    "secrets:get:project/mozilla/level-any/*",
+    "secrets:get:project/mozilla/process-top-crashes/ci",
+    "secrets:get:project/mozilla/process-top-crashes/level-1/*",
+    "secrets:get:project/mozilla/process-top-crashes/level-any/*"
   ]
 }

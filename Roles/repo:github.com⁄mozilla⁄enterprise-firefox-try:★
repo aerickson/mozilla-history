@@ -104,7 +104,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-12T21:31:33.569Z",
+  "lastModified": "2026-05-25T17:43:02.200Z",
   "roleId": "repo:github.com/mozilla/enterprise-firefox-try:*",
   "scopes": [
     "assume:project:taskcluster:enterprise:level-1-sccache-buckets",
@@ -157,8 +157,6 @@
     "queue:route:tc-treeherder.v2.enterprise-firefox-pr.*",
     "queue:route:tc-treeherder.v2.enterprise-firefox-try.*",
     "queue:scheduler-id:enterprise-level-1",
-    "secrets:get:project/enterprise/level-1/*",
-    "secrets:get:project/enterprise/level-any/*",
     "secrets:get:project/perftest/gecko/level-1/*",
     "secrets:get:project/releng/enterprise/build/level-1/*",
     "secrets:get:project/releng/gecko/build/level-1/gecko-symbol-upload",

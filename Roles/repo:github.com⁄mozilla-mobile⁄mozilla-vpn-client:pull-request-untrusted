@@ -44,12 +44,10 @@
     "queue:route:tc-treeherder.v2.mozilla-vpn-client-pr.*",
     "queue:scheduler-id:mozillavpn-level-1",
     "queue:seal-task-group:mozillavpn-level-1/*",
-    "secrets:get:project/mozillavpn/level-1/*",
-    "secrets:get:project/mozillavpn/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:08:51.168Z",
+  "lastModified": "2026-05-25T17:41:35.474Z",
   "roleId": "repo:github.com/mozilla-mobile/mozilla-vpn-client:pull-request-untrusted",
   "scopes": [
     "docker-worker:cache:mozillavpn-level-1-*",
@@ -93,8 +91,6 @@
     "queue:route:tc-treeherder.v2.mozilla-vpn-client-pr.*",
     "queue:scheduler-id:mozillavpn-level-1",
     "queue:seal-task-group:mozillavpn-level-1/*",
-    "secrets:get:project/mozillavpn/level-1/*",
-    "secrets:get:project/mozillavpn/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

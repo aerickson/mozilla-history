@@ -93,9 +93,11 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-03-30T16:53:15.340Z",
+  "lastModified": "2026-05-25T17:39:56.051Z",
   "roleId": "repo:github.com/mozilla/enterprise-firefox-try:action:*",
   "scopes": [
-    "queue:get-artifact:project/enterprise/*"
+    "queue:get-artifact:project/enterprise/*",
+    "secrets:get:project/enterprise/level-1/*",
+    "secrets:get:project/enterprise/level-any/*"
   ]
 }

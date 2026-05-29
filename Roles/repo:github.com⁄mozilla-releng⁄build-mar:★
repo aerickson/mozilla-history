@@ -60,7 +60,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-01-30T13:56:18.643Z",
+  "lastModified": "2026-05-25T17:42:40.487Z",
   "roleId": "repo:github.com/mozilla-releng/build-mar:*",
   "scopes": [
     "docker-worker:cache:releng-level-1-*",
@@ -83,10 +83,6 @@
     "queue:route:notify.email.*",
     "queue:scheduler-id:releng-level-1",
     "queue:scheduler-id:taskcluster-github",
-    "secrets:get:project/releng/build-mar/level-1/*",
-    "secrets:get:project/releng/build-mar/level-any/*",
-    "secrets:get:project/releng/level-1/*",
-    "secrets:get:project/releng/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

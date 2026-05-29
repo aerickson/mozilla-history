@@ -48,14 +48,12 @@
     "queue:seal-task-group:code-analysis-level-1/*",
     "queue:seal-task-group:lint/*",
     "queue:seal-task-group:mozilla-level-1/*",
-    "secrets:get:project/code-analysis/level-1/*",
-    "secrets:get:project/code-analysis/level-any/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:20:10.444Z",
+  "lastModified": "2026-05-25T17:42:53.867Z",
   "roleId": "repo:github.com/mozilla/code-coverage:pull-request",
   "scopes": [
     "docker-worker:cache:code-analysis-level-1-*",
@@ -78,8 +76,6 @@
     "queue:route:index.code-analysis.v2.code-coverage-pr.*",
     "queue:scheduler-id:code-analysis-level-1",
     "queue:seal-task-group:code-analysis-level-1/*",
-    "secrets:get:project/code-analysis/level-1/*",
-    "secrets:get:project/code-analysis/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

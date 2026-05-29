@@ -31,11 +31,9 @@
     "queue:seal-task-group:lint/*",
     "queue:seal-task-group:taskgraph-level-1/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
-    "secrets:get:project/taskcluster/gecko/hgmointernal",
-    "secrets:get:project/taskgraph/level-1/*",
-    "secrets:get:project/taskgraph/level-any/*"
+    "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-08T14:44:49.644Z",
+  "lastModified": "2026-05-25T17:40:49.547Z",
   "roleId": "repo:github.com/taskcluster/taskgraph:pull-request-untrusted",
   "scopes": [
     "docker-worker:cache:taskgraph-level-1-*",
@@ -66,8 +64,6 @@
     "queue:seal-task-group:lint/*",
     "queue:seal-task-group:taskgraph-level-1/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
-    "secrets:get:project/taskcluster/gecko/hgmointernal",
-    "secrets:get:project/taskgraph/level-1/*",
-    "secrets:get:project/taskgraph/level-any/*"
+    "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]
 }

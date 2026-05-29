@@ -60,14 +60,12 @@
     "queue:seal-task-group:adhoc-level-1/*",
     "queue:seal-task-group:lint/*",
     "queue:seal-task-group:mozilla-level-1/*",
-    "secrets:get:project/adhoc/level-1/*",
-    "secrets:get:project/adhoc/level-any/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-02-06T14:00:33.078Z",
+  "lastModified": "2026-05-25T17:40:19.248Z",
   "roleId": "repo:github.com/mozilla-releng/adhoc-signing:pull-request",
   "scopes": [
     "docker-worker:cache:adhoc-level-1-*",
@@ -102,8 +100,6 @@
     "queue:route:notify.email.*",
     "queue:scheduler-id:adhoc-level-1",
     "queue:seal-task-group:adhoc-level-1/*",
-    "secrets:get:project/adhoc/level-1/*",
-    "secrets:get:project/adhoc/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

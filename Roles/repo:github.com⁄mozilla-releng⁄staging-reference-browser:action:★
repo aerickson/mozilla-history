@@ -74,7 +74,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:15:11.634Z",
+  "lastModified": "2026-05-25T17:41:13.802Z",
   "roleId": "repo:github.com/mozilla-releng/staging-reference-browser:action:*",
   "scopes": [
     "project:mobile:reference-browser:releng:signing:cert:dep-signing",
@@ -82,6 +82,10 @@
     "queue:create-task:highest:proj-autophone/gecko-t-ap-perf-p2",
     "queue:create-task:highest:proj-autophone/gecko-t-bitbar-gw-perf-a51",
     "queue:create-task:highest:proj-autophone/gecko-t-bitbar-gw-perf-g5",
-    "queue:create-task:highest:proj-autophone/gecko-t-bitbar-gw-perf-p2"
+    "queue:create-task:highest:proj-autophone/gecko-t-bitbar-gw-perf-p2",
+    "secrets:get:project/mobile/level-1/*",
+    "secrets:get:project/mobile/level-any/*",
+    "secrets:get:project/mobile/reference-browser/level-1/*",
+    "secrets:get:project/mobile/reference-browser/level-any/*"
   ]
 }

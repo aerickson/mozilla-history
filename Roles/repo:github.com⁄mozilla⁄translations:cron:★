@@ -60,9 +60,11 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2025-09-04T13:10:06.892Z",
+  "lastModified": "2026-05-25T17:41:48.142Z",
   "roleId": "repo:github.com/mozilla/translations:cron:*",
   "scopes": [
-    "secrets:get:project/releng/mobile/github-cron-token"
+    "secrets:get:project/releng/mobile/github-cron-token",
+    "secrets:get:project/translations/level-1/*",
+    "secrets:get:project/translations/level-any/*"
   ]
 }

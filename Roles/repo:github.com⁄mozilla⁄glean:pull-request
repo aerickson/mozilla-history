@@ -64,16 +64,12 @@
     "queue:seal-task-group:glean-level-1/*",
     "queue:seal-task-group:lint/*",
     "queue:seal-task-group:mozilla-level-1/*",
-    "secrets:get:project/glean/glean/level-1/*",
-    "secrets:get:project/glean/glean/level-any/*",
-    "secrets:get:project/glean/level-1/*",
-    "secrets:get:project/glean/level-any/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:16:47.538Z",
+  "lastModified": "2026-05-25T17:42:51.270Z",
   "roleId": "repo:github.com/mozilla/glean:pull-request",
   "scopes": [
     "docker-worker:cache:glean-level-1-*",
@@ -112,10 +108,6 @@
     "queue:route:index.project.glean.cache.pr.*",
     "queue:scheduler-id:glean-level-1",
     "queue:seal-task-group:glean-level-1/*",
-    "secrets:get:project/glean/glean/level-1/*",
-    "secrets:get:project/glean/glean/level-any/*",
-    "secrets:get:project/glean/level-1/*",
-    "secrets:get:project/glean/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

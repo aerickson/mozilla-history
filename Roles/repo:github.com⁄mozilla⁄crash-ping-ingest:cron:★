@@ -42,10 +42,14 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:11:41.123Z",
+  "lastModified": "2026-05-25T17:42:15.280Z",
   "roleId": "repo:github.com/mozilla/crash-ping-ingest:cron:*",
   "scopes": [
     "secrets:get:project/mozilla/crash-ping-ingest/ci",
+    "secrets:get:project/mozilla/crash-ping-ingest/level-1/*",
+    "secrets:get:project/mozilla/crash-ping-ingest/level-any/*",
+    "secrets:get:project/mozilla/level-1/*",
+    "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/releng/mobile/github-cron-token"
   ]
 }

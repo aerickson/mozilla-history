@@ -63,7 +63,7 @@
     "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ],
-  "lastModified": "2025-09-04T13:05:59.380Z",
+  "lastModified": "2026-05-25T17:39:56.957Z",
   "roleId": "repo:github.com/mozilla-releng/staging-xpi-private:*",
   "scopes": [
     "docker-worker:cache:xpi-level-1-*",
@@ -82,8 +82,6 @@
     "queue:scheduler-id:xpi-level-1",
     "secrets:get:project/releng/releng-github-clone-ssh",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
-    "secrets:get:project/taskcluster/gecko/hgmointernal",
-    "secrets:get:project/xpi/level-1/*",
-    "secrets:get:project/xpi/level-any/*"
+    "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]
 }

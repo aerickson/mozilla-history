@@ -42,7 +42,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:04:53.647Z",
+  "lastModified": "2026-05-25T17:42:07.949Z",
   "roleId": "repo:github.com/mozilla-releng/firefox-ci-playground:*",
   "scopes": [
     "docker-worker:cache:mozilla-level-1-*",
@@ -60,10 +60,6 @@
     "queue:route:checks",
     "queue:route:index.mozilla.v2.firefox-ci-playground.*",
     "queue:scheduler-id:mozilla-level-1",
-    "secrets:get:project/mozilla/firefox-ci-playground/level-1/*",
-    "secrets:get:project/mozilla/firefox-ci-playground/level-any/*",
-    "secrets:get:project/mozilla/level-1/*",
-    "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

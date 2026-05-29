@@ -72,7 +72,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:17:37.066Z",
+  "lastModified": "2026-05-25T17:40:40.776Z",
   "roleId": "repo:github.com/mozilla-releng/staging-mozilla-vpn-client:release:*",
   "scopes": [
     "project:mozillavpn:releng:beetmover:action:copy-artifacts",
@@ -94,6 +94,7 @@
     "queue:create-task:low:scriptworker-prov-v1/mozillavpn-t-signing-mac",
     "queue:route:index.mozillavpn.v2.staging-mozilla-vpn-client.release.*",
     "secrets:get:project/mozillavpn/level-1/*",
+    "secrets:get:project/mozillavpn/level-any/*",
     "secrets:get:project/mozillavpn/tokens"
   ]
 }

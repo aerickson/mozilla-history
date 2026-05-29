@@ -31,7 +31,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:14:30.479Z",
+  "lastModified": "2026-05-25T17:41:32.055Z",
   "roleId": "repo:hg.mozilla.org/projects/nss:*",
   "scopes": [
     "docker-worker:cache:nss-level-3-*",
@@ -57,8 +57,6 @@
     "queue:route:tc-treeherder.nss.*",
     "queue:route:tc-treeherder.v2.nss.*",
     "queue:scheduler-id:nss-level-3",
-    "secrets:get:project/nss/level-3/*",
-    "secrets:get:project/nss/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

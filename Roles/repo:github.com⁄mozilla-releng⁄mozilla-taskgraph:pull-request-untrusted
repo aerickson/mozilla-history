@@ -54,13 +54,9 @@
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
-    "secrets:get:project/taskcluster/gecko/hgmointernal",
-    "secrets:get:project/taskgraph/level-1/*",
-    "secrets:get:project/taskgraph/level-any/*",
-    "secrets:get:project/taskgraph/mozilla-taskgraph/level-1/*",
-    "secrets:get:project/taskgraph/mozilla-taskgraph/level-any/*"
+    "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:19:46.659Z",
+  "lastModified": "2026-05-25T17:42:27.601Z",
   "roleId": "repo:github.com/mozilla-releng/mozilla-taskgraph:pull-request-untrusted",
   "scopes": [
     "docker-worker:cache:taskgraph-level-1-*",
@@ -87,10 +83,6 @@
     "queue:scheduler-id:taskgraph-level-1",
     "queue:seal-task-group:taskgraph-level-1/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
-    "secrets:get:project/taskcluster/gecko/hgmointernal",
-    "secrets:get:project/taskgraph/level-1/*",
-    "secrets:get:project/taskgraph/level-any/*",
-    "secrets:get:project/taskgraph/mozilla-taskgraph/level-1/*",
-    "secrets:get:project/taskgraph/mozilla-taskgraph/level-any/*"
+    "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]
 }

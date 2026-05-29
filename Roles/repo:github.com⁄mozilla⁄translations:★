@@ -71,7 +71,7 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2025-09-04T13:15:32.826Z",
+  "lastModified": "2026-05-25T17:42:29.469Z",
   "roleId": "repo:github.com/mozilla/translations:*",
   "scopes": [
     "docker-worker:cache:translations-level-1-*",
@@ -98,8 +98,6 @@
     "queue:route:tc-treeherder.v2.translations.*",
     "queue:scheduler-id:translations-level-1",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
-    "secrets:get:project/taskcluster/gecko/hgmointernal",
-    "secrets:get:project/translations/level-1/*",
-    "secrets:get:project/translations/level-any/*"
+    "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]
 }

@@ -89,7 +89,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:18:24.759Z",
+  "lastModified": "2026-05-25T17:42:34.611Z",
   "roleId": "repo:github.com/mozilla-releng/staging-mozilla-vpn-client:*",
   "scopes": [
     "docker-worker:cache:mozillavpn-level-1-*",
@@ -113,8 +113,6 @@
     "queue:route:tc-treeherder.staging-mozilla-vpn-client.*",
     "queue:route:tc-treeherder.v2.staging-mozilla-vpn-client.*",
     "queue:scheduler-id:mozillavpn-level-1",
-    "secrets:get:project/mozillavpn/level-1/*",
-    "secrets:get:project/mozillavpn/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

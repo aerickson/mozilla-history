@@ -1,0 +1,187 @@
+{
+  "bindings": [
+    {
+      "exchange": "exchange/taskcluster-github/v1/pull-request",
+      "routingKeyPattern": "#.mozilla-firefox.#.opened"
+    },
+    {
+      "exchange": "exchange/taskcluster-github/v1/pull-request",
+      "routingKeyPattern": "#.mozilla-firefox.#.reopened"
+    },
+    {
+      "exchange": "exchange/taskcluster-github/v1/pull-request",
+      "routingKeyPattern": "#.mozilla-firefox.#.synchronize"
+    }
+  ],
+  "hookGroupId": "project-engwf",
+  "hookId": "reviewer-assignment-production",
+  "metadata": {
+    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAutomatically assign reviewers to PRs",
+    "emailOnError": true,
+    "name": "Reviewer assignment hook (production)",
+    "owner": "omehani@mozilla.com"
+  },
+  "schedule": [],
+  "task": {
+    "tags": {},
+    "extra": {},
+    "routes": [
+      "index.project.engwf.production.reviewer-assignment.latest",
+      "index.project.engwf.production.reviewer-assignment.${payload.organization}.${payload.repository}.latest",
+      "index.project.engwf.production.reviewer-assignment.${payload.organization}.${payload.repository}.pull-request.${payload.body.number}",
+      "index.project.engwf.production.reviewer-assignment.${payload.organization}.${payload.repository}.revision.${payload.body.pull_request.head.sha}"
+    ],
+    "scopes": [
+      "secrets:get:project/engwf/reviewer-assignment/runtime-production",
+      "index:insert-task:project.engwf.production.reviewer-assignment.*"
+    ],
+    "created": {
+      "$fromNow": "0 seconds"
+    },
+    "expires": {
+      "$fromNow": "1 month"
+    },
+    "payload": {
+      "env": {
+        "PR_URL": {
+          "$eval": "payload.body.pull_request.html_url"
+        },
+        "DIFF_URL": {
+          "$eval": "payload.body.pull_request.diff_url"
+        },
+        "ORG_NAME": {
+          "$eval": "payload.organization"
+        },
+        "REPO_URL": {
+          "$eval": "payload.body.repository.html_url"
+        },
+        "REPO_NAME": {
+          "$eval": "payload.repository"
+        },
+        "TC_SECRET_ID": "project/engwf/reviewer-assignment/runtime-production",
+        "TARGET_BRANCH_NAME": {
+          "$eval": "payload.body.pull_request.base.ref"
+        }
+      },
+      "image": {
+        "path": "public/image.tar.zst",
+        "type": "indexed-image",
+        "namespace": "mozilla.v2.reviewer-selector.branch.main.latest.docker-image.reviewer-selector"
+      },
+      "features": {
+        "taskclusterProxy": true
+      },
+      "maxRunTime": 600,
+      "capabilities": {}
+    },
+    "retries": 3,
+    "deadline": {
+      "$fromNow": "2 hours"
+    },
+    "metadata": {
+      "name": "Reviewer assignment",
+      "owner": "omehani@mozilla.com",
+      "source": "https://github.com/mozilla-conduit/reviewer-selector",
+      "description": "Assign reviewers for PRs in the mozilla-firefox org"
+    },
+    "priority": "lowest",
+    "workerType": "bot",
+    "schedulerId": "engwf",
+    "provisionerId": "code-review"
+  },
+  "triggerSchema": {
+    "type": "object",
+    "required": [
+      "body",
+      "organization",
+      "repository"
+    ],
+    "properties": {
+      "body": {
+        "type": "object",
+        "required": [
+          "action",
+          "number",
+          "repository"
+        ],
+        "properties": {
+          "action": {
+            "type": "string",
+            "pattern": "^(opened|reopened|synchronize)$",
+            "description": "Action on the PR"
+          },
+          "number": {
+            "type": "integer"
+          },
+          "repository": {
+            "type": "object",
+            "required": [
+              "html_url"
+            ],
+            "properties": {
+              "html_url": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "pull_request": {
+            "type": "object",
+            "required": [
+              "base",
+              "diff_url",
+              "head",
+              "html_url"
+            ],
+            "properties": {
+              "base": {
+                "type": "object",
+                "required": [
+                  "ref"
+                ],
+                "properties": {
+                  "ref": {
+                    "type": "string",
+                    "description": "Target branch to merge this PR in"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "head": {
+                "type": "object",
+                "required": [
+                  "sha"
+                ],
+                "properties": {
+                  "sha": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "diff_url": {
+                "type": "string"
+              },
+              "html_url": {
+                "type": "string"
+              }
+            },
+            "description": "Pull request metadata",
+            "additionalProperties": true
+          }
+        },
+        "description": "The raw body of github event (for version 1)\n",
+        "additionalProperties": true
+      },
+      "repository": {
+        "type": "string",
+        "pattern": "^(firefox)$"
+      },
+      "organization": {
+        "type": "string",
+        "pattern": "^mozilla-firefox$"
+      }
+    },
+    "additionalProperties": true
+  }
+}

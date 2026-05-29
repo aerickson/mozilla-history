@@ -58,14 +58,10 @@
     "queue:seal-task-group:releng-level-1/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
-    "secrets:get:project/releng/k8s-autoscale/level-1/*",
-    "secrets:get:project/releng/k8s-autoscale/level-any/*",
-    "secrets:get:project/releng/level-1/*",
-    "secrets:get:project/releng/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-11-28T15:41:59.845Z",
+  "lastModified": "2026-05-25T17:42:19.832Z",
   "roleId": "repo:github.com/mozilla-releng/k8s-autoscale:pull-request",
   "scopes": [
     "docker-worker:cache:releng-level-1-*",
@@ -96,10 +92,6 @@
     "queue:scheduler-id:releng-level-1",
     "queue:scheduler-id:taskcluster-github",
     "queue:seal-task-group:releng-level-1/*",
-    "secrets:get:project/releng/k8s-autoscale/level-1/*",
-    "secrets:get:project/releng/k8s-autoscale/level-any/*",
-    "secrets:get:project/releng/level-1/*",
-    "secrets:get:project/releng/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

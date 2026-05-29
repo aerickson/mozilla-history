@@ -53,12 +53,10 @@
     "queue:seal-task-group:scriptworker-level-1/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
-    "secrets:get:project/scriptworker/level-1/*",
-    "secrets:get:project/scriptworker/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:17:49.776Z",
+  "lastModified": "2026-05-25T17:41:21.217Z",
   "roleId": "repo:github.com/mozilla-releng/scriptworker-scripts:pull-request",
   "scopes": [
     "docker-worker:cache:scriptworker-level-1-*",
@@ -84,8 +82,6 @@
     "queue:route:index.scriptworker.v2.scriptworker-scripts.*",
     "queue:scheduler-id:scriptworker-level-1",
     "queue:seal-task-group:scriptworker-level-1/*",
-    "secrets:get:project/scriptworker/level-1/*",
-    "secrets:get:project/scriptworker/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

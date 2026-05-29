@@ -42,7 +42,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:08:54.755Z",
+  "lastModified": "2026-05-25T17:40:26.711Z",
   "roleId": "repo:github.com/mozilla-releng/simple-github:*",
   "scopes": [
     "docker-worker:cache:mozilla-level-1-*",
@@ -60,10 +60,6 @@
     "queue:route:checks",
     "queue:route:index.mozilla.v2.simple-github.*",
     "queue:scheduler-id:mozilla-level-1",
-    "secrets:get:project/mozilla/level-1/*",
-    "secrets:get:project/mozilla/level-any/*",
-    "secrets:get:project/mozilla/simple-github/level-1/*",
-    "secrets:get:project/mozilla/simple-github/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

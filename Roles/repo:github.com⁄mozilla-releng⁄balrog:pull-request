@@ -56,13 +56,11 @@
     "queue:seal-task-group:releng-level-1/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
-    "secrets:get:project/releng/level-1/*",
-    "secrets:get:project/releng/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal",
     "secrets:get:repo:github.com/mozilla-releng/balrog:coveralls"
   ],
-  "lastModified": "2025-11-28T15:42:36.914Z",
+  "lastModified": "2026-05-25T17:41:14.617Z",
   "roleId": "repo:github.com/mozilla-releng/balrog:pull-request",
   "scopes": [
     "docker-worker:cache:releng-level-1-*",
@@ -91,8 +89,6 @@
     "queue:scheduler-id:releng-level-1",
     "queue:scheduler-id:taskcluster-github",
     "queue:seal-task-group:releng-level-1/*",
-    "secrets:get:project/releng/level-1/*",
-    "secrets:get:project/releng/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal",
     "secrets:get:repo:github.com/mozilla-releng/balrog:coveralls"

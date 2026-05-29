@@ -44,14 +44,10 @@
     "queue:route:tc-treeherder.v2.reference-browser-pr.*",
     "queue:scheduler-id:mobile-level-1",
     "queue:seal-task-group:mobile-level-1/*",
-    "secrets:get:project/mobile/level-1/*",
-    "secrets:get:project/mobile/level-any/*",
-    "secrets:get:project/mobile/reference-browser/level-1/*",
-    "secrets:get:project/mobile/reference-browser/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:07:18.498Z",
+  "lastModified": "2026-05-25T17:41:57.845Z",
   "roleId": "repo:github.com/mozilla-mobile/reference-browser:pull-request-untrusted",
   "scopes": [
     "docker-worker:cache:mobile-level-1-*",
@@ -95,10 +91,6 @@
     "queue:route:tc-treeherder.v2.reference-browser-pr.*",
     "queue:scheduler-id:mobile-level-1",
     "queue:seal-task-group:mobile-level-1/*",
-    "secrets:get:project/mobile/level-1/*",
-    "secrets:get:project/mobile/level-any/*",
-    "secrets:get:project/mobile/reference-browser/level-1/*",
-    "secrets:get:project/mobile/reference-browser/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ]

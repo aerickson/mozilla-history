@@ -30,7 +30,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:19:30.050Z",
+  "lastModified": "2026-05-25T17:43:01.229Z",
   "roleId": "repo:github.com/afranchuk/process-top-crashes:pull-request",
   "scopes": [
     "index:insert-task:mozilla.v2.process-top-crashes-pr.*",
@@ -41,6 +41,10 @@
     "queue:route:index.mozilla.v2.process-top-crashes.cache.head.*",
     "queue:route:index.mozilla.v2.process-top-crashes.cache.pr.*",
     "queue:seal-task-group:mozilla-level-1/*",
-    "secrets:get:project/mozilla/process-top-crashes/ci"
+    "secrets:get:project/mozilla/level-1/*",
+    "secrets:get:project/mozilla/level-any/*",
+    "secrets:get:project/mozilla/process-top-crashes/ci",
+    "secrets:get:project/mozilla/process-top-crashes/level-1/*",
+    "secrets:get:project/mozilla/process-top-crashes/level-any/*"
   ]
 }
