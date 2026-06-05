@@ -1,0 +1,17 @@
+{
+  "created": "2026-06-03T17:28:41.226Z",
+  "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nScopes in this role are defined in [fxci-config/grants.d](https://github.com/mozilla-releng/fxci-config/blob/main/grants.d).",
+  "expandedScopes": [
+    "assume:repo:github.com/taskcluster/taskgraph:tag:*",
+    "hooks:trigger-hook:lint/pre-commit-*",
+    "queue:cancel-task-group:lint/*",
+    "queue:seal-task-group:lint/*"
+  ],
+  "lastModified": "2026-06-03T17:28:41.226Z",
+  "roleId": "repo:github.com/taskcluster/taskgraph:tag:*",
+  "scopes": [
+    "hooks:trigger-hook:lint/pre-commit-*",
+    "queue:cancel-task-group:lint/*",
+    "queue:seal-task-group:lint/*"
+  ]
+}

@@ -71,6 +71,7 @@
     "project:releng:microsoftstore:mock",
     "project:releng:services/tooltool/api/download/internal",
     "project:releng:services/tooltool/api/download/public",
+    "project:releng:ship-it:action:create-new-nightly-release",
     "project:releng:ship-it:action:create-new-release",
     "project:releng:ship-it:action:mark-as-shipped",
     "project:releng:ship-it:action:mark-as-started",
@@ -128,7 +129,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-27T16:16:05.695Z",
+  "lastModified": "2026-05-29T14:34:11.451Z",
   "roleId": "repo:hg.mozilla.org/projects/cedar:*",
   "scopes": [
     "assume:project:taskcluster:gecko:level-2-sccache-buckets",
@@ -196,6 +197,7 @@
     "project:releng:microsoftstore:mock",
     "project:releng:services/tooltool/api/download/internal",
     "project:releng:services/tooltool/api/download/public",
+    "project:releng:ship-it:action:create-new-nightly-release",
     "project:releng:ship-it:action:create-new-release",
     "project:releng:ship-it:action:mark-as-shipped",
     "project:releng:ship-it:action:mark-as-started",
