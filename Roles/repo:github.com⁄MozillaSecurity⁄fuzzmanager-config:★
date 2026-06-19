@@ -1,0 +1,24 @@
+{
+  "created": "2026-06-18T16:19:35.071Z",
+  "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nScopes in this role are defined in [fxci-config/grants.d](https://github.com/mozilla-releng/fxci-config/blob/main/grants.d).",
+  "expandedScopes": [
+    "assume:repo:github.com/MozillaSecurity/fuzzmanager-config:*",
+    "queue:create-task:highest:proj-fuzzing/ci",
+    "queue:create-task:highest:proj-fuzzing/ci-*",
+    "queue:create-task:highest:proj-fuzzing/decision",
+    "queue:route:checks",
+    "queue:scheduler-id:fuzzing",
+    "secrets:get:project/fuzzing/ansible-vault-key",
+    "secrets:get:project/fuzzing/ci-*",
+    "secrets:get:project/fuzzing/codecov-*",
+    "secrets:get:project/fuzzing/deploy-*",
+    "secrets:get:project/fuzzing/pypi-*",
+    "secrets:get:project/fuzzing/ssh-fm-staging-automation-user"
+  ],
+  "lastModified": "2026-06-18T16:19:35.071Z",
+  "roleId": "repo:github.com/MozillaSecurity/fuzzmanager-config:*",
+  "scopes": [
+    "secrets:get:project/fuzzing/ansible-vault-key",
+    "secrets:get:project/fuzzing/ssh-fm-staging-automation-user"
+  ]
+}

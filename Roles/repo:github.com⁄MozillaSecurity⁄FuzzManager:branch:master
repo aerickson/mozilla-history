@@ -1,0 +1,23 @@
+{
+  "created": "2026-06-18T16:19:31.954Z",
+  "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nScopes in this role are defined in [fxci-config/grants.d](https://github.com/mozilla-releng/fxci-config/blob/main/grants.d).",
+  "expandedScopes": [
+    "assume:repo:github.com/MozillaSecurity/FuzzManager:branch:master",
+    "docker-worker:capability:privileged",
+    "queue:create-task:highest:proj-fuzzing/ci",
+    "queue:create-task:highest:proj-fuzzing/ci-*",
+    "queue:create-task:highest:proj-fuzzing/decision",
+    "queue:route:checks",
+    "queue:scheduler-id:fuzzing",
+    "secrets:get:project/fuzzing/ci-*",
+    "secrets:get:project/fuzzing/codecov-*",
+    "secrets:get:project/fuzzing/deploy-*",
+    "secrets:get:project/fuzzing/docker-hub",
+    "secrets:get:project/fuzzing/pypi-*"
+  ],
+  "lastModified": "2026-06-18T16:19:31.954Z",
+  "roleId": "repo:github.com/MozillaSecurity/FuzzManager:branch:master",
+  "scopes": [
+    "secrets:get:project/fuzzing/docker-hub"
+  ]
+}

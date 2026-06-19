@@ -13,6 +13,7 @@
     "assume:repo:github.com/mozilla-releng/simple-github:action:generic",
     "assume:repo:github.com/mozilla/*:action:generic",
     "assume:repo:github.com/mozilla/crash-ping-ingest:action:generic",
+    "assume:repo:github.com/taskcluster/*:action:generic",
     "docker-worker:cache:mozilla-level-1-*",
     "docker-worker:cache:mozilla-level-3-*",
     "docker-worker:cache:mozilla-project-crash-ping-ingest-level-1-*",
@@ -49,6 +50,8 @@
     "index:insert-task:mozilla.v2.reps.*",
     "index:insert-task:mozilla.v2.reviewer-selector.*",
     "index:insert-task:mozilla.v2.simple-github.*",
+    "index:insert-task:mozilla.v2.taskcluster-pr.*",
+    "index:insert-task:mozilla.v2.taskcluster.*",
     "queue:cancel-task-group:lint/*",
     "queue:cancel-task-group:mozilla-level-1/*",
     "queue:cancel-task:mozilla-level-1/*",
@@ -81,6 +84,8 @@
     "queue:route:index.mozilla.v2.reps.*",
     "queue:route:index.mozilla.v2.reviewer-selector.*",
     "queue:route:index.mozilla.v2.simple-github.*",
+    "queue:route:index.mozilla.v2.taskcluster-pr.*",
+    "queue:route:index.mozilla.v2.taskcluster.*",
     "queue:scheduler-id:mozilla-level-1",
     "queue:scheduler-id:mozilla-level-3",
     "queue:seal-task-group:lint/*",
@@ -108,7 +113,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-27T11:23:05.972Z",
+  "lastModified": "2026-06-12T18:41:28.776Z",
   "roleId": "hook-id:project-mozilla/in-tree-action-1-generic/*",
   "scopes": [
     "assume:repo:github.com/afranchuk/process-top-crashes:action:generic",
@@ -120,6 +125,7 @@
     "assume:repo:github.com/mozilla-releng/reps:action:generic",
     "assume:repo:github.com/mozilla-releng/simple-github:action:generic",
     "assume:repo:github.com/mozilla/*:action:generic",
-    "assume:repo:github.com/mozilla/crash-ping-ingest:action:generic"
+    "assume:repo:github.com/mozilla/crash-ping-ingest:action:generic",
+    "assume:repo:github.com/taskcluster/*:action:generic"
   ]
 }

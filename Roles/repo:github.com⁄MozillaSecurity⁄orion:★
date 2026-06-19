@@ -1,0 +1,28 @@
+{
+  "created": "2026-06-18T15:56:43.476Z",
+  "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nScopes in this role are defined in [fxci-config/grants.d](https://github.com/mozilla-releng/fxci-config/blob/main/grants.d).",
+  "expandedScopes": [
+    "assume:repo:github.com/MozillaSecurity/orion:*",
+    "docker-worker:capability:privileged",
+    "index:insert-task:project.fuzzing.orion.*",
+    "queue:create-task:highest:proj-fuzzing/ci",
+    "queue:create-task:highest:proj-fuzzing/ci-*",
+    "queue:create-task:highest:proj-fuzzing/decision",
+    "queue:route:checks",
+    "queue:route:index.project.fuzzing.orion.*",
+    "queue:scheduler-id:fuzzing",
+    "secrets:get:project/fuzzing/ci-*",
+    "secrets:get:project/fuzzing/codecov-*",
+    "secrets:get:project/fuzzing/deploy-*",
+    "secrets:get:project/fuzzing/docker-hub",
+    "secrets:get:project/fuzzing/pypi-*"
+  ],
+  "lastModified": "2026-06-18T15:56:43.476Z",
+  "roleId": "repo:github.com/MozillaSecurity/orion:*",
+  "scopes": [
+    "docker-worker:capability:privileged",
+    "index:insert-task:project.fuzzing.orion.*",
+    "queue:route:index.project.fuzzing.orion.*",
+    "secrets:get:project/fuzzing/docker-hub"
+  ]
+}

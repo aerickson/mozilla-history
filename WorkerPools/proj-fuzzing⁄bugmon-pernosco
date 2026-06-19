@@ -1,0 +1,690 @@
+{
+  "config": {
+    "lifecycle": {
+      "registrationTimeout": 1800,
+      "reregistrationTimeout": 345600,
+      "queueInactivityTimeout": 7200
+    },
+    "maxCapacity": 10,
+    "minCapacity": 0,
+    "scalingRatio": 1,
+    "launchConfigs": [
+      {
+        "region": "us-east-1",
+        "launchConfig": {
+          "ImageId": "ami-0a6e926238859761c",
+          "SubnetId": "subnet-566e060c",
+          "Placement": {
+            "AvailabilityZone": "us-east-1a"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-12cd3762"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "capacity": 1,
+          "shutdown": {
+            "enabled": true,
+            "afterIdleSeconds": 120
+          },
+          "artifacts": {
+            "skipCompressionExtensions": [
+              ".7z",
+              ".bz2",
+              ".deb",
+              ".dmg",
+              ".flv",
+              ".gif",
+              ".gz",
+              ".jpeg",
+              ".jpg",
+              ".png",
+              ".swf",
+              ".tbz",
+              ".tgz",
+              ".webp",
+              ".whl",
+              ".woff",
+              ".woff2",
+              ".xz",
+              ".zip",
+              ".zst",
+              "lz4"
+            ]
+          },
+          "dockerConfig": {
+            "allowPrivileged": true,
+            "allowDisableSeccomp": true
+          },
+          "deviceManagement": {
+            "kvm": {
+              "enabled": false
+            },
+            "hostSharedMemory": {
+              "enabled": false
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-6350aa384f6ab04fc4d1",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-east-1",
+        "launchConfig": {
+          "ImageId": "ami-0a6e926238859761c",
+          "SubnetId": "subnet-f2c93496",
+          "Placement": {
+            "AvailabilityZone": "us-east-1b"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-12cd3762"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "capacity": 1,
+          "shutdown": {
+            "enabled": true,
+            "afterIdleSeconds": 120
+          },
+          "artifacts": {
+            "skipCompressionExtensions": [
+              ".7z",
+              ".bz2",
+              ".deb",
+              ".dmg",
+              ".flv",
+              ".gif",
+              ".gz",
+              ".jpeg",
+              ".jpg",
+              ".png",
+              ".swf",
+              ".tbz",
+              ".tgz",
+              ".webp",
+              ".whl",
+              ".woff",
+              ".woff2",
+              ".xz",
+              ".zip",
+              ".zst",
+              "lz4"
+            ]
+          },
+          "dockerConfig": {
+            "allowPrivileged": true,
+            "allowDisableSeccomp": true
+          },
+          "deviceManagement": {
+            "kvm": {
+              "enabled": false
+            },
+            "hostSharedMemory": {
+              "enabled": false
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-91a6ad119067d0cf1427",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-east-1",
+        "launchConfig": {
+          "ImageId": "ami-0a6e926238859761c",
+          "SubnetId": "subnet-c52454e9",
+          "Placement": {
+            "AvailabilityZone": "us-east-1c"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-12cd3762"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "capacity": 1,
+          "shutdown": {
+            "enabled": true,
+            "afterIdleSeconds": 120
+          },
+          "artifacts": {
+            "skipCompressionExtensions": [
+              ".7z",
+              ".bz2",
+              ".deb",
+              ".dmg",
+              ".flv",
+              ".gif",
+              ".gz",
+              ".jpeg",
+              ".jpg",
+              ".png",
+              ".swf",
+              ".tbz",
+              ".tgz",
+              ".webp",
+              ".whl",
+              ".woff",
+              ".woff2",
+              ".xz",
+              ".zip",
+              ".zst",
+              "lz4"
+            ]
+          },
+          "dockerConfig": {
+            "allowPrivileged": true,
+            "allowDisableSeccomp": true
+          },
+          "deviceManagement": {
+            "kvm": {
+              "enabled": false
+            },
+            "hostSharedMemory": {
+              "enabled": false
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-5eb7edd47ec412f26be0",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-east-1",
+        "launchConfig": {
+          "ImageId": "ami-0a6e926238859761c",
+          "SubnetId": "subnet-e7e6ccaf",
+          "Placement": {
+            "AvailabilityZone": "us-east-1d"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-12cd3762"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "capacity": 1,
+          "shutdown": {
+            "enabled": true,
+            "afterIdleSeconds": 120
+          },
+          "artifacts": {
+            "skipCompressionExtensions": [
+              ".7z",
+              ".bz2",
+              ".deb",
+              ".dmg",
+              ".flv",
+              ".gif",
+              ".gz",
+              ".jpeg",
+              ".jpg",
+              ".png",
+              ".swf",
+              ".tbz",
+              ".tgz",
+              ".webp",
+              ".whl",
+              ".woff",
+              ".woff2",
+              ".xz",
+              ".zip",
+              ".zst",
+              "lz4"
+            ]
+          },
+          "dockerConfig": {
+            "allowPrivileged": true,
+            "allowDisableSeccomp": true
+          },
+          "deviceManagement": {
+            "kvm": {
+              "enabled": false
+            },
+            "hostSharedMemory": {
+              "enabled": false
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-63ed309b23b7c5a95fde",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-east-1",
+        "launchConfig": {
+          "ImageId": "ami-0a6e926238859761c",
+          "SubnetId": "subnet-7f720d73",
+          "Placement": {
+            "AvailabilityZone": "us-east-1f"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-12cd3762"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "capacity": 1,
+          "shutdown": {
+            "enabled": true,
+            "afterIdleSeconds": 120
+          },
+          "artifacts": {
+            "skipCompressionExtensions": [
+              ".7z",
+              ".bz2",
+              ".deb",
+              ".dmg",
+              ".flv",
+              ".gif",
+              ".gz",
+              ".jpeg",
+              ".jpg",
+              ".png",
+              ".swf",
+              ".tbz",
+              ".tgz",
+              ".webp",
+              ".whl",
+              ".woff",
+              ".woff2",
+              ".xz",
+              ".zip",
+              ".zst",
+              "lz4"
+            ]
+          },
+          "dockerConfig": {
+            "allowPrivileged": true,
+            "allowDisableSeccomp": true
+          },
+          "deviceManagement": {
+            "kvm": {
+              "enabled": false
+            },
+            "hostSharedMemory": {
+              "enabled": false
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-d08478bbfa5f7f780a3d",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-west-1",
+        "launchConfig": {
+          "ImageId": "ami-03e4f8db63254ce7e",
+          "SubnetId": "subnet-7641632e",
+          "Placement": {
+            "AvailabilityZone": "us-west-1b"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-caed26ac"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "capacity": 1,
+          "shutdown": {
+            "enabled": true,
+            "afterIdleSeconds": 120
+          },
+          "artifacts": {
+            "skipCompressionExtensions": [
+              ".7z",
+              ".bz2",
+              ".deb",
+              ".dmg",
+              ".flv",
+              ".gif",
+              ".gz",
+              ".jpeg",
+              ".jpg",
+              ".png",
+              ".swf",
+              ".tbz",
+              ".tgz",
+              ".webp",
+              ".whl",
+              ".woff",
+              ".woff2",
+              ".xz",
+              ".zip",
+              ".zst",
+              "lz4"
+            ]
+          },
+          "dockerConfig": {
+            "allowPrivileged": true,
+            "allowDisableSeccomp": true
+          },
+          "deviceManagement": {
+            "kvm": {
+              "enabled": false
+            },
+            "hostSharedMemory": {
+              "enabled": false
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-8cdc874656a1010277da",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-west-1",
+        "launchConfig": {
+          "ImageId": "ami-03e4f8db63254ce7e",
+          "SubnetId": "subnet-48a9b82c",
+          "Placement": {
+            "AvailabilityZone": "us-west-1c"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-caed26ac"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "capacity": 1,
+          "shutdown": {
+            "enabled": true,
+            "afterIdleSeconds": 120
+          },
+          "artifacts": {
+            "skipCompressionExtensions": [
+              ".7z",
+              ".bz2",
+              ".deb",
+              ".dmg",
+              ".flv",
+              ".gif",
+              ".gz",
+              ".jpeg",
+              ".jpg",
+              ".png",
+              ".swf",
+              ".tbz",
+              ".tgz",
+              ".webp",
+              ".whl",
+              ".woff",
+              ".woff2",
+              ".xz",
+              ".zip",
+              ".zst",
+              "lz4"
+            ]
+          },
+          "dockerConfig": {
+            "allowPrivileged": true,
+            "allowDisableSeccomp": true
+          },
+          "deviceManagement": {
+            "kvm": {
+              "enabled": false
+            },
+            "hostSharedMemory": {
+              "enabled": false
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-97b3e093930acd048d4e",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-west-2",
+        "launchConfig": {
+          "ImageId": "ami-0b5dd0bbb670ec80e",
+          "SubnetId": "subnet-d948b6bf",
+          "Placement": {
+            "AvailabilityZone": "us-west-2a"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-2728435d"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "capacity": 1,
+          "shutdown": {
+            "enabled": true,
+            "afterIdleSeconds": 120
+          },
+          "artifacts": {
+            "skipCompressionExtensions": [
+              ".7z",
+              ".bz2",
+              ".deb",
+              ".dmg",
+              ".flv",
+              ".gif",
+              ".gz",
+              ".jpeg",
+              ".jpg",
+              ".png",
+              ".swf",
+              ".tbz",
+              ".tgz",
+              ".webp",
+              ".whl",
+              ".woff",
+              ".woff2",
+              ".xz",
+              ".zip",
+              ".zst",
+              "lz4"
+            ]
+          },
+          "dockerConfig": {
+            "allowPrivileged": true,
+            "allowDisableSeccomp": true
+          },
+          "deviceManagement": {
+            "kvm": {
+              "enabled": false
+            },
+            "hostSharedMemory": {
+              "enabled": false
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-0d4cd3399e019910a6d7",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-west-2",
+        "launchConfig": {
+          "ImageId": "ami-0b5dd0bbb670ec80e",
+          "SubnetId": "subnet-2eaaba67",
+          "Placement": {
+            "AvailabilityZone": "us-west-2b"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-2728435d"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "capacity": 1,
+          "shutdown": {
+            "enabled": true,
+            "afterIdleSeconds": 120
+          },
+          "artifacts": {
+            "skipCompressionExtensions": [
+              ".7z",
+              ".bz2",
+              ".deb",
+              ".dmg",
+              ".flv",
+              ".gif",
+              ".gz",
+              ".jpeg",
+              ".jpg",
+              ".png",
+              ".swf",
+              ".tbz",
+              ".tgz",
+              ".webp",
+              ".whl",
+              ".woff",
+              ".woff2",
+              ".xz",
+              ".zip",
+              ".zst",
+              "lz4"
+            ]
+          },
+          "dockerConfig": {
+            "allowPrivileged": true,
+            "allowDisableSeccomp": true
+          },
+          "deviceManagement": {
+            "kvm": {
+              "enabled": false
+            },
+            "hostSharedMemory": {
+              "enabled": false
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-1adbc94b6bb71f285281",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-west-2",
+        "launchConfig": {
+          "ImageId": "ami-0b5dd0bbb670ec80e",
+          "SubnetId": "subnet-540a9f0f",
+          "Placement": {
+            "AvailabilityZone": "us-west-2c"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-2728435d"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "capacity": 1,
+          "shutdown": {
+            "enabled": true,
+            "afterIdleSeconds": 120
+          },
+          "artifacts": {
+            "skipCompressionExtensions": [
+              ".7z",
+              ".bz2",
+              ".deb",
+              ".dmg",
+              ".flv",
+              ".gif",
+              ".gz",
+              ".jpeg",
+              ".jpg",
+              ".png",
+              ".swf",
+              ".tbz",
+              ".tgz",
+              ".webp",
+              ".whl",
+              ".woff",
+              ".woff2",
+              ".xz",
+              ".zip",
+              ".zst",
+              "lz4"
+            ]
+          },
+          "dockerConfig": {
+            "allowPrivileged": true,
+            "allowDisableSeccomp": true
+          },
+          "deviceManagement": {
+            "kvm": {
+              "enabled": false
+            },
+            "hostSharedMemory": {
+              "enabled": false
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-5c05da15f0a7f2932ffc",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      }
+    ]
+  },
+  "created": "2026-06-18T16:19:28.547Z",
+  "currentCapacity": 0,
+  "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nFuzzing bugmon pernosco pool (docker-worker, metal)",
+  "emailOnError": false,
+  "lastModified": "2026-06-18T16:19:28.547Z",
+  "owner": "jkratzer@mozilla.com",
+  "providerId": "aws",
+  "requestedCapacity": 0,
+  "requestedCount": 0,
+  "runningCapacity": 0,
+  "runningCount": 0,
+  "stoppedCapacity": 0,
+  "stoppedCount": 0,
+  "stoppingCapacity": 0,
+  "stoppingCount": 0,
+  "workerPoolId": "proj-fuzzing/bugmon-pernosco"
+}

@@ -1,0 +1,235 @@
+{
+  "config": {
+    "lifecycle": {
+      "registrationTimeout": 1800,
+      "reregistrationTimeout": 345600,
+      "queueInactivityTimeout": 7200
+    },
+    "maxCapacity": 5,
+    "minCapacity": 0,
+    "scalingRatio": 1,
+    "launchConfigs": [
+      {
+        "region": "us-east-1",
+        "launchConfig": {
+          "ImageId": "ami-02619e55246806e8d",
+          "SubnetId": "subnet-566e060c",
+          "Placement": {
+            "AvailabilityZone": "us-east-1a"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-12cd3762"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "genericWorker": {
+            "config": {
+              "wstAudience": "firefoxcitc",
+              "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
+              "sentryProject": "generic-worker",
+              "disableReboots": false,
+              "cleanUpTaskDirs": true,
+              "idleTimeoutSecs": 300,
+              "livelogExecutable": "/usr/local/bin/livelog",
+              "numberOfTasksToRun": 0,
+              "taskclusterProxyPort": 80,
+              "shutdownMachineOnIdle": true,
+              "ed25519SigningKeyLocation": "/etc/taskcluster/secrets/gw_cot_private_key",
+              "taskclusterProxyExecutable": "/usr/local/bin/taskcluster-proxy",
+              "shutdownMachineOnInternalError": true
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-93df0f4443abd3e13220",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-east-1",
+        "launchConfig": {
+          "ImageId": "ami-02619e55246806e8d",
+          "SubnetId": "subnet-f2c93496",
+          "Placement": {
+            "AvailabilityZone": "us-east-1b"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-12cd3762"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "genericWorker": {
+            "config": {
+              "wstAudience": "firefoxcitc",
+              "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
+              "sentryProject": "generic-worker",
+              "disableReboots": false,
+              "cleanUpTaskDirs": true,
+              "idleTimeoutSecs": 300,
+              "livelogExecutable": "/usr/local/bin/livelog",
+              "numberOfTasksToRun": 0,
+              "taskclusterProxyPort": 80,
+              "shutdownMachineOnIdle": true,
+              "ed25519SigningKeyLocation": "/etc/taskcluster/secrets/gw_cot_private_key",
+              "taskclusterProxyExecutable": "/usr/local/bin/taskcluster-proxy",
+              "shutdownMachineOnInternalError": true
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-15d392b7306bd2327ec0",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-east-1",
+        "launchConfig": {
+          "ImageId": "ami-02619e55246806e8d",
+          "SubnetId": "subnet-c52454e9",
+          "Placement": {
+            "AvailabilityZone": "us-east-1c"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-12cd3762"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "genericWorker": {
+            "config": {
+              "wstAudience": "firefoxcitc",
+              "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
+              "sentryProject": "generic-worker",
+              "disableReboots": false,
+              "cleanUpTaskDirs": true,
+              "idleTimeoutSecs": 300,
+              "livelogExecutable": "/usr/local/bin/livelog",
+              "numberOfTasksToRun": 0,
+              "taskclusterProxyPort": 80,
+              "shutdownMachineOnIdle": true,
+              "ed25519SigningKeyLocation": "/etc/taskcluster/secrets/gw_cot_private_key",
+              "taskclusterProxyExecutable": "/usr/local/bin/taskcluster-proxy",
+              "shutdownMachineOnInternalError": true
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-006cadf92ba923493226",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-east-1",
+        "launchConfig": {
+          "ImageId": "ami-02619e55246806e8d",
+          "SubnetId": "subnet-e7e6ccaf",
+          "Placement": {
+            "AvailabilityZone": "us-east-1d"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-12cd3762"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "genericWorker": {
+            "config": {
+              "wstAudience": "firefoxcitc",
+              "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
+              "sentryProject": "generic-worker",
+              "disableReboots": false,
+              "cleanUpTaskDirs": true,
+              "idleTimeoutSecs": 300,
+              "livelogExecutable": "/usr/local/bin/livelog",
+              "numberOfTasksToRun": 0,
+              "taskclusterProxyPort": 80,
+              "shutdownMachineOnIdle": true,
+              "ed25519SigningKeyLocation": "/etc/taskcluster/secrets/gw_cot_private_key",
+              "taskclusterProxyExecutable": "/usr/local/bin/taskcluster-proxy",
+              "shutdownMachineOnInternalError": true
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-1d297e37c38b2ad639a9",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      },
+      {
+        "region": "us-east-1",
+        "launchConfig": {
+          "ImageId": "ami-02619e55246806e8d",
+          "SubnetId": "subnet-7f720d73",
+          "Placement": {
+            "AvailabilityZone": "us-east-1f"
+          },
+          "InstanceType": "m5d.metal",
+          "SecurityGroupIds": [
+            "sg-12cd3762"
+          ],
+          "InstanceMarketOptions": {
+            "MarketType": "spot"
+          }
+        },
+        "workerConfig": {
+          "genericWorker": {
+            "config": {
+              "wstAudience": "firefoxcitc",
+              "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
+              "sentryProject": "generic-worker",
+              "disableReboots": false,
+              "cleanUpTaskDirs": true,
+              "idleTimeoutSecs": 300,
+              "livelogExecutable": "/usr/local/bin/livelog",
+              "numberOfTasksToRun": 0,
+              "taskclusterProxyPort": 80,
+              "shutdownMachineOnIdle": true,
+              "ed25519SigningKeyLocation": "/etc/taskcluster/secrets/gw_cot_private_key",
+              "taskclusterProxyExecutable": "/usr/local/bin/taskcluster-proxy",
+              "shutdownMachineOnInternalError": true
+            }
+          }
+        },
+        "workerManager": {
+          "launchConfigId": "lc-b28ef78e5e3c37557a6b",
+          "capacityPerInstance": 1
+        },
+        "additionalUserData": {}
+      }
+    ]
+  },
+  "created": "2026-06-18T16:19:32.996Z",
+  "currentCapacity": 0,
+  "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nFuzzing bugmon pernosco staging pool",
+  "emailOnError": true,
+  "lastModified": "2026-06-18T16:19:32.996Z",
+  "owner": "taskcluster-notifications+workers@mozilla.com",
+  "providerId": "aws",
+  "requestedCapacity": 0,
+  "requestedCount": 0,
+  "runningCapacity": 0,
+  "runningCount": 0,
+  "stoppedCapacity": 0,
+  "stoppedCount": 0,
+  "stoppingCapacity": 0,
+  "stoppingCount": 0,
+  "workerPoolId": "proj-fuzzing/bugmon-pernosco-staging"
+}
