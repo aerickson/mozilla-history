@@ -17,23 +17,13 @@
         "workerConfig": {
           "genericWorker": {
             "config": {
-              "tasksDir": "Z:\\",
-              "cachesDir": "Z:\\caches",
               "wstAudience": "firefoxcitc",
-              "downloadsDir": "Z:\\downloads",
               "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
-              "sentryProject": "generic-worker",
-              "disableReboots": false,
-              "cleanUpTaskDirs": true,
-              "idleTimeoutSecs": 150,
+              "idleTimeoutSecs": 15,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
-              "numberOfTasksToRun": 0,
-              "disableOOMProtection": true,
-              "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
-              "taskclusterProxyPort": 80,
+              "numberOfTasksToRun": 1,
               "shutdownMachineOnIdle": true,
-              "ed25519SigningKeyLocation": "C:\\generic-worker\\ed25519-private.key",
-              "enableRunTaskAsCurrentUser": false,
+              "ed25519SigningKeyLocation": "C:\\generic-worker\\generic-worker-ed25519-signing-key.key",
               "taskclusterProxyExecutable": "C:\\generic-worker\\taskcluster-proxy.exe",
               "shutdownMachineOnInternalError": true
             }
@@ -46,7 +36,7 @@
               "value": "Standard_NV12s_v3"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/images/imageset-fcxybmrwdcsmxjijwamv-eastus-fuzzing"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/images/imageset-ajdnmqrgviixcxbrlwlm-eastus-fuzzing"
             },
             "location": {
               "value": "eastus"
@@ -63,7 +53,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-4889c75c2b12fb499828",
+          "launchConfigId": "lc-4acef420df9651384f63",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-proj-fuzzing-bugmon-processor-windows"
@@ -76,23 +66,13 @@
         "workerConfig": {
           "genericWorker": {
             "config": {
-              "tasksDir": "Z:\\",
-              "cachesDir": "Z:\\caches",
               "wstAudience": "firefoxcitc",
-              "downloadsDir": "Z:\\downloads",
               "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
-              "sentryProject": "generic-worker",
-              "disableReboots": false,
-              "cleanUpTaskDirs": true,
-              "idleTimeoutSecs": 150,
+              "idleTimeoutSecs": 15,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
-              "numberOfTasksToRun": 0,
-              "disableOOMProtection": true,
-              "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
-              "taskclusterProxyPort": 80,
+              "numberOfTasksToRun": 1,
               "shutdownMachineOnIdle": true,
-              "ed25519SigningKeyLocation": "C:\\generic-worker\\ed25519-private.key",
-              "enableRunTaskAsCurrentUser": false,
+              "ed25519SigningKeyLocation": "C:\\generic-worker\\generic-worker-ed25519-signing-key.key",
               "taskclusterProxyExecutable": "C:\\generic-worker\\taskcluster-proxy.exe",
               "shutdownMachineOnInternalError": true
             }
@@ -105,7 +85,7 @@
               "value": "Standard_NV12s_v3"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/images/imageset-ofghwxvlubvnimhurgqa-eastus2-fuzzing"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/images/imageset-kqjastlpfcktfmbknacc-eastus2-fuzzing"
             },
             "location": {
               "value": "eastus2"
@@ -122,7 +102,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-647f89b0a2af9fec005a",
+          "launchConfigId": "lc-119d26bbe47db6be7942",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-proj-fuzzing-bugmon-processor-windows"
@@ -135,23 +115,13 @@
         "workerConfig": {
           "genericWorker": {
             "config": {
-              "tasksDir": "Z:\\",
-              "cachesDir": "Z:\\caches",
               "wstAudience": "firefoxcitc",
-              "downloadsDir": "Z:\\downloads",
               "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
-              "sentryProject": "generic-worker",
-              "disableReboots": false,
-              "cleanUpTaskDirs": true,
-              "idleTimeoutSecs": 150,
+              "idleTimeoutSecs": 15,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
-              "numberOfTasksToRun": 0,
-              "disableOOMProtection": true,
-              "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
-              "taskclusterProxyPort": 80,
+              "numberOfTasksToRun": 1,
               "shutdownMachineOnIdle": true,
-              "ed25519SigningKeyLocation": "C:\\generic-worker\\ed25519-private.key",
-              "enableRunTaskAsCurrentUser": false,
+              "ed25519SigningKeyLocation": "C:\\generic-worker\\generic-worker-ed25519-signing-key.key",
               "taskclusterProxyExecutable": "C:\\generic-worker\\taskcluster-proxy.exe",
               "shutdownMachineOnInternalError": true
             }
@@ -164,7 +134,7 @@
               "value": "Standard_NV12s_v3"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/images/imageset-hhgwofqoyyhwaxoucnli-southcentralus-fuzzing"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/images/imageset-wklenlbxaoeghdemjdyk-southcentralus-fuzzing"
             },
             "location": {
               "value": "southcentralus"
@@ -181,7 +151,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-7d183fcdc043fac8e114",
+          "launchConfigId": "lc-95f50e3226662577e9a8",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-proj-fuzzing-bugmon-processor-windows"
@@ -194,23 +164,13 @@
         "workerConfig": {
           "genericWorker": {
             "config": {
-              "tasksDir": "Z:\\",
-              "cachesDir": "Z:\\caches",
               "wstAudience": "firefoxcitc",
-              "downloadsDir": "Z:\\downloads",
               "wstServerURL": "https://firefoxci-websocktunnel.services.mozilla.com/",
-              "sentryProject": "generic-worker",
-              "disableReboots": false,
-              "cleanUpTaskDirs": true,
-              "idleTimeoutSecs": 150,
+              "idleTimeoutSecs": 15,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
-              "numberOfTasksToRun": 0,
-              "disableOOMProtection": true,
-              "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
-              "taskclusterProxyPort": 80,
+              "numberOfTasksToRun": 1,
               "shutdownMachineOnIdle": true,
-              "ed25519SigningKeyLocation": "C:\\generic-worker\\ed25519-private.key",
-              "enableRunTaskAsCurrentUser": false,
+              "ed25519SigningKeyLocation": "C:\\generic-worker\\generic-worker-ed25519-signing-key.key",
               "taskclusterProxyExecutable": "C:\\generic-worker\\taskcluster-proxy.exe",
               "shutdownMachineOnInternalError": true
             }
@@ -223,7 +183,7 @@
               "value": "Standard_NV12s_v3"
             },
             "imageId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/images/imageset-owexteqnyghtbsfeuppb-westus2-fuzzing"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/images/imageset-cnnahgrkshgsftrapiac-westus2-fuzzing"
             },
             "location": {
               "value": "westus2"
@@ -240,7 +200,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-b4723ca3f9076d00e977",
+          "launchConfigId": "lc-d04de8512c7899463f44",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-proj-fuzzing-bugmon-processor-windows"
@@ -251,7 +211,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nFuzzing bugmon processor Windows GPU pool",
   "emailOnError": true,
-  "lastModified": "2026-06-18T17:03:47.689Z",
+  "lastModified": "2026-06-23T14:37:51.534Z",
   "owner": "jkratzer@mozilla.com",
   "providerId": "azure2",
   "requestedCapacity": 0,

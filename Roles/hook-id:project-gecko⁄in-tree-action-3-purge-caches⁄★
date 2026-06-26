@@ -13,6 +13,7 @@
     "assume:repo:hg.mozilla.org/releases/mozilla-beta:action:purge-caches",
     "assume:repo:hg.mozilla.org/releases/mozilla-esr115:action:purge-caches",
     "assume:repo:hg.mozilla.org/releases/mozilla-esr140:action:purge-caches",
+    "assume:repo:hg.mozilla.org/releases/mozilla-esr153:action:purge-caches",
     "assume:repo:hg.mozilla.org/releases/mozilla-release:action:purge-caches",
     "auth:aws-s3:read-write:tc-gp-private-1d-us-east-1/releng/mbsdiff-cache/",
     "auth:gcp:access-token:sccache-3/sccache-l3*",
@@ -67,6 +68,7 @@
     "index:insert-task:gecko.v2.mozilla-central.*",
     "index:insert-task:gecko.v2.mozilla-esr115.*",
     "index:insert-task:gecko.v2.mozilla-esr140.*",
+    "index:insert-task:gecko.v2.mozilla-esr153.*",
     "index:insert-task:gecko.v2.mozilla-release.*",
     "index:insert-task:gecko.v2.pine.*",
     "index:insert-task:gecko.v2.trunk.revision.*",
@@ -155,6 +157,7 @@
     "queue:route:index.gecko.v2.mozilla-central.*",
     "queue:route:index.gecko.v2.mozilla-esr115.*",
     "queue:route:index.gecko.v2.mozilla-esr140.*",
+    "queue:route:index.gecko.v2.mozilla-esr153.*",
     "queue:route:index.gecko.v2.mozilla-release.*",
     "queue:route:index.gecko.v2.pine.*",
     "queue:route:index.gecko.v2.trunk.revision.*",
@@ -168,6 +171,7 @@
     "queue:route:tc-treeherder-stage.mozilla-central.*",
     "queue:route:tc-treeherder-stage.mozilla-esr115.*",
     "queue:route:tc-treeherder-stage.mozilla-esr140.*",
+    "queue:route:tc-treeherder-stage.mozilla-esr153.*",
     "queue:route:tc-treeherder-stage.mozilla-release.*",
     "queue:route:tc-treeherder-stage.pine.*",
     "queue:route:tc-treeherder-stage.v2.autoland.*",
@@ -178,6 +182,7 @@
     "queue:route:tc-treeherder-stage.v2.mozilla-central.*",
     "queue:route:tc-treeherder-stage.v2.mozilla-esr115.*",
     "queue:route:tc-treeherder-stage.v2.mozilla-esr140.*",
+    "queue:route:tc-treeherder-stage.v2.mozilla-esr153.*",
     "queue:route:tc-treeherder-stage.v2.mozilla-release.*",
     "queue:route:tc-treeherder-stage.v2.pine.*",
     "queue:route:tc-treeherder.autoland.*",
@@ -188,6 +193,7 @@
     "queue:route:tc-treeherder.mozilla-central.*",
     "queue:route:tc-treeherder.mozilla-esr115.*",
     "queue:route:tc-treeherder.mozilla-esr140.*",
+    "queue:route:tc-treeherder.mozilla-esr153.*",
     "queue:route:tc-treeherder.mozilla-release.*",
     "queue:route:tc-treeherder.pine.*",
     "queue:route:tc-treeherder.v2.autoland.*",
@@ -198,6 +204,7 @@
     "queue:route:tc-treeherder.v2.mozilla-central.*",
     "queue:route:tc-treeherder.v2.mozilla-esr115.*",
     "queue:route:tc-treeherder.v2.mozilla-esr140.*",
+    "queue:route:tc-treeherder.v2.mozilla-esr153.*",
     "queue:route:tc-treeherder.v2.mozilla-release.*",
     "queue:route:tc-treeherder.v2.pine.*",
     "queue:scheduler-id:gecko-level-3",
@@ -229,7 +236,7 @@
     "secrets:get:project/updatebot/3/try-sshkey",
     "secrets:get:project/webrender-ci/wrupdater-github-token"
   ],
-  "lastModified": "2026-03-11T18:19:52.346Z",
+  "lastModified": "2026-06-23T14:55:01.599Z",
   "roleId": "hook-id:project-gecko/in-tree-action-3-purge-caches/*",
   "scopes": [
     "assume:repo:github.com/mozilla-firefox/firefox:action:purge-caches",
@@ -241,6 +248,7 @@
     "assume:repo:hg.mozilla.org/releases/mozilla-beta:action:purge-caches",
     "assume:repo:hg.mozilla.org/releases/mozilla-esr115:action:purge-caches",
     "assume:repo:hg.mozilla.org/releases/mozilla-esr140:action:purge-caches",
+    "assume:repo:hg.mozilla.org/releases/mozilla-esr153:action:purge-caches",
     "assume:repo:hg.mozilla.org/releases/mozilla-release:action:purge-caches"
   ]
 }

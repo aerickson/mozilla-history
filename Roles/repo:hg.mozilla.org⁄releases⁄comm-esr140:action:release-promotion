@@ -50,6 +50,9 @@
     "project:comm:thunderbird:releng:treescript:action:push",
     "project:comm:thunderbird:releng:treescript:action:tagging",
     "project:comm:thunderbird:releng:treescript:action:version_bump",
+    "project:releng:lando:action:tag",
+    "project:releng:lando:action:version_bump",
+    "project:releng:lando:repo:thunderbird-esr140",
     "project:releng:services/tooltool/api/download/internal",
     "project:releng:services/tooltool/api/download/public",
     "purge-cache:comm-3/*",
@@ -94,7 +97,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-03-19T07:59:55.595Z",
+  "lastModified": "2026-06-25T14:27:34.186Z",
   "roleId": "repo:hg.mozilla.org/releases/comm-esr140:action:release-promotion",
   "scopes": [
     "in-tree:hook-action:project-comm/in-tree-action-3-*",
@@ -107,6 +110,9 @@
     "project:comm:thunderbird:releng:flathub:stable:org.mozilla.Thunderbird",
     "project:comm:thunderbird:releng:flathub:stable:org.mozilla.thunderbird_esr",
     "project:comm:thunderbird:releng:microsoftstore:esr",
-    "project:comm:thunderbird:releng:ship-it:server:production"
+    "project:comm:thunderbird:releng:ship-it:server:production",
+    "project:releng:lando:action:tag",
+    "project:releng:lando:action:version_bump",
+    "project:releng:lando:repo:thunderbird-esr140"
   ]
 }

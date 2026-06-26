@@ -67,7 +67,7 @@
     "project:releng:flathub:firefox:mock",
     "project:releng:googleplay:product:fenix:dep",
     "project:releng:googleplay:product:focus-android:dep",
-    "project:releng:lando:repo:esr140",
+    "project:releng:lando:repo:esr153",
     "project:releng:microsoftstore:mock",
     "project:releng:services/tooltool/api/download/internal",
     "project:releng:services/tooltool/api/download/public",
@@ -144,10 +144,10 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-02-23T13:40:38.798Z",
+  "lastModified": "2026-06-23T14:54:49.814Z",
   "roleId": "repo:hg.mozilla.org/releases/mozilla-release:action:merge-automation",
   "scopes": [
-    "project:releng:lando:repo:esr140",
+    "project:releng:lando:repo:esr153",
     "project:releng:ship-it:action:mark-as-merged",
     "project:releng:ship-it:server:production"
   ]
