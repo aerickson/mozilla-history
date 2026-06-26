@@ -11,8 +11,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 4,
-  "TotalCapacity": 4
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "adhoc-1/images",
@@ -26,8 +26,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 10,
-  "TotalCapacity": 10
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "adhoc-3/decision",
@@ -41,8 +41,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 3,
-  "TotalCapacity": 3
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "adhoc-3/images",
@@ -56,8 +56,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 3,
-  "TotalCapacity": 3
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "app-services-1/b-linux",
@@ -71,8 +71,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 305,
-  "TotalCapacity": 305
+  "TotalWorkers": 415,
+  "TotalCapacity": 415
  },
  {
   "WorkerPoolID": "app-services-1/b-linux-docker-amd",
@@ -101,8 +101,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1,
-  "TotalCapacity": 1
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "app-services-1/images",
@@ -116,8 +116,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 4,
-  "TotalCapacity": 4
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "app-services-3/b-linux",
@@ -131,8 +131,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 975,
-  "TotalCapacity": 975
+  "TotalWorkers": 1108,
+  "TotalCapacity": 1108
  },
  {
   "WorkerPoolID": "app-services-3/b-linux-docker-amd",
@@ -161,8 +161,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 28,
-  "TotalCapacity": 28
+  "TotalWorkers": 30,
+  "TotalCapacity": 30
  },
  {
   "WorkerPoolID": "app-services-3/images",
@@ -176,8 +176,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 3,
-  "TotalCapacity": 3
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "built-in/fail",
@@ -243,8 +243,8 @@
    "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
-  "TotalWorkers": 32,
-  "TotalCapacity": 32
+  "TotalWorkers": 26,
+  "TotalCapacity": 26
  },
  {
   "WorkerPoolID": "code-analysis-3/decision",
@@ -288,8 +288,8 @@
    "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-gui-googlecompute-2024-09-18t05-46-31z",
-  "TotalWorkers": 12,
-  "TotalCapacity": 12
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "code-coverage/bot",
@@ -303,8 +303,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 289,
-  "TotalCapacity": 289
+  "TotalWorkers": 267,
+  "TotalCapacity": 267
  },
  {
   "WorkerPoolID": "code-review/bot",
@@ -318,8 +318,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 9894,
-  "TotalCapacity": 9894
+  "TotalWorkers": 9832,
+  "TotalCapacity": 9832
  },
  {
   "WorkerPoolID": "comm-1/b-linux",
@@ -333,8 +333,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1010,
-  "TotalCapacity": 1010
+  "TotalWorkers": 936,
+  "TotalCapacity": 936
  },
  {
   "WorkerPoolID": "comm-1/b-linux-aarch64",
@@ -363,8 +363,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 6,
-  "TotalCapacity": 6
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "comm-1/b-linux-docker-large-amd",
@@ -423,8 +423,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 3,
-  "TotalCapacity": 3
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "comm-1/b-linux-xlarge",
@@ -438,8 +438,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 4,
-  "TotalCapacity": 4
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "comm-1/b-win2022",
@@ -453,8 +453,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 22,
-  "TotalCapacity": 22
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "comm-1/decision",
@@ -468,8 +468,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 243,
-  "TotalCapacity": 243
+  "TotalWorkers": 262,
+  "TotalCapacity": 262
  },
  {
   "WorkerPoolID": "comm-1/images",
@@ -483,8 +483,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 9,
-  "TotalCapacity": 9
+  "TotalWorkers": 11,
+  "TotalCapacity": 11
  },
  {
   "WorkerPoolID": "comm-1/images-aarch64",
@@ -528,8 +528,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "comm-2/b-linux-docker-amd",
@@ -618,8 +618,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 4,
-  "TotalCapacity": 4
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "comm-2/decision",
@@ -678,8 +678,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 4251,
-  "TotalCapacity": 4251
+  "TotalWorkers": 3929,
+  "TotalCapacity": 3929
  },
  {
   "WorkerPoolID": "comm-3/b-linux-aarch64",
@@ -693,8 +693,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 5,
-  "TotalCapacity": 5
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "comm-3/b-linux-docker-amd",
@@ -708,8 +708,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1714,
-  "TotalCapacity": 1714
+  "TotalWorkers": 1887,
+  "TotalCapacity": 1887
  },
  {
   "WorkerPoolID": "comm-3/b-linux-docker-large-amd",
@@ -723,8 +723,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 6,
-  "TotalCapacity": 6
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
  },
  {
   "WorkerPoolID": "comm-3/b-linux-docker-xlarge-amd",
@@ -738,8 +738,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 7,
-  "TotalCapacity": 7
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
  },
  {
   "WorkerPoolID": "comm-3/b-linux-gcp-aarch64",
@@ -768,8 +768,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 5,
-  "TotalCapacity": 5
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "comm-3/b-linux-xlarge",
@@ -783,8 +783,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 21,
-  "TotalCapacity": 21
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
  },
  {
   "WorkerPoolID": "comm-3/b-win2022",
@@ -798,8 +798,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 751,
-  "TotalCapacity": 751
+  "TotalWorkers": 520,
+  "TotalCapacity": 520
  },
  {
   "WorkerPoolID": "comm-3/decision",
@@ -813,8 +813,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 130,
-  "TotalCapacity": 130
+  "TotalWorkers": 120,
+  "TotalCapacity": 120
  },
  {
   "WorkerPoolID": "comm-3/images",
@@ -828,8 +828,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 39,
-  "TotalCapacity": 39
+  "TotalWorkers": 13,
+  "TotalCapacity": 13
  },
  {
   "WorkerPoolID": "comm-3/images-aarch64",
@@ -843,8 +843,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 4,
-  "TotalCapacity": 4
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "comm-t/misc",
@@ -858,8 +858,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 105,
-  "TotalCapacity": 105
+  "TotalWorkers": 47,
+  "TotalCapacity": 47
  },
  {
   "WorkerPoolID": "comm-t/t-linux-arm64-docker",
@@ -888,8 +888,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 16,
-  "TotalCapacity": 16
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "comm-t/t-linux-docker-amd",
@@ -903,8 +903,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 2163,
-  "TotalCapacity": 2163
+  "TotalWorkers": 2305,
+  "TotalCapacity": 2305
  },
  {
   "WorkerPoolID": "comm-t/t-linux-docker-noscratch",
@@ -918,8 +918,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 94,
-  "TotalCapacity": 94
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "comm-t/t-linux-docker-noscratch-amd",
@@ -933,8 +933,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 4376,
-  "TotalCapacity": 4376
+  "TotalWorkers": 3376,
+  "TotalCapacity": 3376
  },
  {
   "WorkerPoolID": "comm-t/win11-64-2009",
@@ -978,8 +978,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 165,
-  "TotalCapacity": 165
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "comm-t/win11-64-24h2-ssd",
@@ -1008,8 +1008,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 5509,
-  "TotalCapacity": 5509
+  "TotalWorkers": 4457,
+  "TotalCapacity": 4457
  },
  {
   "WorkerPoolID": "comm-t/win11-64-25h2-ssd",
@@ -1053,8 +1053,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 10,
-  "TotalCapacity": 10
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "enterprise-1/b-linux",
@@ -1068,8 +1068,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1557,
-  "TotalCapacity": 1557
+  "TotalWorkers": 1237,
+  "TotalCapacity": 1237
  },
  {
   "WorkerPoolID": "enterprise-1/b-linux-aarch64",
@@ -1083,8 +1083,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 9,
-  "TotalCapacity": 9
+  "TotalWorkers": 21,
+  "TotalCapacity": 21
  },
  {
   "WorkerPoolID": "enterprise-1/b-linux-docker-amd",
@@ -1098,8 +1098,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 202,
-  "TotalCapacity": 202
+  "TotalWorkers": 464,
+  "TotalCapacity": 464
  },
  {
   "WorkerPoolID": "enterprise-1/b-linux-docker-large-amd",
@@ -1113,8 +1113,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 19,
-  "TotalCapacity": 19
+  "TotalWorkers": 27,
+  "TotalCapacity": 27
  },
  {
   "WorkerPoolID": "enterprise-1/b-linux-docker-xlarge-amd",
@@ -1128,8 +1128,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1535,
-  "TotalCapacity": 1535
+  "TotalWorkers": 1056,
+  "TotalCapacity": 1056
  },
  {
   "WorkerPoolID": "enterprise-1/b-win2022",
@@ -1143,8 +1143,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 150,
-  "TotalCapacity": 150
+  "TotalWorkers": 110,
+  "TotalCapacity": 110
  },
  {
   "WorkerPoolID": "enterprise-1/decision",
@@ -1158,8 +1158,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 94,
-  "TotalCapacity": 94
+  "TotalWorkers": 81,
+  "TotalCapacity": 81
  },
  {
   "WorkerPoolID": "enterprise-1/images",
@@ -1173,8 +1173,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 61,
-  "TotalCapacity": 61
+  "TotalWorkers": 91,
+  "TotalCapacity": 91
  },
  {
   "WorkerPoolID": "enterprise-1/images-aarch64",
@@ -1188,8 +1188,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 11,
-  "TotalCapacity": 11
+  "TotalWorkers": 16,
+  "TotalCapacity": 16
  },
  {
   "WorkerPoolID": "enterprise-1/win11-a64-25h2-builder",
@@ -1203,8 +1203,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 8,
-  "TotalCapacity": 8
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "enterprise-3/b-linux",
@@ -1218,8 +1218,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1955,
-  "TotalCapacity": 1955
+  "TotalWorkers": 1805,
+  "TotalCapacity": 1805
  },
  {
   "WorkerPoolID": "enterprise-3/b-linux-aarch64",
@@ -1233,8 +1233,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 16,
-  "TotalCapacity": 16
+  "TotalWorkers": 25,
+  "TotalCapacity": 25
  },
  {
   "WorkerPoolID": "enterprise-3/b-linux-docker-amd",
@@ -1248,8 +1248,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 824,
-  "TotalCapacity": 824
+  "TotalWorkers": 674,
+  "TotalCapacity": 674
  },
  {
   "WorkerPoolID": "enterprise-3/b-linux-docker-large-amd",
@@ -1263,8 +1263,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 70,
-  "TotalCapacity": 70
+  "TotalWorkers": 73,
+  "TotalCapacity": 73
  },
  {
   "WorkerPoolID": "enterprise-3/b-linux-docker-xlarge-amd",
@@ -1278,8 +1278,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 493,
-  "TotalCapacity": 493
+  "TotalWorkers": 366,
+  "TotalCapacity": 366
  },
  {
   "WorkerPoolID": "enterprise-3/b-win2022",
@@ -1293,8 +1293,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 332,
-  "TotalCapacity": 332
+  "TotalWorkers": 242,
+  "TotalCapacity": 242
  },
  {
   "WorkerPoolID": "enterprise-3/decision",
@@ -1308,8 +1308,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 51,
-  "TotalCapacity": 51
+  "TotalWorkers": 41,
+  "TotalCapacity": 41
  },
  {
   "WorkerPoolID": "enterprise-3/images",
@@ -1323,8 +1323,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 36,
-  "TotalCapacity": 36
+  "TotalWorkers": 73,
+  "TotalCapacity": 73
  },
  {
   "WorkerPoolID": "enterprise-3/images-aarch64",
@@ -1338,8 +1338,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 7,
-  "TotalCapacity": 7
+  "TotalWorkers": 13,
+  "TotalCapacity": 13
  },
  {
   "WorkerPoolID": "enterprise-3/win11-a64-25h2-builder",
@@ -1368,8 +1368,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 227,
-  "TotalCapacity": 227
+  "TotalWorkers": 313,
+  "TotalCapacity": 313
  },
  {
   "WorkerPoolID": "enterprise-t/t-linux-2204-wayland",
@@ -1383,8 +1383,8 @@
    "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
-  "TotalWorkers": 821,
-  "TotalCapacity": 821
+  "TotalWorkers": 599,
+  "TotalCapacity": 599
  },
  {
   "WorkerPoolID": "enterprise-t/t-linux-2204-wayland-snap",
@@ -1419,13 +1419,13 @@
  {
   "WorkerPoolID": "enterprise-t/t-linux-2404-wayland-snap-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-alpha",
   "TotalWorkers": 2,
@@ -1458,8 +1458,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 999,
-  "TotalCapacity": 999
+  "TotalWorkers": 1361,
+  "TotalCapacity": 1361
  },
  {
   "WorkerPoolID": "enterprise-t/t-linux-docker-amd",
@@ -1473,8 +1473,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 4790,
-  "TotalCapacity": 4790
+  "TotalWorkers": 3898,
+  "TotalCapacity": 3898
  },
  {
   "WorkerPoolID": "enterprise-t/t-linux-docker-kvm",
@@ -1503,8 +1503,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 8038,
-  "TotalCapacity": 8038
+  "TotalWorkers": 5795,
+  "TotalCapacity": 5795
  },
  {
   "WorkerPoolID": "enterprise-t/t-linux-xlarge-2204-wayland",
@@ -1533,8 +1533,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 317,
-  "TotalCapacity": 317
+  "TotalWorkers": 276,
+  "TotalCapacity": 276
  },
  {
   "WorkerPoolID": "enterprise-t/win11-64-24h2",
@@ -1563,8 +1563,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 4,
-  "TotalCapacity": 4
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "enterprise-t/win11-64-24h2-gpu",
@@ -1578,8 +1578,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "enterprise-t/win11-64-24h2-large",
@@ -1623,8 +1623,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 4,
-  "TotalCapacity": 4
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "enterprise-t/win11-64-25h2",
@@ -1638,8 +1638,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 6177,
-  "TotalCapacity": 6177
+  "TotalWorkers": 5630,
+  "TotalCapacity": 5630
  },
  {
   "WorkerPoolID": "enterprise-t/win11-64-25h2-alpha",
@@ -1653,8 +1653,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 220,
-  "TotalCapacity": 220
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "enterprise-t/win11-64-25h2-gpu",
@@ -1668,8 +1668,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 435,
-  "TotalCapacity": 435
+  "TotalWorkers": 264,
+  "TotalCapacity": 264
  },
  {
   "WorkerPoolID": "enterprise-t/win11-64-25h2-large",
@@ -1683,8 +1683,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 3121,
-  "TotalCapacity": 3121
+  "TotalWorkers": 1967,
+  "TotalCapacity": 1967
  },
  {
   "WorkerPoolID": "enterprise-t/win11-64-25h2-privileged",
@@ -1713,8 +1713,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 148,
-  "TotalCapacity": 148
+  "TotalWorkers": 187,
+  "TotalCapacity": 187
  },
  {
   "WorkerPoolID": "enterprise-t/win11-64-25h2-source-alpha",
@@ -1728,8 +1728,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 221,
-  "TotalCapacity": 221
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "enterprise-t/win11-64-25h2-webgpu",
@@ -1758,8 +1758,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 10058,
-  "TotalCapacity": 10058
+  "TotalWorkers": 8289,
+  "TotalCapacity": 8289
  },
  {
   "WorkerPoolID": "gecko-1/b-linux-2204-kvm-gcp",
@@ -1788,23 +1788,23 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 496,
-  "TotalCapacity": 496
+  "TotalWorkers": 234,
+  "TotalCapacity": 234
  },
  {
   "WorkerPoolID": "gecko-1/b-linux-docker-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "gecko-1/b-linux-docker-amd",
@@ -1818,8 +1818,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 12416,
-  "TotalCapacity": 12416
+  "TotalWorkers": 10223,
+  "TotalCapacity": 10223
  },
  {
   "WorkerPoolID": "gecko-1/b-linux-docker-large-amd",
@@ -1833,8 +1833,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 433,
-  "TotalCapacity": 433
+  "TotalWorkers": 108,
+  "TotalCapacity": 108
  },
  {
   "WorkerPoolID": "gecko-1/b-linux-docker-xlarge-amd",
@@ -1848,8 +1848,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1218,
-  "TotalCapacity": 1218
+  "TotalWorkers": 1068,
+  "TotalCapacity": 1068
  },
  {
   "WorkerPoolID": "gecko-1/b-linux-gcp-aarch64",
@@ -1878,8 +1878,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 163,
-  "TotalCapacity": 163
+  "TotalWorkers": 170,
+  "TotalCapacity": 170
  },
  {
   "WorkerPoolID": "gecko-1/b-linux-large",
@@ -1908,8 +1908,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 18709,
-  "TotalCapacity": 18709
+  "TotalWorkers": 15878,
+  "TotalCapacity": 15878
  },
  {
   "WorkerPoolID": "gecko-1/b-linux-xlarge",
@@ -1923,8 +1923,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 6,
-  "TotalCapacity": 6
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "gecko-1/b-win2022",
@@ -1938,8 +1938,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 971,
-  "TotalCapacity": 971
+  "TotalWorkers": 725,
+  "TotalCapacity": 725
  },
  {
   "WorkerPoolID": "gecko-1/b-win2022-alpha",
@@ -1968,8 +1968,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "gecko-1/b-win2022-xxlarge",
@@ -1983,8 +1983,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 36,
-  "TotalCapacity": 36
+  "TotalWorkers": 69,
+  "TotalCapacity": 69
  },
  {
   "WorkerPoolID": "gecko-1/decision",
@@ -1998,8 +1998,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1137,
-  "TotalCapacity": 1137
+  "TotalWorkers": 812,
+  "TotalCapacity": 812
  },
  {
   "WorkerPoolID": "gecko-1/images",
@@ -2013,8 +2013,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 422,
-  "TotalCapacity": 422
+  "TotalWorkers": 107,
+  "TotalCapacity": 107
  },
  {
   "WorkerPoolID": "gecko-1/images-aarch64",
@@ -2028,8 +2028,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 106,
-  "TotalCapacity": 106
+  "TotalWorkers": 15,
+  "TotalCapacity": 15
  },
  {
   "WorkerPoolID": "gecko-1/win11-a64-25h2-builder",
@@ -2043,19 +2043,23 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 31,
-  "TotalCapacity": 31
+  "TotalWorkers": 18,
+  "TotalCapacity": 18
  },
  {
   "WorkerPoolID": "gecko-1/win11-a64-25h2-builder-alpha",
-  "Implementation": "",
-  "Version": "",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
   "Details": {
-   "error": "Version not determined; task not (yet) claimed"
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 379,
-  "TotalCapacity": 379
+  "TotalWorkers": 361,
+  "TotalCapacity": 361
  },
  {
   "WorkerPoolID": "gecko-2/b-linux",
@@ -2069,8 +2073,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 332,
-  "TotalCapacity": 332
+  "TotalWorkers": 50,
+  "TotalCapacity": 50
  },
  {
   "WorkerPoolID": "gecko-2/b-linux-aarch64",
@@ -2099,8 +2103,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 788,
-  "TotalCapacity": 788
+  "TotalWorkers": 78,
+  "TotalCapacity": 78
  },
  {
   "WorkerPoolID": "gecko-2/b-linux-docker-large-amd",
@@ -2114,8 +2118,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 63,
-  "TotalCapacity": 63
+  "TotalWorkers": 31,
+  "TotalCapacity": 31
  },
  {
   "WorkerPoolID": "gecko-2/b-linux-docker-xlarge-amd",
@@ -2129,8 +2133,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 162,
-  "TotalCapacity": 162
+  "TotalWorkers": 23,
+  "TotalCapacity": 23
  },
  {
   "WorkerPoolID": "gecko-2/b-linux-gcp-aarch64",
@@ -2144,8 +2148,8 @@
    "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-arm64-gui-googlecompute-2024-09-18t14-57-52z",
-  "TotalWorkers": 3,
-  "TotalCapacity": 3
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "gecko-2/b-linux-kvm",
@@ -2159,8 +2163,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 52,
-  "TotalCapacity": 52
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
  },
  {
   "WorkerPoolID": "gecko-2/b-linux-large",
@@ -2189,8 +2193,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 809,
-  "TotalCapacity": 809
+  "TotalWorkers": 129,
+  "TotalCapacity": 129
  },
  {
   "WorkerPoolID": "gecko-2/b-linux-xlarge",
@@ -2219,8 +2223,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 17,
-  "TotalCapacity": 17
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
  },
  {
   "WorkerPoolID": "gecko-2/decision",
@@ -2234,8 +2238,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 36,
-  "TotalCapacity": 36
+  "TotalWorkers": 12,
+  "TotalCapacity": 12
  },
  {
   "WorkerPoolID": "gecko-2/images",
@@ -2249,8 +2253,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 3,
-  "TotalCapacity": 3
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "gecko-2/images-aarch64",
@@ -2279,8 +2283,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 20189,
-  "TotalCapacity": 20189
+  "TotalWorkers": 23234,
+  "TotalCapacity": 23234
  },
  {
   "WorkerPoolID": "gecko-3/b-linux-2204-kvm-gcp",
@@ -2309,19 +2313,19 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 41,
-  "TotalCapacity": 41
+  "TotalWorkers": 19,
+  "TotalCapacity": 19
  },
  {
   "WorkerPoolID": "gecko-3/b-linux-docker-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-alpha",
   "TotalWorkers": 2,
@@ -2339,8 +2343,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 27625,
-  "TotalCapacity": 27625
+  "TotalWorkers": 24825,
+  "TotalCapacity": 24825
  },
  {
   "WorkerPoolID": "gecko-3/b-linux-docker-large-amd",
@@ -2354,8 +2358,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 653,
-  "TotalCapacity": 653
+  "TotalWorkers": 646,
+  "TotalCapacity": 646
  },
  {
   "WorkerPoolID": "gecko-3/b-linux-docker-xlarge-amd",
@@ -2369,8 +2373,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 3402,
-  "TotalCapacity": 3402
+  "TotalWorkers": 2746,
+  "TotalCapacity": 2746
  },
  {
   "WorkerPoolID": "gecko-3/b-linux-gcp-aarch64",
@@ -2384,8 +2388,8 @@
    "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-arm64-gui-googlecompute-2024-09-18t19-02-58z",
-  "TotalWorkers": 3,
-  "TotalCapacity": 3
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "gecko-3/b-linux-kvm",
@@ -2399,8 +2403,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 619,
-  "TotalCapacity": 619
+  "TotalWorkers": 486,
+  "TotalCapacity": 486
  },
  {
   "WorkerPoolID": "gecko-3/b-linux-large",
@@ -2429,8 +2433,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 26611,
-  "TotalCapacity": 26611
+  "TotalWorkers": 29290,
+  "TotalCapacity": 29290
  },
  {
   "WorkerPoolID": "gecko-3/b-linux-xlarge",
@@ -2444,8 +2448,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 132,
-  "TotalCapacity": 132
+  "TotalWorkers": 151,
+  "TotalCapacity": 151
  },
  {
   "WorkerPoolID": "gecko-3/b-win2022",
@@ -2459,8 +2463,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 5498,
-  "TotalCapacity": 5498
+  "TotalWorkers": 5599,
+  "TotalCapacity": 5599
  },
  {
   "WorkerPoolID": "gecko-3/b-win2022-headless",
@@ -2489,8 +2493,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 14,
-  "TotalCapacity": 14
+  "TotalWorkers": 12,
+  "TotalCapacity": 12
  },
  {
   "WorkerPoolID": "gecko-3/decision",
@@ -2504,8 +2508,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 5112,
-  "TotalCapacity": 5112
+  "TotalWorkers": 4469,
+  "TotalCapacity": 4469
  },
  {
   "WorkerPoolID": "gecko-3/images",
@@ -2519,8 +2523,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 134,
-  "TotalCapacity": 134
+  "TotalWorkers": 120,
+  "TotalCapacity": 120
  },
  {
   "WorkerPoolID": "gecko-3/images-aarch64",
@@ -2534,8 +2538,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 29,
-  "TotalCapacity": 29
+  "TotalWorkers": 19,
+  "TotalCapacity": 19
  },
  {
   "WorkerPoolID": "gecko-3/win11-a64-25h2-builder",
@@ -2549,8 +2553,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 79,
-  "TotalCapacity": 79
+  "TotalWorkers": 115,
+  "TotalCapacity": 115
  },
  {
   "WorkerPoolID": "gecko-t/misc",
@@ -2564,8 +2568,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1295,
-  "TotalCapacity": 1295
+  "TotalWorkers": 716,
+  "TotalCapacity": 716
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-2204-wayland",
@@ -2579,8 +2583,8 @@
    "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
-  "TotalWorkers": 7841,
-  "TotalCapacity": 7841
+  "TotalWorkers": 7569,
+  "TotalCapacity": 7569
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-2204-wayland-arm64-relsre",
@@ -2639,19 +2643,19 @@
    "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
-  "TotalWorkers": 19,
-  "TotalCapacity": 19
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-2404-headless-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
   "TotalWorkers": 2,
@@ -2660,13 +2664,13 @@
  {
   "WorkerPoolID": "gecko-t/t-linux-2404-headless-arm64-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "arm64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-alpha",
   "TotalWorkers": 2,
@@ -2675,13 +2679,13 @@
  {
   "WorkerPoolID": "gecko-t/t-linux-2404-headless-ssd-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
   "TotalWorkers": 2,
@@ -2710,19 +2714,19 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-2026-05-04",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-2404-wayland-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-alpha",
   "TotalWorkers": 2,
@@ -2740,19 +2744,19 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-2026-05-04",
-  "TotalWorkers": 20,
-  "TotalCapacity": 20
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-2404-wayland-snap-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-alpha",
   "TotalWorkers": 2,
@@ -2770,8 +2774,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 30,
-  "TotalCapacity": 30
+  "TotalWorkers": 29,
+  "TotalCapacity": 29
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-docker",
@@ -2785,8 +2789,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1307,
-  "TotalCapacity": 1307
+  "TotalWorkers": 1139,
+  "TotalCapacity": 1139
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-docker-16c32gb-amd",
@@ -2800,8 +2804,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 2366,
-  "TotalCapacity": 2366
+  "TotalWorkers": 3107,
+  "TotalCapacity": 3107
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-docker-amd",
@@ -2815,23 +2819,23 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 41790,
-  "TotalCapacity": 41790
+  "TotalWorkers": 36791,
+  "TotalCapacity": 36791
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-docker-amd-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-docker-kvm",
@@ -2845,23 +2849,23 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 71906,
-  "TotalCapacity": 71906
+  "TotalWorkers": 65985,
+  "TotalCapacity": 65985
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-docker-kvm-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 21,
+  "TotalCapacity": 21
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-docker-noscratch",
@@ -2875,8 +2879,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 6300,
-  "TotalCapacity": 6300
+  "TotalWorkers": 10024,
+  "TotalCapacity": 10024
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-docker-noscratch-amd",
@@ -2890,23 +2894,23 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 150283,
-  "TotalCapacity": 150283
+  "TotalWorkers": 145288,
+  "TotalCapacity": 145288
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-docker-noscratch-amd-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 61,
+  "TotalCapacity": 61
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-vm-2204-wayland",
@@ -2916,8 +2920,8 @@
    "error": "No artifacts found"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/generic-2204-wayland-vm-gcp-googlecompute-2023-09-22t17-39-37z",
-  "TotalWorkers": 39,
-  "TotalCapacity": 39
+  "TotalWorkers": 77,
+  "TotalCapacity": 77
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-vm-2204-wayland-snap",
@@ -2942,8 +2946,8 @@
    "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
-  "TotalWorkers": 5313,
-  "TotalCapacity": 5313
+  "TotalWorkers": 5550,
+  "TotalCapacity": 5550
  },
  {
   "WorkerPoolID": "gecko-t/t-linux-xlarge-2404-wayland",
@@ -2972,8 +2976,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 3920,
-  "TotalCapacity": 3920
+  "TotalWorkers": 3396,
+  "TotalCapacity": 3396
  },
  {
   "WorkerPoolID": "gecko-t/win10-64-2009-alpha",
@@ -2987,8 +2991,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 72,
-  "TotalCapacity": 72
+  "TotalWorkers": 34,
+  "TotalCapacity": 34
  },
  {
   "WorkerPoolID": "gecko-t/win10-64-2009-gpu",
@@ -3002,8 +3006,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 469,
-  "TotalCapacity": 469
+  "TotalWorkers": 437,
+  "TotalCapacity": 437
  },
  {
   "WorkerPoolID": "gecko-t/win10-64-2009-gpu-alpha",
@@ -3017,8 +3021,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 6,
-  "TotalCapacity": 6
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
  },
  {
   "WorkerPoolID": "gecko-t/win10-64-2009-source",
@@ -3032,8 +3036,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 48,
-  "TotalCapacity": 48
+  "TotalWorkers": 96,
+  "TotalCapacity": 96
  },
  {
   "WorkerPoolID": "gecko-t/win10-64-2009-source-alpha",
@@ -3077,8 +3081,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 9,
-  "TotalCapacity": 9
+  "TotalWorkers": 10,
+  "TotalCapacity": 10
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-2009",
@@ -3092,8 +3096,8 @@
    "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 1170,
-  "TotalCapacity": 1170
+  "TotalWorkers": 1714,
+  "TotalCapacity": 1714
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-2009-alpha",
@@ -3107,8 +3111,8 @@
    "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 3,
-  "TotalCapacity": 3
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-2009-gpu",
@@ -3122,8 +3126,8 @@
    "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 183,
-  "TotalCapacity": 183
+  "TotalWorkers": 302,
+  "TotalCapacity": 302
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-2009-gpu-alpha",
@@ -3152,8 +3156,8 @@
    "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 40,
-  "TotalCapacity": 40
+  "TotalWorkers": 38,
+  "TotalCapacity": 38
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-2009-source-alpha",
@@ -3167,8 +3171,8 @@
    "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-2009-ssd",
@@ -3242,8 +3246,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 2021,
-  "TotalCapacity": 2021
+  "TotalWorkers": 2647,
+  "TotalCapacity": 2647
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-24h2-alpha",
@@ -3257,8 +3261,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 327,
-  "TotalCapacity": 327
+  "TotalWorkers": 113,
+  "TotalCapacity": 113
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-24h2-gpu",
@@ -3272,8 +3276,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 55,
-  "TotalCapacity": 55
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-24h2-gpu-alpha",
@@ -3287,8 +3291,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 26,
-  "TotalCapacity": 26
+  "TotalWorkers": 10,
+  "TotalCapacity": 10
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-24h2-large",
@@ -3302,8 +3306,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 151,
-  "TotalCapacity": 151
+  "TotalWorkers": 229,
+  "TotalCapacity": 229
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-24h2-large-alpha",
@@ -3317,8 +3321,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 5,
-  "TotalCapacity": 5
+  "TotalWorkers": 6,
+  "TotalCapacity": 6
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-24h2-privileged",
@@ -3362,8 +3366,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 16,
-  "TotalCapacity": 16
+  "TotalWorkers": 15,
+  "TotalCapacity": 15
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-24h2-source-alpha",
@@ -3377,8 +3381,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 12,
-  "TotalCapacity": 12
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-24h2-ssd",
@@ -3437,26 +3441,11 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 3,
-  "TotalCapacity": 3
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-24h2-webgpu",
-  "Implementation": "generic-worker",
-  "Version": "99.2.0",
-  "Details": {
-   "arch": "amd64",
-   "engine": "multiuser",
-   "go": "1.26.2",
-   "os": "windows",
-   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
-  },
-  "Imageset": "unknown",
-  "TotalWorkers": 30,
-  "TotalCapacity": 30
- },
- {
-  "WorkerPoolID": "gecko-t/win11-64-24h2-webgpu-alpha",
   "Implementation": "generic-worker",
   "Version": "99.2.0",
   "Details": {
@@ -3471,6 +3460,21 @@
   "TotalCapacity": 2
  },
  {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-webgpu-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
   "WorkerPoolID": "gecko-t/win11-64-25h2",
   "Implementation": "generic-worker",
   "Version": "99.2.0",
@@ -3482,8 +3486,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 71841,
-  "TotalCapacity": 71841
+  "TotalWorkers": 75244,
+  "TotalCapacity": 75244
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-alpha",
@@ -3497,8 +3501,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 436,
-  "TotalCapacity": 436
+  "TotalWorkers": 118,
+  "TotalCapacity": 118
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-amd",
@@ -3512,8 +3516,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 219,
-  "TotalCapacity": 219
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-gpu",
@@ -3527,8 +3531,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 17347,
-  "TotalCapacity": 17347
+  "TotalWorkers": 16240,
+  "TotalCapacity": 16240
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-gpu-alpha",
@@ -3542,8 +3546,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 234,
-  "TotalCapacity": 234
+  "TotalWorkers": 13,
+  "TotalCapacity": 13
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-gpu-perf-experiment",
@@ -3557,8 +3561,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 53,
-  "TotalCapacity": 53
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-large",
@@ -3572,8 +3576,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 8325,
-  "TotalCapacity": 8325
+  "TotalWorkers": 10111,
+  "TotalCapacity": 10111
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-large-alpha",
@@ -3587,8 +3591,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 281,
-  "TotalCapacity": 281
+  "TotalWorkers": 30,
+  "TotalCapacity": 30
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-privileged",
@@ -3602,8 +3606,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 258,
-  "TotalCapacity": 258
+  "TotalWorkers": 257,
+  "TotalCapacity": 257
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-privileged-alpha",
@@ -3617,8 +3621,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 218,
-  "TotalCapacity": 218
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-source",
@@ -3632,8 +3636,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 2081,
-  "TotalCapacity": 2081
+  "TotalWorkers": 1875,
+  "TotalCapacity": 1875
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-source-alpha",
@@ -3647,8 +3651,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 222,
-  "TotalCapacity": 222
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-ssd",
@@ -3707,8 +3711,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 222,
-  "TotalCapacity": 222
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-webgpu",
@@ -3722,8 +3726,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 3736,
-  "TotalCapacity": 3736
+  "TotalWorkers": 3794,
+  "TotalCapacity": 3794
  },
  {
   "WorkerPoolID": "gecko-t/win11-64-25h2-webgpu-alpha",
@@ -3737,8 +3741,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 219,
-  "TotalCapacity": 219
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "gecko-t/win11-a64-25h2",
@@ -3752,8 +3756,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 252,
-  "TotalCapacity": 252
+  "TotalWorkers": 262,
+  "TotalCapacity": 262
  },
  {
   "WorkerPoolID": "gecko-t/win11-a64-25h2-alpha",
@@ -3767,8 +3771,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 35,
-  "TotalCapacity": 35
+  "TotalWorkers": 16,
+  "TotalCapacity": 16
  },
  {
   "WorkerPoolID": "glean-1/b-linux",
@@ -3782,8 +3786,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 53,
-  "TotalCapacity": 53
+  "TotalWorkers": 46,
+  "TotalCapacity": 46
  },
  {
   "WorkerPoolID": "glean-1/decision",
@@ -3827,8 +3831,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 29,
-  "TotalCapacity": 29
+  "TotalWorkers": 25,
+  "TotalCapacity": 25
  },
  {
   "WorkerPoolID": "glean-3/decision",
@@ -3842,8 +3846,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 7,
-  "TotalCapacity": 7
+  "TotalWorkers": 8,
+  "TotalCapacity": 8
  },
  {
   "WorkerPoolID": "glean-3/images",
@@ -3866,8 +3870,8 @@
   "Version": "38.0.5",
   "Details": {},
   "Imageset": "projects/taskcluster-imaging/global/images/docker-firefoxci-gcp-l1-googlecompute-2025-06-13t18-31-38z",
-  "TotalWorkers": 5,
-  "TotalCapacity": 40
+  "TotalWorkers": 4,
+  "TotalCapacity": 32
  },
  {
   "WorkerPoolID": "infra/build-decision-alpha",
@@ -3896,8 +3900,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 161,
-  "TotalCapacity": 161
+  "TotalWorkers": 153,
+  "TotalCapacity": 153
  },
  {
   "WorkerPoolID": "mobile-1/decision",
@@ -3911,8 +3915,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 7,
-  "TotalCapacity": 7
+  "TotalWorkers": 11,
+  "TotalCapacity": 11
  },
  {
   "WorkerPoolID": "mobile-1/images",
@@ -3941,8 +3945,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 278,
-  "TotalCapacity": 278
+  "TotalWorkers": 267,
+  "TotalCapacity": 267
  },
  {
   "WorkerPoolID": "mobile-3/decision",
@@ -3956,8 +3960,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 155,
-  "TotalCapacity": 155
+  "TotalWorkers": 147,
+  "TotalCapacity": 147
  },
  {
   "WorkerPoolID": "mobile-3/images",
@@ -4016,8 +4020,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 9,
-  "TotalCapacity": 9
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "mozilla-1/images",
@@ -4031,8 +4035,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 34,
-  "TotalCapacity": 34
+  "TotalWorkers": 13,
+  "TotalCapacity": 13
  },
  {
   "WorkerPoolID": "mozilla-3/b-linux",
@@ -4076,8 +4080,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 440,
-  "TotalCapacity": 440
+  "TotalWorkers": 447,
+  "TotalCapacity": 447
  },
  {
   "WorkerPoolID": "mozilla-3/images",
@@ -4091,8 +4095,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 7,
-  "TotalCapacity": 7
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "mozilla-t/pre-commit",
@@ -4106,8 +4110,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 21,
-  "TotalCapacity": 21
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
  },
  {
   "WorkerPoolID": "mozilla-t/t-linux-2204-wayland",
@@ -4121,8 +4125,8 @@
    "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "mozilla-t/t-linux-2204-wayland-relsre",
@@ -4157,17 +4161,17 @@
  {
   "WorkerPoolID": "mozilla-t/t-linux-2404-wayland-alpha",
   "Implementation": "generic-worker",
-  "Version": "100.3.0",
+  "Version": "100.4.0",
   "Details": {
    "arch": "amd64",
    "engine": "multiuser",
    "go": "1.26.4",
    "os": "linux",
-   "revision": "fe314d92315c5ca248e56d34494eac8f42eb7122"
+   "revision": "d87e9cc5ac7c7a6182b79d13f800ec6e17eb25be"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-alpha",
-  "TotalWorkers": 553,
-  "TotalCapacity": 553
+  "TotalWorkers": 605,
+  "TotalCapacity": 605
  },
  {
   "WorkerPoolID": "mozilla-t/t-linux-arm64-docker",
@@ -4196,8 +4200,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 60,
-  "TotalCapacity": 60
+  "TotalWorkers": 23,
+  "TotalCapacity": 23
  },
  {
   "WorkerPoolID": "mozilla-t/t-linux-docker-amd",
@@ -4226,8 +4230,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 6,
-  "TotalCapacity": 6
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "mozilla-t/t-linux-docker-noscratch-amd",
@@ -4256,8 +4260,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 369,
-  "TotalCapacity": 369
+  "TotalWorkers": 392,
+  "TotalCapacity": 392
  },
  {
   "WorkerPoolID": "mozillavpn-1/b-linux-large",
@@ -4271,8 +4275,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 309,
-  "TotalCapacity": 309
+  "TotalWorkers": 305,
+  "TotalCapacity": 305
  },
  {
   "WorkerPoolID": "mozillavpn-1/b-win2022",
@@ -4286,8 +4290,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 79,
-  "TotalCapacity": 79
+  "TotalWorkers": 83,
+  "TotalCapacity": 83
  },
  {
   "WorkerPoolID": "mozillavpn-1/b-win2022-alpha",
@@ -4301,8 +4305,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "mozillavpn-1/decision",
@@ -4316,8 +4320,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 12,
-  "TotalCapacity": 12
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "mozillavpn-1/images",
@@ -4331,8 +4335,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 49,
-  "TotalCapacity": 49
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
  },
  {
   "WorkerPoolID": "mozillavpn-1/win11-a64-25h2-builder",
@@ -4346,8 +4350,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 7,
-  "TotalCapacity": 7
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "mozillavpn-3/b-linux",
@@ -4361,8 +4365,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 165,
-  "TotalCapacity": 165
+  "TotalWorkers": 178,
+  "TotalCapacity": 178
  },
  {
   "WorkerPoolID": "mozillavpn-3/b-linux-large",
@@ -4376,8 +4380,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 166,
-  "TotalCapacity": 166
+  "TotalWorkers": 172,
+  "TotalCapacity": 172
  },
  {
   "WorkerPoolID": "mozillavpn-3/b-win2022",
@@ -4391,8 +4395,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 26,
-  "TotalCapacity": 26
+  "TotalWorkers": 29,
+  "TotalCapacity": 29
  },
  {
   "WorkerPoolID": "mozillavpn-3/decision",
@@ -4406,8 +4410,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 26,
-  "TotalCapacity": 26
+  "TotalWorkers": 20,
+  "TotalCapacity": 20
  },
  {
   "WorkerPoolID": "mozillavpn-3/images",
@@ -4421,8 +4425,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 8,
-  "TotalCapacity": 8
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "mozillavpn-3/win11-a64-25h2-builder",
@@ -4451,8 +4455,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 113,
-  "TotalCapacity": 113
+  "TotalWorkers": 18,
+  "TotalCapacity": 18
  },
  {
   "WorkerPoolID": "nss-1/b-win2022",
@@ -4466,8 +4470,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 220,
-  "TotalCapacity": 220
+  "TotalWorkers": 56,
+  "TotalCapacity": 56
  },
  {
   "WorkerPoolID": "nss-1/b-win2022-alpha",
@@ -4481,8 +4485,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 3,
-  "TotalCapacity": 3
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "nss-1/decision",
@@ -4496,8 +4500,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 40,
-  "TotalCapacity": 40
+  "TotalWorkers": 11,
+  "TotalCapacity": 11
  },
  {
   "WorkerPoolID": "nss-1/images",
@@ -4526,8 +4530,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 20,
-  "TotalCapacity": 20
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "nss-1/linux-docker",
@@ -4541,8 +4545,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 676,
-  "TotalCapacity": 676
+  "TotalWorkers": 251,
+  "TotalCapacity": 251
  },
  {
   "WorkerPoolID": "nss-1/win11-a64-25h2",
@@ -4556,8 +4560,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "nss-1/win11-a64-25h2-alpha",
@@ -4571,8 +4575,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 5,
-  "TotalCapacity": 5
+  "TotalWorkers": 18,
+  "TotalCapacity": 18
  },
  {
   "WorkerPoolID": "nss-1/win11-a64-25h2-builder",
@@ -4591,14 +4595,18 @@
  },
  {
   "WorkerPoolID": "nss-1/win11-a64-25h2-builder-alpha",
-  "Implementation": "",
-  "Version": "",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
   "Details": {
-   "error": "Version not determined; task not (yet) claimed"
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 262,
-  "TotalCapacity": 262
+  "TotalWorkers": 205,
+  "TotalCapacity": 205
  },
  {
   "WorkerPoolID": "nss-3/b-linux-aarch64",
@@ -4627,8 +4635,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 163,
-  "TotalCapacity": 163
+  "TotalWorkers": 102,
+  "TotalCapacity": 102
  },
  {
   "WorkerPoolID": "nss-3/decision",
@@ -4642,8 +4650,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 11,
-  "TotalCapacity": 11
+  "TotalWorkers": 6,
+  "TotalCapacity": 6
  },
  {
   "WorkerPoolID": "nss-3/images",
@@ -4687,8 +4695,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 695,
-  "TotalCapacity": 695
+  "TotalWorkers": 306,
+  "TotalCapacity": 306
  },
  {
   "WorkerPoolID": "nss-3/win11-a64-25h2-builder",
@@ -4717,8 +4725,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 343,
-  "TotalCapacity": 343
+  "TotalWorkers": 45,
+  "TotalCapacity": 45
  },
  {
   "WorkerPoolID": "nss-t/t-linux-docker",
@@ -4732,8 +4740,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 1709,
-  "TotalCapacity": 1709
+  "TotalWorkers": 616,
+  "TotalCapacity": 616
  },
  {
   "WorkerPoolID": "nss-t/t-linux-docker-amd",
@@ -4777,8 +4785,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 26,
-  "TotalCapacity": 26
+  "TotalWorkers": 17,
+  "TotalCapacity": 17
  },
  {
   "WorkerPoolID": "proj-autophone/gecko-t-bitbar-gw-perf-a55",
@@ -4826,21 +4834,6 @@
   "TotalCapacity": 0
  },
  {
-  "WorkerPoolID": "proj-autophone/gecko-t-lambda-alpha-a55",
-  "Implementation": "generic-worker",
-  "Version": "87.0.0",
-  "Details": {
-   "arch": "amd64",
-   "engine": "insecure",
-   "go": "1.24.5",
-   "os": "linux",
-   "revision": "99a1fcafbbcc688dd7ff02589fc33af8bccddceb"
-  },
-  "Imageset": "",
-  "TotalWorkers": 0,
-  "TotalCapacity": 0
- },
- {
   "WorkerPoolID": "proj-autophone/gecko-t-lambda-perf-a55",
   "Implementation": "generic-worker",
   "Version": "87.0.0",
@@ -4863,8 +4856,8 @@
    "error": "Version not determined; task not (yet) claimed"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
-  "TotalWorkers": 11,
-  "TotalCapacity": 11
+  "TotalWorkers": 87,
+  "TotalCapacity": 87
  },
  {
   "WorkerPoolID": "proj-fuzzing/bugmon-pernosco",
@@ -4872,8 +4865,8 @@
   "Version": "44.23.4",
   "Details": {},
   "Imageset": "ami-03e4f8db63254ce7e,ami-0a6e926238859761c,ami-0b5dd0bbb670ec80e",
-  "TotalWorkers": 1,
-  "TotalCapacity": 1
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "proj-fuzzing/bugmon-pernosco-staging",
@@ -4883,8 +4876,8 @@
    "error": "Version not determined; task not (yet) claimed"
   },
   "Imageset": "ami-02619e55246806e8d",
-  "TotalWorkers": 1,
-  "TotalCapacity": 1
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "proj-fuzzing/bugmon-processor",
@@ -4894,19 +4887,23 @@
    "error": "Version not determined; task not (yet) claimed"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
-  "TotalWorkers": 1,
-  "TotalCapacity": 1
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "proj-fuzzing/bugmon-processor-windows",
-  "Implementation": "",
-  "Version": "",
+  "Implementation": "generic-worker",
+  "Version": "100.0.1",
   "Details": {
-   "error": "Version not determined; task not (yet) claimed"
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "fcf9d8ed582ed8de3d1cdb8f4f91ccec93b7803c"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 98,
-  "TotalCapacity": 98
+  "TotalWorkers": 178,
+  "TotalCapacity": 178
  },
  {
   "WorkerPoolID": "proj-fuzzing/ci",
@@ -4927,19 +4924,23 @@
    "error": "Version not determined; task not (yet) claimed"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-arm64-mqscbutmsbawtytlroxk",
-  "TotalWorkers": 1,
-  "TotalCapacity": 1
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "proj-fuzzing/ci-windows",
-  "Implementation": "",
-  "Version": "",
+  "Implementation": "generic-worker",
+  "Version": "100.0.1",
   "Details": {
-   "error": "Version not determined; task not (yet) claimed"
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "fcf9d8ed582ed8de3d1cdb8f4f91ccec93b7803c"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 65,
-  "TotalCapacity": 65
+  "TotalWorkers": 111,
+  "TotalCapacity": 111
  },
  {
   "WorkerPoolID": "proj-fuzzing/decision",
@@ -4949,8 +4950,8 @@
    "error": "Version not determined; task not (yet) claimed"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
-  "TotalWorkers": 23,
-  "TotalCapacity": 23
+  "TotalWorkers": 199,
+  "TotalCapacity": 199
  },
  {
   "WorkerPoolID": "proj-fuzzing/grizzly-reduce-worker",
@@ -4960,8 +4961,8 @@
    "error": "Version not determined; task not (yet) claimed"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
-  "TotalWorkers": 1,
-  "TotalCapacity": 1
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "proj-fuzzing/grizzly-reduce-worker-android",
@@ -4971,30 +4972,38 @@
    "error": "Version not determined; task not (yet) claimed"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
-  "TotalWorkers": 1,
-  "TotalCapacity": 1
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "proj-fuzzing/grizzly-reduce-worker-windows",
-  "Implementation": "",
-  "Version": "",
+  "Implementation": "generic-worker",
+  "Version": "100.0.1",
   "Details": {
-   "error": "Version not determined; task not (yet) claimed"
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "fcf9d8ed582ed8de3d1cdb8f4f91ccec93b7803c"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 62,
-  "TotalCapacity": 62
+  "TotalWorkers": 107,
+  "TotalCapacity": 107
  },
  {
   "WorkerPoolID": "proj-fuzzing/grizzly-reduce-worker-windows-ngpu",
-  "Implementation": "",
-  "Version": "",
+  "Implementation": "generic-worker",
+  "Version": "100.0.1",
   "Details": {
-   "error": "Version not determined; task not (yet) claimed"
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "fcf9d8ed582ed8de3d1cdb8f4f91ccec93b7803c"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 65,
-  "TotalCapacity": 65
+  "TotalWorkers": 111,
+  "TotalCapacity": 111
  },
  {
   "WorkerPoolID": "proj-fuzzing/nss-corpus-update-worker",
@@ -5004,8 +5013,8 @@
    "error": "Version not determined; task not (yet) claimed"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
-  "TotalWorkers": 1,
-  "TotalCapacity": 1
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
  },
  {
   "WorkerPoolID": "releng-1/decision",
@@ -5019,8 +5028,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 86,
-  "TotalCapacity": 86
+  "TotalWorkers": 52,
+  "TotalCapacity": 52
  },
  {
   "WorkerPoolID": "releng-1/linux-docker",
@@ -5034,8 +5043,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 53,
-  "TotalCapacity": 53
+  "TotalWorkers": 35,
+  "TotalCapacity": 35
  },
  {
   "WorkerPoolID": "releng-3/decision",
@@ -5049,8 +5058,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 50,
-  "TotalCapacity": 50
+  "TotalWorkers": 36,
+  "TotalCapacity": 36
  },
  {
   "WorkerPoolID": "releng-3/linux-docker",
@@ -5064,8 +5073,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 69,
-  "TotalCapacity": 69
+  "TotalWorkers": 50,
+  "TotalCapacity": 50
  },
  {
   "WorkerPoolID": "releng-hardware/applicationservices-b-1-osx1015",
@@ -5167,21 +5176,6 @@
    "go": "1.22.0",
    "os": "darwin",
    "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
-  },
-  "Imageset": "",
-  "TotalWorkers": 0,
-  "TotalCapacity": 0
- },
- {
-  "WorkerPoolID": "releng-hardware/gecko-1-b-osx-arm64-vms",
-  "Implementation": "generic-worker",
-  "Version": "95.0.3",
-  "Details": {
-   "arch": "arm64",
-   "engine": "multiuser",
-   "go": "1.25.5",
-   "os": "darwin",
-   "revision": "a996b8269b1f67ce723d5b18b07019b210d21e99"
   },
   "Imageset": "",
   "TotalWorkers": 0,
@@ -5291,13 +5285,13 @@
  {
   "WorkerPoolID": "releng-hardware/gecko-t-osx-1015-r8-staging",
   "Implementation": "generic-worker",
-  "Version": "72.0.1",
+  "Version": "60.3.4",
   "Details": {
    "arch": "amd64",
-   "engine": "insecure",
-   "go": "1.23.1",
+   "engine": "simple",
+   "go": "1.22.0",
    "os": "darwin",
-   "revision": "fa5416dc696bf086fc255f36a99e03c2543ff78f"
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
   },
   "Imageset": "",
   "TotalWorkers": 0,
@@ -5321,13 +5315,13 @@
  {
   "WorkerPoolID": "releng-hardware/gecko-t-osx-1400-r8-staging",
   "Implementation": "generic-worker",
-  "Version": "97.0.1",
+  "Version": "60.3.4",
   "Details": {
    "arch": "amd64",
-   "engine": "insecure",
-   "go": "1.26.0",
+   "engine": "simple",
+   "go": "1.22.0",
    "os": "darwin",
-   "revision": "6519c127aad40a47b1412136d9a5797a76eca200"
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
   },
   "Imageset": "",
   "TotalWorkers": 0,
@@ -5351,13 +5345,13 @@
  {
   "WorkerPoolID": "releng-hardware/gecko-t-osx-1500-m4",
   "Implementation": "generic-worker",
-  "Version": "91.0.2",
+  "Version": "95.0.3",
   "Details": {
    "arch": "arm64",
    "engine": "multiuser",
-   "go": "1.25.3",
+   "go": "1.25.5",
    "os": "darwin",
-   "revision": "06628b37211e56a8bd044bf879260bc792c4fa4a"
+   "revision": "a996b8269b1f67ce723d5b18b07019b210d21e99"
   },
   "Imageset": "",
   "TotalWorkers": 0,
@@ -5566,8 +5560,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 430,
-  "TotalCapacity": 430
+  "TotalWorkers": 269,
+  "TotalCapacity": 269
  },
  {
   "WorkerPoolID": "relops-1/decision",
@@ -5611,8 +5605,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 11,
-  "TotalCapacity": 11
+  "TotalWorkers": 13,
+  "TotalCapacity": 13
  },
  {
   "WorkerPoolID": "relops-3/images",
@@ -5641,8 +5635,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 30,
-  "TotalCapacity": 30
+  "TotalWorkers": 12,
+  "TotalCapacity": 12
  },
  {
   "WorkerPoolID": "scriptworker-1/images",
@@ -5656,8 +5650,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 154,
-  "TotalCapacity": 154
+  "TotalWorkers": 79,
+  "TotalCapacity": 79
  },
  {
   "WorkerPoolID": "scriptworker-3/decision",
@@ -5671,8 +5665,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 24,
-  "TotalCapacity": 24
+  "TotalWorkers": 11,
+  "TotalCapacity": 11
  },
  {
   "WorkerPoolID": "scriptworker-3/images",
@@ -5686,8 +5680,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 147,
-  "TotalCapacity": 147
+  "TotalWorkers": 71,
+  "TotalCapacity": 71
  },
  {
   "WorkerPoolID": "scriptworker-k8s/app-services-3-beetmover",
@@ -5817,6 +5811,15 @@
  },
  {
   "WorkerPoolID": "scriptworker-k8s/gecko-1-lando",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-1-shipit",
   "Implementation": "Scriptworker",
   "Version": "",
   "Details": {},
@@ -5960,51 +5963,6 @@
   "TotalCapacity": 0
  },
  {
-  "WorkerPoolID": "scriptworker-k8s/xpi-3-beetmover",
-  "Implementation": "Scriptworker",
-  "Version": "",
-  "Details": {},
-  "Imageset": "",
-  "TotalWorkers": 0,
-  "TotalCapacity": 0
- },
- {
-  "WorkerPoolID": "scriptworker-k8s/xpi-3-github",
-  "Implementation": "Scriptworker",
-  "Version": "",
-  "Details": {},
-  "Imageset": "",
-  "TotalWorkers": 0,
-  "TotalCapacity": 0
- },
- {
-  "WorkerPoolID": "scriptworker-k8s/xpi-3-lando",
-  "Implementation": "Scriptworker",
-  "Version": "",
-  "Details": {},
-  "Imageset": "",
-  "TotalWorkers": 0,
-  "TotalCapacity": 0
- },
- {
-  "WorkerPoolID": "scriptworker-k8s/xpi-3-shipit",
-  "Implementation": "Scriptworker",
-  "Version": "",
-  "Details": {},
-  "Imageset": "",
-  "TotalWorkers": 0,
-  "TotalCapacity": 0
- },
- {
-  "WorkerPoolID": "scriptworker-k8s/xpi-3-signing",
-  "Implementation": "Scriptworker",
-  "Version": "",
-  "Details": {},
-  "Imageset": "",
-  "TotalWorkers": 0,
-  "TotalCapacity": 0
- },
- {
   "WorkerPoolID": "scriptworker-k8s/xpi-t-signing",
   "Implementation": "Scriptworker",
   "Version": "",
@@ -6130,8 +6088,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 12,
-  "TotalCapacity": 12
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
  },
  {
   "WorkerPoolID": "taskgraph-3/decision",
@@ -6145,8 +6103,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 10,
-  "TotalCapacity": 10
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
  },
  {
   "WorkerPoolID": "taskgraph-3/images",
@@ -6160,8 +6118,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 14,
-  "TotalCapacity": 14
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
  },
  {
   "WorkerPoolID": "taskgraph-t/linux-docker",
@@ -6175,8 +6133,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 159,
-  "TotalCapacity": 159
+  "TotalWorkers": 118,
+  "TotalCapacity": 118
  },
  {
   "WorkerPoolID": "taskgraph-t/win11-64-24h2",
@@ -6190,8 +6148,8 @@
    "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
   },
   "Imageset": "unknown",
-  "TotalWorkers": 16,
-  "TotalCapacity": 16
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
  },
  {
   "WorkerPoolID": "taskgraph-t/win11-64-25h2",
@@ -6220,8 +6178,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 13,
-  "TotalCapacity": 13
+  "TotalWorkers": 6,
+  "TotalCapacity": 6
  },
  {
   "WorkerPoolID": "translations-1/b-linux-large-gcp-1tb-32-256-std-d2g",
@@ -6235,8 +6193,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 26,
-  "TotalCapacity": 26
+  "TotalWorkers": 6,
+  "TotalCapacity": 6
  },
  {
   "WorkerPoolID": "translations-1/b-linux-large-gcp-1tb-64-512-d2g",
@@ -6265,8 +6223,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 4,
-  "TotalCapacity": 4
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
  },
  {
   "WorkerPoolID": "translations-1/b-linux-large-gcp-d2g",
@@ -6280,8 +6238,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 75,
-  "TotalCapacity": 75
+  "TotalWorkers": 29,
+  "TotalCapacity": 29
  },
  {
   "WorkerPoolID": "translations-1/b-linux-large-gcp-d2g-1tb",
@@ -6325,8 +6283,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 258,
-  "TotalCapacity": 258
+  "TotalWorkers": 48,
+  "TotalCapacity": 48
  },
  {
   "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g",
@@ -6340,8 +6298,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 325,
-  "TotalCapacity": 325
+  "TotalWorkers": 184,
+  "TotalCapacity": 184
  },
  {
   "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4",
@@ -6355,8 +6313,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 249,
-  "TotalCapacity": 249
+  "TotalWorkers": 43,
+  "TotalCapacity": 43
  },
  {
   "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-1tb",
@@ -6370,8 +6328,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 116,
-  "TotalCapacity": 116
+  "TotalWorkers": 59,
+  "TotalCapacity": 59
  },
  {
   "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-1tb-alpha",
@@ -6430,8 +6388,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 20,
-  "TotalCapacity": 20
+  "TotalWorkers": 11,
+  "TotalCapacity": 11
  },
  {
   "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-2tb-alpha",
@@ -6460,8 +6418,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 35,
-  "TotalCapacity": 35
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
  },
  {
   "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-300gb-alpha",
@@ -6550,8 +6508,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 8,
-  "TotalCapacity": 8
+  "TotalWorkers": 14,
+  "TotalCapacity": 14
  },
  {
   "WorkerPoolID": "translations-1/images",
@@ -6595,8 +6553,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 175,
-  "TotalCapacity": 175
+  "TotalWorkers": 163,
+  "TotalCapacity": 163
  },
  {
   "WorkerPoolID": "xpi-1/decision",
@@ -6610,8 +6568,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 52,
-  "TotalCapacity": 52
+  "TotalWorkers": 75,
+  "TotalCapacity": 75
  },
  {
   "WorkerPoolID": "xpi-1/images",
@@ -6625,8 +6583,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 2,
-  "TotalCapacity": 2
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
  },
  {
   "WorkerPoolID": "xpi-3/b-linux",
@@ -6640,8 +6598,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 41,
-  "TotalCapacity": 41
+  "TotalWorkers": 24,
+  "TotalCapacity": 24
  },
  {
   "WorkerPoolID": "xpi-3/decision",
@@ -6655,8 +6613,8 @@
    "revision": "ddb9ce7efdb98ae2d0917b69778e9f3cd125e07f"
   },
   "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04",
-  "TotalWorkers": 12,
-  "TotalCapacity": 12
+  "TotalWorkers": 10,
+  "TotalCapacity": 10
  },
  {
   "WorkerPoolID": "xpi-3/images",
