@@ -1,0 +1,23 @@
+{
+  "created": "2026-06-30T12:05:53.749Z",
+  "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nScopes in this role are defined in [fxci-config/grants.d](https://github.com/mozilla-releng/fxci-config/blob/main/grants.d).",
+  "expandedScopes": [
+    "assume:login-identity:mozilla-auth0/ad|Mozilla-LDAP|dpalmeiro",
+    "auth:create-client:mozilla-auth0/ad|Mozilla-LDAP|dpalmeiro/*",
+    "auth:delete-client:mozilla-auth0/ad|Mozilla-LDAP|dpalmeiro/*",
+    "auth:list-clients",
+    "auth:reset-access-token:mozilla-auth0/ad|Mozilla-LDAP|dpalmeiro/*",
+    "auth:reset-access-token:project/perf-ai/bot",
+    "auth:update-client:mozilla-auth0/ad|Mozilla-LDAP|dpalmeiro/*",
+    "queue:claimed-list:*",
+    "queue:create-task:highest:built-in/fail",
+    "queue:create-task:highest:built-in/succeed",
+    "queue:get-artifact:login-identity/mozilla-auth0/ad|Mozilla-LDAP|dpalmeiro/*",
+    "queue:pending-list:*"
+  ],
+  "lastModified": "2026-06-30T12:05:53.749Z",
+  "roleId": "login-identity:mozilla-auth0/ad|Mozilla-LDAP|dpalmeiro",
+  "scopes": [
+    "auth:reset-access-token:project/perf-ai/bot"
+  ]
+}

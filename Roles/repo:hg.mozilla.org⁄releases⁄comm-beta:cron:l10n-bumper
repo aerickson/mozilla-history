@@ -41,7 +41,7 @@
     "project:comm:thunderbird:releng:treescript:action:tagging",
     "project:comm:thunderbird:releng:treescript:action:version_bump",
     "project:releng:lando:action:l10n_bump",
-    "project:releng:lando:repo:thunderbird-beta",
+    "project:releng:lando:repo:thunderbird-desktop-beta",
     "project:releng:services/tooltool/api/download/internal",
     "project:releng:services/tooltool/api/download/public",
     "purge-cache:comm-3/*",
@@ -86,10 +86,10 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-06-25T14:27:32.793Z",
+  "lastModified": "2026-06-30T20:57:30.833Z",
   "roleId": "repo:hg.mozilla.org/releases/comm-beta:cron:l10n-bumper",
   "scopes": [
     "project:releng:lando:action:l10n_bump",
-    "project:releng:lando:repo:thunderbird-beta"
+    "project:releng:lando:repo:thunderbird-desktop-beta"
   ]
 }

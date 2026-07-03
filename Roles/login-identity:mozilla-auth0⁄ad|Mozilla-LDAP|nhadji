@@ -1,0 +1,25 @@
+{
+  "created": "2026-06-30T14:15:30.892Z",
+  "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nScopes in this role are defined in [fxci-config/grants.d](https://github.com/mozilla-releng/fxci-config/blob/main/grants.d).",
+  "expandedScopes": [
+    "assume:login-identity:mozilla-auth0/ad|Mozilla-LDAP|nhadji",
+    "auth:create-client:mozilla-auth0/ad|Mozilla-LDAP|nhadji/*",
+    "auth:delete-client:mozilla-auth0/ad|Mozilla-LDAP|nhadji/*",
+    "auth:list-clients",
+    "auth:reset-access-token:mozilla-auth0/ad|Mozilla-LDAP|nhadji/*",
+    "auth:update-client:mozilla-auth0/ad|Mozilla-LDAP|nhadji/*",
+    "queue:claimed-list:*",
+    "queue:create-task:highest:built-in/fail",
+    "queue:create-task:highest:built-in/succeed",
+    "queue:get-artifact:login-identity/mozilla-auth0/ad|Mozilla-LDAP|nhadji/*",
+    "queue:pending-list:*",
+    "secrets:get:project/releng/reviewbot-testing-github-staging-firefox-ssh",
+    "secrets:set:project/releng/reviewbot-testing-github-staging-firefox-ssh"
+  ],
+  "lastModified": "2026-06-30T14:15:30.892Z",
+  "roleId": "login-identity:mozilla-auth0/ad|Mozilla-LDAP|nhadji",
+  "scopes": [
+    "secrets:get:project/releng/reviewbot-testing-github-staging-firefox-ssh",
+    "secrets:set:project/releng/reviewbot-testing-github-staging-firefox-ssh"
+  ]
+}

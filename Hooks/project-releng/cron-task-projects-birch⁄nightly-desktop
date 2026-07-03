@@ -12,10 +12,8 @@
     "tags": {},
     "extra": {},
     "routes": [
-      "notify.email.ciduty+failedcron@mozilla.com.on-failed",
-      "notify.email.ciduty+exceptioncron@mozilla.com.on-exception",
-      "notify.email.sheriffs+failedcron@mozilla.org.on-failed",
-      "notify.email.sheriffs+exceptioncron@mozilla.org.on-exception"
+      "notify.email.release+failedcron@mozilla.com.on-failed",
+      "notify.email.release+exceptioncron@mozilla.com.on-exception"
     ],
     "scopes": [
       "assume:hook-id:project-releng/cron-task-projects-birch/nightly-desktop"
@@ -33,7 +31,7 @@
         "--project",
         "birch",
         "--level",
-        "2",
+        "1",
         "--repository-type",
         "hg",
         "--branch",
@@ -60,7 +58,7 @@
     },
     "priority": "normal",
     "workerType": "build-decision",
-    "schedulerId": "gecko-level-2",
+    "schedulerId": "gecko-level-1",
     "provisionerId": "infra"
   },
   "triggerSchema": {
