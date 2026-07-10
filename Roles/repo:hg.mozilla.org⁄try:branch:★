@@ -66,7 +66,7 @@
     "project:releng:googleplay:product:fenix:dep",
     "project:releng:googleplay:product:focus-android:dep",
     "project:releng:lando:action:*",
-    "project:releng:lando:repo:staging-*",
+    "project:releng:lando:repo:staging-firefox-*",
     "project:releng:microsoftstore:mock",
     "project:releng:services/tooltool/api/download/internal",
     "project:releng:services/tooltool/api/download/public",
@@ -129,7 +129,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-03-20T10:42:43.874Z",
+  "lastModified": "2026-07-03T14:20:38.527Z",
   "roleId": "repo:hg.mozilla.org/try:branch:*",
   "scopes": [
     "assume:project:taskcluster:gecko:level-1-sccache-buckets",
@@ -139,7 +139,7 @@
     "index:insert-task:gecko.cache.level-1.*",
     "index:insert-task:gecko.v2.try.*",
     "project:releng:lando:action:*",
-    "project:releng:lando:repo:staging-*",
+    "project:releng:lando:repo:staging-firefox-*",
     "queue:cancel-task:gecko-level-1/*",
     "queue:create-task:low:bitbar/gecko-t-*",
     "queue:create-task:low:built-in/*",

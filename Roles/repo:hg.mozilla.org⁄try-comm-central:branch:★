@@ -37,6 +37,8 @@
     "project:comm:thunderbird:releng:treescript:action:push",
     "project:comm:thunderbird:releng:treescript:action:tagging",
     "project:comm:thunderbird:releng:treescript:action:version_bump",
+    "project:releng:lando:action:*",
+    "project:releng:lando:repo:thunderbird-infra-testing-main",
     "project:releng:services/tooltool/api/download/internal",
     "project:releng:services/tooltool/api/download/public",
     "purge-cache:comm-1/*",
@@ -73,7 +75,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-03-20T10:42:24.863Z",
+  "lastModified": "2026-07-06T15:13:34.170Z",
   "roleId": "repo:hg.mozilla.org/try-comm-central:branch:*",
   "scopes": [
     "assume:project:taskcluster:comm:level-1-sccache-buckets",
@@ -82,6 +84,8 @@
     "in-tree:hook-action:project-comm/in-tree-action-1-*",
     "index:insert-task:comm.cache.level-1.*",
     "index:insert-task:comm.v2.try-comm-central.*",
+    "project:releng:lando:action:*",
+    "project:releng:lando:repo:thunderbird-infra-testing-main",
     "queue:cancel-task:comm-level-1/*",
     "queue:create-task:low:built-in/*",
     "queue:create-task:low:comm-1/*",

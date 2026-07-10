@@ -1,10 +1,10 @@
 {
   "hookGroupId": "project-translations",
-  "hookId": "in-tree-action-1-generic/c38484aa6d",
+  "hookId": "in-tree-pr-action-1-generic/e9a57629e1",
   "metadata": {
-    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAction task generic at level 1, with `.taskcluster.yml` hash c38484aa6d.\n\nFor (project, branch) combinations:\ntranslations, branch: 'dev-thai'\ntranslations, branch: 'dev_bcai_fp16'\ntranslations, branch: 'dev_continuation_init'\ntranslations, branch: 'dev_datasets'\ntranslations, branch: 'dev_eval_google_unescape'\ntranslations, branch: 'dev_final_eval_step'\ntranslations, branch: 'dev_fix_evals'\ntranslations, branch: 'dev_fix_metricx'\ntranslations, branch: 'dev_hbs'\ntranslations, branch: 'dev_iberian'\ntranslations, branch: 'dev_next26'\ntranslations, branch: 'dev_remove_neulab'\ntranslations, branch: 'dev_student_finetuning2'\ntranslations, branch: 'dev_topk_sampling'\ntranslations, branch: 'dev_uv'\ntranslations, branch: 'dev_validation_sets'\ntranslations, branch: 'dev_vocab'\ntranslations, branch: 'dev_zt'\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
+    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nPR action task generic at level 1, with `.taskcluster.yml` hash e9a57629e1.\n\nFor (project, branch) combinations:\ntranslations, branch: 'main'\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
     "emailOnError": true,
-    "name": "project-translations/in-tree-action-1-generic/c38484aa6d",
+    "name": "project-translations/in-tree-pr-action-1-generic/e9a57629e1",
     "owner": "taskcluster-notifications@mozilla.com"
   },
   "schedule": [],
@@ -448,7 +448,7 @@
         "title": "${payload.decision.action.title}",
         "symbol": "${payload.decision.action.symbol}",
         "cb_name": "${payload.decision.action.cb_name}",
-        "repo_scope": "assume:repo:${payload.decision.repository.url[8:]}:action:generic",
+        "repo_scope": "assume:repo:${payload.decision.repository.base_url[8:]}:action:generic",
         "action_perm": "generic",
         "description": "${payload.decision.action.description}",
         "taskGroupId": "${payload.decision.action.taskGroupId}"
@@ -459,7 +459,7 @@
       "ownTaskId": {
         "$eval": "taskId"
       },
-      "tasks_for": "action",
+      "tasks_for": "pr-action",
       "parameters": {
         "$eval": "payload.decision['parameters']"
       },

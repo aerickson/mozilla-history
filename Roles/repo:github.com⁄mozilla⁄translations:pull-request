@@ -65,9 +65,11 @@
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
-    "secrets:get:project/taskcluster/gecko/hgmointernal"
+    "secrets:get:project/taskcluster/gecko/hgmointernal",
+    "secrets:get:project/translations/level-1/*",
+    "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2025-09-04T13:09:38.111Z",
+  "lastModified": "2026-07-09T17:45:02.232Z",
   "roleId": "repo:github.com/mozilla/translations:pull-request",
   "scopes": [
     "in-tree:hook-action:project-translations/in-tree-pr-action-1-*",
@@ -81,6 +83,8 @@
     "queue:route:index.translations.v2.translations-pr.*",
     "queue:route:tc-treeherder-stage.v2.translations-pr.*",
     "queue:route:tc-treeherder.v2.translations-pr.*",
-    "queue:seal-task-group:translations-level-1/*"
+    "queue:seal-task-group:translations-level-1/*",
+    "secrets:get:project/translations/level-1/*",
+    "secrets:get:project/translations/level-any/*"
   ]
 }
