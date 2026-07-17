@@ -5,7 +5,7 @@
       "reregistrationTimeout": 345600,
       "queueInactivityTimeout": 7200
     },
-    "maxCapacity": 5,
+    "maxCapacity": 1000,
     "minCapacity": 0,
     "scalingRatio": 1,
     "launchConfigs": [
@@ -18,7 +18,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 60,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
+              "sourceImage": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -46,9 +46,9 @@
                 "allowGPUs": false,
                 "enableD2G": true,
                 "allowPrivileged": false,
-                "allowInteractive": true,
+                "allowInteractive": false,
                 "allowLoopbackAudio": false,
-                "allowLoopbackVideo": true,
+                "allowLoopbackVideo": false,
                 "allowHostSharedMemory": false
               },
               "wstAudience": "firefoxcitc",
@@ -59,8 +59,8 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 300,
-              "enableInteractive": true,
-              "livelogExecutable": "/usr/local/bin/livelog",
+              "enableInteractive": false,
+              "livelogExecutable": "/bin/false",
               "numberOfTasksToRun": 0,
               "taskclusterProxyPort": 80,
               "disableNativePayloads": true,
@@ -74,7 +74,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-61aef9e85b9f6b8abeb8",
+          "launchConfigId": "lc-53596e95c0b2e033f440",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -96,7 +96,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 60,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
+              "sourceImage": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -124,9 +124,9 @@
                 "allowGPUs": false,
                 "enableD2G": true,
                 "allowPrivileged": false,
-                "allowInteractive": true,
+                "allowInteractive": false,
                 "allowLoopbackAudio": false,
-                "allowLoopbackVideo": true,
+                "allowLoopbackVideo": false,
                 "allowHostSharedMemory": false
               },
               "wstAudience": "firefoxcitc",
@@ -137,8 +137,8 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 300,
-              "enableInteractive": true,
-              "livelogExecutable": "/usr/local/bin/livelog",
+              "enableInteractive": false,
+              "livelogExecutable": "/bin/false",
               "numberOfTasksToRun": 0,
               "taskclusterProxyPort": 80,
               "disableNativePayloads": true,
@@ -152,7 +152,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-719b5e28373738b3ffdc",
+          "launchConfigId": "lc-a7aab12321d6106d140f",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -174,7 +174,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 60,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
+              "sourceImage": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -202,9 +202,9 @@
                 "allowGPUs": false,
                 "enableD2G": true,
                 "allowPrivileged": false,
-                "allowInteractive": true,
+                "allowInteractive": false,
                 "allowLoopbackAudio": false,
-                "allowLoopbackVideo": true,
+                "allowLoopbackVideo": false,
                 "allowHostSharedMemory": false
               },
               "wstAudience": "firefoxcitc",
@@ -215,8 +215,8 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 300,
-              "enableInteractive": true,
-              "livelogExecutable": "/usr/local/bin/livelog",
+              "enableInteractive": false,
+              "livelogExecutable": "/bin/false",
               "numberOfTasksToRun": 0,
               "taskclusterProxyPort": 80,
               "disableNativePayloads": true,
@@ -230,7 +230,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-7aaf7bc88addc9b46941",
+          "launchConfigId": "lc-488b626d7631994e2fee",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -252,7 +252,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 60,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
+              "sourceImage": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -280,9 +280,9 @@
                 "allowGPUs": false,
                 "enableD2G": true,
                 "allowPrivileged": false,
-                "allowInteractive": true,
+                "allowInteractive": false,
                 "allowLoopbackAudio": false,
-                "allowLoopbackVideo": true,
+                "allowLoopbackVideo": false,
                 "allowHostSharedMemory": false
               },
               "wstAudience": "firefoxcitc",
@@ -293,8 +293,8 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 300,
-              "enableInteractive": true,
-              "livelogExecutable": "/usr/local/bin/livelog",
+              "enableInteractive": false,
+              "livelogExecutable": "/bin/false",
               "numberOfTasksToRun": 0,
               "taskclusterProxyPort": 80,
               "disableNativePayloads": true,
@@ -308,7 +308,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-1eaf30450aa220c4f632",
+          "launchConfigId": "lc-29675319ebf7f0ba428b",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -330,7 +330,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 60,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
+              "sourceImage": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -358,9 +358,9 @@
                 "allowGPUs": false,
                 "enableD2G": true,
                 "allowPrivileged": false,
-                "allowInteractive": true,
+                "allowInteractive": false,
                 "allowLoopbackAudio": false,
-                "allowLoopbackVideo": true,
+                "allowLoopbackVideo": false,
                 "allowHostSharedMemory": false
               },
               "wstAudience": "firefoxcitc",
@@ -371,8 +371,8 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 300,
-              "enableInteractive": true,
-              "livelogExecutable": "/usr/local/bin/livelog",
+              "enableInteractive": false,
+              "livelogExecutable": "/bin/false",
               "numberOfTasksToRun": 0,
               "taskclusterProxyPort": 80,
               "disableNativePayloads": true,
@@ -386,7 +386,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-bb3c65cd579c591d152c",
+          "launchConfigId": "lc-4e7972f3891f9e3b12ca",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -408,7 +408,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 60,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
+              "sourceImage": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -436,9 +436,9 @@
                 "allowGPUs": false,
                 "enableD2G": true,
                 "allowPrivileged": false,
-                "allowInteractive": true,
+                "allowInteractive": false,
                 "allowLoopbackAudio": false,
-                "allowLoopbackVideo": true,
+                "allowLoopbackVideo": false,
                 "allowHostSharedMemory": false
               },
               "wstAudience": "firefoxcitc",
@@ -449,8 +449,8 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 300,
-              "enableInteractive": true,
-              "livelogExecutable": "/usr/local/bin/livelog",
+              "enableInteractive": false,
+              "livelogExecutable": "/bin/false",
               "numberOfTasksToRun": 0,
               "taskclusterProxyPort": 80,
               "disableNativePayloads": true,
@@ -464,7 +464,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-0a586bc989eec4566786",
+          "launchConfigId": "lc-b80681e7ac666d2b9769",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -486,7 +486,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 60,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-05-04"
+              "sourceImage": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-05-04"
             }
           },
           {
@@ -514,9 +514,9 @@
                 "allowGPUs": false,
                 "enableD2G": true,
                 "allowPrivileged": false,
-                "allowInteractive": true,
+                "allowInteractive": false,
                 "allowLoopbackAudio": false,
-                "allowLoopbackVideo": true,
+                "allowLoopbackVideo": false,
                 "allowHostSharedMemory": false
               },
               "wstAudience": "firefoxcitc",
@@ -527,8 +527,8 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 300,
-              "enableInteractive": true,
-              "livelogExecutable": "/usr/local/bin/livelog",
+              "enableInteractive": false,
+              "livelogExecutable": "/bin/false",
               "numberOfTasksToRun": 0,
               "taskclusterProxyPort": 80,
               "disableNativePayloads": true,
@@ -542,7 +542,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-4ecf3c13e80320cd0d09",
+          "launchConfigId": "lc-7a57a42f861cb94aff36",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -557,13 +557,13 @@
       }
     ]
   },
-  "created": "2026-07-09T19:08:45.244Z",
+  "created": "2026-07-13T21:08:27.482Z",
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nWorker for Firefox automation.",
   "emailOnError": true,
-  "lastModified": "2026-07-09T19:08:45.244Z",
+  "lastModified": "2026-07-13T21:08:27.482Z",
   "owner": "release+tc-workers@mozilla.com",
-  "providerId": "fxci-level1-gcp",
+  "providerId": "fxci-level3-gcp",
   "requestedCapacity": 0,
   "requestedCount": 0,
   "runningCapacity": 0,
@@ -572,5 +572,5 @@
   "stoppedCount": 0,
   "stoppingCapacity": 0,
   "stoppingCount": 0,
-  "workerPoolId": "gecko-2/b-linux-dockerupdatebot-amd"
+  "workerPoolId": "gecko-3/b-linux-docker-updatebot-amd"
 }

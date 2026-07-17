@@ -2,15 +2,15 @@
   "bindings": [
     {
       "exchange": "exchange/taskcluster-github/v1/pull-request",
-      "routingKeyPattern": "#.mozilla-firefox.#.opened"
+      "routingKeyPattern": "primary.mozilla-firefox.firefox.opened"
     },
     {
       "exchange": "exchange/taskcluster-github/v1/pull-request",
-      "routingKeyPattern": "#.mozilla-firefox.#.reopened"
+      "routingKeyPattern": "primary.mozilla-firefox.firefox.reopened"
     },
     {
       "exchange": "exchange/taskcluster-github/v1/pull-request",
-      "routingKeyPattern": "#.mozilla-firefox.#.synchronize"
+      "routingKeyPattern": "primary.mozilla-firefox.firefox.synchronize"
     }
   ],
   "hookGroupId": "project-engwf",
@@ -105,11 +105,6 @@
           "repository"
         ],
         "properties": {
-          "action": {
-            "type": "string",
-            "pattern": "^(opened|reopened|synchronize)$",
-            "description": "Action on the PR"
-          },
           "number": {
             "type": "integer"
           },

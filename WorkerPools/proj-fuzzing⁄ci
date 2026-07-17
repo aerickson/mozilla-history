@@ -20,14 +20,6 @@
               "diskSizeGb": 60,
               "sourceImage": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl"
             }
-          },
-          {
-            "type": "SCRATCH",
-            "interface": "NVME",
-            "autoDelete": true,
-            "initializeParams": {
-              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
-            }
           }
         ],
         "region": "us-central1",
@@ -57,7 +49,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-12c7347163bf4d854caf",
+          "launchConfigId": "lc-ad4f76efac498d93c413",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -80,14 +72,6 @@
             "initializeParams": {
               "diskSizeGb": 60,
               "sourceImage": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl"
-            }
-          },
-          {
-            "type": "SCRATCH",
-            "interface": "NVME",
-            "autoDelete": true,
-            "initializeParams": {
-              "diskType": "zones/us-central1-b/diskTypes/local-ssd"
             }
           }
         ],
@@ -118,7 +102,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-065746b452679978b77a",
+          "launchConfigId": "lc-0afbf099f846b83d90b1",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -141,14 +125,6 @@
             "initializeParams": {
               "diskSizeGb": 60,
               "sourceImage": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl"
-            }
-          },
-          {
-            "type": "SCRATCH",
-            "interface": "NVME",
-            "autoDelete": true,
-            "initializeParams": {
-              "diskType": "zones/us-central1-c/diskTypes/local-ssd"
             }
           }
         ],
@@ -179,7 +155,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-43d1996de46528b0316f",
+          "launchConfigId": "lc-933f72df46a70dc0f713",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -202,14 +178,6 @@
             "initializeParams": {
               "diskSizeGb": 60,
               "sourceImage": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl"
-            }
-          },
-          {
-            "type": "SCRATCH",
-            "interface": "NVME",
-            "autoDelete": true,
-            "initializeParams": {
-              "diskType": "zones/us-central1-f/diskTypes/local-ssd"
             }
           }
         ],
@@ -240,7 +208,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-8d8d32f0e8302988c5f4",
+          "launchConfigId": "lc-5d6048ad6ee9a4e06382",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -263,14 +231,6 @@
             "initializeParams": {
               "diskSizeGb": 60,
               "sourceImage": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl"
-            }
-          },
-          {
-            "type": "SCRATCH",
-            "interface": "NVME",
-            "autoDelete": true,
-            "initializeParams": {
-              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
             }
           }
         ],
@@ -301,7 +261,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-bdf72fdd73dbac78b356",
+          "launchConfigId": "lc-6cb80f12057530e897b7",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -320,7 +280,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nFuzzing CI pool",
   "emailOnError": false,
-  "lastModified": "2026-06-18T15:56:44.718Z",
+  "lastModified": "2026-07-10T14:18:58.693Z",
   "owner": "fuzzing+taskcluster@mozilla.com",
   "providerId": "fxci-level1-gcp",
   "requestedCapacity": 0,

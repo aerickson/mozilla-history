@@ -2,7 +2,15 @@
   "bindings": [
     {
       "exchange": "exchange/taskcluster-github/v1/pull-request",
-      "routingKeyPattern": "#.infra-testing.#"
+      "routingKeyPattern": "primary.mozilla-firefox.infra-testing.opened"
+    },
+    {
+      "exchange": "exchange/taskcluster-github/v1/pull-request",
+      "routingKeyPattern": "primary.mozilla-firefox.infra-testing.reopened"
+    },
+    {
+      "exchange": "exchange/taskcluster-github/v1/pull-request",
+      "routingKeyPattern": "primary.mozilla-firefox.infra-testing.synchronize"
     }
   ],
   "hookGroupId": "project-engwf",
@@ -92,17 +100,11 @@
       "body": {
         "type": "object",
         "required": [
-          "action",
           "number",
           "pull_request",
           "repository"
         ],
         "properties": {
-          "action": {
-            "type": "string",
-            "pattern": "^(opened|reopened|synchronize)$",
-            "description": "Action on the PR"
-          },
           "number": {
             "type": "integer"
           },

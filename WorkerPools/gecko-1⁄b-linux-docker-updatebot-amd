@@ -5,7 +5,7 @@
       "reregistrationTimeout": 345600,
       "queueInactivityTimeout": 7200
     },
-    "maxCapacity": 5,
+    "maxCapacity": 1000,
     "minCapacity": 0,
     "scalingRatio": 1,
     "launchConfigs": [
@@ -74,7 +74,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-de1f99f4ee16fbfe3bbb",
+          "launchConfigId": "lc-dc856e593febf0c050cd",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -152,7 +152,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-02228e84834c49884e92",
+          "launchConfigId": "lc-c702d1cef55d0650b1b5",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -230,7 +230,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-3cade19f84b0f86335a5",
+          "launchConfigId": "lc-c4958252ed7638a8d0a9",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -308,7 +308,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-9f83b2e15e102d0ec56a",
+          "launchConfigId": "lc-a755f2aad206d41735ae",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -386,7 +386,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-edee4e1993ac82cbb023",
+          "launchConfigId": "lc-06ca532afcaebcabebc5",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -464,7 +464,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-5f8a0c3eec3f0fbb5581",
+          "launchConfigId": "lc-77473a36afb7043f4aae",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -542,7 +542,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-9bfd3608ee5f7cded60f",
+          "launchConfigId": "lc-bd5bf2c6d341f5667231",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -557,11 +557,11 @@
       }
     ]
   },
-  "created": "2026-07-09T19:08:46.027Z",
+  "created": "2026-07-13T21:08:26.389Z",
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nWorker for Firefox automation.",
   "emailOnError": true,
-  "lastModified": "2026-07-09T19:08:46.027Z",
+  "lastModified": "2026-07-13T21:08:26.389Z",
   "owner": "release+tc-workers@mozilla.com",
   "providerId": "fxci-level1-gcp",
   "requestedCapacity": 0,
@@ -572,5 +572,5 @@
   "stoppedCount": 0,
   "stoppingCapacity": 0,
   "stoppingCount": 0,
-  "workerPoolId": "gecko-1/b-linux-dockerupdatebot-amd"
+  "workerPoolId": "gecko-1/b-linux-docker-updatebot-amd"
 }
