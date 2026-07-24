@@ -28,7 +28,7 @@
     "queue:route:index.xpi.cache.head.*",
     "queue:route:index.xpi.cache.level-1.*",
     "queue:route:index.xpi.cache.pr.*",
-    "queue:route:index.xpi.v2.*",
+    "queue:route:index.xpi.v2.xpi-manifest-pr.*",
     "queue:route:index.xpi.xpi-manifest.cache.level-1.*",
     "queue:route:notify.email.*",
     "queue:scheduler-id:taskcluster-github",
@@ -40,7 +40,7 @@
     "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ],
-  "lastModified": "2025-09-04T13:12:12.742Z",
+  "lastModified": "2026-07-23T20:38:20.142Z",
   "roleId": "repo:github.com/mozilla-extensions/xpi-manifest:pull-request",
   "scopes": [
     "docker-worker:cache:xpi-level-1-*",
@@ -68,7 +68,7 @@
     "queue:route:index.xpi.cache.head.*",
     "queue:route:index.xpi.cache.level-1.*",
     "queue:route:index.xpi.cache.pr.*",
-    "queue:route:index.xpi.v2.*",
+    "queue:route:index.xpi.v2.xpi-manifest-pr.*",
     "queue:route:index.xpi.xpi-manifest.cache.level-1.*",
     "queue:route:notify.email.*",
     "queue:scheduler-id:taskcluster-github",

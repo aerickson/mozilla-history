@@ -19,7 +19,6 @@
     "index:insert-task:mozilla.cache.level-1.*",
     "index:insert-task:mozilla.cache.pr.*",
     "index:insert-task:mozilla.v2.mozilla-releng-pr.*",
-    "index:insert-task:mozilla.v2.mozilla-releng.*",
     "project:adhoc:releng:signing:cert:dep-signing",
     "queue:cancel-task-group:adhoc-level-1/*",
     "queue:cancel-task-group:lint/*",
@@ -54,7 +53,6 @@
     "queue:route:index.mozilla.cache.level-1.*",
     "queue:route:index.mozilla.cache.pr.*",
     "queue:route:index.mozilla.v2.mozilla-releng-pr.*",
-    "queue:route:index.mozilla.v2.mozilla-releng.*",
     "queue:route:notify.email.*",
     "queue:scheduler-id:adhoc-level-1",
     "queue:scheduler-id:mozilla-level-1",
@@ -66,7 +64,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-02-06T14:00:35.795Z",
+  "lastModified": "2026-07-23T20:38:24.299Z",
   "roleId": "repo:github.com/mozilla-releng/staging-adhoc-signing:pull-request",
   "scopes": [
     "index:insert-task:adhoc.cache.head.*",
@@ -86,7 +84,6 @@
     "queue:route:index.adhoc.cache.pr.*",
     "queue:route:index.adhoc.v2.staging-adhoc-manifest.*",
     "queue:route:index.adhoc.v2.staging-adhoc-signing-pr.*",
-    "queue:route:index.adhoc.v2.staging-adhoc-signing.*",
     "queue:route:notify.email.*",
     "queue:seal-task-group:adhoc-level-1/*"
   ]

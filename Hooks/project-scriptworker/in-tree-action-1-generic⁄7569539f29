@@ -1,18 +1,18 @@
 {
-  "hookGroupId": "project-releng",
-  "hookId": "in-tree-pr-action-1-generic/75eb3ed135",
+  "hookGroupId": "project-scriptworker",
+  "hookId": "in-tree-action-1-generic/7569539f29",
   "metadata": {
-    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nPR action task generic at level 1, with `.taskcluster.yml` hash 75eb3ed135.\n\nFor (project, branch) combinations:\n\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
+    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAction task generic at level 1, with `.taskcluster.yml` hash 7569539f29.\n\nFor (project, branch) combinations:\n\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
     "emailOnError": true,
-    "name": "project-releng/in-tree-pr-action-1-generic/75eb3ed135",
+    "name": "project-scriptworker/in-tree-action-1-generic/7569539f29",
     "owner": "taskcluster-notifications@mozilla.com"
   },
   "schedule": [],
   "task": {
     "in": {
-      "$if": "(tasks_for == \"github-pull-request\" \u0026\u0026 event.action in [\"opened\", \"reopened\", \"synchronize\"]) || (tasks_for in [\"action\", \"cron\"]) || (tasks_for == \"github-push\" \u0026\u0026 event.ref in [\"refs/heads/main\", \"refs/heads/production\", \"refs/heads/dev\"])\n",
-      "then": {
-        "in": {
+      "in": {
+        "$if": "tasks_for in [\"action\", \"cron\"] || (tasks_for == \"github-pull-request\" \u0026\u0026 pullRequestAction in [\"opened\", \"reopened\", \"synchronize\"]) || (tasks_for == \"github-push\"\n    \u0026\u0026 head_branch[:11] == \"refs/heads/\"\n    \u0026\u0026 (head_branch[11:] in [\"master\", \"production\", \"dev\"]\n        || (head_branch[11:22] == \"production-\" \u0026\u0026 head_branch[22:] in allScripts)\n        || (head_branch[11:15] == \"dev-\" \u0026\u0026 head_branch[15:] in allScripts)\n        )\n    )\n",
+        "then": {
           "in": {
             "tags": {
               "$if": "tasks_for in [\"github-push\", \"github-pull-request\"]",
@@ -133,19 +133,19 @@
                   {
                     "REPOSITORIES": {
                       "$json": {
-                        "${repo.name}": "${repo.description}"
+                        "scriptworker": "Scriptworker-scripts"
                       }
                     },
-                    "${repo.prefix}_HEAD_REF": "${head_branch}",
-                    "${repo.prefix}_HEAD_REV": "${head_sha}",
-                    "${repo.prefix}_BASE_REPOSITORY": "${baseRepoUrl}",
-                    "${repo.prefix}_HEAD_REPOSITORY": "${repoUrl}",
-                    "${repo.prefix}_REPOSITORY_TYPE": "git"
+                    "SCRIPTWORKER_HEAD_REF": "${head_branch}",
+                    "SCRIPTWORKER_HEAD_REV": "${head_sha}",
+                    "SCRIPTWORKER_BASE_REPOSITORY": "${baseRepoUrl}",
+                    "SCRIPTWORKER_HEAD_REPOSITORY": "${repoUrl}",
+                    "SCRIPTWORKER_REPOSITORY_TYPE": "git"
                   },
                   {
                     "$if": "tasks_for in [\"github-pull-request\"]",
                     "then": {
-                      "${repo.prefix}_PULL_REQUEST_NUMBER": "${event.pull_request.number}"
+                      "SCRIPTWORKER_PULL_REQUEST_NUMBER": "${event.pull_request.number}"
                     }
                   },
                   {
@@ -167,10 +167,10 @@
                   }
                 ]
               },
-              "image": "mozillareleases/taskgraph:decision-v24.1.1@sha256:c2cf963f7621b0f64dc142a04ddcc179d36afdd05c6dc1c2d198d97b55ecb394",
+              "image": "mozillareleases/taskgraph:decision-v24.2.0@sha256:08ee0e7c71ac117a848efef3f929f309d6b49fa84067e5a98f6db6801346e8a2",
               "command": [
-                "/usr/local/bin/run-task",
-                "--${repo.name}-checkout=/builds/worker/checkouts/src",
+                "run-task",
+                "--scriptworker-checkout=/builds/worker/checkouts/src",
                 "--task-cwd=/builds/worker/checkouts/src",
                 "--",
                 "bash",
@@ -178,7 +178,7 @@
                 {
                   "in": {
                     "$if": "tasks_for == \"action\"",
-                    "else": "ln -s /builds/worker/artifacts artifacts \u0026\u0026 taskgraph decision --pushlog-id='0' --pushdate='0' --project='${project}' --message=\"\" --owner='${ownerEmail}' --level='${level}' --base-repository=\"${'$'+repo.prefix}_BASE_REPOSITORY\" --head-repository=\"${'$'+repo.prefix}_HEAD_REPOSITORY\" --head-ref=\"${'$'+repo.prefix}_HEAD_REF\" --head-rev=\"${'$'+repo.prefix}_HEAD_REV\" --repository-type=\"${'$'+repo.prefix}_REPOSITORY_TYPE\" --tasks-for='${tasks_for}' ${extraArgs}\n",
+                    "else": "ln -s /builds/worker/artifacts artifacts \u0026\u0026 taskgraph decision --pushlog-id='0' --pushdate='0' --project='${project}' --message=\"\" --owner='${ownerEmail}' --level='${level}' --base-repository=\"$SCRIPTWORKER_BASE_REPOSITORY\" --head-repository=\"$SCRIPTWORKER_HEAD_REPOSITORY\" --head-ref=\"$SCRIPTWORKER_HEAD_REF\" --head-rev=\"$SCRIPTWORKER_HEAD_REV\" --repository-type=\"$SCRIPTWORKER_REPOSITORY_TYPE\" --tasks-for='${tasks_for}' ${extraArgs}\n",
                     "then": "cd /builds/worker/checkouts/src \u0026\u0026 ln -s /builds/worker/artifacts artifacts \u0026\u0026 taskgraph action-callback\n"
                   },
                   "$let": {
@@ -228,7 +228,7 @@
                     "$if": "tasks_for == \"action\"",
                     "else": {
                       "name": "Decision Task for cron job ${cron.job_name}",
-                      "description": "Created by a [cron task](https://firefox-ci-tc.services.mozilla.com/tasks/${cron.task_id})"
+                      "description": "Created by a [cron task](https://tools.taskcluster.net/tasks/${cron.task_id})"
                     },
                     "then": {
                       "name": "Action: ${action.title}",
@@ -255,102 +255,116 @@
           },
           "$let": {
             "level": {
-              "$if": "tasks_for in [\"github-push\", \"cron\", \"action\"] \u0026\u0026 repoUrl == repo.canonicalUrl",
+              "$if": "tasks_for in [\"github-push\", \"cron\", \"action\"] \u0026\u0026 repoUrl == \"https://github.com/mozilla-releng/scriptworker-scripts\"",
               "else": 1,
               "then": 3
             }
           }
-        },
-        "$let": {
-          "repo": {
-            "name": "shipit",
-            "prefix": "SHIPIT",
-            "description": "Shipit",
-            "canonicalUrl": "https://github.com/mozilla-releng/shipit"
-          },
-          "project": {
-            "$if": "tasks_for == \"github-push\"",
-            "else": {
-              "$if": "tasks_for == \"github-pull-request\"",
-              "else": {
-                "$if": "tasks_for in [\"cron\", \"action\"]",
-                "then": "${repository.project}"
-              },
-              "then": "${event.pull_request.head.repo.name}"
-            },
-            "then": "${event.repository.name}"
-          },
-          "repoUrl": {
-            "$if": "tasks_for == \"github-push\"",
-            "else": {
-              "$if": "tasks_for == \"github-pull-request\"",
-              "else": {
-                "$if": "tasks_for in [\"cron\", \"action\"]",
-                "then": "${repository.url}"
-              },
-              "then": "${event.pull_request.head.repo.html_url}"
-            },
-            "then": "${event.repository.html_url}"
-          },
-          "head_sha": {
-            "$if": "tasks_for == \"github-push\"",
-            "else": {
-              "$if": "tasks_for == \"github-pull-request\"",
-              "else": {
-                "$if": "tasks_for in [\"cron\", \"action\"]",
-                "then": "${push.revision}"
-              },
-              "then": "${event.pull_request.head.sha}"
-            },
-            "then": "${event.after}"
-          },
-          "ownTaskId": {
-            "$if": "\"github\" in tasks_for",
-            "else": {
-              "$if": "tasks_for in [\"cron\", \"action\"]",
-              "then": "${ownTaskId}"
-            },
-            "then": {
-              "$eval": "as_slugid(\"decision_task\")"
-            }
-          },
-          "ownerEmail": {
-            "$if": "tasks_for == \"github-push\"",
-            "else": {
-              "$if": "tasks_for == \"github-pull-request\"",
-              "else": {
-                "$if": "tasks_for in [\"cron\", \"action\"]",
-                "then": "${tasks_for}@noreply.mozilla.org"
-              },
-              "then": "${event.pull_request.user.login}@users.noreply.github.com"
-            },
-            "then": "${event.pusher.email}"
-          },
-          "baseRepoUrl": {
-            "$if": "tasks_for == \"github-push\"",
-            "else": {
-              "$if": "tasks_for == \"github-pull-request\"",
-              "else": {
-                "$if": "tasks_for in [\"cron\", \"action\"]",
-                "then": "${repository.url}"
-              },
-              "then": "${event.pull_request.base.repo.html_url}"
-            },
-            "then": "${event.repository.html_url}"
-          },
-          "head_branch": {
+        }
+      },
+      "$let": {
+        "project": {
+          "$if": "tasks_for == \"github-push\"",
+          "else": {
             "$if": "tasks_for == \"github-pull-request\"",
             "else": {
-              "$if": "tasks_for == \"github-push\"",
-              "else": {
-                "$if": "tasks_for in [\"cron\", \"action\"]",
-                "then": "${push.branch}"
-              },
-              "then": "${event.ref}"
+              "$if": "tasks_for in [\"cron\", \"action\"]",
+              "then": "${repository.project}"
             },
-            "then": "${event.pull_request.head.ref}"
+            "then": "${event.pull_request.head.repo.name}"
           },
-          "trustDomain": "releng"
+          "then": "${event.repository.name}"
+        },
+        "repoUrl": {
+          "$if": "tasks_for == \"github-push\"",
+          "else": {
+            "$if": "tasks_for == \"github-pull-request\"",
+            "else": {
+              "$if": "tasks_for in [\"cron\", \"action\"]",
+              "then": "${repository.url}"
+            },
+            "then": "${event.pull_request.head.repo.html_url}"
+          },
+          "then": "${event.repository.html_url}"
+        },
+        "head_sha": {
+          "$if": "tasks_for == \"github-push\"",
+          "else": {
+            "$if": "tasks_for == \"github-pull-request\"",
+            "else": {
+              "$if": "tasks_for in [\"cron\", \"action\"]",
+              "then": "${push.revision}"
+            },
+            "then": "${event.pull_request.head.sha}"
+          },
+          "then": "${event.after}"
+        },
+        "ownTaskId": {
+          "$if": "\"github\" in tasks_for",
+          "else": {
+            "$if": "tasks_for in [\"cron\", \"action\"]",
+            "then": "${ownTaskId}"
+          },
+          "then": {
+            "$eval": "as_slugid(\"decision_task\")"
+          }
+        },
+        "allScripts": [
+          "addonscript",
+          "balrogscript",
+          "beetmoverscript",
+          "bitrisescript",
+          "bouncerscript",
+          "githubscript",
+          "landoscript",
+          "pushapkscript",
+          "pushflatpakscript",
+          "pushmsixscript",
+          "shipitscript",
+          "signingscript",
+          "treescript"
+        ],
+        "ownerEmail": {
+          "$if": "tasks_for == \"github-push\"",
+          "else": {
+            "$if": "tasks_for == \"github-pull-request\"",
+            "else": {
+              "$if": "tasks_for in [\"cron\", \"action\"]",
+              "then": "${tasks_for}@noreply.mozilla.org"
+            },
+            "then": "${event.pull_request.user.login}@users.noreply.github.com"
+          },
+          "then": "${event.pusher.email}"
+        },
+        "baseRepoUrl": {
+          "$if": "tasks_for == \"github-push\"",
+          "else": {
+            "$if": "tasks_for == \"github-pull-request\"",
+            "else": {
+              "$if": "tasks_for in [\"cron\", \"action\"]",
+              "then": "${repository.url}"
+            },
+            "then": "${event.pull_request.base.repo.html_url}"
+          },
+          "then": "${event.repository.html_url}"
+        },
+        "head_branch": {
+          "$if": "tasks_for == \"github-pull-request\"",
+          "else": {
+            "$if": "tasks_for == \"github-push\"",
+            "else": {
+              "$if": "tasks_for in [\"cron\", \"action\"]",
+              "then": "${push.branch}"
+            },
+            "then": "${event.ref}"
+          },
+          "then": "${event.pull_request.head.ref}"
+        },
+        "trustDomain": "scriptworker",
+        "pullRequestAction": {
+          "$if": "tasks_for == \"github-pull-request\"",
+          "else": "UNDEFINED",
+          "then": "${event.action}"
         }
       }
     },
@@ -366,7 +380,7 @@
         "title": "${payload.decision.action.title}",
         "symbol": "${payload.decision.action.symbol}",
         "cb_name": "${payload.decision.action.cb_name}",
-        "repo_scope": "assume:repo:${payload.decision.repository.base_url[8:]}:action:generic",
+        "repo_scope": "assume:repo:${payload.decision.repository.url[8:]}:action:generic",
         "action_perm": "generic",
         "description": "${payload.decision.action.description}",
         "taskGroupId": "${payload.decision.action.taskGroupId}"
@@ -377,7 +391,7 @@
       "ownTaskId": {
         "$eval": "taskId"
       },
-      "tasks_for": "pr-action",
+      "tasks_for": "action",
       "parameters": {
         "$eval": "payload.decision['parameters']"
       },
