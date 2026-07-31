@@ -25,6 +25,8 @@
     "queue:create-task:low:mozilla-1/*",
     "queue:create-task:low:mozilla-t/*",
     "queue:create-task:low:releng-hardware/mozilla-b-1-*",
+    "queue:get-artifact:private/project/mozilla-firefox-ci-playground/*",
+    "queue:get-artifact:private/project/mozilla/*",
     "queue:rerun-task:mozilla-level-1/*",
     "queue:route:checks",
     "queue:route:index.mozilla.cache.head.*",
@@ -39,22 +41,30 @@
     "queue:scheduler-id:mozilla-level-1",
     "queue:seal-task-group:lint/*",
     "queue:seal-task-group:mozilla-level-1/*",
+    "secrets:get:project/mozilla/firefox-ci-playground/level-1/*",
+    "secrets:get:project/mozilla/firefox-ci-playground/level-any/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/releng/releng-github-clone-ssh",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:20:07.172Z",
+  "lastModified": "2026-07-29T13:46:03.336Z",
   "roleId": "repo:github.com/mozilla-releng/firefox-ci-playground-private:pull-request",
   "scopes": [
     "index:insert-task:mozilla.v2.firefox-ci-playground-private-pr.*",
     "index:insert-task:mozilla.v2.firefox-ci-playground.cache.head.*",
     "index:insert-task:mozilla.v2.firefox-ci-playground.cache.pr.*",
     "queue:cancel-task-group:mozilla-level-1/*",
+    "queue:get-artifact:private/project/mozilla-firefox-ci-playground/*",
+    "queue:get-artifact:private/project/mozilla/*",
     "queue:route:index.mozilla.v2.firefox-ci-playground-private-pr.*",
     "queue:route:index.mozilla.v2.firefox-ci-playground.cache.head.*",
     "queue:route:index.mozilla.v2.firefox-ci-playground.cache.pr.*",
-    "queue:seal-task-group:mozilla-level-1/*"
+    "queue:seal-task-group:mozilla-level-1/*",
+    "secrets:get:project/mozilla/firefox-ci-playground/level-1/*",
+    "secrets:get:project/mozilla/firefox-ci-playground/level-any/*",
+    "secrets:get:project/mozilla/level-1/*",
+    "secrets:get:project/mozilla/level-any/*"
   ]
 }

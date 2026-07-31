@@ -55,10 +55,12 @@
     "queue:seal-task-group:releng-level-1/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
+    "secrets:get:project/releng/level-1/*",
+    "secrets:get:project/releng/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-10-21T12:14:29.363Z",
+  "lastModified": "2026-07-29T13:46:17.141Z",
   "roleId": "repo:github.com/mozilla-releng/winsign:pull-request",
   "scopes": [
     "index:insert-task:releng.cache.head.*",
@@ -68,6 +70,8 @@
     "queue:route:index.releng.cache.head.*",
     "queue:route:index.releng.cache.pr.*",
     "queue:route:index.releng.v2.winsign-pr.*",
-    "queue:seal-task-group:releng-level-1/*"
+    "queue:seal-task-group:releng-level-1/*",
+    "secrets:get:project/releng/level-1/*",
+    "secrets:get:project/releng/level-any/*"
   ]
 }

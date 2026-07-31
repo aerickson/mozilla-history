@@ -51,10 +51,14 @@
     "queue:seal-task-group:releng-level-1/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
+    "secrets:get:project/releng/build-mar/level-1/*",
+    "secrets:get:project/releng/build-mar/level-any/*",
+    "secrets:get:project/releng/level-1/*",
+    "secrets:get:project/releng/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-01-30T13:56:22.557Z",
+  "lastModified": "2026-07-29T13:46:24.621Z",
   "roleId": "repo:github.com/mozilla-releng/build-mar:pull-request",
   "scopes": [
     "index:insert-task:releng.v2.build-mar-pr.*",
@@ -64,6 +68,10 @@
     "queue:route:index.releng.v2.build-mar-pr.*",
     "queue:route:index.releng.v2.build-mar.cache.head.*",
     "queue:route:index.releng.v2.build-mar.cache.pr.*",
-    "queue:seal-task-group:releng-level-1/*"
+    "queue:seal-task-group:releng-level-1/*",
+    "secrets:get:project/releng/build-mar/level-1/*",
+    "secrets:get:project/releng/build-mar/level-any/*",
+    "secrets:get:project/releng/level-1/*",
+    "secrets:get:project/releng/level-any/*"
   ]
 }

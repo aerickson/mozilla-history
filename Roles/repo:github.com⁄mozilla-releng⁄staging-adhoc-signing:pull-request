@@ -39,6 +39,7 @@
     "queue:create-task:low:mozilla-t/*",
     "queue:create-task:low:releng-hardware/adhoc-b-1-*",
     "queue:create-task:low:releng-hardware/mozilla-b-1-*",
+    "queue:get-artifact:releng/adhoc/*",
     "queue:rerun-task:adhoc-level-1/*",
     "queue:rerun-task:mozilla-level-1/*",
     "queue:route:checks",
@@ -59,12 +60,14 @@
     "queue:seal-task-group:adhoc-level-1/*",
     "queue:seal-task-group:lint/*",
     "queue:seal-task-group:mozilla-level-1/*",
+    "secrets:get:project/adhoc/level-1/*",
+    "secrets:get:project/adhoc/level-any/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-07-23T20:38:24.299Z",
+  "lastModified": "2026-07-29T13:45:44.067Z",
   "roleId": "repo:github.com/mozilla-releng/staging-adhoc-signing:pull-request",
   "scopes": [
     "index:insert-task:adhoc.cache.head.*",
@@ -79,12 +82,15 @@
     "queue:create-task:highest:scriptworker-prov-v1/adhoc-signing-mac-dev",
     "queue:create-task:highest:scriptworker-prov-v1/adhoc-t-*",
     "queue:create-task:highest:scriptworker-prov-v1/dep-adhoc-signing-mac14m2*",
+    "queue:get-artifact:releng/adhoc/*",
     "queue:route:index.adhoc-signing.cache.level-1.*",
     "queue:route:index.adhoc.cache.head.*",
     "queue:route:index.adhoc.cache.pr.*",
     "queue:route:index.adhoc.v2.staging-adhoc-manifest.*",
     "queue:route:index.adhoc.v2.staging-adhoc-signing-pr.*",
     "queue:route:notify.email.*",
-    "queue:seal-task-group:adhoc-level-1/*"
+    "queue:seal-task-group:adhoc-level-1/*",
+    "secrets:get:project/adhoc/level-1/*",
+    "secrets:get:project/adhoc/level-any/*"
   ]
 }

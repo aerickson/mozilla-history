@@ -35,10 +35,12 @@
     "queue:seal-task-group:mozilla-level-1/*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
+    "secrets:get:project/mozilla/redo/level-1/*",
+    "secrets:get:project/mozilla/redo/level-any/*",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2025-09-04T13:18:39.092Z",
+  "lastModified": "2026-07-29T13:46:00.561Z",
   "roleId": "repo:github.com/mozilla-releng/redo:pull-request",
   "scopes": [
     "index:insert-task:mozilla.v2.redo-pr.*",
@@ -48,6 +50,10 @@
     "queue:route:index.mozilla.v2.redo-pr.*",
     "queue:route:index.mozilla.v2.redo.cache.head.*",
     "queue:route:index.mozilla.v2.redo.cache.pr.*",
-    "queue:seal-task-group:mozilla-level-1/*"
+    "queue:seal-task-group:mozilla-level-1/*",
+    "secrets:get:project/mozilla/level-1/*",
+    "secrets:get:project/mozilla/level-any/*",
+    "secrets:get:project/mozilla/redo/level-1/*",
+    "secrets:get:project/mozilla/redo/level-any/*"
   ]
 }
