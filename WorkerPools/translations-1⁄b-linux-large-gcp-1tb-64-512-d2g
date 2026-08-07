@@ -10,7 +10,7 @@
     "scalingRatio": 1,
     "launchConfigs": [
       {
-        "zone": "us-central1-a",
+        "zone": "us-west1-a",
         "disks": [
           {
             "boot": true,
@@ -22,13 +22,13 @@
             }
           }
         ],
-        "region": "us-central1",
+        "region": "us-west1",
         "scheduling": {
           "onHostMaintenance": "terminate",
           "provisioningModel": "SPOT",
           "instanceTerminationAction": "DELETE"
         },
-        "machineType": "zones/us-central1-a/machineTypes/n2-highmem-64",
+        "machineType": "zones/us-west1-a/machineTypes/n2-highmem-64",
         "workerConfig": {
           "genericWorker": {
             "config": {
@@ -67,7 +67,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-229138aaeba1c77f071f",
+          "launchConfigId": "lc-ff90fbe1fd426a26f480",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -82,7 +82,7 @@
         ]
       },
       {
-        "zone": "us-central1-b",
+        "zone": "us-west1-b",
         "disks": [
           {
             "boot": true,
@@ -94,13 +94,13 @@
             }
           }
         ],
-        "region": "us-central1",
+        "region": "us-west1",
         "scheduling": {
           "onHostMaintenance": "terminate",
           "provisioningModel": "SPOT",
           "instanceTerminationAction": "DELETE"
         },
-        "machineType": "zones/us-central1-b/machineTypes/n2-highmem-64",
+        "machineType": "zones/us-west1-b/machineTypes/n2-highmem-64",
         "workerConfig": {
           "genericWorker": {
             "config": {
@@ -139,7 +139,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-5d551498c1aa2c85fed1",
+          "launchConfigId": "lc-d28ed38a77e8f6e4f3d9",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -298,7 +298,7 @@
         ]
       },
       {
-        "zone": "us-west1-a",
+        "zone": "us-central1-a",
         "disks": [
           {
             "boot": true,
@@ -310,13 +310,13 @@
             }
           }
         ],
-        "region": "us-west1",
+        "region": "us-central1",
         "scheduling": {
           "onHostMaintenance": "terminate",
           "provisioningModel": "SPOT",
           "instanceTerminationAction": "DELETE"
         },
-        "machineType": "zones/us-west1-a/machineTypes/n2-highmem-64",
+        "machineType": "zones/us-central1-a/machineTypes/n2-highmem-64",
         "workerConfig": {
           "genericWorker": {
             "config": {
@@ -355,7 +355,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-ff90fbe1fd426a26f480",
+          "launchConfigId": "lc-229138aaeba1c77f071f",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -370,7 +370,7 @@
         ]
       },
       {
-        "zone": "us-west1-b",
+        "zone": "us-central1-b",
         "disks": [
           {
             "boot": true,
@@ -382,13 +382,13 @@
             }
           }
         ],
-        "region": "us-west1",
+        "region": "us-central1",
         "scheduling": {
           "onHostMaintenance": "terminate",
           "provisioningModel": "SPOT",
           "instanceTerminationAction": "DELETE"
         },
-        "machineType": "zones/us-west1-b/machineTypes/n2-highmem-64",
+        "machineType": "zones/us-central1-b/machineTypes/n2-highmem-64",
         "workerConfig": {
           "genericWorker": {
             "config": {
@@ -427,7 +427,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-d28ed38a77e8f6e4f3d9",
+          "launchConfigId": "lc-5d551498c1aa2c85fed1",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -519,7 +519,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nPreemptible VM workers with 1 TB of disk space, 64 vCPUs, and 512 GiB of RAM. Intended for Firefox Translations only.",
   "emailOnError": true,
-  "lastModified": "2026-05-05T15:12:33.990Z",
+  "lastModified": "2026-08-05T18:05:21.120Z",
   "owner": "release+tc-workers@mozilla.com",
   "providerId": "fxci-level1-gcp",
   "requestedCapacity": 0,

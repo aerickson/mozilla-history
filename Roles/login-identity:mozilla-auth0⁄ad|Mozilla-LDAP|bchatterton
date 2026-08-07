@@ -8,7 +8,6 @@
     "auth:list-clients",
     "auth:reset-access-token:mozilla-auth0/ad|Mozilla-LDAP|bchatterton/*",
     "auth:update-client:mozilla-auth0/ad|Mozilla-LDAP|bchatterton/*",
-    "hooks:trigger-hook:project-gecko/in-tree-action-1-release-promotion/*",
     "queue:claimed-list:*",
     "queue:create-task:highest:built-in/fail",
     "queue:create-task:highest:built-in/succeed",
@@ -17,10 +16,9 @@
     "secrets:get:project/mozilla/fx-desktop-qa-automation/level-*",
     "secrets:set:project/mozilla/fx-desktop-qa-automation/level-*"
   ],
-  "lastModified": "2025-09-04T13:15:20.017Z",
+  "lastModified": "2026-08-05T18:11:28.735Z",
   "roleId": "login-identity:mozilla-auth0/ad|Mozilla-LDAP|bchatterton",
   "scopes": [
-    "hooks:trigger-hook:project-gecko/in-tree-action-1-release-promotion/*",
     "secrets:get:project/mozilla/fx-desktop-qa-automation/level-*",
     "secrets:set:project/mozilla/fx-desktop-qa-automation/level-*"
   ]

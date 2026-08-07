@@ -116,6 +116,7 @@
     "queue:route:tc-treeherder.v2.holly.*",
     "queue:scheduler-id:gecko-level-2",
     "secrets:get:project/civet/github-deploy-key",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/gecko/level-2/*",
     "secrets:get:project/gecko/level-any/*",
     "secrets:get:project/mobile/ci/testrail",
@@ -136,7 +137,7 @@
     "secrets:get:project/updatebot/2/sql-proxy-config",
     "secrets:get:project/updatebot/2/try-sshkey"
   ],
-  "lastModified": "2026-07-02T20:26:35.158Z",
+  "lastModified": "2026-08-05T18:11:22.279Z",
   "roleId": "repo:hg.mozilla.org/projects/holly:*",
   "scopes": [
     "assume:project:taskcluster:gecko:level-2-sccache-buckets",
@@ -249,6 +250,7 @@
     "queue:route:tc-treeherder.v2.holly.*",
     "queue:scheduler-id:gecko-level-2",
     "secrets:get:project/civet/github-deploy-key",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/mobile/ci/testrail",
     "secrets:get:project/mobile/firefox-android/android-components/firebase",
     "secrets:get:project/mobile/firefox-android/fenix/firebase",

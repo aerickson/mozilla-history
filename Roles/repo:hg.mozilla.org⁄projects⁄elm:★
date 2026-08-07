@@ -114,6 +114,7 @@
     "queue:route:tc-treeherder.v2.elm.*",
     "queue:scheduler-id:gecko-level-2",
     "secrets:get:project/civet/github-deploy-key",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/gecko/level-2/*",
     "secrets:get:project/gecko/level-any/*",
     "secrets:get:project/mobile/ci/testrail",
@@ -127,7 +128,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-29T14:34:13.409Z",
+  "lastModified": "2026-08-05T18:10:46.968Z",
   "roleId": "repo:hg.mozilla.org/projects/elm:*",
   "scopes": [
     "assume:project:taskcluster:gecko:level-2-sccache-buckets",
@@ -238,6 +239,7 @@
     "queue:route:tc-treeherder.v2.elm.*",
     "queue:scheduler-id:gecko-level-2",
     "secrets:get:project/civet/github-deploy-key",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/mobile/ci/testrail",
     "secrets:get:project/mobile/firefox-android/android-components/firebase",
     "secrets:get:project/mobile/firefox-android/fenix/firebase",

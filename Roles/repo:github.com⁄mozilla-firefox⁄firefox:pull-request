@@ -122,6 +122,7 @@
     "queue:scheduler-id:gecko-level-1",
     "queue:seal-task-group:gecko-level-1/*",
     "secrets:get:project/civet/github-deploy-key",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/gecko/level-1/*",
     "secrets:get:project/gecko/level-any/*",
     "secrets:get:project/mobile/ci/testrail",
@@ -134,7 +135,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-07-03T14:20:40.158Z",
+  "lastModified": "2026-08-05T18:10:54.036Z",
   "roleId": "repo:github.com/mozilla-firefox/firefox:pull-request",
   "scopes": [
     "assume:project:taskcluster:gecko:level-1-sccache-buckets",
@@ -255,6 +256,7 @@
     "queue:scheduler-id:gecko-level-1",
     "queue:seal-task-group:gecko-level-1/*",
     "secrets:get:project/civet/github-deploy-key",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/gecko/level-1/*",
     "secrets:get:project/gecko/level-any/*",
     "secrets:get:project/mobile/ci/testrail",

@@ -111,6 +111,7 @@
     "queue:route:tc-treeherder.firefox-prototypes.*",
     "queue:route:tc-treeherder.v2.firefox-prototypes.*",
     "queue:scheduler-id:gecko-level-1",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/gecko/level-1/*",
     "secrets:get:project/gecko/level-any/*",
     "secrets:get:project/mobile/ci/testrail",
@@ -123,7 +124,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-29T14:33:42.616Z",
+  "lastModified": "2026-08-05T18:11:16.281Z",
   "roleId": "repo:github.com/Firefox-AI/firefox-prototypes:branch:smart-window",
   "scopes": [
     "assume:project:taskcluster:gecko:level-1-sccache-buckets",
@@ -233,6 +234,7 @@
     "queue:route:tc-treeherder.firefox-prototypes.*",
     "queue:route:tc-treeherder.v2.firefox-prototypes.*",
     "queue:scheduler-id:gecko-level-1",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/gecko/level-1/*",
     "secrets:get:project/gecko/level-any/*",
     "secrets:get:project/mobile/ci/testrail",

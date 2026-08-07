@@ -10,7 +10,7 @@
     "scalingRatio": 1,
     "launchConfigs": [
       {
-        "zone": "us-central1-a",
+        "zone": "us-east1-d",
         "disks": [
           {
             "boot": true,
@@ -22,13 +22,13 @@
             }
           }
         ],
-        "region": "us-central1",
+        "region": "us-east1",
         "scheduling": {
           "onHostMaintenance": "terminate",
           "provisioningModel": "SPOT",
           "instanceTerminationAction": "DELETE"
         },
-        "machineType": "zones/us-central1-a/machineTypes/c3d-standard-8",
+        "machineType": "zones/us-east1-d/machineTypes/c3d-standard-8",
         "workerConfig": {
           "genericWorker": {
             "config": {
@@ -66,7 +66,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-0b4cdef8a2fbd6a7aaa9",
+          "launchConfigId": "lc-2e7c39aaaa4e4b556503",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -430,7 +430,7 @@
         ]
       },
       {
-        "zone": "us-east1-d",
+        "zone": "us-central1-a",
         "disks": [
           {
             "boot": true,
@@ -442,13 +442,13 @@
             }
           }
         ],
-        "region": "us-east1",
+        "region": "us-central1",
         "scheduling": {
           "onHostMaintenance": "terminate",
           "provisioningModel": "SPOT",
           "instanceTerminationAction": "DELETE"
         },
-        "machineType": "zones/us-east1-d/machineTypes/c3d-standard-8",
+        "machineType": "zones/us-central1-a/machineTypes/c3d-standard-8",
         "workerConfig": {
           "genericWorker": {
             "config": {
@@ -486,7 +486,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-2e7c39aaaa4e4b556503",
+          "launchConfigId": "lc-0b4cdef8a2fbd6a7aaa9",
           "capacityPerInstance": 1
         },
         "networkInterfaces": [
@@ -575,7 +575,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nWorker for test tasks.",
   "emailOnError": true,
-  "lastModified": "2026-05-05T15:12:40.648Z",
+  "lastModified": "2026-08-05T18:05:17.196Z",
   "owner": "release+tc-workers@mozilla.com",
   "providerId": "fxci-level1-gcp",
   "requestedCapacity": 0,

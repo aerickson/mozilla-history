@@ -130,6 +130,7 @@
     "queue:route:tc-treeherder.v2.maple.*",
     "queue:scheduler-id:gecko-level-3",
     "secrets:get:project/civet/github-deploy-key",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/gecko/level-3/*",
     "secrets:get:project/gecko/level-any/*",
     "secrets:get:project/mobile/ci/testrail",
@@ -146,7 +147,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-29T14:33:54.357Z",
+  "lastModified": "2026-08-05T18:10:52.891Z",
   "roleId": "repo:hg.mozilla.org/projects/maple:*",
   "scopes": [
     "assume:project:taskcluster:gecko:level-3-sccache-buckets",
@@ -273,6 +274,7 @@
     "queue:route:tc-treeherder.v2.maple.*",
     "queue:scheduler-id:gecko-level-3",
     "secrets:get:project/civet/github-deploy-key",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/mobile/ci/testrail",
     "secrets:get:project/mobile/firefox-android/android-components/firebase",
     "secrets:get:project/mobile/firefox-android/fenix/firebase",

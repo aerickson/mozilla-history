@@ -127,6 +127,7 @@
     "queue:route:tc-treeherder.v2.firefox.*",
     "queue:scheduler-id:gecko-level-3",
     "secrets:get:project/civet/github-deploy-key",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/gecko/level-3/*",
     "secrets:get:project/gecko/level-any/*",
     "secrets:get:project/mobile/ci/testrail",
@@ -143,7 +144,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-29T14:34:07.019Z",
+  "lastModified": "2026-08-05T18:10:57.539Z",
   "roleId": "repo:github.com/mozilla-firefox/firefox:branch:FIREFOX_ESR_*",
   "scopes": [
     "assume:project:taskcluster:gecko:level-3-sccache-buckets",
@@ -269,6 +270,7 @@
     "queue:route:tc-treeherder.v2.firefox.*",
     "queue:scheduler-id:gecko-level-3",
     "secrets:get:project/civet/github-deploy-key",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/gecko/level-3/*",
     "secrets:get:project/gecko/level-any/*",
     "secrets:get:project/mobile/ci/testrail",

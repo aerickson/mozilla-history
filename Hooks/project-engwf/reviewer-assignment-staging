@@ -19,7 +19,7 @@
     "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAutomatically assign reviewers to PRs",
     "emailOnError": true,
     "name": "Reviewer assignment hook (staging)",
-    "owner": "omehani@mozilla.com"
+    "owner": "conduit-team@mozilla.com"
   },
   "schedule": [],
   "task": {
@@ -66,7 +66,7 @@
       "image": {
         "path": "public/image.tar.zst",
         "type": "indexed-image",
-        "namespace": "mozilla.v2.reviewer-selector.branch.staging.latest.docker-image.reviewer-selector"
+        "namespace": "mozilla.v2.reviewer-selector.branch.main.latest.docker-image.reviewer-selector"
       },
       "features": {
         "taskclusterProxy": true
@@ -87,7 +87,7 @@
     "priority": "lowest",
     "workerType": "bot",
     "schedulerId": "engwf",
-    "provisionerId": "code-review"
+    "provisionerId": "reviewer-assignment"
   },
   "triggerSchema": {
     "type": "object",
@@ -100,6 +100,7 @@
       "body": {
         "type": "object",
         "required": [
+          "action",
           "number",
           "pull_request",
           "repository"
@@ -169,12 +170,10 @@
         "additionalProperties": true
       },
       "repository": {
-        "type": "string",
-        "pattern": "^infra-testing$"
+        "type": "string"
       },
       "organization": {
-        "type": "string",
-        "pattern": "^mozilla-firefox$"
+        "type": "string"
       }
     },
     "additionalProperties": true

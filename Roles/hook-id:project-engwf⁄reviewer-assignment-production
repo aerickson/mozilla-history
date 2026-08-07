@@ -24,7 +24,7 @@
     "purge-cache:all-purge-requests",
     "purge-cache:purge-requests:*",
     "queue:claimed-count:*",
-    "queue:create-task:lowest:code-review/bot",
+    "queue:create-task:highest:reviewer-assignment/bot",
     "queue:create-task:project:none",
     "queue:get-artifact:public/*",
     "queue:get-provisioner:*",
@@ -51,12 +51,12 @@
     "worker-manager:list-worker-pools",
     "worker-manager:list-workers:*"
   ],
-  "lastModified": "2026-05-27T11:22:58.895Z",
+  "lastModified": "2026-08-04T01:06:22.222Z",
   "roleId": "hook-id:project-engwf/reviewer-assignment-production",
   "scopes": [
     "assume:anonymous",
     "index:insert-task:project.engwf.production.reviewer-assignment.*",
-    "queue:create-task:lowest:code-review/bot",
+    "queue:create-task:highest:reviewer-assignment/bot",
     "queue:route:index.project.engwf.production.reviewer-assignment.*",
     "queue:scheduler-id:engwf",
     "secrets:get:project/engwf/reviewer-assignment/runtime-production"

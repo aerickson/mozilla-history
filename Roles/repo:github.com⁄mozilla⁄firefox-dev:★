@@ -144,6 +144,7 @@
     "queue:seal-task-group:gecko-level-1/*",
     "queue:seal-task-group:lint/*",
     "queue:seal-task-group:mozilla-level-1/*",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/gecko/level-1/*",
     "secrets:get:project/gecko/level-any/*",
     "secrets:get:project/mobile/ci/testrail",
@@ -158,7 +159,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-29T14:33:49.042Z",
+  "lastModified": "2026-08-05T18:11:09.209Z",
   "roleId": "repo:github.com/mozilla/firefox-dev:*",
   "scopes": [
     "assume:project:taskcluster:gecko:level-1-sccache-buckets",
@@ -268,6 +269,7 @@
     "queue:route:tc-treeherder.firefox-dev.*",
     "queue:route:tc-treeherder.v2.firefox-dev.*",
     "queue:scheduler-id:gecko-level-1",
+    "secrets:get:project/desktop-test-ops/*",
     "secrets:get:project/mobile/ci/testrail",
     "secrets:get:project/mobile/firefox-android/android-components/firebase",
     "secrets:get:project/mobile/firefox-android/fenix/firebase",

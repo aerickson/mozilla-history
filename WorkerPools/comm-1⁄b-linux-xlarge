@@ -10,7 +10,7 @@
     "scalingRatio": 1,
     "launchConfigs": [
       {
-        "zone": "us-central1-a",
+        "zone": "us-west1-b",
         "disks": [
           {
             "boot": true,
@@ -26,7 +26,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
+              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
             }
           },
           {
@@ -34,7 +34,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
+              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
             }
           },
           {
@@ -42,7 +42,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
+              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
             }
           },
           {
@@ -50,7 +50,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
+              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
             }
           },
           {
@@ -58,7 +58,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
+              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
             }
           },
           {
@@ -66,7 +66,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
+              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
             }
           },
           {
@@ -74,7 +74,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
+              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
             }
           },
           {
@@ -82,17 +82,17 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
+              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
             }
           }
         ],
-        "region": "us-central1",
+        "region": "us-west1",
         "scheduling": {
           "onHostMaintenance": "terminate",
           "provisioningModel": "SPOT",
           "instanceTerminationAction": "DELETE"
         },
-        "machineType": "zones/us-central1-a/machineTypes/n2-standard-64",
+        "machineType": "zones/us-west1-b/machineTypes/n2-standard-64",
         "workerConfig": {
           "genericWorker": {
             "config": {
@@ -130,7 +130,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-166b0e00d567e9f2e8ee",
+          "launchConfigId": "lc-cf9b3666ccce8abd5ef1",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -685,7 +685,7 @@
         ]
       },
       {
-        "zone": "us-west1-b",
+        "zone": "us-central1-a",
         "disks": [
           {
             "boot": true,
@@ -701,7 +701,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
+              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
             }
           },
           {
@@ -709,7 +709,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
+              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
             }
           },
           {
@@ -717,7 +717,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
+              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
             }
           },
           {
@@ -725,7 +725,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
+              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
             }
           },
           {
@@ -733,7 +733,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
+              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
             }
           },
           {
@@ -741,7 +741,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
+              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
             }
           },
           {
@@ -749,7 +749,7 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
+              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
             }
           },
           {
@@ -757,17 +757,17 @@
             "interface": "NVME",
             "autoDelete": true,
             "initializeParams": {
-              "diskType": "zones/us-west1-b/diskTypes/local-ssd"
+              "diskType": "zones/us-central1-a/diskTypes/local-ssd"
             }
           }
         ],
-        "region": "us-west1",
+        "region": "us-central1",
         "scheduling": {
           "onHostMaintenance": "terminate",
           "provisioningModel": "SPOT",
           "instanceTerminationAction": "DELETE"
         },
-        "machineType": "zones/us-west1-b/machineTypes/n2-standard-64",
+        "machineType": "zones/us-central1-a/machineTypes/n2-standard-64",
         "workerConfig": {
           "genericWorker": {
             "config": {
@@ -805,7 +805,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-cf9b3666ccce8abd5ef1",
+          "launchConfigId": "lc-166b0e00d567e9f2e8ee",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -960,7 +960,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nWorker for Firefox automation.",
   "emailOnError": true,
-  "lastModified": "2026-05-05T15:12:31.349Z",
+  "lastModified": "2026-08-05T18:05:20.467Z",
   "owner": "release+tc-workers@mozilla.com",
   "providerId": "fxci-level1-gcp",
   "requestedCapacity": 0,
