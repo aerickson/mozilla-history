@@ -82,12 +82,14 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-25T17:41:42.400Z",
+  "lastModified": "2026-08-07T14:09:12.162Z",
   "roleId": "repo:github.com/mozilla-releng/staging-reference-browser:pull-request",
   "scopes": [
     "index:insert-task:mobile.v2.reference-browser.cache.head.*",
     "index:insert-task:mobile.v2.reference-browser.cache.pr.*",
     "index:insert-task:mobile.v2.staging-reference-browser-pr.*",
+    "notify:email:*",
+    "notify:slack-channel:*",
     "project:mobile:reference-browser:releng:googleplay:product:reference-browser:dep",
     "project:mobile:reference-browser:releng:signing:cert:dep-signing",
     "queue:cancel-task-group:mobile-level-1/*",
@@ -99,6 +101,7 @@
     "queue:route:index.mobile.v2.reference-browser.cache.head.*",
     "queue:route:index.mobile.v2.reference-browser.cache.pr.*",
     "queue:route:index.mobile.v2.staging-reference-browser-pr.*",
+    "queue:route:notify.*",
     "queue:route:tc-treeherder-stage.v2.staging-reference-browser-pr.*",
     "queue:route:tc-treeherder.v2.staging-reference-browser-pr.*",
     "queue:seal-task-group:mobile-level-1/*",

@@ -1,10 +1,10 @@
 {
   "hookGroupId": "project-relops",
-  "hookId": "in-tree-pr-action-1-run-integration-tests/e47c45782f",
+  "hookId": "in-tree-action-3-generic/a168c62341",
   "metadata": {
-    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nPR action task run-integration-tests at level 1, with `.taskcluster.yml` hash e47c45782f.\n\nFor (project, branch) combinations:\n\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
+    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAction task generic at level 3, with `.taskcluster.yml` hash a168c62341.\n\nFor (project, branch) combinations:\nworker-images, branch: 'main'\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n\n\nThis hook is no longer current and is kept for historical purposes.",
     "emailOnError": true,
-    "name": "project-relops/in-tree-pr-action-1-run-integration-tests/e47c45782f",
+    "name": "project-relops/in-tree-action-3-generic/a168c62341",
     "owner": "taskcluster-notifications@mozilla.com"
   },
   "schedule": [],
@@ -170,6 +170,16 @@
                           "DEPLOY_IMAGES": {
                             "$json": {
                               "$eval": "cron.input.images"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "$if": "tasks_for == \"cron\" \u0026\u0026 cron[\"input\"] \u0026\u0026 cron.input[\"pools\"]",
+                        "then": {
+                          "DEPLOY_HW_POOLS": {
+                            "$json": {
+                              "$eval": "cron.input.pools"
                             }
                           }
                         }
@@ -427,8 +437,8 @@
         "title": "${payload.decision.action.title}",
         "symbol": "${payload.decision.action.symbol}",
         "cb_name": "${payload.decision.action.cb_name}",
-        "repo_scope": "assume:repo:${payload.decision.repository.base_url[8:]}:action:run-integration-tests",
-        "action_perm": "run-integration-tests",
+        "repo_scope": "assume:repo:${payload.decision.repository.url[8:]}:action:generic",
+        "action_perm": "generic",
         "description": "${payload.decision.action.description}",
         "taskGroupId": "${payload.decision.action.taskGroupId}"
       },
@@ -438,7 +448,7 @@
       "ownTaskId": {
         "$eval": "taskId"
       },
-      "tasks_for": "pr-action",
+      "tasks_for": "action",
       "parameters": {
         "$eval": "payload.decision['parameters']"
       },

@@ -1,10 +1,10 @@
 {
   "hookGroupId": "project-relops",
-  "hookId": "in-tree-action-3-generic/e47c45782f",
+  "hookId": "in-tree-pr-action-1-run-integration-tests/168e40d388",
   "metadata": {
-    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAction task generic at level 3, with `.taskcluster.yml` hash e47c45782f.\n\nFor (project, branch) combinations:\nworker-images, branch: 'main'\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
+    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nPR action task run-integration-tests at level 1, with `.taskcluster.yml` hash 168e40d388.\n\nFor (project, branch) combinations:\n\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
     "emailOnError": true,
-    "name": "project-relops/in-tree-action-3-generic/e47c45782f",
+    "name": "project-relops/in-tree-pr-action-1-run-integration-tests/168e40d388",
     "owner": "taskcluster-notifications@mozilla.com"
   },
   "schedule": [],
@@ -170,6 +170,36 @@
                           "DEPLOY_IMAGES": {
                             "$json": {
                               "$eval": "cron.input.images"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "$if": "tasks_for == \"cron\" \u0026\u0026 cron[\"input\"] \u0026\u0026 cron.input[\"pools\"]",
+                        "then": {
+                          "DEPLOY_HW_POOLS": {
+                            "$json": {
+                              "$eval": "cron.input.pools"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "$if": "tasks_for == \"cron\" \u0026\u0026 cron[\"input\"] \u0026\u0026 cron.input[\"tests\"]",
+                        "then": {
+                          "DEPLOY_HW_TESTS": {
+                            "$json": {
+                              "$eval": "cron.input.tests"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "$if": "tasks_for == \"cron\" \u0026\u0026 cron[\"input\"] \u0026\u0026 cron.input[\"repeat\"]",
+                        "then": {
+                          "DEPLOY_HW_REPEAT": {
+                            "$json": {
+                              "$eval": "cron.input.repeat"
                             }
                           }
                         }
@@ -427,8 +457,8 @@
         "title": "${payload.decision.action.title}",
         "symbol": "${payload.decision.action.symbol}",
         "cb_name": "${payload.decision.action.cb_name}",
-        "repo_scope": "assume:repo:${payload.decision.repository.url[8:]}:action:generic",
-        "action_perm": "generic",
+        "repo_scope": "assume:repo:${payload.decision.repository.base_url[8:]}:action:run-integration-tests",
+        "action_perm": "run-integration-tests",
         "description": "${payload.decision.action.description}",
         "taskGroupId": "${payload.decision.action.taskGroupId}"
       },
@@ -438,7 +468,7 @@
       "ownTaskId": {
         "$eval": "taskId"
       },
-      "tasks_for": "action",
+      "tasks_for": "pr-action",
       "parameters": {
         "$eval": "payload.decision['parameters']"
       },

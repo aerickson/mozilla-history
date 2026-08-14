@@ -1,0 +1,316 @@
+{
+  "hookGroupId": "project-xpi",
+  "hookId": "decision-v1",
+  "metadata": {
+    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nRun Taskgraph Decision task for GitHub events in the mozilla-extensions org",
+    "emailOnError": true,
+    "name": "XPI Decision Task",
+    "owner": "release+hooks@mozilla.com"
+  },
+  "schedule": [],
+  "task": {
+    "in": {
+      "in": {
+        "in": {
+          "$if": "(payload.tasks_for == \"github-push\"\n \u0026\u0026 (!('branches' in payload.context)\n     || len(branchMatches) \u003e 0))\n|| (isPullRequest \u0026\u0026 pullRequestAction in [\"opened\", \"reopened\", \"synchronize\"])\n",
+          "then": {
+            "in": {
+              "tags": {
+                "kind": "decision-task",
+                "createdForUser": "${ownerEmail}"
+              },
+              "extra": {
+                "tasks_for": "${payload.tasks_for}"
+              },
+              "routes": {
+                "$flatten": [
+                  "checks",
+                  {
+                    "$if": "payload.tasks_for == \"github-push\"",
+                    "else": [],
+                    "then": [
+                      "index.${trustDomain}.v2.${project}.latest.taskgraph.decision",
+                      "index.${trustDomain}.v2.${project}.revision.${headSha}.taskgraph.decision"
+                    ]
+                  }
+                ]
+              },
+              "scopes": {
+                "$if": "payload.tasks_for == \"github-push\"",
+                "else": [
+                  "assume:repo:github.com/${repoName}:${payload.tasks_for[7:]}"
+                ],
+                "then": [
+                  "assume:repo:github.com/${repoName}:branch:${shortRef}"
+                ]
+              },
+              "created": {
+                "$fromNow": ""
+              },
+              "expires": {
+                "$fromNow": "1 year 1 second"
+              },
+              "payload": {
+                "env": {
+                  "REPOSITORIES": {
+                    "$json": {
+                      "src": "Source"
+                    }
+                  },
+                  "SRC_BASE_REF": "${baseRef}",
+                  "SRC_BASE_REV": "${baseSha}",
+                  "SRC_HEAD_REF": "${headRef}",
+                  "SRC_HEAD_REV": "${headSha}",
+                  "SRC_BASE_REPOSITORY": "${baseRepoUrl}",
+                  "SRC_HEAD_REPOSITORY": "${repoUrl}",
+                  "SRC_REPOSITORY_TYPE": "git"
+                },
+                "cache": {
+                  "${trustDomain}-level-${level}-checkouts-sparse-v1": "/builds/worker/checkouts"
+                },
+                "image": "${taskgraphImage}",
+                "command": [
+                  "run-task",
+                  "--src-checkout=/builds/worker/checkouts/src",
+                  "--task-cwd=/builds/worker/checkouts/src",
+                  "--",
+                  "bash",
+                  "-cx",
+                  "ln -s /builds/worker/artifacts artifacts \u0026\u0026 taskgraph decision --verbose --pushlog-id='0' --pushdate='0' --project='${project}' --owner='${ownerEmail}' --level='${level}' --repository-type=git --tasks-for='${payload.tasks_for}' --base-repository='${baseRepoUrl}' --base-ref='${baseRef}' --base-rev='${baseSha}' --head-repository='${repoUrl}' --head-ref='${headRef}' --head-rev='${headSha}'"
+                ],
+                "features": {
+                  "chainOfTrust": {
+                    "$if": "level == 3",
+                    "else": false,
+                    "then": true
+                  },
+                  "taskclusterProxy": true
+                },
+                "artifacts": {
+                  "public": {
+                    "path": "/builds/worker/artifacts",
+                    "type": "directory",
+                    "expires": {
+                      "$fromNow": "1 year"
+                    }
+                  },
+                  "public/docker-contexts": {
+                    "path": "/builds/worker/checkouts/src/docker-contexts",
+                    "type": "directory",
+                    "expires": {
+                      "$fromNow": "7 day"
+                    }
+                  }
+                },
+                "maxRunTime": 1800
+              },
+              "retries": 5,
+              "deadline": {
+                "$fromNow": "1 day"
+              },
+              "metadata": {
+                "name": "Decision Task (${payload.tasks_for[7:]})",
+                "owner": "${ownerEmail}",
+                "source": "${repoUrl}/raw/${headSha}/.taskcluster.yml",
+                "description": "The task that creates all of the other tasks in the task graph"
+              },
+              "priority": "very-low",
+              "requires": "all-completed",
+              "workerType": "decision",
+              "schedulerId": "${trustDomain}-level-${level}",
+              "taskGroupId": {
+                "$eval": "payload.taskId"
+              },
+              "dependencies": [],
+              "provisionerId": "${trustDomain}-${level}"
+            },
+            "$let": {
+              "level": {
+                "$if": "isPullRequest",
+                "else": {
+                  "$if": "len(branchMatches) \u003e 0",
+                  "else": 1,
+                  "then": {
+                    "$eval": "branchMatches[0].level"
+                  }
+                },
+                "then": 1
+              }
+            }
+          }
+        },
+        "$let": {
+          "branchMatches": {
+            "$if": "'branches' in payload.context",
+            "else": [],
+            "then": {
+              "$filter": {
+                "$eval": "payload.context.branches"
+              },
+              "each(b)": "b.pattern == shortRef || (b.pattern[-1:] == \"*\"\n    \u0026\u0026 shortRef[:len(b.pattern)-1] == b.pattern[:-1])\n"
+            }
+          }
+        }
+      },
+      "$let": {
+        "shortRef": {
+          "$switch": {
+            "$default": "${headRef}",
+            "headRef[:10] == \"refs/tags/\"": "${headRef[10:]}",
+            "headRef[:11] == \"refs/heads/\"": "${headRef[11:]}"
+          }
+        }
+      }
+    },
+    "$let": {
+      "$merge": [
+        {
+          "repoName": "UNDEFINED",
+          "trustDomain": {
+            "$eval": "payload.context.trustDomain"
+          },
+          "isPullRequest": false,
+          "taskgraphImage": {
+            "$if": "'taskgraphVersion' in payload.context",
+            "else": "mozillareleases/taskgraph:decision-latest",
+            "then": {
+              "$eval": "'mozillareleases/taskgraph:decision-v' + payload.context.taskgraphVersion"
+            }
+          },
+          "pullRequestAction": "UNDEFINED"
+        },
+        {
+          "$switch": {
+            "payload.tasks_for == \"github-push\"": {
+              "baseRef": {
+                "$eval": "payload.event.ref"
+              },
+              "baseSha": {
+                "$eval": "payload.event.before"
+              },
+              "headRef": {
+                "$eval": "payload.event.ref"
+              },
+              "headSha": {
+                "$eval": "payload.event.after"
+              },
+              "project": {
+                "$eval": "payload.event.repository.name"
+              },
+              "repoUrl": {
+                "$eval": "payload.event.repository.html_url"
+              },
+              "repoName": {
+                "$eval": "payload.event.repository.full_name"
+              },
+              "ownerEmail": {
+                "$eval": "payload.event.pusher.email"
+              },
+              "baseRepoUrl": {
+                "$eval": "payload.event.repository.html_url"
+              }
+            },
+            "payload.tasks_for[:19] == \"github-pull-request\"": {
+              "baseRef": {
+                "$eval": "payload.event.pull_request.base.ref"
+              },
+              "baseSha": {
+                "$eval": "payload.event.pull_request.base.sha"
+              },
+              "headRef": {
+                "$eval": "payload.event.pull_request.head.ref"
+              },
+              "headSha": {
+                "$eval": "payload.event.pull_request.head.sha"
+              },
+              "project": {
+                "$eval": "payload.event.pull_request.head.repo.name"
+              },
+              "repoUrl": {
+                "$eval": "payload.event.pull_request.head.repo.html_url"
+              },
+              "repoName": {
+                "$eval": "payload.event.pull_request.base.repo.full_name"
+              },
+              "ownerEmail": {
+                "$eval": "payload.event.pull_request.user.login + '@users.noreply.github.com'"
+              },
+              "baseRepoUrl": {
+                "$eval": "payload.event.pull_request.base.repo.html_url"
+              },
+              "isPullRequest": true,
+              "pullRequestAction": {
+                "$eval": "payload.event.action"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "triggerSchema": {
+    "type": "object",
+    "properties": {
+      "now": {
+        "type": "string"
+      },
+      "event": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "taskId": {
+        "type": "string"
+      },
+      "context": {
+        "type": "object",
+        "required": [
+          "trustDomain"
+        ],
+        "properties": {
+          "branches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "pattern",
+                "level"
+              ],
+              "properties": {
+                "level": {
+                  "enum": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "type": "integer"
+                },
+                "pattern": {
+                  "type": "string",
+                  "description": "Branch name or \"prefix/*\" glob (e.g. \"main\" or \"release/*\").\n"
+                }
+              },
+              "additionalProperties": false
+            },
+            "description": "List of branch patterns with SCM levels. Only matching branches trigger a decision task. If not specified, all pushes trigger at level 1. Pull requests always use level 1.\n"
+          },
+          "trustDomain": {
+            "type": "string",
+            "description": "Trust domain for the project (e.g. \"releng\")"
+          },
+          "taskgraphVersion": {
+            "type": "string",
+            "description": "Version of the taskgraph decision image to use (e.g. \"23.0.0\"). Defaults to latest if not specified.\n"
+          }
+        },
+        "additionalProperties": false
+      },
+      "tasks_for": {
+        "type": "string"
+      },
+      "taskcluster_root_url": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": false
+  }
+}

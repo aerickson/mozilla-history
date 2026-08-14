@@ -17,7 +17,7 @@
           "sourceRepository": "ronin_puppet",
           "sourceOrganisation": "mozilla-platform-ops"
         },
-        "location": "canadacentral",
+        "location": "westus3",
         "workerConfig": {
           "genericWorker": {
             "config": {
@@ -58,13 +58,13 @@
               "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.5"
             },
             "location": {
-              "value": "canadacentral"
+              "value": "westus3"
             },
             "priority": {
               "value": "Spot"
             },
             "subnetId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-canada-central-enterprise-t/providers/Microsoft.Network/virtualNetworks/vn-canada-central-enterprise-t/subnets/sn-canada-central-enterprise-t"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-west-us-3-enterprise-t/providers/Microsoft.Network/virtualNetworks/vn-west-us-3-enterprise-t/subnets/sn-west-us-3-enterprise-t"
             }
           },
           "templateLink": {
@@ -73,7 +73,7 @@
         },
         "workerManager": {
           "initialWeight": 1,
-          "launchConfigId": "lc-ecdbc60a5244262cb789",
+          "launchConfigId": "lc-53bea664012252a89008",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-enterprise-t-win11-64-25h2-large"
@@ -707,7 +707,7 @@
           "sourceRepository": "ronin_puppet",
           "sourceOrganisation": "mozilla-platform-ops"
         },
-        "location": "westus3",
+        "location": "canadacentral",
         "workerConfig": {
           "genericWorker": {
             "config": {
@@ -748,13 +748,13 @@
               "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.5"
             },
             "location": {
-              "value": "westus3"
+              "value": "canadacentral"
             },
             "priority": {
               "value": "Spot"
             },
             "subnetId": {
-              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-west-us-3-enterprise-t/providers/Microsoft.Network/virtualNetworks/vn-west-us-3-enterprise-t/subnets/sn-west-us-3-enterprise-t"
+              "value": "/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-canada-central-enterprise-t/providers/Microsoft.Network/virtualNetworks/vn-canada-central-enterprise-t/subnets/sn-canada-central-enterprise-t"
             }
           },
           "templateLink": {
@@ -763,7 +763,7 @@
         },
         "workerManager": {
           "initialWeight": 1,
-          "launchConfigId": "lc-53bea664012252a89008",
+          "launchConfigId": "lc-ecdbc60a5244262cb789",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-enterprise-t-win11-64-25h2-large"
@@ -774,7 +774,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\n",
   "emailOnError": true,
-  "lastModified": "2026-06-24T21:29:11.456Z",
+  "lastModified": "2026-08-11T15:12:33.717Z",
   "owner": "relops-azure-provisioning@mozilla.com",
   "providerId": "azure2",
   "requestedCapacity": 0,

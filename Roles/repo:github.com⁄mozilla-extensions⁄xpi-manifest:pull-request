@@ -5,6 +5,7 @@
     "assume:repo:github.com/mozilla-extensions/xpi-manifest:pull-request",
     "docker-worker:cache:xpi-level-1-*",
     "generic-worker:cache:xpi-level-1-*",
+    "hooks:trigger-hook:project-xpi/decision-*",
     "in-tree:hook-action:project-xpi/in-tree-action-1-*",
     "index:insert-task:xpi.cache.head.*",
     "index:insert-task:xpi.cache.level-1.*",
@@ -40,11 +41,12 @@
     "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ],
-  "lastModified": "2026-07-23T20:38:20.142Z",
+  "lastModified": "2026-08-11T15:01:32.071Z",
   "roleId": "repo:github.com/mozilla-extensions/xpi-manifest:pull-request",
   "scopes": [
     "docker-worker:cache:xpi-level-1-*",
     "generic-worker:cache:xpi-level-1-*",
+    "hooks:trigger-hook:project-xpi/decision-*",
     "in-tree:hook-action:project-xpi/in-tree-action-1-*",
     "index:insert-task:xpi.cache.head.*",
     "index:insert-task:xpi.cache.level-1.*",
