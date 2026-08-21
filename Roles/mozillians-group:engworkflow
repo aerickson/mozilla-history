@@ -20,6 +20,7 @@
     "hooks:modify-hook:project-engwf/reviewer-assignment-staging",
     "hooks:status:*",
     "index:find-task:*",
+    "index:insert-task:project.engwf.production.reviewer-assignment.*",
     "index:insert-task:project.engwf.staging.reviewer-assignment.*",
     "index:list-namespaces:*",
     "index:list-tasks:*",
@@ -40,6 +41,7 @@
     "queue:list-worker-types:*",
     "queue:list-workers:*",
     "queue:pending-count:*",
+    "queue:route:index.project.engwf.production.reviewer-assignment.*",
     "queue:route:index.project.engwf.staging.reviewer-assignment.*",
     "queue:scheduler-id:engwf",
     "queue:status:*",
@@ -54,11 +56,13 @@
     "worker-manager:list-worker-pools",
     "worker-manager:list-workers:*"
   ],
-  "lastModified": "2026-06-25T06:54:32.872Z",
+  "lastModified": "2026-08-17T18:38:22.521Z",
   "roleId": "mozillians-group:engworkflow",
   "scopes": [
     "assume:hook-id:project-engwf/reviewer-assignment-staging",
     "hooks:modify-hook:project-engwf/reviewer-assignment-staging",
+    "index:insert-task:project.engwf.production.reviewer-assignment.*",
+    "queue:route:index.project.engwf.production.reviewer-assignment.*",
     "secrets:get:project/engwf/*",
     "secrets:set:project/engwf/*"
   ]

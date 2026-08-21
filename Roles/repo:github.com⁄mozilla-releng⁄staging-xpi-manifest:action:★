@@ -7,8 +7,7 @@
     "docker-worker:cache:xpi-level-1-*",
     "generic-worker:cache:mozilla-level-1-*",
     "generic-worker:cache:xpi-level-1-*",
-    "hooks:trigger-hook:lint/pre-commit-*",
-    "hooks:trigger-hook:project-xpi/decision-*",
+    "github:trigger-hook:lint/pre-commit-*",
     "in-tree:hook-action:project-mozilla/in-tree-action-1-*",
     "in-tree:hook-action:project-xpi/in-tree-action-1-*",
     "index:insert-task:mozilla.cache.head.*",
@@ -75,11 +74,10 @@
     "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ],
-  "lastModified": "2026-08-11T15:01:39.362Z",
+  "lastModified": "2026-08-20T13:37:11.748Z",
   "roleId": "repo:github.com/mozilla-releng/staging-xpi-manifest:action:*",
   "scopes": [
     "docker-worker:cache:xpi-level-1-*",
-    "hooks:trigger-hook:project-xpi/decision-*",
     "project:xpi:balrog:action:*",
     "project:xpi:balrog:channel:*",
     "project:xpi:balrog:server:staging",

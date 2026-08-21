@@ -4,7 +4,6 @@
   "expandedScopes": [
     "assume:repo:github.com/mozilla-extensions/xpi-manifest:tag:*",
     "docker-worker:cache:xpi-level-1-*",
-    "hooks:trigger-hook:project-xpi/decision-*",
     "project:xpi:releng:signing:cert:dep-signing",
     "queue:cancel-task-group:xpi-level-1/*",
     "queue:create-task:low:built-in/*",
@@ -21,11 +20,10 @@
     "queue:seal-task-group:xpi-level-1/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ],
-  "lastModified": "2026-08-11T15:01:35.777Z",
+  "lastModified": "2026-08-20T13:37:10.175Z",
   "roleId": "repo:github.com/mozilla-extensions/xpi-manifest:tag:*",
   "scopes": [
     "docker-worker:cache:xpi-level-1-*",
-    "hooks:trigger-hook:project-xpi/decision-*",
     "project:xpi:releng:signing:cert:dep-signing",
     "queue:cancel-task-group:xpi-level-1/*",
     "queue:create-task:low:built-in/*",

@@ -1,10 +1,10 @@
 {
-  "hookGroupId": "project-mozilla",
-  "hookId": "in-tree-action-1-generic/bdb598f044",
+  "hookGroupId": "project-adhoc",
+  "hookId": "in-tree-action-3-release-promotion/8752d0cb45",
   "metadata": {
-    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAction task generic at level 1, with `.taskcluster.yml` hash bdb598f044.\n\nFor (project, branch) combinations:\nreviewer-selector, branch: 'staging'\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
+    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAction task release-promotion at level 3, with `.taskcluster.yml` hash 8752d0cb45.\n\nFor (project, branch) combinations:\nadhoc-signing, branch: 'main'\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
     "emailOnError": true,
-    "name": "project-mozilla/in-tree-action-1-generic/bdb598f044",
+    "name": "project-adhoc/in-tree-action-3-release-promotion/8752d0cb45",
     "owner": "taskcluster-notifications@mozilla.com"
   },
   "schedule": [],
@@ -12,7 +12,7 @@
     "in": {
       "in": {
         "in": {
-          "$if": "tasks_for in [\"action\", \"pr-action\", \"cron\"] || (tasks_for == \"github-push\" \u0026\u0026 short_head_ref in [\"main\", \"staging\", \"develop\"] ) || (isPullRequest \u0026\u0026 pullRequestAction in [\"opened\", \"reopened\", \"synchronize\"])\n",
+          "$if": "tasks_for in [\"action\", \"pr-action\", \"cron\"] || (tasks_for == \"github-push\" \u0026\u0026 short_head_ref == \"main\") || (isPullRequest \u0026\u0026 pullRequestAction in [\"opened\", \"reopened\", \"synchronize\"]) || (tasks_for == \"github-issue-comment\" \u0026\u0026 event.taskcluster_comment == \"ci\")\n",
           "then": {
             "tags": {
               "$switch": {
@@ -94,9 +94,6 @@
                 "$default": [
                   "assume:repo:${repoUrl[8:]}:cron:${cron.job_name}"
                 ],
-                "isPullRequest": [
-                  "assume:repo:github.com/${event.pull_request.base.repo.full_name}:${tasks_for[7:]}"
-                ],
                 "tasks_for == \"action\"": [
                   "assume:repo:${repoUrl[8:]}:action:${action.action_perm}"
                 ],
@@ -105,6 +102,12 @@
                 ],
                 "tasks_for in [\"github-push\"]": [
                   "assume:repo:${repoUrl[8:]}:branch:${short_head_ref}"
+                ],
+                "tasks_for == \"github-issue-comment\"": [
+                  "assume:repo:github.com/${event.pull_request.base.repo.full_name}:pull-request"
+                ],
+                "tasks_for[:19] == \"github-pull-request\"": [
+                  "assume:repo:github.com/${event.pull_request.base.repo.full_name}:${tasks_for[7:]}"
                 ]
               }
             },
@@ -125,21 +128,21 @@
                     {
                       "REPOSITORIES": {
                         "$json": {
-                          "${normProject}": "${normProject}"
+                          "adhoc": "${normProject}"
                         }
                       },
-                      "${normProjectUpper}_BASE_REF": "${base_ref}",
-                      "${normProjectUpper}_BASE_REV": "${base_sha}",
-                      "${normProjectUpper}_HEAD_REF": "${head_ref}",
-                      "${normProjectUpper}_HEAD_REV": "${head_sha}",
-                      "${normProjectUpper}_BASE_REPOSITORY": "${baseRepoUrl}",
-                      "${normProjectUpper}_HEAD_REPOSITORY": "${repoUrl}",
-                      "${normProjectUpper}_REPOSITORY_TYPE": "git"
+                      "ADHOC_BASE_REF": "${base_ref}",
+                      "ADHOC_BASE_REV": "${base_sha}",
+                      "ADHOC_HEAD_REF": "${head_ref}",
+                      "ADHOC_HEAD_REV": "${head_sha}",
+                      "ADHOC_BASE_REPOSITORY": "${baseRepoUrl}",
+                      "ADHOC_HEAD_REPOSITORY": "${repoUrl}",
+                      "ADHOC_REPOSITORY_TYPE": "git"
                     },
                     {
                       "$if": "isPullRequest",
                       "then": {
-                        "${normProjectUpper}_PULL_REQUEST_NUMBER": "${event.pull_request.number}"
+                        "ADHOC_PULL_REQUEST_NUMBER": "${event.pull_request.number}"
                       }
                     },
                     {
@@ -161,20 +164,17 @@
                     }
                   ]
                 },
-                "cache": {
-                  "${trustDomain}-project-${project}-level-${level}-checkouts-v2": "/builds/worker/checkouts"
-                },
-                "image": "mozillareleases/taskgraph:decision-v23.0.0",
+                "image": "mozillareleases/taskgraph:decision-v24.2.3@sha256:df3418a624ebc87c386890f95256f16fe6e43d29608965a61e2b3dcde89b6926",
                 "command": [
                   "run-task",
-                  "--${normProject}-checkout=/builds/worker/checkouts/src",
+                  "--adhoc-checkout=/builds/worker/checkouts/src",
                   "--",
                   "bash",
                   "-cx",
                   {
                     "in": {
                       "$if": "tasks_for in [\"action\", \"pr-action\"]",
-                      "else": "cd /builds/worker/checkouts/src \u0026\u0026 ln -s /builds/worker/artifacts artifacts \u0026\u0026 taskgraph decision --pushlog-id='0' --pushdate='0' --project='${project}' --owner='${ownerEmail}' --level='${level}' --repository-type=git --tasks-for='${tasks_for}' --base-repository='${baseRepoUrl}' --base-ref='${base_ref}' --base-rev='${base_sha}' --head-repository='${repoUrl}' --head-ref='${head_ref}' --head-rev='${head_sha}' ${extraArgs}\n",
+                      "else": "cd /builds/worker/checkouts/src \u0026\u0026 ln -s /builds/worker/artifacts artifacts \u0026\u0026 taskgraph decision --pushlog-id='0' --pushdate='0' --project='${project}' --owner='${ownerEmail}' --level='${level}' --repository-type=git --tasks-for='${decisionTasksFor}' --base-repository='${baseRepoUrl}' --base-ref='${base_ref}' --base-rev='${base_sha}' --head-repository='${repoUrl}' --head-ref='${head_ref}' --head-rev='${head_sha}' ${extraArgs}\n",
                       "then": "cd /builds/worker/checkouts/src \u0026\u0026 ln -s /builds/worker/artifacts artifacts \u0026\u0026 taskgraph action-callback\n"
                     },
                     "$let": {
@@ -182,11 +182,17 @@
                         "$if": "tasks_for == \"cron\"",
                         "else": "",
                         "then": "${cron.quoted_args}"
+                      },
+                      "decisionTasksFor": {
+                        "$if": "tasks_for == \"github-issue-comment\"",
+                        "else": "${tasks_for}",
+                        "then": "github-pull-request"
                       }
                     }
                   }
                 ],
                 "features": {
+                  "chainOfTrust": true,
                   "taskclusterProxy": true
                 },
                 "artifacts": {
@@ -210,9 +216,6 @@
               "$let": {
                 "normProject": {
                   "$eval": "join(split(project, \"-\"), \"_\")"
-                },
-                "normProjectUpper": {
-                  "$eval": "uppercase(join(split(project, \"-\"), \"_\"))"
                 }
               }
             },
@@ -269,9 +272,9 @@
         },
         "$let": {
           "level": {
-            "$if": "tasks_for == \"github-push\" \u0026\u0026 head_ref in [\"main\", \"refs/heads/main\"]",
-            "else": "1",
-            "then": "3"
+            "$if": "isPullRequest || tasks_for == \"pr-action\" || repoUrl != \"https://github.com/mozilla-releng/adhoc-signing\"",
+            "else": "3",
+            "then": "1"
           },
           "short_base_ref": {
             "$switch": {
@@ -292,16 +295,16 @@
       "$let": {
         "project": {
           "$switch": {
-            "tasks_for[:19] == \"github-pull-request\"": "${event.pull_request.base.repo.name}",
             "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${repository.project}",
-            "tasks_for in [\"github-push\", \"github-release\"]": "${event.repository.name}"
+            "tasks_for in [\"github-push\", \"github-release\"]": "${event.repository.name}",
+            "tasks_for[:19] == \"github-pull-request\" || tasks_for == \"github-issue-comment\"": "${event.pull_request.base.repo.name}"
           }
         },
         "repoUrl": {
           "$switch": {
             "$default": "${event.repository.html_url}",
-            "tasks_for[:19] == \"github-pull-request\"": "${event.pull_request.head.repo.html_url}",
-            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${repository.url}"
+            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${repository.url}",
+            "tasks_for[:19] == \"github-pull-request\" || tasks_for == \"github-issue-comment\"": "${event.pull_request.head.repo.html_url}"
           }
         },
         "base_ref": {
@@ -309,33 +312,33 @@
             "tasks_for == \"pr-action\"": "${push.base_branch}",
             "tasks_for == \"github-release\"": "",
             "tasks_for in [\"cron\", \"action\"]": "${push.branch}",
-            "tasks_for[:19] == \"github-pull-request\"": "${event.pull_request.base.ref}",
             "tasks_for == \"github-push\" \u0026\u0026 event.base_ref": "${event.base_ref}",
-            "tasks_for == \"github-push\" \u0026\u0026 !(event.base_ref)": "${event.ref}"
+            "tasks_for == \"github-push\" \u0026\u0026 !(event.base_ref)": "${event.ref}",
+            "tasks_for[:19] == \"github-pull-request\" || tasks_for == \"github-issue-comment\"": "${event.pull_request.base.ref}"
           }
         },
         "base_sha": {
           "$switch": {
             "tasks_for == \"github-push\"": "${event.before}",
             "tasks_for == \"github-release\"": "${event.release.target_commitish}",
-            "tasks_for[:19] == \"github-pull-request\"": "${event.pull_request.base.sha}",
-            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${push.revision}"
+            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${push.revision}",
+            "tasks_for[:19] == \"github-pull-request\" || tasks_for == \"github-issue-comment\"": "${event.pull_request.base.sha}"
           }
         },
         "head_ref": {
           "$switch": {
             "tasks_for == \"github-push\"": "${event.ref}",
             "tasks_for == \"github-release\"": "${event.release.tag_name}",
-            "tasks_for[:19] == \"github-pull-request\"": "${event.pull_request.head.ref}",
-            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${push.branch}"
+            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${push.branch}",
+            "tasks_for[:19] == \"github-pull-request\" || tasks_for == \"github-issue-comment\"": "${event.pull_request.head.ref}"
           }
         },
         "head_sha": {
           "$switch": {
             "tasks_for == \"github-push\"": "${event.after}",
             "tasks_for == \"github-release\"": "${event.release.tag_name}",
-            "tasks_for[:19] == \"github-pull-request\"": "${event.pull_request.head.sha}",
-            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${push.revision}"
+            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${push.revision}",
+            "tasks_for[:19] == \"github-pull-request\" || tasks_for == \"github-issue-comment\"": "${event.pull_request.head.sha}"
           }
         },
         "ownTaskId": {
@@ -350,8 +353,8 @@
           "$switch": {
             "tasks_for == \"github-push\"": "${event.pusher.email}",
             "tasks_for == \"github-release\"": "${event.sender.login}@users.noreply.github.com",
-            "tasks_for[:19] == \"github-pull-request\"": "${event.pull_request.user.login}@users.noreply.github.com",
-            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${tasks_for}@noreply.mozilla.org"
+            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${tasks_for}@noreply.mozilla.org",
+            "tasks_for[:19] == \"github-pull-request\" || tasks_for == \"github-issue-comment\"": "${event.pull_request.user.login}@users.noreply.github.com"
           }
         },
         "baseRepoUrl": {
@@ -359,20 +362,20 @@
             "$default": "${event.repository.html_url}",
             "tasks_for == \"pr-action\"": "${repository.base_url}",
             "tasks_for in [\"cron\", \"action\"]": "${repository.url}",
-            "tasks_for[:19] == \"github-pull-request\"": "${event.pull_request.base.repo.html_url}"
+            "tasks_for[:19] == \"github-pull-request\" || tasks_for == \"github-issue-comment\"": "${event.pull_request.base.repo.html_url}"
           }
         },
         "head_branch": {
           "$switch": {
             "tasks_for == \"github-push\"": "${event.ref}",
             "tasks_for == \"github-release\"": "${event.release.target_commitish}",
-            "tasks_for[:19] == \"github-pull-request\"": "${event.pull_request.head.ref}",
-            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${push.branch}"
+            "tasks_for in [\"cron\", \"action\", \"pr-action\"]": "${push.branch}",
+            "tasks_for[:19] == \"github-pull-request\" || tasks_for == \"github-issue-comment\"": "${event.pull_request.head.ref}"
           }
         },
-        "trustDomain": "mozilla",
+        "trustDomain": "adhoc",
         "isPullRequest": {
-          "$eval": "tasks_for[:19] == \"github-pull-request\""
+          "$eval": "tasks_for[:19] == \"github-pull-request\" || tasks_for == \"github-issue-comment\""
         },
         "releaseAction": {
           "$if": "tasks_for == \"github-release\"",
@@ -399,8 +402,8 @@
         "title": "${payload.decision.action.title}",
         "symbol": "${payload.decision.action.symbol}",
         "cb_name": "${payload.decision.action.cb_name}",
-        "repo_scope": "assume:repo:${payload.decision.repository.url[8:]}:action:generic",
-        "action_perm": "generic",
+        "repo_scope": "assume:repo:${payload.decision.repository.url[8:]}:action:release-promotion",
+        "action_perm": "release-promotion",
         "description": "${payload.decision.action.description}",
         "taskGroupId": "${payload.decision.action.taskGroupId}"
       },

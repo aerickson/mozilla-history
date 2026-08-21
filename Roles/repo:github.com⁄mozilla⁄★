@@ -83,7 +83,7 @@
     "generic-worker:run-as-administrator:gecko-t/win11-64-25h2-privileged",
     "generic-worker:run-as-administrator:gecko-t/win11-64-25h2-privileged-alpha",
     "generic-worker:run-as-administrator:releng-hardware/win11-64*",
-    "hooks:trigger-hook:lint/pre-commit-*",
+    "github:trigger-hook:lint/pre-commit-*",
     "in-tree:hook-action:project-app-services/in-tree-action-1-*",
     "in-tree:hook-action:project-app-services/in-tree-action-3-*",
     "in-tree:hook-action:project-enterprise/in-tree-action-1-*",
@@ -471,12 +471,12 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2026-07-22T20:55:47.374Z",
+  "lastModified": "2026-08-20T17:44:21.466Z",
   "roleId": "repo:github.com/mozilla/*",
   "scopes": [
     "docker-worker:cache:mozilla-level-1-*",
     "generic-worker:cache:mozilla-level-1-*",
-    "hooks:trigger-hook:lint/pre-commit-*",
+    "github:trigger-hook:lint/pre-commit-*",
     "in-tree:hook-action:project-mozilla/in-tree-action-1-*",
     "index:insert-task:mozilla.cache.head.*",
     "index:insert-task:mozilla.cache.level-1.*",
