@@ -55,9 +55,15 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2026-05-25T17:40:13.155Z",
+  "lastModified": "2026-08-25T13:51:42.071Z",
   "roleId": "repo:github.com/mozilla/translations:release:*",
   "scopes": [
+    "index:insert-task:translations.v2.translations.*",
+    "queue:route:index.translations.v2.translations.*",
+    "queue:route:tc-treeherder-stage.translations.*",
+    "queue:route:tc-treeherder-stage.v2.translations.*",
+    "queue:route:tc-treeherder.translations.*",
+    "queue:route:tc-treeherder.v2.translations.*",
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ]

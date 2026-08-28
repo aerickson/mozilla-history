@@ -38,9 +38,11 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-25T17:42:02.531Z",
+  "lastModified": "2026-08-21T14:33:12.495Z",
   "roleId": "repo:github.com/mozilla-releng/redo:action:*",
   "scopes": [
+    "index:insert-task:mozilla.v2.redo.*",
+    "queue:route:index.mozilla.v2.redo.*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/mozilla/redo/level-1/*",

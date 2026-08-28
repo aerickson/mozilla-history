@@ -69,14 +69,13 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2026-05-25T17:42:29.469Z",
+  "lastModified": "2026-08-25T13:51:01.228Z",
   "roleId": "repo:github.com/mozilla/translations:*",
   "scopes": [
     "docker-worker:cache:translations-level-1-*",
     "generic-worker:cache:translations-level-1-*",
     "in-tree:hook-action:project-translations/in-tree-action-1-*",
     "index:insert-task:translations.cache.level-1.*",
-    "index:insert-task:translations.v2.translations.*",
     "project:translations:releng:beetmover:action:upload-data",
     "project:translations:releng:beetmover:action:upload-translations-artifacts",
     "queue:cancel-task:translations-level-1/*",
@@ -89,11 +88,6 @@
     "queue:rerun-task:translations-level-1/*",
     "queue:route:checks",
     "queue:route:index.translations.cache.level-1.*",
-    "queue:route:index.translations.v2.translations.*",
-    "queue:route:tc-treeherder-stage.translations.*",
-    "queue:route:tc-treeherder-stage.v2.translations.*",
-    "queue:route:tc-treeherder.translations.*",
-    "queue:route:tc-treeherder.v2.translations.*",
     "queue:scheduler-id:translations-level-1",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"

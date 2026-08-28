@@ -40,6 +40,7 @@
     "project:comm:thunderbird:releng:treescript:action:tagging",
     "project:comm:thunderbird:releng:treescript:action:version_bump",
     "project:releng:lando:action:merge_day",
+    "project:releng:lando:repo:thunderbird-desktop-esr153",
     "project:releng:lando:repo:thunderbird-desktop-release",
     "project:releng:services/tooltool/api/download/internal",
     "project:releng:services/tooltool/api/download/public",
@@ -85,10 +86,11 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-07-15T22:25:42.712Z",
+  "lastModified": "2026-08-27T19:01:40.082Z",
   "roleId": "repo:hg.mozilla.org/releases/comm-release:action:merge-automation",
   "scopes": [
     "project:releng:lando:action:merge_day",
+    "project:releng:lando:repo:thunderbird-desktop-esr153",
     "project:releng:lando:repo:thunderbird-desktop-release"
   ]
 }

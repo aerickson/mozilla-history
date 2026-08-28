@@ -38,9 +38,11 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-25T17:40:03.049Z",
+  "lastModified": "2026-08-21T14:32:57.015Z",
   "roleId": "repo:github.com/mozilla-releng/firefox-ci-playground:action:*",
   "scopes": [
+    "index:insert-task:mozilla.v2.firefox-ci-playground.*",
+    "queue:route:index.mozilla.v2.firefox-ci-playground.*",
     "secrets:get:project/mozilla/firefox-ci-playground/level-1/*",
     "secrets:get:project/mozilla/firefox-ci-playground/level-any/*",
     "secrets:get:project/mozilla/level-1/*",

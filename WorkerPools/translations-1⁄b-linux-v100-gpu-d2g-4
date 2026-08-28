@@ -18,7 +18,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-18"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
             }
           }
         ],
@@ -67,7 +67,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-5f81b1e2a50094d715f6",
+          "launchConfigId": "lc-283ceb95b4729beae53f",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Skylake",
@@ -96,7 +96,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-18"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
             }
           }
         ],
@@ -145,7 +145,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-daca989b4c47b4c88894",
+          "launchConfigId": "lc-f5a7b91e05955c978ee6",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Skylake",
@@ -174,7 +174,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-18"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
             }
           }
         ],
@@ -223,7 +223,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-409068b790b1acdded82",
+          "launchConfigId": "lc-367a3a56e3001198b21b",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Skylake",
@@ -252,7 +252,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-18"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
             }
           }
         ],
@@ -301,7 +301,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-ad481ae0f2dc75572207",
+          "launchConfigId": "lc-83fe04370790223af087",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Skylake",
@@ -330,7 +330,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-18"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
             }
           }
         ],
@@ -379,7 +379,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-58f74d481d3e6bb8a38a",
+          "launchConfigId": "lc-fc7c422370b3b13e2514",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Skylake",
@@ -408,7 +408,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-18"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
             }
           }
         ],
@@ -457,7 +457,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-1ca61eaf450797539dec",
+          "launchConfigId": "lc-c8ded18ddd5ffcc02810",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Skylake",
@@ -486,7 +486,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-18"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
             }
           }
         ],
@@ -535,7 +535,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-11fa17f8dce8da39d105",
+          "launchConfigId": "lc-9934d155d409c5615756",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Skylake",
@@ -561,7 +561,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nWorker for machine learning and other high GPU tasks",
   "emailOnError": true,
-  "lastModified": "2026-08-19T13:31:20.676Z",
+  "lastModified": "2026-08-26T17:54:48.598Z",
   "owner": "release+tc-workers@mozilla.com",
   "providerId": "fxci-level1-gcp",
   "requestedCapacity": 0,

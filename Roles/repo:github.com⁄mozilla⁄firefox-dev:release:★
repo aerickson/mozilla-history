@@ -148,9 +148,15 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-26T19:59:26.083Z",
+  "lastModified": "2026-08-25T13:50:51.381Z",
   "roleId": "repo:github.com/mozilla/firefox-dev:release:*",
   "scopes": [
+    "index:insert-task:gecko.v2.firefox-dev.*",
+    "queue:route:index.gecko.v2.firefox-dev.*",
+    "queue:route:tc-treeherder-stage.firefox-dev.*",
+    "queue:route:tc-treeherder-stage.v2.firefox-dev.*",
+    "queue:route:tc-treeherder.firefox-dev.*",
+    "queue:route:tc-treeherder.v2.firefox-dev.*",
     "secrets:get:project/gecko/level-1/*",
     "secrets:get:project/gecko/level-any/*"
   ]

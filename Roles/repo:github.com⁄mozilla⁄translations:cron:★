@@ -58,9 +58,15 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2026-05-25T17:41:48.142Z",
+  "lastModified": "2026-08-25T13:51:13.725Z",
   "roleId": "repo:github.com/mozilla/translations:cron:*",
   "scopes": [
+    "index:insert-task:translations.v2.translations.*",
+    "queue:route:index.translations.v2.translations.*",
+    "queue:route:tc-treeherder-stage.translations.*",
+    "queue:route:tc-treeherder-stage.v2.translations.*",
+    "queue:route:tc-treeherder.translations.*",
+    "queue:route:tc-treeherder.v2.translations.*",
     "secrets:get:project/releng/mobile/github-cron-token",
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"

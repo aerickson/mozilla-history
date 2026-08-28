@@ -65,10 +65,11 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-25T17:40:29.425Z",
+  "lastModified": "2026-08-25T13:51:33.881Z",
   "roleId": "repo:github.com/mozilla-releng/staging-application-services:action:*",
   "scopes": [
-    "queue:route:index.app-services.v2.staging-application-services.revision.*",
+    "index:insert-task:app-services.v2.staging-application-services.*",
+    "queue:route:index.app-services.v2.staging-application-services.*",
     "queue:route:index.project.staging-application-services.*",
     "secrets:get:project/app-services/level-1/*",
     "secrets:get:project/app-services/level-any/*",

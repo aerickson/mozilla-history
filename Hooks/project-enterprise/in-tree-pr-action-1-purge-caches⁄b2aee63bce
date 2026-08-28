@@ -1,10 +1,10 @@
 {
   "hookGroupId": "project-enterprise",
-  "hookId": "in-tree-action-1-generic/cef6777f3b",
+  "hookId": "in-tree-pr-action-1-purge-caches/b2aee63bce",
   "metadata": {
-    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAction task generic at level 1, with `.taskcluster.yml` hash cef6777f3b.\n\nFor (project, branch) combinations:\n\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n\n\nThis hook is no longer current and is kept for historical purposes.",
+    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nPR action task purge-caches at level 1, with `.taskcluster.yml` hash b2aee63bce.\n\nFor (project, branch) combinations:\nenterprise-firefox-try, branch: 'enterprise-main'\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
     "emailOnError": true,
-    "name": "project-enterprise/in-tree-action-1-generic/cef6777f3b",
+    "name": "project-enterprise/in-tree-pr-action-1-purge-caches/b2aee63bce",
     "owner": "taskcluster-notifications@mozilla.com"
   },
   "schedule": [],
@@ -395,7 +395,7 @@
         "tasks_for[:6] == \"github\" || (tasks_for in [\"action\", \"pr-action\"] \u0026\u0026 parameters[\"repository_type\"] == \"git\") || (tasks_for == \"cron\" \u0026\u0026 repository[\"type\"] == \"git\")": {
           "in": {
             "in": {
-              "$if": "eventType in [\"action\", \"cron\"] || (eventType == \"push\" \u0026\u0026 repoType == \"enterprise\" \u0026\u0026 shortRef in [\"enterprise-main\", \"enterprise-beta\", \"enterprise-release\"]) || (eventType == \"push\" \u0026\u0026 project == \"enterprise-firefox-try\") || (isPullRequest \u0026\u0026 eventAction in [\"opened\", \"reopened\", \"synchronize\"])\n",
+              "$if": "eventType in [\"action\", \"cron\"] || (eventType == \"push\" \u0026\u0026 repoType == \"prod\" \u0026\u0026 shortRef in [\"enterprise-main\", \"enterprise-beta\", \"enterprise-release\"]) || (eventType == \"push\" \u0026\u0026 repoType == \"dev\") || (isPullRequest \u0026\u0026 eventAction in [\"opened\", \"reopened\", \"synchronize\"])\n",
               "then": {
                 "in": {
                   "tags": {
@@ -511,7 +511,12 @@
                             "index.${trustDomain}.v2.${project}.revision.${headRev}.taskgraph.decision"
                           ],
                           "tasks_for == \"action\"": [
-                            "tc-treeherder.v2.${shortRef}.${headRev}",
+                            {
+                              "$switch": {
+                                "$default": "tc-treeherder.v2.${project}.${headRev}",
+                                "project == \"enterprise-firefox\"": "tc-treeherder.v2.${shortRef}.${headRev}"
+                              }
+                            },
                             "index.${trustDomain}.v2.${project}.revision.${headRev}.taskgraph.actions.${ownTaskId}"
                           ],
                           "tasks_for == \"pr-action\"": [
@@ -698,7 +703,7 @@
                 },
                 "$let": {
                   "level": {
-                    "$if": "(tasks_for == \"action\" || eventType in [\"cron\", \"push\"]) \u0026\u0026 repoType == \"enterprise\" \u0026\u0026 project == \"enterprise-firefox\"",
+                    "$if": "(tasks_for == \"action\" || eventType in [\"cron\", \"push\"]) \u0026\u0026 repoType == \"prod\"",
                     "else": 1,
                     "then": 3
                   }
@@ -711,8 +716,9 @@
                   "$default": null,
                   "repoUrl == \"https://github.com/mozilla/firefox-dev\"": "dev",
                   "repoUrl == \"https://github.com/mozilla-firefox/firefox\"": "prod",
-                  "repoUrl == \"https://github.com/mozilla/enterprise-firefox\"": "enterprise",
-                  "repoUrl == \"https://github.com/mozilla-releng/staging-firefox\"": "dev"
+                  "repoUrl == \"https://github.com/mozilla/enterprise-firefox\"": "prod",
+                  "repoUrl == \"https://github.com/mozilla-releng/staging-firefox\"": "dev",
+                  "repoUrl == \"https://github.com/mozilla/enterprise-firefox-try\"": "dev"
                 }
               },
               "shortRef": {
@@ -803,8 +809,8 @@
         "title": "${payload.decision.action.title}",
         "symbol": "${payload.decision.action.symbol}",
         "cb_name": "${payload.decision.action.cb_name}",
-        "repo_scope": "assume:repo:${payload.decision.repository.url[8:]}:action:generic",
-        "action_perm": "generic",
+        "repo_scope": "assume:repo:${payload.decision.repository.base_url[8:]}:action:purge-caches",
+        "action_perm": "purge-caches",
         "description": "${payload.decision.action.description}",
         "taskGroupId": "${payload.decision.action.taskGroupId}"
       },
@@ -814,7 +820,7 @@
       "ownTaskId": {
         "$eval": "taskId"
       },
-      "tasks_for": "action",
+      "tasks_for": "pr-action",
       "parameters": {
         "$eval": "payload.decision['parameters']"
       },

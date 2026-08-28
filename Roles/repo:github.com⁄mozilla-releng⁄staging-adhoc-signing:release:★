@@ -47,9 +47,11 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-25T17:40:24.433Z",
+  "lastModified": "2026-08-25T13:51:16.124Z",
   "roleId": "repo:github.com/mozilla-releng/staging-adhoc-signing:release:*",
   "scopes": [
+    "index:insert-task:adhoc.v2.staging-adhoc-signing.*",
+    "queue:route:index.adhoc.v2.staging-adhoc-signing.*",
     "secrets:get:project/adhoc/level-1/*",
     "secrets:get:project/adhoc/level-any/*"
   ]

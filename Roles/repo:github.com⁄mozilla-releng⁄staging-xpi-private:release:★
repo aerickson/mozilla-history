@@ -56,9 +56,11 @@
     "secrets:get:project/xpi/level-1/*",
     "secrets:get:project/xpi/level-any/*"
   ],
-  "lastModified": "2026-05-25T17:42:48.448Z",
+  "lastModified": "2026-08-25T13:51:50.897Z",
   "roleId": "repo:github.com/mozilla-releng/staging-xpi-private:release:*",
   "scopes": [
+    "index:insert-task:xpi.v2.staging-xpi-private.*",
+    "queue:route:index.xpi.v2.staging-xpi-private.*",
     "secrets:get:project/xpi/level-1/*",
     "secrets:get:project/xpi/level-any/*"
   ]

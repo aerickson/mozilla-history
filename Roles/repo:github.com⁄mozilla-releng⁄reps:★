@@ -40,7 +40,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-25T17:41:30.433Z",
+  "lastModified": "2026-08-25T13:50:19.755Z",
   "roleId": "repo:github.com/mozilla-releng/reps:*",
   "scopes": [
     "docker-worker:cache:mozilla-level-1-*",
@@ -48,7 +48,7 @@
     "generic-worker:cache:mozilla-level-1-*",
     "generic-worker:cache:mozilla-project-reps-level-1-*",
     "in-tree:hook-action:project-mozilla/in-tree-action-1-*",
-    "index:insert-task:mozilla.v2.reps.*",
+    "index:insert-task:mozilla.v2.reps.cache.level-1.*",
     "queue:cancel-task:mozilla-level-1/*",
     "queue:create-task:low:built-in/*",
     "queue:create-task:low:mozilla-1/*",
@@ -56,7 +56,7 @@
     "queue:create-task:low:releng-hardware/mozilla-b-1-*",
     "queue:rerun-task:mozilla-level-1/*",
     "queue:route:checks",
-    "queue:route:index.mozilla.v2.reps.*",
+    "queue:route:index.mozilla.v2.reps.cache.level-1.*",
     "queue:scheduler-id:mozilla-level-1",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"

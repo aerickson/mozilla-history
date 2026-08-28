@@ -38,9 +38,11 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-25T17:41:19.194Z",
+  "lastModified": "2026-08-21T14:32:50.564Z",
   "roleId": "repo:github.com/mozilla-releng/simple-github:release:*",
   "scopes": [
+    "index:insert-task:mozilla.v2.simple-github.*",
+    "queue:route:index.mozilla.v2.simple-github.*",
     "secrets:get:project/mozilla/level-1/*",
     "secrets:get:project/mozilla/level-any/*",
     "secrets:get:project/mozilla/simple-github/level-1/*",

@@ -91,9 +91,15 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-25T17:40:53.949Z",
+  "lastModified": "2026-08-25T13:51:38.387Z",
   "roleId": "repo:github.com/mozilla/enterprise-firefox-try:release:*",
   "scopes": [
+    "index:insert-task:enterprise.v2.enterprise-firefox-try.*",
+    "queue:route:index.enterprise.v2.enterprise-firefox-try.*",
+    "queue:route:tc-treeherder-stage.enterprise-firefox-try.*",
+    "queue:route:tc-treeherder-stage.v2.enterprise-firefox-try.*",
+    "queue:route:tc-treeherder.enterprise-firefox-try.*",
+    "queue:route:tc-treeherder.v2.enterprise-firefox-try.*",
     "secrets:get:project/enterprise/level-1/*",
     "secrets:get:project/enterprise/level-any/*"
   ]

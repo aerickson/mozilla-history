@@ -74,10 +74,11 @@
     "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ],
-  "lastModified": "2026-08-20T13:37:11.748Z",
+  "lastModified": "2026-08-25T13:51:40.992Z",
   "roleId": "repo:github.com/mozilla-releng/staging-xpi-manifest:action:*",
   "scopes": [
     "docker-worker:cache:xpi-level-1-*",
+    "index:insert-task:xpi.v2.staging-xpi-manifest.*",
     "project:xpi:balrog:action:*",
     "project:xpi:balrog:channel:*",
     "project:xpi:balrog:server:staging",
@@ -97,6 +98,7 @@
     "queue:route:checks",
     "queue:route:index.xpi.cache.level-1.*",
     "queue:route:index.xpi.cache.pr.*",
+    "queue:route:index.xpi.v2.staging-xpi-manifest.*",
     "queue:route:index.xpi.v2.xpi-manifest.*",
     "queue:route:index.xpi.xpi-manifest.cache.level-1.*",
     "queue:route:notify.email.*",

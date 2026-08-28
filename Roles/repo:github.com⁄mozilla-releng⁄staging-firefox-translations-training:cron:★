@@ -54,9 +54,15 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2026-05-25T17:40:11.532Z",
+  "lastModified": "2026-08-25T13:50:52.303Z",
   "roleId": "repo:github.com/mozilla-releng/staging-firefox-translations-training:cron:*",
   "scopes": [
+    "index:insert-task:translations.v2.staging-firefox-translations-training.*",
+    "queue:route:index.translations.v2.staging-firefox-translations-training.*",
+    "queue:route:tc-treeherder-stage.staging-firefox-translations-training.*",
+    "queue:route:tc-treeherder-stage.v2.staging-firefox-translations-training.*",
+    "queue:route:tc-treeherder.staging-firefox-translations-training.*",
+    "queue:route:tc-treeherder.v2.staging-firefox-translations-training.*",
     "secrets:get:project/releng/mobile/github-cron-token",
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"

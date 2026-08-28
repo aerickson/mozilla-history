@@ -1,10 +1,10 @@
 {
   "hookGroupId": "project-adhoc",
-  "hookId": "in-tree-action-3-release-promotion/8752d0cb45",
+  "hookId": "in-tree-action-1-generic/c4c650b93c",
   "metadata": {
-    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAction task release-promotion at level 3, with `.taskcluster.yml` hash 8752d0cb45.\n\nFor (project, branch) combinations:\nadhoc-signing, branch: 'main'\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
+    "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nAction task generic at level 1, with `.taskcluster.yml` hash c4c650b93c.\n\nFor (project, branch) combinations:\n\n\nThis hook is fired in response to actions defined in a\nGecko decision task's `actions.json`.\n",
     "emailOnError": true,
-    "name": "project-adhoc/in-tree-action-3-release-promotion/8752d0cb45",
+    "name": "project-adhoc/in-tree-action-1-generic/c4c650b93c",
     "owner": "taskcluster-notifications@mozilla.com"
   },
   "schedule": [],
@@ -63,7 +63,11 @@
                   }
                 },
                 {
-                  "tasks_for": "${tasks_for}"
+                  "tasks_for": {
+                    "$if": "tasks_for == \"github-issue-comment\"",
+                    "else": "${tasks_for}",
+                    "then": "github-pull-request"
+                  }
                 }
               ]
             },
@@ -402,8 +406,8 @@
         "title": "${payload.decision.action.title}",
         "symbol": "${payload.decision.action.symbol}",
         "cb_name": "${payload.decision.action.cb_name}",
-        "repo_scope": "assume:repo:${payload.decision.repository.url[8:]}:action:release-promotion",
-        "action_perm": "release-promotion",
+        "repo_scope": "assume:repo:${payload.decision.repository.url[8:]}:action:generic",
+        "action_perm": "generic",
         "description": "${payload.decision.action.description}",
         "taskGroupId": "${payload.decision.action.taskGroupId}"
       },

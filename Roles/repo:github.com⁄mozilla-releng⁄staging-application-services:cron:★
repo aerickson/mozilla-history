@@ -64,9 +64,11 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-05-25T17:41:11.574Z",
+  "lastModified": "2026-08-25T13:50:26.462Z",
   "roleId": "repo:github.com/mozilla-releng/staging-application-services:cron:*",
   "scopes": [
+    "index:insert-task:app-services.v2.staging-application-services.*",
+    "queue:route:index.app-services.v2.staging-application-services.*",
     "secrets:get:project/app-services/level-1/*",
     "secrets:get:project/app-services/level-any/*",
     "secrets:get:project/releng/mobile/github-cron-token"
