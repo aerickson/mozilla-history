@@ -10,7 +10,6 @@
     "github:trigger-hook:lint/pre-commit-*",
     "in-tree:hook-action:project-mozilla/in-tree-action-1-*",
     "index:insert-task:mozilla.cache.head.*",
-    "index:insert-task:mozilla.cache.level-1.*",
     "index:insert-task:mozilla.cache.pr.*",
     "index:insert-task:mozilla.v2.mozilla-releng-pr.*",
     "index:insert-task:xpi.cache.level-1.*",
@@ -34,7 +33,6 @@
     "queue:rerun-task:xpi-level-1/*",
     "queue:route:checks",
     "queue:route:index.mozilla.cache.head.*",
-    "queue:route:index.mozilla.cache.level-1.*",
     "queue:route:index.mozilla.cache.pr.*",
     "queue:route:index.mozilla.v2.mozilla-releng-pr.*",
     "queue:route:index.xpi.cache.level-1.*",
@@ -56,10 +54,12 @@
     "secrets:get:project/xpi/level-1/*",
     "secrets:get:project/xpi/level-any/*"
   ],
-  "lastModified": "2026-08-25T13:51:50.897Z",
+  "lastModified": "2026-09-02T18:49:27.736Z",
   "roleId": "repo:github.com/mozilla-releng/staging-xpi-private:release:*",
   "scopes": [
+    "index:insert-task:xpi.cache.level-1.*",
     "index:insert-task:xpi.v2.staging-xpi-private.*",
+    "queue:route:index.xpi.cache.level-1.*",
     "queue:route:index.xpi.v2.staging-xpi-private.*",
     "secrets:get:project/xpi/level-1/*",
     "secrets:get:project/xpi/level-any/*"

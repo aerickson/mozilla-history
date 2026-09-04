@@ -18,7 +18,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-09-03"
             }
           }
         ],
@@ -66,7 +66,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-7dd9f408d2f36deb252e",
+          "launchConfigId": "lc-5e2dfc739f6df2ad9ef3",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Ampere Altra",
@@ -89,7 +89,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-09-03"
             }
           }
         ],
@@ -137,7 +137,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-035a4dba5147beba77e1",
+          "launchConfigId": "lc-a7b0e70cf80dd932343a",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Ampere Altra",
@@ -160,7 +160,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 75,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-09-03"
             }
           }
         ],
@@ -208,7 +208,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-2b7a410204ae9fd8d1ef",
+          "launchConfigId": "lc-b0f8dfb53fb61f1a118a",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Ampere Altra",
@@ -228,7 +228,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nBuilds AArch64 docker images",
   "emailOnError": false,
-  "lastModified": "2026-08-26T17:55:18.807Z",
+  "lastModified": "2026-09-03T13:35:00.699Z",
   "owner": "release+tc-workers@mozilla.com",
   "providerId": "fxci-level1-gcp",
   "requestedCapacity": 0,

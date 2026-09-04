@@ -140,6 +140,7 @@
     "queue:create-task:low:scriptworker-prov-v1/depsigning-mac-v1-dev",
     "queue:create-task:medium:proj-autophone/*",
     "queue:get-artifact:private/openh264/*",
+    "queue:get-artifact:private/widevine/*",
     "queue:get-artifact:project/civet/*",
     "queue:get-artifact:project/gecko/*",
     "queue:get-artifact:releng/partner/*",
@@ -178,7 +179,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-08-05T18:11:32.765Z",
+  "lastModified": "2026-09-01T15:59:28.432Z",
   "roleId": "repo:hg.mozilla.org/releases/mozilla-beta:*",
   "scopes": [
     "assume:project:taskcluster:gecko:level-3-sccache-buckets",
@@ -287,6 +288,7 @@
     "queue:create-task:low:scriptworker-prov-v1/depsigning-mac-v1-dev",
     "queue:create-task:medium:proj-autophone/*",
     "queue:get-artifact:private/openh264/*",
+    "queue:get-artifact:private/widevine/*",
     "queue:get-artifact:project/civet/*",
     "queue:get-artifact:project/gecko/*",
     "queue:get-artifact:releng/partner/*",

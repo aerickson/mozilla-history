@@ -114,6 +114,7 @@
     "queue:create-task:low:scriptworker-prov-v1/depsigning-mac-v1-dev",
     "queue:create-task:medium:proj-autophone/*",
     "queue:get-artifact:private/openh264/*",
+    "queue:get-artifact:private/widevine/*",
     "queue:get-artifact:project/civet/*",
     "queue:get-artifact:project/gecko/*",
     "queue:get-artifact:releng/partner/*",
@@ -147,7 +148,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-03-20T10:41:41.977Z",
+  "lastModified": "2026-09-01T15:59:35.255Z",
   "roleId": "repo:hg.mozilla.org/integration/autoland:branch:*",
   "scopes": [
     "assume:project:taskcluster:gecko:level-3-sccache-buckets",
@@ -171,6 +172,7 @@
     "queue:create-task:highest:scriptworker-k8s/gecko-3-*",
     "queue:create-task:highest:scriptworker-k8s/gecko-t-*",
     "queue:get-artifact:private/openh264/*",
+    "queue:get-artifact:private/widevine/*",
     "queue:rerun-task:gecko-level-3/*",
     "queue:route:index.gecko.cache.level-3.*",
     "queue:route:index.gecko.v2.autoland.*",

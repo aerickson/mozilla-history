@@ -62,9 +62,10 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-08-25T13:51:42.949Z",
+  "lastModified": "2026-09-02T18:49:51.736Z",
   "roleId": "repo:github.com/mozilla-mobile/staging-firefox-ios:action:*",
   "scopes": [
+    "index:insert-task:mobile.v2.firefox-ios.cache.level-1.*",
     "index:insert-task:mobile.v2.staging-firefox-ios.*",
     "notify:email:*",
     "notify:slack-channel:*",
@@ -81,6 +82,7 @@
     "project:mobile:firefox-ios:releng:bitrise:workflow:klar_unit_test",
     "queue:create-task:highest:scriptworker-k8s/mobile-1-*",
     "queue:create-task:low:releng-hardware/mozilla-b-1-osx",
+    "queue:route:index.mobile.v2.firefox-ios.cache.level-1.*",
     "queue:route:index.mobile.v2.staging-firefox-ios.*",
     "queue:route:notify.*",
     "queue:route:tc-treeherder-stage.staging-firefox-ios.*",

@@ -1,0 +1,7086 @@
+[
+ {
+  "WorkerPoolID": "adhoc-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 10,
+  "TotalCapacity": 10
+ },
+ {
+  "WorkerPoolID": "adhoc-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 38,
+  "TotalCapacity": 38
+ },
+ {
+  "WorkerPoolID": "adhoc-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
+ },
+ {
+  "WorkerPoolID": "adhoc-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "app-services-1/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 311,
+  "TotalCapacity": 311
+ },
+ {
+  "WorkerPoolID": "app-services-1/b-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "app-services-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 6,
+  "TotalCapacity": 6
+ },
+ {
+  "WorkerPoolID": "app-services-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "app-services-3/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 593,
+  "TotalCapacity": 593
+ },
+ {
+  "WorkerPoolID": "app-services-3/b-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "app-services-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 21,
+  "TotalCapacity": 21
+ },
+ {
+  "WorkerPoolID": "app-services-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "built-in/fail",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "No artifacts found"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "built-in/succeed",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "No artifacts found"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "code-analysis-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "code-analysis-1/linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "code-analysis-1/linux-gw-gcp",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
+  "TotalWorkers": 18,
+  "TotalCapacity": 18
+ },
+ {
+  "WorkerPoolID": "code-analysis-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "code-analysis-3/linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "code-analysis-3/linux-gw-gcp",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-gui-googlecompute-2024-09-18t05-46-31z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "code-coverage/bot",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 374,
+  "TotalCapacity": 374
+ },
+ {
+  "WorkerPoolID": "code-review/bot",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 11061,
+  "TotalCapacity": 11061
+ },
+ {
+  "WorkerPoolID": "comm-1/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1662,
+  "TotalCapacity": 1662
+ },
+ {
+  "WorkerPoolID": "comm-1/b-linux-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-1/b-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 11,
+  "TotalCapacity": 11
+ },
+ {
+  "WorkerPoolID": "comm-1/b-linux-docker-large-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "comm-1/b-linux-docker-xlarge-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
+ },
+ {
+  "WorkerPoolID": "comm-1/b-linux-gcp-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-arm64-gui-googlecompute-2024-09-18t14-57-52z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-1/b-linux-large",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-1/b-linux-xlarge",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-1/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "comm-1/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 221,
+  "TotalCapacity": 221
+ },
+ {
+  "WorkerPoolID": "comm-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 457,
+  "TotalCapacity": 457
+ },
+ {
+  "WorkerPoolID": "comm-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "comm-1/images-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-2/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-2/b-linux-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-2/b-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-2/b-linux-docker-large-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-2/b-linux-docker-xlarge-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "comm-2/b-linux-gcp-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-arm64-gui-googlecompute-2024-09-18t14-57-52z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-2/b-linux-large",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-2/b-linux-xlarge",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "comm-2/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-2/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-2/images-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-3/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 5425,
+  "TotalCapacity": 5425
+ },
+ {
+  "WorkerPoolID": "comm-3/b-linux-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-3/b-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2250,
+  "TotalCapacity": 2250
+ },
+ {
+  "WorkerPoolID": "comm-3/b-linux-docker-large-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 9,
+  "TotalCapacity": 9
+ },
+ {
+  "WorkerPoolID": "comm-3/b-linux-docker-xlarge-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 6,
+  "TotalCapacity": 6
+ },
+ {
+  "WorkerPoolID": "comm-3/b-linux-gcp-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-arm64-gui-googlecompute-2024-09-18t19-02-58z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-3/b-linux-large",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-3/b-linux-xlarge",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "comm-3/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 759,
+  "TotalCapacity": 759
+ },
+ {
+  "WorkerPoolID": "comm-3/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 221,
+  "TotalCapacity": 221
+ },
+ {
+  "WorkerPoolID": "comm-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 190,
+  "TotalCapacity": 190
+ },
+ {
+  "WorkerPoolID": "comm-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "comm-3/images-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-t/misc",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 127,
+  "TotalCapacity": 127
+ },
+ {
+  "WorkerPoolID": "comm-t/t-linux-arm64-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-t/t-linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 14,
+  "TotalCapacity": 14
+ },
+ {
+  "WorkerPoolID": "comm-t/t-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 4382,
+  "TotalCapacity": 4382
+ },
+ {
+  "WorkerPoolID": "comm-t/t-linux-docker-noscratch",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 63,
+  "TotalCapacity": 63
+ },
+ {
+  "WorkerPoolID": "comm-t/t-linux-docker-noscratch-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 7054,
+  "TotalCapacity": 7054
+ },
+ {
+  "WorkerPoolID": "comm-t/win11-64-2009",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-t/win11-64-2009-ssd",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-t/win11-64-24h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 114,
+  "TotalCapacity": 114
+ },
+ {
+  "WorkerPoolID": "comm-t/win11-64-24h2-ssd",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "comm-t/win11-64-25h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 9292,
+  "TotalCapacity": 9292
+ },
+ {
+  "WorkerPoolID": "comm-t/win11-64-25h2-ssd",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-t/win11-a64-25h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "comm-t/win11-a64-25h2-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 21,
+  "TotalCapacity": 21
+ },
+ {
+  "WorkerPoolID": "enterprise-1/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1030,
+  "TotalCapacity": 1030
+ },
+ {
+  "WorkerPoolID": "enterprise-1/b-linux-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 19,
+  "TotalCapacity": 19
+ },
+ {
+  "WorkerPoolID": "enterprise-1/b-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 173,
+  "TotalCapacity": 173
+ },
+ {
+  "WorkerPoolID": "enterprise-1/b-linux-docker-large-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 9,
+  "TotalCapacity": 9
+ },
+ {
+  "WorkerPoolID": "enterprise-1/b-linux-docker-xlarge-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1306,
+  "TotalCapacity": 1306
+ },
+ {
+  "WorkerPoolID": "enterprise-1/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 101,
+  "TotalCapacity": 101
+ },
+ {
+  "WorkerPoolID": "enterprise-1/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 221,
+  "TotalCapacity": 221
+ },
+ {
+  "WorkerPoolID": "enterprise-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 120,
+  "TotalCapacity": 120
+ },
+ {
+  "WorkerPoolID": "enterprise-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
+ },
+ {
+  "WorkerPoolID": "enterprise-1/images-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "enterprise-1/win11-a64-25h2-builder",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-3/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 4303,
+  "TotalCapacity": 4303
+ },
+ {
+  "WorkerPoolID": "enterprise-3/b-linux-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-3/b-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 768,
+  "TotalCapacity": 768
+ },
+ {
+  "WorkerPoolID": "enterprise-3/b-linux-docker-large-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 62,
+  "TotalCapacity": 62
+ },
+ {
+  "WorkerPoolID": "enterprise-3/b-linux-docker-xlarge-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 533,
+  "TotalCapacity": 533
+ },
+ {
+  "WorkerPoolID": "enterprise-3/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 610,
+  "TotalCapacity": 610
+ },
+ {
+  "WorkerPoolID": "enterprise-3/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 221,
+  "TotalCapacity": 221
+ },
+ {
+  "WorkerPoolID": "enterprise-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 62,
+  "TotalCapacity": 62
+ },
+ {
+  "WorkerPoolID": "enterprise-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
+ },
+ {
+  "WorkerPoolID": "enterprise-3/images-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "enterprise-3/win11-a64-25h2-builder",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "enterprise-t/misc",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 237,
+  "TotalCapacity": 237
+ },
+ {
+  "WorkerPoolID": "enterprise-t/t-linux-2204-wayland",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
+  "TotalWorkers": 863,
+  "TotalCapacity": 863
+ },
+ {
+  "WorkerPoolID": "enterprise-t/t-linux-2204-wayland-snap",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/t-linux-2404-wayland-snap",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/t-linux-2404-wayland-snap-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-alpha",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/t-linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/t-linux-docker-16c32gb-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1078,
+  "TotalCapacity": 1078
+ },
+ {
+  "WorkerPoolID": "enterprise-t/t-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 4720,
+  "TotalCapacity": 4720
+ },
+ {
+  "WorkerPoolID": "enterprise-t/t-linux-docker-kvm",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/t-linux-docker-noscratch-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 8105,
+  "TotalCapacity": 8105
+ },
+ {
+  "WorkerPoolID": "enterprise-t/t-linux-xlarge-2204-wayland",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win10-64-2009",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 604,
+  "TotalCapacity": 604
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-24h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-24h2-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-24h2-gpu",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-24h2-large",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-24h2-source",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-24h2-source-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-25h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 7147,
+  "TotalCapacity": 7147
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-25h2-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-25h2-gpu",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 413,
+  "TotalCapacity": 413
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-25h2-large",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3040,
+  "TotalCapacity": 3040
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-25h2-privileged",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-25h2-source",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 372,
+  "TotalCapacity": 372
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-25h2-source-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "enterprise-t/win11-64-25h2-webgpu",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 7750,
+  "TotalCapacity": 7750
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-2204-kvm-gcp",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 47,
+  "TotalCapacity": 47
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-docker-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 11169,
+  "TotalCapacity": 11169
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-docker-large-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1214,
+  "TotalCapacity": 1214
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-docker-updatebot-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-docker-xlarge-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1424,
+  "TotalCapacity": 1424
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-gcp-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-arm64-gui-googlecompute-2024-09-18t14-57-52z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-kvm",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 166,
+  "TotalCapacity": 166
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-large",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-medium",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 19586,
+  "TotalCapacity": 19586
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-linux-xlarge",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 1185,
+  "TotalCapacity": 1185
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-win2022-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-win2022-headless",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-win2022-updatebot",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-win2022-xxlarge",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 11,
+  "TotalCapacity": 11
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 273,
+  "TotalCapacity": 273
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-win2025-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 177,
+  "TotalCapacity": 177
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-win2025-headless",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 28181,
+  "TotalCapacity": 28181
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-win2025-updatebot",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 221,
+  "TotalCapacity": 221
+ },
+ {
+  "WorkerPoolID": "gecko-1/b-win2025-xxlarge",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 221,
+  "TotalCapacity": 221
+ },
+ {
+  "WorkerPoolID": "gecko-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1842,
+  "TotalCapacity": 1842
+ },
+ {
+  "WorkerPoolID": "gecko-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 76,
+  "TotalCapacity": 76
+ },
+ {
+  "WorkerPoolID": "gecko-1/images-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 16,
+  "TotalCapacity": 16
+ },
+ {
+  "WorkerPoolID": "gecko-1/win11-a64-25h2-builder",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 33,
+  "TotalCapacity": 33
+ },
+ {
+  "WorkerPoolID": "gecko-1/win11-a64-25h2-builder-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 185,
+  "TotalCapacity": 185
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 307,
+  "TotalCapacity": 307
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux-docker-large-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 39,
+  "TotalCapacity": 39
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux-docker-updatebot-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux-docker-xlarge-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 75,
+  "TotalCapacity": 75
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux-gcp-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-arm64-gui-googlecompute-2024-09-18t14-57-52z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux-kvm",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 15,
+  "TotalCapacity": 15
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux-large",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux-medium",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 328,
+  "TotalCapacity": 328
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-linux-xlarge",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 23,
+  "TotalCapacity": 23
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-win2022-updatebot",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 221,
+  "TotalCapacity": 221
+ },
+ {
+  "WorkerPoolID": "gecko-2/b-win2025-updatebot",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 221,
+  "TotalCapacity": 221
+ },
+ {
+  "WorkerPoolID": "gecko-2/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 20,
+  "TotalCapacity": 20
+ },
+ {
+  "WorkerPoolID": "gecko-2/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-2/images-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 26804,
+  "TotalCapacity": 26804
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-2204-kvm-gcp",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-gui-googlecompute-2024-09-18t05-46-31z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 45,
+  "TotalCapacity": 45
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-docker-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-alpha",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 28537,
+  "TotalCapacity": 28537
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-docker-large-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2850,
+  "TotalCapacity": 2850
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-docker-updatebot-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 46,
+  "TotalCapacity": 46
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-docker-xlarge-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3756,
+  "TotalCapacity": 3756
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-gcp-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-arm64-gui-googlecompute-2024-09-18t19-02-58z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-kvm",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 630,
+  "TotalCapacity": 630
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-large",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 45,
+  "TotalCapacity": 45
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-medium",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 32943,
+  "TotalCapacity": 32943
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-linux-xlarge",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 192,
+  "TotalCapacity": 192
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 8035,
+  "TotalCapacity": 8035
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-win2022-headless",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-win2022-updatebot",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-win2022-xxlarge",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 12,
+  "TotalCapacity": 12
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 246,
+  "TotalCapacity": 246
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-win2025-headless",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 221,
+  "TotalCapacity": 221
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-win2025-updatebot",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 221,
+  "TotalCapacity": 221
+ },
+ {
+  "WorkerPoolID": "gecko-3/b-win2025-xxlarge",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 220,
+  "TotalCapacity": 220
+ },
+ {
+  "WorkerPoolID": "gecko-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 4773,
+  "TotalCapacity": 4773
+ },
+ {
+  "WorkerPoolID": "gecko-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 70,
+  "TotalCapacity": 70
+ },
+ {
+  "WorkerPoolID": "gecko-3/images-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 10,
+  "TotalCapacity": 10
+ },
+ {
+  "WorkerPoolID": "gecko-3/win11-a64-25h2-builder",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 236,
+  "TotalCapacity": 236
+ },
+ {
+  "WorkerPoolID": "gecko-t/misc",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1386,
+  "TotalCapacity": 1386
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2204-wayland",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
+  "TotalWorkers": 11285,
+  "TotalCapacity": 11285
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2204-wayland-arm64-relsre",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-arm64-gui-googlecompute-2024-09-18t14-57-52z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2204-wayland-relsre",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2025-01-13t22-33-40z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2204-wayland-root-exp",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2204-wayland-snap",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
+  "TotalWorkers": 58,
+  "TotalCapacity": 58
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2404-headless-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2404-headless-arm64-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-alpha",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2404-headless-ssd-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2404-relsre",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-googlecompute-alpha",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2404-wayland",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2404-wayland-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-alpha",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2404-wayland-snap",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-2026-08-26",
+  "TotalWorkers": 57,
+  "TotalCapacity": 57
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-2404-wayland-snap-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-alpha",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-arm64-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 37,
+  "TotalCapacity": 37
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1344,
+  "TotalCapacity": 1344
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-docker-16c32gb-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2605,
+  "TotalCapacity": 2605
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 45054,
+  "TotalCapacity": 45054
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-docker-amd-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-docker-kvm",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 85557,
+  "TotalCapacity": 85557
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-docker-kvm-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
+  "TotalWorkers": 21,
+  "TotalCapacity": 21
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-docker-noscratch",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 14539,
+  "TotalCapacity": 14539
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-docker-noscratch-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 237214,
+  "TotalCapacity": 237214
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-docker-noscratch-amd-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha",
+  "TotalWorkers": 70,
+  "TotalCapacity": 70
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-vm-2204-wayland",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "No artifacts found"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/generic-2204-wayland-vm-gcp-googlecompute-2023-09-22t17-39-37z",
+  "TotalWorkers": 74,
+  "TotalCapacity": 74
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-vm-2204-wayland-snap",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "No artifacts found"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/generic-2204-wayland-vm-gcp-googlecompute-2023-09-22t17-39-37z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-xlarge-2204-wayland",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
+  "TotalWorkers": 7581,
+  "TotalCapacity": 7581
+ },
+ {
+  "WorkerPoolID": "gecko-t/t-linux-xlarge-2404-wayland",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win10-64-2009",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 6499,
+  "TotalCapacity": 6499
+ },
+ {
+  "WorkerPoolID": "gecko-t/win10-64-2009-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 6,
+  "TotalCapacity": 6
+ },
+ {
+  "WorkerPoolID": "gecko-t/win10-64-2009-gpu",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 1147,
+  "TotalCapacity": 1147
+ },
+ {
+  "WorkerPoolID": "gecko-t/win10-64-2009-gpu-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 8,
+  "TotalCapacity": 8
+ },
+ {
+  "WorkerPoolID": "gecko-t/win10-64-2009-source",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 108,
+  "TotalCapacity": 108
+ },
+ {
+  "WorkerPoolID": "gecko-t/win10-64-2009-source-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 12,
+  "TotalCapacity": 12
+ },
+ {
+  "WorkerPoolID": "gecko-t/win10-64-2009-webgpu",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win10-64-2009-webgpu-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-2009",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3549,
+  "TotalCapacity": 3549
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-2009-alpha",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-2009-gpu",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 406,
+  "TotalCapacity": 406
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-2009-gpu-alpha",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-2009-source",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 31,
+  "TotalCapacity": 31
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-2009-source-alpha",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-2009-ssd",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-2009-ssd-gpu",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-2009-webgpu",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-2009-webgpu-alpha",
+  "Implementation": "generic-worker",
+  "Version": "96.2.3",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "7e335dd50c7d98dfe083b4c5a2ee64406544fc0b"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 4060,
+  "TotalCapacity": 4060
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-gpu",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 23,
+  "TotalCapacity": 23
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-gpu-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-large",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 359,
+  "TotalCapacity": 359
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-large-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-privileged",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-privileged-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-source",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 18,
+  "TotalCapacity": 18
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-source-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-ssd",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-ssd-gpu",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-unprivileged",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-unprivileged-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-webgpu",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-24h2-webgpu-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 119221,
+  "TotalCapacity": 119221
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-amd",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-gpu",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 24905,
+  "TotalCapacity": 24905
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-gpu-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-gpu-perf-experiment",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-large",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 15172,
+  "TotalCapacity": 15172
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-large-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-privileged",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 439,
+  "TotalCapacity": 439
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-privileged-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-source",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2517,
+  "TotalCapacity": 2517
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-source-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-ssd",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-ssd-gpu",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-unprivileged",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-unprivileged-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-webgpu",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 4725,
+  "TotalCapacity": 4725
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-64-25h2-webgpu-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-a64-25h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 350,
+  "TotalCapacity": 350
+ },
+ {
+  "WorkerPoolID": "gecko-t/win11-a64-25h2-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 6,
+  "TotalCapacity": 6
+ },
+ {
+  "WorkerPoolID": "glean-1/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 40,
+  "TotalCapacity": 40
+ },
+ {
+  "WorkerPoolID": "glean-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "glean-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "glean-3/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 21,
+  "TotalCapacity": 21
+ },
+ {
+  "WorkerPoolID": "glean-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
+ },
+ {
+  "WorkerPoolID": "glean-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "infra/build-decision",
+  "Implementation": "docker-worker",
+  "Version": "38.0.5",
+  "Details": {},
+  "Imageset": "projects/taskcluster-imaging/global/images/docker-firefoxci-gcp-l1-googlecompute-2025-06-13t18-31-38z",
+  "TotalWorkers": 5,
+  "TotalCapacity": 40
+ },
+ {
+  "WorkerPoolID": "infra/build-decision-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mobile-1/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 198,
+  "TotalCapacity": 198
+ },
+ {
+  "WorkerPoolID": "mobile-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 11,
+  "TotalCapacity": 11
+ },
+ {
+  "WorkerPoolID": "mobile-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mobile-3/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 243,
+  "TotalCapacity": 243
+ },
+ {
+  "WorkerPoolID": "mobile-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 154,
+  "TotalCapacity": 154
+ },
+ {
+  "WorkerPoolID": "mobile-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozilla-1/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozilla-1/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozilla-1/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 219,
+  "TotalCapacity": 219
+ },
+ {
+  "WorkerPoolID": "mozilla-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
+ },
+ {
+  "WorkerPoolID": "mozilla-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 10,
+  "TotalCapacity": 10
+ },
+ {
+  "WorkerPoolID": "mozilla-3/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozilla-3/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozilla-3/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 219,
+  "TotalCapacity": 219
+ },
+ {
+  "WorkerPoolID": "mozilla-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 456,
+  "TotalCapacity": 456
+ },
+ {
+  "WorkerPoolID": "mozilla-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
+ },
+ {
+  "WorkerPoolID": "mozilla-t/pre-commit",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 11,
+  "TotalCapacity": 11
+ },
+ {
+  "WorkerPoolID": "mozilla-t/t-linux-2204-wayland",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2024-08-22t22-48-09z",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "mozilla-t/t-linux-2204-wayland-relsre",
+  "Implementation": "generic-worker",
+  "Version": "64.3.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.2",
+   "os": "linux",
+   "revision": "b66b6614b9b79077f1bfc78f97afb8c25c0c4b30"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2025-01-13t22-33-40z",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozilla-t/t-linux-2404-wayland",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-2026-08-26",
+  "TotalWorkers": 13,
+  "TotalCapacity": 13
+ },
+ {
+  "WorkerPoolID": "mozilla-t/t-linux-2404-wayland-alpha",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-gui-googlecompute-alpha",
+  "TotalWorkers": 857,
+  "TotalCapacity": 857
+ },
+ {
+  "WorkerPoolID": "mozilla-t/t-linux-arm64-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozilla-t/t-linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 44,
+  "TotalCapacity": 44
+ },
+ {
+  "WorkerPoolID": "mozilla-t/t-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozilla-t/t-linux-docker-noscratch",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 12,
+  "TotalCapacity": 12
+ },
+ {
+  "WorkerPoolID": "mozilla-t/t-linux-docker-noscratch-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozillavpn-1/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 292,
+  "TotalCapacity": 292
+ },
+ {
+  "WorkerPoolID": "mozillavpn-1/b-linux-large",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 244,
+  "TotalCapacity": 244
+ },
+ {
+  "WorkerPoolID": "mozillavpn-1/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 50,
+  "TotalCapacity": 50
+ },
+ {
+  "WorkerPoolID": "mozillavpn-1/b-win2022-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozillavpn-1/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 219,
+  "TotalCapacity": 219
+ },
+ {
+  "WorkerPoolID": "mozillavpn-1/b-win2025-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "mozillavpn-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 6,
+  "TotalCapacity": 6
+ },
+ {
+  "WorkerPoolID": "mozillavpn-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 32,
+  "TotalCapacity": 32
+ },
+ {
+  "WorkerPoolID": "mozillavpn-1/win11-a64-25h2-builder",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
+ },
+ {
+  "WorkerPoolID": "mozillavpn-3/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 138,
+  "TotalCapacity": 138
+ },
+ {
+  "WorkerPoolID": "mozillavpn-3/b-linux-large",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 149,
+  "TotalCapacity": 149
+ },
+ {
+  "WorkerPoolID": "mozillavpn-3/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 27,
+  "TotalCapacity": 27
+ },
+ {
+  "WorkerPoolID": "mozillavpn-3/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 219,
+  "TotalCapacity": 219
+ },
+ {
+  "WorkerPoolID": "mozillavpn-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 17,
+  "TotalCapacity": 17
+ },
+ {
+  "WorkerPoolID": "mozillavpn-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 10,
+  "TotalCapacity": 10
+ },
+ {
+  "WorkerPoolID": "mozillavpn-3/win11-a64-25h2-builder",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "nope/nope",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "nss-1/b-linux-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 457,
+  "TotalCapacity": 457
+ },
+ {
+  "WorkerPoolID": "nss-1/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 486,
+  "TotalCapacity": 486
+ },
+ {
+  "WorkerPoolID": "nss-1/b-win2022-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "nss-1/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 219,
+  "TotalCapacity": 219
+ },
+ {
+  "WorkerPoolID": "nss-1/b-win2025-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "nss-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 44,
+  "TotalCapacity": 44
+ },
+ {
+  "WorkerPoolID": "nss-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "nss-1/images-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "nss-1/linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1334,
+  "TotalCapacity": 1334
+ },
+ {
+  "WorkerPoolID": "nss-1/win11-a64-25h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "nss-1/win11-a64-25h2-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
+ },
+ {
+  "WorkerPoolID": "nss-1/win11-a64-25h2-builder",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "nss-1/win11-a64-25h2-builder-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 9,
+  "TotalCapacity": 9
+ },
+ {
+  "WorkerPoolID": "nss-3/b-linux-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 549,
+  "TotalCapacity": 549
+ },
+ {
+  "WorkerPoolID": "nss-3/b-win2022",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 435,
+  "TotalCapacity": 435
+ },
+ {
+  "WorkerPoolID": "nss-3/b-win2025",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 219,
+  "TotalCapacity": 219
+ },
+ {
+  "WorkerPoolID": "nss-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 32,
+  "TotalCapacity": 32
+ },
+ {
+  "WorkerPoolID": "nss-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "nss-3/images-aarch64",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "nss-3/linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 1707,
+  "TotalCapacity": 1707
+ },
+ {
+  "WorkerPoolID": "nss-3/win11-a64-25h2-builder",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
+ },
+ {
+  "WorkerPoolID": "nss-t/t-linux-arm64-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-arm64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2959,
+  "TotalCapacity": 2959
+ },
+ {
+  "WorkerPoolID": "nss-t/t-linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3963,
+  "TotalCapacity": 3963
+ },
+ {
+  "WorkerPoolID": "nss-t/t-linux-docker-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "nss-t/win11-a64-25h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "nss-t/win11-a64-25h2-alpha",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 17,
+  "TotalCapacity": 17
+ },
+ {
+  "WorkerPoolID": "proj-autophone/gecko-t-bitbar-gw-perf-a55",
+  "Implementation": "generic-worker",
+  "Version": "36.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "simple",
+   "go": "1.13.7",
+   "os": "linux",
+   "revision": "b9cb11293f106f4330a42853fa3d2d15a9f13200"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "proj-autophone/gecko-t-bitbar-gw-perf-p6",
+  "Implementation": "generic-worker",
+  "Version": "36.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "simple",
+   "go": "1.13.7",
+   "os": "linux",
+   "revision": "b9cb11293f106f4330a42853fa3d2d15a9f13200"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "proj-autophone/gecko-t-bitbar-gw-perf-s24",
+  "Implementation": "generic-worker",
+  "Version": "36.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "simple",
+   "go": "1.13.7",
+   "os": "linux",
+   "revision": "b9cb11293f106f4330a42853fa3d2d15a9f13200"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "proj-autophone/gecko-t-lambda-perf-a55",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/bugmon-monitor",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
+  "TotalWorkers": 89,
+  "TotalCapacity": 89
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/bugmon-pernosco",
+  "Implementation": "docker-worker",
+  "Version": "44.23.4",
+  "Details": {},
+  "Imageset": "ami-03e4f8db63254ce7e,ami-0a6e926238859761c,ami-0b5dd0bbb670ec80e",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/bugmon-pernosco-staging",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "ami-02619e55246806e8d",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/bugmon-processor",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/bugmon-processor-windows",
+  "Implementation": "generic-worker",
+  "Version": "100.0.1",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "fcf9d8ed582ed8de3d1cdb8f4f91ccec93b7803c"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/ci",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
+  "TotalWorkers": 68,
+  "TotalCapacity": 68
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/ci-arm64",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-arm64-mqscbutmsbawtytlroxk",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/ci-windows",
+  "Implementation": "generic-worker",
+  "Version": "100.0.1",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "fcf9d8ed582ed8de3d1cdb8f4f91ccec93b7803c"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/decision",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
+  "TotalWorkers": 224,
+  "TotalCapacity": 224
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/grizzly-reduce-worker",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/grizzly-reduce-worker-android",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/grizzly-reduce-worker-windows",
+  "Implementation": "generic-worker",
+  "Version": "100.0.1",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "fcf9d8ed582ed8de3d1cdb8f4f91ccec93b7803c"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/grizzly-reduce-worker-windows-ngpu",
+  "Implementation": "generic-worker",
+  "Version": "100.0.1",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "fcf9d8ed582ed8de3d1cdb8f4f91ccec93b7803c"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "proj-fuzzing/nss-corpus-update-worker",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "releng-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 48,
+  "TotalCapacity": 48
+ },
+ {
+  "WorkerPoolID": "releng-1/linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
+ },
+ {
+  "WorkerPoolID": "releng-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 27,
+  "TotalCapacity": 27
+ },
+ {
+  "WorkerPoolID": "releng-3/linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 26,
+  "TotalCapacity": 26
+ },
+ {
+  "WorkerPoolID": "releng-hardware/applicationservices-b-1-osx1015",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/applicationservices-b-3-osx1015",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/enterprise-1-b-osx-arm64",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/enterprise-3-b-osx-arm64",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-1-b-osx-1015",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-1-b-osx-1015-staging",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-1-b-osx-arm64",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-3-b-osx-1015",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-3-b-osx-arm64",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-linux-netperf-1804",
+  "Implementation": "generic-worker",
+  "Version": "65.1.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "insecure",
+   "go": "1.22.3",
+   "os": "linux",
+   "revision": "1a085daa37b887ee519970b7a223194868787be5"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-linux-netperf-2404",
+  "Implementation": "generic-worker",
+  "Version": "88.0.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "insecure",
+   "go": "1.24.5",
+   "os": "linux",
+   "revision": "fcaf4a25fc4a3eb8543bc8605d77ce319306d7c6"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-linux-talos-1804",
+  "Implementation": "generic-worker",
+  "Version": "61.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "simple",
+   "go": "1.22.1",
+   "os": "linux",
+   "revision": "3bd4419b4b124d4b28a1fac2b71c7ca70db37f11"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-linux-talos-2404",
+  "Implementation": "generic-worker",
+  "Version": "88.0.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "insecure",
+   "go": "1.24.5",
+   "os": "linux",
+   "revision": "fcaf4a25fc4a3eb8543bc8605d77ce319306d7c6"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-linux-talos-2404-bug2055283",
+  "Implementation": "generic-worker",
+  "Version": "88.0.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "insecure",
+   "go": "1.24.5",
+   "os": "linux",
+   "revision": "fcaf4a25fc4a3eb8543bc8605d77ce319306d7c6"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-osx-1015-r8",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "amd64",
+   "engine": "simple",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-osx-1015-r8-staging",
+  "Implementation": "generic-worker",
+  "Version": "67.1.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "insecure",
+   "go": "1.22.4",
+   "os": "darwin",
+   "revision": "0e62d3bf791f005b8c511ea815141218def04be2"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-osx-1400-r8",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "amd64",
+   "engine": "simple",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-osx-1400-r8-staging",
+  "Implementation": "generic-worker",
+  "Version": "100.5.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "insecure",
+   "go": "1.26.4",
+   "os": "darwin",
+   "revision": "f5fc37cc8f94db311ee7bdaccf49324f94185b7d"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-osx-1500-m-vms",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "arm64",
+   "engine": "simple",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-osx-1500-m4",
+  "Implementation": "generic-worker",
+  "Version": "91.0.2",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.25.3",
+   "os": "darwin",
+   "revision": "06628b37211e56a8bd044bf879260bc792c4fa4a"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-osx-1500-m4-staging",
+  "Implementation": "generic-worker",
+  "Version": "100.5.0",
+  "Details": {
+   "arch": "arm64",
+   "engine": "multiuser",
+   "go": "1.26.4",
+   "os": "darwin",
+   "revision": "f5fc37cc8f94db311ee7bdaccf49324f94185b7d"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/gecko-t-win7-32-hw",
+  "Implementation": "generic-worker",
+  "Version": "45.0.0",
+  "Details": {
+   "arch": "386",
+   "engine": "multiuser",
+   "go": "1.19.3",
+   "os": "windows",
+   "revision": "988e8100b318b60963599bcbb52442d990ff5f65"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/mozillavpn-b-1-osx",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/mozillavpn-b-3-osx",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/nss-1-b-osx-1015",
+  "Implementation": "generic-worker",
+  "Version": "60.3.4",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.22.0",
+   "os": "darwin",
+   "revision": "943a6f2b0d14fa0270280bc6f23acc2945d0fe45"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/nss-3-b-osx-1015",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/win11-64-24h2-hw",
+  "Implementation": "generic-worker",
+  "Version": "96.2.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "773509947e498500b5198c9d344226b9b644efef"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/win11-64-24h2-hw-alpha",
+  "Implementation": "generic-worker",
+  "Version": "96.2.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "773509947e498500b5198c9d344226b9b644efef"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/win11-64-24h2-hw-perf-debug",
+  "Implementation": "generic-worker",
+  "Version": "96.2.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "773509947e498500b5198c9d344226b9b644efef"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/win11-64-24h2-hw-ref",
+  "Implementation": "",
+  "Version": "",
+  "Details": {
+   "error": "Version not determined; task not (yet) claimed"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-hardware/win11-64-24h2-hw-ref-alpha",
+  "Implementation": "generic-worker",
+  "Version": "96.2.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.25.7",
+   "os": "windows",
+   "revision": "773509947e498500b5198c9d344226b9b644efef"
+  },
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "releng-t/linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 101,
+  "TotalCapacity": 101
+ },
+ {
+  "WorkerPoolID": "relops-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "relops-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "relops-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 28,
+  "TotalCapacity": 28
+ },
+ {
+  "WorkerPoolID": "relops-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "reviewer-assignment/bot",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 7,
+  "TotalCapacity": 7
+ },
+ {
+  "WorkerPoolID": "scriptworker-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 6,
+  "TotalCapacity": 6
+ },
+ {
+  "WorkerPoolID": "scriptworker-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 32,
+  "TotalCapacity": 32
+ },
+ {
+  "WorkerPoolID": "scriptworker-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 8,
+  "TotalCapacity": 8
+ },
+ {
+  "WorkerPoolID": "scriptworker-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 52,
+  "TotalCapacity": 52
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/adhoc-t-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/app-services-3-beetmover",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/app-services-3-shipit",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/app-services-3-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/comm-3-balrog",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/comm-3-beetmover",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/comm-3-bouncer",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/comm-3-lando",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/comm-3-shipit",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/comm-3-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/comm-t-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/enterprise-3-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/enterprise-t-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-1-beetmover",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-1-lando",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-3-addon",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-3-balrog",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-3-beetmover",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-3-bouncer",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-3-lando",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-3-pushapk",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-3-shipit",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-3-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/gecko-t-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/mobile-3-bitrise",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/mobile-3-github",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/mobile-3-pushapk",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/mobile-3-shipit",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/mobile-3-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/mobile-3-tree",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/mobile-t-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/mozillavpn-3-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/translations-1-beetmover",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-k8s/xpi-t-signing",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-prov-v1/adhoc-signing-mac14m2",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-prov-v1/comm-signing-mac14m2",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-prov-v1/dep-adhoc-signing-mac14m2",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-prov-v1/dep-comm-signing-mac14m2",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-prov-v1/dep-enterprise-signing-mac14m2",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-prov-v1/dep-gecko-signing-mac14m2",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-prov-v1/dep-mozillavpn-signing-mac14m2",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-prov-v1/enterprise-signing-mac14m2",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-prov-v1/gecko-signing-mac14m2",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "scriptworker-prov-v1/mozillavpn-signing-mac14m2",
+  "Implementation": "Scriptworker",
+  "Version": "",
+  "Details": {},
+  "Imageset": "",
+  "TotalWorkers": 0,
+  "TotalCapacity": 0
+ },
+ {
+  "WorkerPoolID": "taskgraph-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 10,
+  "TotalCapacity": 10
+ },
+ {
+  "WorkerPoolID": "taskgraph-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "taskgraph-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "taskgraph-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "taskgraph-t/linux-docker",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 12,
+  "TotalCapacity": 12
+ },
+ {
+  "WorkerPoolID": "taskgraph-t/win11-64-24h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "taskgraph-t/win11-64-25h2",
+  "Implementation": "generic-worker",
+  "Version": "99.2.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.26.2",
+   "os": "windows",
+   "revision": "bc2efe2827821902a59f229b3700d31a3bbf30d3"
+  },
+  "Imageset": "unknown",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-large-gcp-1tb-32-256-d2g",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 9,
+  "TotalCapacity": 9
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-large-gcp-1tb-32-256-std-d2g",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 17,
+  "TotalCapacity": 17
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-large-gcp-1tb-64-512-d2g",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 5,
+  "TotalCapacity": 5
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-large-gcp-1tb-64-512-std-d2g",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-large-gcp-d2g",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 97,
+  "TotalCapacity": 97
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-large-gcp-d2g-1tb",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-large-gcp-d2g-1tb-standard",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-large-gcp-d2g-300gb",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 296,
+  "TotalCapacity": 296
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 241,
+  "TotalCapacity": 241
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 142,
+  "TotalCapacity": 142
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-1tb",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 43,
+  "TotalCapacity": 43
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-1tb-alpha",
+  "Implementation": "generic-worker",
+  "Version": "84.1.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.24.4",
+   "os": "linux",
+   "revision": "4a139f395a04a36bddf7430a76fcba68f032611e"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha-tc",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-1tb-standard",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-1tb-std-alpha",
+  "Implementation": "generic-worker",
+  "Version": "84.1.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.24.4",
+   "os": "linux",
+   "revision": "4a139f395a04a36bddf7430a76fcba68f032611e"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha-tc",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-2tb",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 11,
+  "TotalCapacity": 11
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-2tb-alpha",
+  "Implementation": "generic-worker",
+  "Version": "84.1.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.24.4",
+   "os": "linux",
+   "revision": "4a139f395a04a36bddf7430a76fcba68f032611e"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha-tc",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-300gb",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 58,
+  "TotalCapacity": 58
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-300gb-alpha",
+  "Implementation": "generic-worker",
+  "Version": "84.1.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.24.4",
+   "os": "linux",
+   "revision": "4a139f395a04a36bddf7430a76fcba68f032611e"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha-tc",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-300gb-standard",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-300gb-std-alpha",
+  "Implementation": "generic-worker",
+  "Version": "84.1.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.24.4",
+   "os": "linux",
+   "revision": "4a139f395a04a36bddf7430a76fcba68f032611e"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha-tc",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-4-alpha",
+  "Implementation": "generic-worker",
+  "Version": "84.1.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.24.4",
+   "os": "linux",
+   "revision": "4a139f395a04a36bddf7430a76fcba68f032611e"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha-tc",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/b-linux-v100-gpu-d2g-alpha",
+  "Implementation": "generic-worker",
+  "Version": "84.1.2",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.24.4",
+   "os": "linux",
+   "revision": "4a139f395a04a36bddf7430a76fcba68f032611e"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-alpha-tc",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 15,
+  "TotalCapacity": 15
+ },
+ {
+  "WorkerPoolID": "translations-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "translations-t/t-linux-gw-noscratch-amd",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ },
+ {
+  "WorkerPoolID": "xpi-1/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 105,
+  "TotalCapacity": 105
+ },
+ {
+  "WorkerPoolID": "xpi-1/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 36,
+  "TotalCapacity": 36
+ },
+ {
+  "WorkerPoolID": "xpi-1/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 10,
+  "TotalCapacity": 10
+ },
+ {
+  "WorkerPoolID": "xpi-3/b-linux",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 3,
+  "TotalCapacity": 3
+ },
+ {
+  "WorkerPoolID": "xpi-3/decision",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 4,
+  "TotalCapacity": 4
+ },
+ {
+  "WorkerPoolID": "xpi-3/images",
+  "Implementation": "generic-worker",
+  "Version": "107.0.0",
+  "Details": {
+   "arch": "amd64",
+   "engine": "multiuser",
+   "go": "1.27.0",
+   "os": "linux",
+   "revision": "6b2f6f681824840ed352ffbb66766adc2ce37134"
+  },
+  "Imageset": "projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-08-26",
+  "TotalWorkers": 2,
+  "TotalCapacity": 2
+ }
+]

@@ -100,6 +100,7 @@
     "queue:create-task:low:scriptworker-prov-v1/depsigning-mac-v1-dev",
     "queue:create-task:medium:proj-autophone/*",
     "queue:get-artifact:private/openh264/*",
+    "queue:get-artifact:private/widevine/*",
     "queue:get-artifact:project/civet/*",
     "queue:get-artifact:project/gecko/*",
     "queue:get-artifact:project/updatebot/*",
@@ -136,7 +137,7 @@
     "secrets:get:project/updatebot/2/sql-proxy-config",
     "secrets:get:project/updatebot/2/try-sshkey"
   ],
-  "lastModified": "2026-03-20T10:41:37.021Z",
+  "lastModified": "2026-09-01T15:59:24.256Z",
   "roleId": "repo:hg.mozilla.org/projects/holly:branch:default",
   "scopes": [
     "assume:project:taskcluster:gecko:level-2-sccache-buckets",
@@ -159,6 +160,7 @@
     "queue:create-task:low:scriptworker-k8s/gecko-2-*",
     "queue:create-task:low:scriptworker-k8s/gecko-t-*",
     "queue:get-artifact:private/openh264/*",
+    "queue:get-artifact:private/widevine/*",
     "queue:rerun-task:gecko-level-2/*",
     "queue:route:index.gecko.cache.level-2.*",
     "queue:route:index.gecko.v2.holly.*",

@@ -12,7 +12,6 @@
     "in-tree:hook-action:project-translations/in-tree-action-1-*",
     "in-tree:hook-action:project-translations/in-tree-pr-action-1-*",
     "index:insert-task:mozilla.cache.head.*",
-    "index:insert-task:mozilla.cache.level-1.*",
     "index:insert-task:mozilla.cache.pr.*",
     "index:insert-task:mozilla.v2.mozilla-pr.*",
     "index:insert-task:translations.cache.head.*",
@@ -42,7 +41,6 @@
     "queue:rerun-task:translations-level-1/*",
     "queue:route:checks",
     "queue:route:index.mozilla.cache.head.*",
-    "queue:route:index.mozilla.cache.level-1.*",
     "queue:route:index.mozilla.cache.pr.*",
     "queue:route:index.mozilla.v2.mozilla-pr.*",
     "queue:route:index.translations.cache.head.*",
@@ -69,13 +67,12 @@
     "secrets:get:project/translations/level-1/*",
     "secrets:get:project/translations/level-any/*"
   ],
-  "lastModified": "2026-08-25T13:51:01.228Z",
+  "lastModified": "2026-09-02T18:49:03.560Z",
   "roleId": "repo:github.com/mozilla/translations:*",
   "scopes": [
     "docker-worker:cache:translations-level-1-*",
     "generic-worker:cache:translations-level-1-*",
     "in-tree:hook-action:project-translations/in-tree-action-1-*",
-    "index:insert-task:translations.cache.level-1.*",
     "project:translations:releng:beetmover:action:upload-data",
     "project:translations:releng:beetmover:action:upload-translations-artifacts",
     "queue:cancel-task:translations-level-1/*",
@@ -87,7 +84,6 @@
     "queue:create-task:low:translations-t/*",
     "queue:rerun-task:translations-level-1/*",
     "queue:route:checks",
-    "queue:route:index.translations.cache.level-1.*",
     "queue:scheduler-id:translations-level-1",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"

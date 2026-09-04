@@ -18,7 +18,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 1024,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-09-03"
             }
           }
         ],
@@ -66,7 +66,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-164e1fb2c956e6de00a6",
+          "launchConfigId": "lc-ebda2d07c16fbb7239e9",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -89,7 +89,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 1024,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-09-03"
             }
           }
         ],
@@ -137,7 +137,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-68b909eb76d8947b5bbd",
+          "launchConfigId": "lc-a873b4b8a4b76342569d",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -160,7 +160,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 1024,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-09-03"
             }
           }
         ],
@@ -208,7 +208,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-9861b89278d84992883d",
+          "launchConfigId": "lc-a6130d508a5c392b9765",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -231,7 +231,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 1024,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-09-03"
             }
           }
         ],
@@ -279,7 +279,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-653532232e51aaef2d2f",
+          "launchConfigId": "lc-58305349b4b1c570219d",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -302,7 +302,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 1024,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-09-03"
             }
           }
         ],
@@ -350,7 +350,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-6411b4e63828963e37a0",
+          "launchConfigId": "lc-31964e6c53f78ca0ed2b",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -373,7 +373,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 1024,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-09-03"
             }
           }
         ],
@@ -421,7 +421,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-b8b25bf802a05042e630",
+          "launchConfigId": "lc-3c46debc7e082c968cc8",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -444,7 +444,7 @@
             "autoDelete": true,
             "initializeParams": {
               "diskSizeGb": 1024,
-              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-08-26"
+              "sourceImage": "projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-headless-googlecompute-2026-09-03"
             }
           }
         ],
@@ -492,7 +492,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-ca7be9d3df8f2eab6490",
+          "launchConfigId": "lc-c384ff6642080d1d9107",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Intel Cascadelake",
@@ -512,7 +512,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nStandard VM workers with 1 TB of disk space, 32 vCPUs, and 256 GiB of RAM. Intended for Firefox Translations only.",
   "emailOnError": true,
-  "lastModified": "2026-08-26T17:55:04.108Z",
+  "lastModified": "2026-09-03T13:34:49.426Z",
   "owner": "release+tc-workers@mozilla.com",
   "providerId": "fxci-level1-gcp",
   "requestedCapacity": 0,

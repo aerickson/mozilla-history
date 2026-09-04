@@ -10,7 +10,6 @@
     "github:trigger-hook:lint/pre-commit-*",
     "in-tree:hook-action:project-mozilla/in-tree-action-1-*",
     "index:insert-task:mozilla.cache.head.*",
-    "index:insert-task:mozilla.cache.level-1.*",
     "index:insert-task:mozilla.cache.pr.*",
     "index:insert-task:mozilla.v2.firefox-ci-playground-pr.*",
     "index:insert-task:mozilla.v2.firefox-ci-playground.*",
@@ -25,7 +24,6 @@
     "queue:rerun-task:mozilla-level-1/*",
     "queue:route:checks",
     "queue:route:index.mozilla.cache.head.*",
-    "queue:route:index.mozilla.cache.level-1.*",
     "queue:route:index.mozilla.cache.pr.*",
     "queue:route:index.mozilla.v2.firefox-ci-playground-pr.*",
     "queue:route:index.mozilla.v2.firefox-ci-playground.*",
@@ -40,7 +38,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-08-25T13:51:48.533Z",
+  "lastModified": "2026-09-02T18:50:17.388Z",
   "roleId": "repo:github.com/mozilla-releng/firefox-ci-playground:*",
   "scopes": [
     "docker-worker:cache:mozilla-level-1-*",
@@ -48,7 +46,6 @@
     "generic-worker:cache:mozilla-level-1-*",
     "generic-worker:cache:mozilla-project-firefox-ci-playground-level-1-*",
     "in-tree:hook-action:project-mozilla/in-tree-action-1-*",
-    "index:insert-task:mozilla.v2.firefox-ci-playground.cache.level-1.*",
     "queue:cancel-task:mozilla-level-1/*",
     "queue:create-task:low:built-in/*",
     "queue:create-task:low:mozilla-1/*",
@@ -56,7 +53,6 @@
     "queue:create-task:low:releng-hardware/mozilla-b-1-*",
     "queue:rerun-task:mozilla-level-1/*",
     "queue:route:checks",
-    "queue:route:index.mozilla.v2.firefox-ci-playground.cache.level-1.*",
     "queue:scheduler-id:mozilla-level-1",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"

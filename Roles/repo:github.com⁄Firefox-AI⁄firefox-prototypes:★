@@ -98,6 +98,7 @@
     "queue:create-task:low:scriptworker-prov-v1/depsigning-mac-v1-dev",
     "queue:create-task:medium:proj-autophone/*",
     "queue:get-artifact:private/openh264/*",
+    "queue:get-artifact:private/widevine/*",
     "queue:get-artifact:project/gecko/*",
     "queue:get-artifact:releng/partner/*",
     "queue:rerun-task:gecko-level-1/*",
@@ -124,7 +125,7 @@
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"
   ],
-  "lastModified": "2026-08-05T18:11:11.753Z",
+  "lastModified": "2026-09-01T16:00:24.147Z",
   "roleId": "repo:github.com/Firefox-AI/firefox-prototypes:*",
   "scopes": [
     "assume:project:taskcluster:gecko:level-1-sccache-buckets",
@@ -221,6 +222,7 @@
     "queue:create-task:low:scriptworker-prov-v1/depsigning-mac-v1-dev",
     "queue:create-task:medium:proj-autophone/*",
     "queue:get-artifact:private/openh264/*",
+    "queue:get-artifact:private/widevine/*",
     "queue:get-artifact:project/gecko/*",
     "queue:get-artifact:releng/partner/*",
     "queue:rerun-task:gecko-level-1/*",

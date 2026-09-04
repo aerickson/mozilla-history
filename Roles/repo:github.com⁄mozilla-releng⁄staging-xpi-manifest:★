@@ -11,7 +11,6 @@
     "in-tree:hook-action:project-mozilla/in-tree-action-1-*",
     "in-tree:hook-action:project-xpi/in-tree-action-1-*",
     "index:insert-task:mozilla.cache.head.*",
-    "index:insert-task:mozilla.cache.level-1.*",
     "index:insert-task:mozilla.cache.pr.*",
     "index:insert-task:mozilla.v2.mozilla-releng-pr.*",
     "index:insert-task:xpi.cache.head.*",
@@ -54,7 +53,6 @@
     "queue:rerun-task:xpi-level-1/*",
     "queue:route:checks",
     "queue:route:index.mozilla.cache.head.*",
-    "queue:route:index.mozilla.cache.level-1.*",
     "queue:route:index.mozilla.cache.pr.*",
     "queue:route:index.mozilla.v2.mozilla-releng-pr.*",
     "queue:route:index.xpi.cache.head.*",
@@ -80,13 +78,12 @@
     "secrets:get:project/xpi/level-any/*",
     "secrets:get:project/xpi/xpi-github-clone-ssh"
   ],
-  "lastModified": "2026-08-25T13:51:19.741Z",
+  "lastModified": "2026-09-02T18:50:45.445Z",
   "roleId": "repo:github.com/mozilla-releng/staging-xpi-manifest:*",
   "scopes": [
     "docker-worker:cache:xpi-level-1-*",
     "generic-worker:cache:xpi-level-1-*",
     "in-tree:hook-action:project-xpi/in-tree-action-1-*",
-    "index:insert-task:xpi.cache.level-1.*",
     "queue:cancel-task:xpi-level-1/*",
     "queue:create-task:low:built-in/*",
     "queue:create-task:low:releng-hardware/xpi-b-1-*",
@@ -94,7 +91,6 @@
     "queue:create-task:low:xpi-t/*",
     "queue:rerun-task:xpi-level-1/*",
     "queue:route:checks",
-    "queue:route:index.xpi.cache.level-1.*",
     "queue:scheduler-id:xpi-level-1",
     "secrets:get:project/taskcluster/gecko/hgfingerprint",
     "secrets:get:project/taskcluster/gecko/hgmointernal"

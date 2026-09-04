@@ -11,7 +11,7 @@
     "launchConfigs": [
       {
         "tags": {
-          "deploymentId": "82415f4",
+          "deploymentId": "b514636",
           "sourceBranch": "windows",
           "sourceScript": "provisioners/windows/azure/2022-azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -33,7 +33,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.5.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.6.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -53,7 +53,7 @@
               "value": "Standard_D32ads_v5"
             },
             "imageId": {
-              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.5"
+              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.6"
             },
             "location": {
               "value": "centralindia"
@@ -71,14 +71,14 @@
         },
         "workerManager": {
           "initialWeight": 1,
-          "launchConfigId": "lc-0636377c274710b80596",
+          "launchConfigId": "lc-f415c5679c7ad4530f63",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-3-b-win2022-updatebot"
       },
       {
         "tags": {
-          "deploymentId": "82415f4",
+          "deploymentId": "b514636",
           "sourceBranch": "windows",
           "sourceScript": "provisioners/windows/azure/2022-azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -100,7 +100,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.5.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.6.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -120,7 +120,7 @@
               "value": "Standard_D32ads_v5"
             },
             "imageId": {
-              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.5"
+              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.6"
             },
             "location": {
               "value": "northcentralus"
@@ -138,14 +138,14 @@
         },
         "workerManager": {
           "initialWeight": 0.9,
-          "launchConfigId": "lc-2dcbfc9034b99fea191a",
+          "launchConfigId": "lc-83d83eaa11b2ad642375",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-3-b-win2022-updatebot"
       },
       {
         "tags": {
-          "deploymentId": "82415f4",
+          "deploymentId": "b514636",
           "sourceBranch": "windows",
           "sourceScript": "provisioners/windows/azure/2022-azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -167,7 +167,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.5.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.6.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -187,7 +187,7 @@
               "value": "Standard_D32ads_v5"
             },
             "imageId": {
-              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.5"
+              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.6"
             },
             "location": {
               "value": "southcentralus"
@@ -205,14 +205,14 @@
         },
         "workerManager": {
           "initialWeight": 0.8,
-          "launchConfigId": "lc-0a7ce73ae27fe1165f0e",
+          "launchConfigId": "lc-441db163f488769d1665",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-3-b-win2022-updatebot"
       },
       {
         "tags": {
-          "deploymentId": "82415f4",
+          "deploymentId": "b514636",
           "sourceBranch": "windows",
           "sourceScript": "provisioners/windows/azure/2022-azure-bootstrap.ps1",
           "sourceRepository": "ronin_puppet",
@@ -234,7 +234,7 @@
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
-                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.5.md"
+                "sbom": "https://github.com/mozilla-platform-ops/worker-images/blob/main/sboms/trusted-win2022-64-2009-1.3.6.md"
               },
               "disableOOMProtection": true,
               "runAfterUserCreation": "C:\\generic-worker\\task-user-init.cmd",
@@ -254,7 +254,7 @@
               "value": "Standard_D32ads_v5"
             },
             "imageId": {
-              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.5"
+              "value": "/subscriptions/a30e97ab-734a-4f3b-a0e4-c51c0bff0701/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/trusted_win2022_64_2009/images/trusted_win2022_64_2009/versions/1.3.6"
             },
             "location": {
               "value": "westus3"
@@ -272,7 +272,7 @@
         },
         "workerManager": {
           "initialWeight": 0.9,
-          "launchConfigId": "lc-1a31f8eb680116d046d4",
+          "launchConfigId": "lc-ab6c567f91593a00095b",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-3-b-win2022-updatebot"
@@ -283,7 +283,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\n",
   "emailOnError": true,
-  "lastModified": "2026-07-09T19:08:46.635Z",
+  "lastModified": "2026-09-03T17:32:00.687Z",
   "owner": "relops-azure-provisioning@mozilla.com",
   "providerId": "azure_trusted",
   "requestedCapacity": 0,
