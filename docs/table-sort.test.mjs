@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 
-import { numericSortKey, rangeSortKey, versionSortKey } from './table-sort.mjs'
+import { numericSortKey, rangeSortKey, versionSortKey } from './table-sort.js'
 
 test('version sort keys order dotted numeric components naturally', () => {
   const versions = ['108.0.0', '9.10.0', '100.0.1', '9.2.0', '99.2.0']
