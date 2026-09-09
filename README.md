@@ -48,13 +48,16 @@ of the current directory.
 
 ## Refreshing All Local Data
 
-For a complete local refresh, set Taskcluster credentials and run:
+For a complete local refresh, run:
 
 ```sh
-export TASKCLUSTER_CLIENT_ID='...'
-export TASKCLUSTER_ACCESS_TOKEN='...'
 ./fetch_and_generate.py
 ```
+
+When `~/.tc_token` exists, the script loads its JSON `clientId` and
+`accessToken` fields. Otherwise, it uses `TASKCLUSTER_CLIENT_ID` and
+`TASKCLUSTER_ACCESS_TOKEN` from the environment. The token file takes
+precedence so stale exported credentials cannot silently override it.
 
 The script builds temporary copies of the Go tools, refreshes `Clients`,
 `Hooks`, `Roles`, and `WorkerPools`, schedules worker-version probes, polls their
