@@ -1,4 +1,4 @@
-import { decorateSortableTables } from './table-sort.mjs'
+import { decorateSortableTables } from './table-sort.js'
 
 // This works for both the Mozilla and community history GitHub Pages sites.
 let basePath = String(window.location.pathname)
