@@ -21,14 +21,8 @@
       margin: 20px 40px;
     }
 
-    .content {
+    .content-column {
       margin-right: 250px;
-    }
-
-    @media screen and (max-width: 1400px) {
-      .content {
-        margin-right: auto;
-      }
     }
 
     .toc {
@@ -52,6 +46,19 @@
     .toc ul ul {
       margin-left: auto;
       padding-left: 15px;
+    }
+
+    @media screen and (max-width: 1400px) {
+      .content-column {
+        margin-right: 0;
+      }
+
+      .toc {
+        position: static;
+        max-height: none;
+        max-width: none;
+        margin-bottom: 20px;
+      }
     }
 
     .row {
@@ -86,19 +93,21 @@
         <strong>Contents</strong>
         <ul id="toc-list"></ul>
       </nav>
-      <p class="info"><strong>Disclaimer:</strong> Values below represent <strong>worker pools</strong>.<br />
-        They do not contain number of unique imagesets used for those pools, or how many tasks are being executed by those
-        worker pools.</p>
-      <div class="content" id="content"></div>
-      <div class="history" id="history-content"></div>
-      <div class="graphs" id="graphs-content">
-        <h2>Graphs</h2>
-        <p class="info"><strong>Disclaimer:</strong> Those values represent number of worker pools, and not number of
-          workers. This also doesn't include total number of tasks run on those worker pools.</p>
-        <h3>Worker implementations</h3>
-        <div id="graph-implementations"></div>
-        <h3>Worker versions</h3>
-        <div id="graph-versions"></div>
+      <div class="content-column">
+        <p class="info"><strong>Disclaimer:</strong> Values below represent <strong>worker pools</strong>.<br />
+          They do not contain number of unique imagesets used for those pools, or how many tasks are being executed by
+          those worker pools.</p>
+        <div id="content"></div>
+        <div class="history" id="history-content"></div>
+        <div class="graphs" id="graphs-content">
+          <h2>Graphs</h2>
+          <p class="info"><strong>Disclaimer:</strong> Those values represent number of worker pools, and not number of
+            workers. This also doesn't include total number of tasks run on those worker pools.</p>
+          <h3>Worker implementations</h3>
+          <div id="graph-implementations"></div>
+          <h3>Worker versions</h3>
+          <div id="graph-versions"></div>
+        </div>
       </div>
     </main>
   </div>

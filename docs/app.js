@@ -54,26 +54,30 @@ function renderHistoryTables(data) {
 
 function renderGraphs(data) {
   const dates = Object.keys(data).sort()
+  const lineTrace = (name, y) => ({
+    x: dates,
+    y,
+    name,
+    type: 'scatter',
+    mode: 'lines',
+    hovertemplate: '<b>%{fullData.name}</b><br>Date: %{x}<br>Worker pools: %{y}<extra></extra>',
+  })
   const implementationTraces = [
     ['Generic worker', 'generic-worker'],
     ['Docker worker', 'docker-worker'],
     ['Unknown', ''],
-  ].map(([name, implementation]) => ({
-    x: dates,
-    y: dates.map(date => data[date].implementations[implementation] || 0),
+  ].map(([name, implementation]) => lineTrace(
     name,
-    type: 'line',
-  }))
+    dates.map(date => data[date].implementations[implementation] || 0),
+  ))
 
   const allVersions = [...new Set(dates.map(date => Object.keys(data[date].versions)).flat())].sort()
-  const versionTraces = allVersions.map(version => ({
-    x: dates,
-    y: dates.map(date => data[date].versions[version] || 0),
-    name: version,
-    type: 'line',
-  }))
+  const versionTraces = allVersions.map(version => lineTrace(
+    version || 'unknown',
+    dates.map(date => data[date].versions[version] || 0),
+  ))
 
-  const layout = { barmode: 'group' }
+  const layout = { hovermode: 'closest' }
   Plotly.newPlot('graph-implementations', implementationTraces, {
     ...layout,
     title: 'Worker Implementations',
