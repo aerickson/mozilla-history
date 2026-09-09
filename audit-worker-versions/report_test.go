@@ -32,6 +32,7 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 
 	got := renderReadme(workers)
 	for _, want := range []string{
+		"This report shows the latest detailed inventory of Firefox CI worker pools alongside historical trends from earlier snapshots.",
 		"Total worker pools: `2`",
 		"### Count by version",
 		"intentionally malformed probe task",
