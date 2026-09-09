@@ -15,6 +15,24 @@ func TestWorkerPoolURL(t *testing.T) {
 	}
 }
 
+func TestSortedVersionCountsUsesNaturalOrder(t *testing.T) {
+	versions := map[string]int{
+		"100.0.1": 1,
+		"108.0.0": 1,
+		"9.10.0":  1,
+		"9.2.0":   1,
+		"99.2.0":  1,
+	}
+	want := []string{"9.2.0", "9.10.0", "99.2.0", "100.0.1", "108.0.0"}
+
+	got := sortedVersionCounts(versions)
+	for i := range want {
+		if got[i].Key != want[i] {
+			t.Fatalf("version %d = %q, want %q", i, got[i].Key, want[i])
+		}
+	}
+}
+
 func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 	workers := []WorkerInfo{{
 		WorkerPoolID:          "example/pool",
