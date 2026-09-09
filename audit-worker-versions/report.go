@@ -11,6 +11,7 @@ import (
 	"sort"
 	"strings"
 	"text/template"
+	"time"
 )
 
 type count struct {
@@ -31,9 +32,10 @@ type reportSection struct {
 }
 
 type reportData struct {
-	GeneratedAt    string
-	ProbeStartedAt string
-	Sections       [5]reportSection
+	GeneratedAt       string
+	ProbeStartedAt    string
+	ReportGeneratedAt string
+	Sections          [5]reportSection
 }
 
 func (w WorkerInfo) WorkerPoolURL() string {
@@ -121,8 +123,9 @@ _Configured values were not collected in this snapshot. Legacy totals included s
 
 This report shows the latest detailed inventory of Firefox CI worker pools alongside historical trends from earlier snapshots. Worker implementation and version are inferred from the failure log produced when each pool is given an intentionally malformed probe task; image and capacity metadata come from Worker Manager. Summary counts represent worker pools, not individual workers or tasks.
 
-{{ if .ProbeStartedAt }}Probe run started: **{{ .ProbeStartedAt }}**{{ if .GeneratedAt }} · Results collected: **{{ .GeneratedAt }}**{{ end }}
-{{ else if .GeneratedAt }}Results collected: **{{ .GeneratedAt }}**
+{{ if .ProbeStartedAt }}Probe run started: **{{ .ProbeStartedAt }}**{{ if .GeneratedAt }} · Results collected: **{{ .GeneratedAt }}**{{ end }}{{ if .ReportGeneratedAt }} · Report generated: **{{ .ReportGeneratedAt }}**{{ end }}
+{{ else if .GeneratedAt }}Results collected: **{{ .GeneratedAt }}**{{ if .ReportGeneratedAt }} · Report generated: **{{ .ReportGeneratedAt }}**{{ end }}
+{{ else if .ReportGeneratedAt }}Report generated: **{{ .ReportGeneratedAt }}**
 {{ end }}
 
 {{ range .Sections }}
@@ -361,6 +364,10 @@ func writeReadme(snapshot WorkerSnapshot) {
 }
 
 func renderReadme(snapshot WorkerSnapshot) string {
+	return renderReadmeAt(snapshot, time.Now())
+}
+
+func renderReadmeAt(snapshot WorkerSnapshot, reportGeneratedAt time.Time) string {
 	workers := snapshot.Workers
 	sections := [5]reportSection{
 		generateReadmeSection("Generic Worker", "", workers, func(w WorkerInfo) bool { return w.Implementation == "generic-worker" }),
@@ -377,6 +384,9 @@ func renderReadme(snapshot WorkerSnapshot) string {
 	}
 	if !snapshot.ProbeStartedAt.IsZero() {
 		data.ProbeStartedAt = snapshot.ProbeStartedAt.UTC().Format(timestampFormat)
+	}
+	if !reportGeneratedAt.IsZero() {
+		data.ReportGeneratedAt = reportGeneratedAt.UTC().Format(timestampFormat)
 	}
 
 	return renderTemplate(data)
