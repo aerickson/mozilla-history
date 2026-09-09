@@ -197,7 +197,6 @@ def main() -> int:
         wait_for_probe_group(auditor, task_group_id, args.poll_interval, env=env)
         run([auditor, task_group_id], env=env)
 
-    run([str(REPOSITORY / "build-docs-history.sh")], env=env)
     print(
         "\nLocal refresh complete. Review the generated files before committing them.",
         flush=True,
