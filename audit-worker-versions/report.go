@@ -138,6 +138,61 @@ func sortedCounts(values map[string]int) []count {
 	return counts
 }
 
+func naturalLess(left, right string) bool {
+	for leftIndex, rightIndex := 0, 0; leftIndex < len(left) && rightIndex < len(right); {
+		leftDigit := left[leftIndex] >= '0' && left[leftIndex] <= '9'
+		rightDigit := right[rightIndex] >= '0' && right[rightIndex] <= '9'
+		if leftDigit && rightDigit {
+			leftEnd, rightEnd := leftIndex, rightIndex
+			for leftEnd < len(left) && left[leftEnd] >= '0' && left[leftEnd] <= '9' {
+				leftEnd++
+			}
+			for rightEnd < len(right) && right[rightEnd] >= '0' && right[rightEnd] <= '9' {
+				rightEnd++
+			}
+
+			leftSignificant, rightSignificant := leftIndex, rightIndex
+			for leftSignificant < leftEnd-1 && left[leftSignificant] == '0' {
+				leftSignificant++
+			}
+			for rightSignificant < rightEnd-1 && right[rightSignificant] == '0' {
+				rightSignificant++
+			}
+
+			leftLength := leftEnd - leftSignificant
+			rightLength := rightEnd - rightSignificant
+			if leftLength != rightLength {
+				return leftLength < rightLength
+			}
+			if leftNumber, rightNumber := left[leftSignificant:leftEnd], right[rightSignificant:rightEnd]; leftNumber != rightNumber {
+				return leftNumber < rightNumber
+			}
+			if leftRunLength, rightRunLength := leftEnd-leftIndex, rightEnd-rightIndex; leftRunLength != rightRunLength {
+				return leftRunLength < rightRunLength
+			}
+
+			leftIndex, rightIndex = leftEnd, rightEnd
+			continue
+		}
+
+		if left[leftIndex] != right[rightIndex] {
+			return left[leftIndex] < right[rightIndex]
+		}
+		leftIndex++
+		rightIndex++
+	}
+
+	return len(left) < len(right)
+}
+
+func sortedVersionCounts(values map[string]int) []count {
+	counts := sortedCounts(values)
+	sort.Slice(counts, func(i, j int) bool {
+		return naturalLess(counts[i].Key, counts[j].Key)
+	})
+	return counts
+}
+
 func generateReadmeSection(title, description string, workers []WorkerInfo, filter func(WorkerInfo) bool) reportSection {
 	filtered := make([]WorkerInfo, 0)
 	versions := make(map[string]int)
@@ -161,7 +216,7 @@ func generateReadmeSection(title, description string, workers []WorkerInfo, filt
 		Title:           title,
 		Description:     description,
 		Count:           len(filtered),
-		Versions:        sortedCounts(versions),
+		Versions:        sortedVersionCounts(versions),
 		Images:          sortedCounts(imagesets),
 		Filtered:        filtered,
 		FullColumns:     title == "Generic Worker",
