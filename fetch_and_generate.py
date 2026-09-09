@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import re
 import subprocess
@@ -15,6 +16,7 @@ from pathlib import Path
 REPOSITORY = Path(__file__).resolve().parent
 TASK_GROUP_PATTERN = re.compile(r"^Task Group ID: (\S+)$")
 WAITING_EXIT_CODE = 3
+TOKEN_FILE = Path.home() / ".tc_token"
 
 
 def parse_args() -> argparse.Namespace:
@@ -99,8 +101,45 @@ def wait_for_probe_group(
         time.sleep(poll_interval)
 
 
+def load_taskcluster_token(env: dict[str, str], token_file: Path = TOKEN_FILE) -> bool:
+    credential_keys = {
+        "TASKCLUSTER_CLIENT_ID": "clientId",
+        "TASKCLUSTER_ACCESS_TOKEN": "accessToken",
+    }
+    if not token_file.exists():
+        return False
+
+    try:
+        token = json.loads(token_file.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise RuntimeError(
+            f"could not read Taskcluster token file {token_file}: {error}"
+        ) from error
+    if not isinstance(token, dict):
+        raise TypeError(
+            f"Taskcluster token file {token_file} must contain a JSON object"
+        )
+
+    invalid = [
+        token_name
+        for token_name in credential_keys.values()
+        if not isinstance(token.get(token_name), str) or not token[token_name]
+    ]
+    if invalid:
+        names = ", ".join(invalid)
+        raise RuntimeError(
+            f"Taskcluster token file {token_file} has missing or invalid field(s): {names}"
+        )
+
+    for environment_name, token_name in credential_keys.items():
+        env[environment_name] = token[token_name]
+    return True
+
+
 def taskcluster_environment() -> dict[str, str]:
     env = os.environ.copy()
+    if load_taskcluster_token(env):
+        print(f"Using Taskcluster credentials from {TOKEN_FILE}", flush=True)
     env.setdefault(
         "TASKCLUSTER_ROOT_URL", "https://firefox-ci-tc.services.mozilla.com/"
     )
@@ -172,6 +211,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("\nInterrupted.", file=sys.stderr)
         sys.exit(130)
-    except (OSError, RuntimeError, subprocess.CalledProcessError) as error:
+    except (OSError, RuntimeError, TypeError, subprocess.CalledProcessError) as error:
         print(f"\nError: {error}", file=sys.stderr)
         sys.exit(1)
