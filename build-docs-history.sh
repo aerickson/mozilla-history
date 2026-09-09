@@ -42,12 +42,17 @@ HISTORICAL_DATA="./${PUBLIC_DIR}/history.json"
 mkdir -p "${PUBLIC_DIR}/data/"
 
 # grab all versions by date
-for rev in $(git rev-list master "${WORKERS_FILE}");
+while IFS= read -r rev;
 do
+	if ! git cat-file -e "${rev}:${WORKERS_FILE}" 2>/dev/null; then
+		echo "Skipping ${rev}: ${WORKERS_FILE} does not exist"
+		continue
+	fi
+
 	revdate=$(git show --no-patch --no-notes --date=short --pretty='%cd' "$rev")
 	echo "Fetching ${revdate} version ${rev}"
 	git show "${rev}:${WORKERS_FILE}" > "${PUBLIC_DIR}/data/${revdate}.json"
-done
+done < <(git rev-list master -- "${WORKERS_FILE}")
 
 node -e "${nodescript}" "${PWD}" ${PUBLIC_DIR}/data/*.json > $HISTORICAL_DATA
 rm -rf "${PUBLIC_DIR}/data/"
