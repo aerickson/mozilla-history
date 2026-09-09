@@ -27,15 +27,23 @@ type (
 )
 
 type WorkerInfo struct {
-	WorkerPoolID   string
-	Implementation string
-	Version        string
-	Details        map[string]string
-	hasNoArtifacts bool
-	isUnknown      bool
-	Imageset       string
-	TotalWorkers   int
-	TotalCapacity  int
+	WorkerPoolID             string
+	Implementation           string
+	Version                  string
+	Details                  map[string]string
+	hasNoArtifacts           bool
+	isUnknown                bool
+	Imageset                 string
+	ConfiguredMinCapacity    *int   `json:",omitempty"`
+	ConfiguredMaxCapacity    *int   `json:",omitempty"`
+	CapacityPerWorker        *int   `json:",omitempty"`
+	ConfiguredMinWorkers     *int   `json:",omitempty"`
+	ConfiguredMaxWorkers     *int   `json:",omitempty"`
+	WorkerManagerLookupError string `json:",omitempty"`
+	// Retained only to recognize snapshots created before configured capacity
+	// fields were collected. New snapshots leave these fields unset.
+	LegacyTotalWorkers  *int `json:"TotalWorkers,omitempty"`
+	LegacyTotalCapacity *int `json:"TotalCapacity,omitempty"`
 }
 
 func (w *WorkerInfo) String() string {
@@ -64,37 +72,50 @@ func (w *WorkerInfo) String() string {
 	return strings.Trim(info, " ")
 }
 
-func GetImageset(wp *tcworkermanager.WorkerPoolFullDefinition) string {
-	var p = wp.ProviderID
-	if p == "test-provisioner" || p == "no-provisioning-nope" || p == "dummy-test-provisioner" || p == "test-dummy-provisioner" {
-		return "unknown"
-	}
+type workerPoolLaunchConfig struct {
+	// AWS
+	LaunchConfig struct {
+		ImageId string
+	} `json:"launchConfig"`
 
-	type LaunchConfig struct {
-		// AWS
-		LaunchConfig struct {
-			ImageId string
-		} `json:"launchConfig"`
+	// GCP
+	Disks []struct {
+		InitializeParams struct {
+			SourceImage string `json:"sourceImage"`
+		} `json:"initializeParams"`
+	} `json:"disks"`
 
-		// GCP
-		Disks []struct {
-			InitializeParams struct {
-				SourceImage string `json:"sourceImage"`
-			} `json:"initializeParams"`
-		} `json:"disks"`
+	// Azure
+	StorageProfile struct {
+		ImageReference struct {
+			Id string `json:"id"`
+		} `json:"imageReference"`
+	} `json:"storageProfile"`
 
-		// Azure
-		StorageProfile struct {
-			ImageReference struct {
-				Id string `json:"id"`
-			} `json:"imageReference"`
-		} `json:"storageProfile"`
-	}
-	type Config struct {
-		LaunchConfigs []LaunchConfig `json:"launchConfigs"`
-	}
-	var cfg Config
+	// Older Worker Manager configurations stored this directly on the
+	// launch config. Newer configurations nest it under workerManager.
+	CapacityPerInstance *int `json:"capacityPerInstance"`
+	WorkerManager       struct {
+		CapacityPerInstance *int `json:"capacityPerInstance"`
+	} `json:"workerManager"`
+}
+
+type workerPoolConfig struct {
+	MinCapacity   *int                     `json:"minCapacity"`
+	MaxCapacity   *int                     `json:"maxCapacity"`
+	LaunchConfigs []workerPoolLaunchConfig `json:"launchConfigs"`
+}
+
+func parseWorkerPoolConfig(wp *tcworkermanager.WorkerPoolFullDefinition) (workerPoolConfig, error) {
+	var cfg workerPoolConfig
 	if err := json.Unmarshal(wp.Config, &cfg); err != nil {
+		return workerPoolConfig{}, err
+	}
+	return cfg, nil
+}
+
+func getImageset(providerID string, cfg workerPoolConfig) string {
+	if providerID == "test-provisioner" || providerID == "no-provisioning-nope" || providerID == "dummy-test-provisioner" || providerID == "test-dummy-provisioner" {
 		return "unknown"
 	}
 
@@ -118,6 +139,46 @@ func GetImageset(wp *tcworkermanager.WorkerPoolFullDefinition) string {
 		return "unknown"
 	}
 	return sortedImages
+}
+
+func ceilDivide(value, divisor int) int {
+	return (value + divisor - 1) / divisor
+}
+
+func enrichWorkerInfo(workerInfo *WorkerInfo, wp *tcworkermanager.WorkerPoolFullDefinition) {
+	cfg, err := parseWorkerPoolConfig(wp)
+	if err != nil {
+		workerInfo.Imageset = "unknown"
+		workerInfo.WorkerManagerLookupError = "Could not parse Worker Manager configuration: " + err.Error()
+		return
+	}
+
+	workerInfo.Imageset = getImageset(wp.ProviderID, cfg)
+	workerInfo.ConfiguredMinCapacity = cfg.MinCapacity
+	workerInfo.ConfiguredMaxCapacity = cfg.MaxCapacity
+
+	capacities := map[int]struct{}{}
+	for _, launchConfig := range cfg.LaunchConfigs {
+		capacity := launchConfig.CapacityPerInstance
+		if launchConfig.WorkerManager.CapacityPerInstance != nil {
+			capacity = launchConfig.WorkerManager.CapacityPerInstance
+		}
+		if capacity != nil && *capacity > 0 {
+			capacities[*capacity] = struct{}{}
+		}
+	}
+
+	if len(capacities) != 1 || cfg.MinCapacity == nil || cfg.MaxCapacity == nil {
+		return
+	}
+	for capacity := range capacities {
+		capacityPerWorker := capacity
+		minWorkers := ceilDivide(*cfg.MinCapacity, capacity)
+		maxWorkers := ceilDivide(*cfg.MaxCapacity, capacity)
+		workerInfo.CapacityPerWorker = &capacityPerWorker
+		workerInfo.ConfiguredMinWorkers = &minWorkers
+		workerInfo.ConfiguredMaxWorkers = &maxWorkers
+	}
 }
 
 var (
@@ -303,12 +364,10 @@ func inspect(queue *tcqueue.Queue, taskIDs []string) {
 					workerPool, err := workermanager.WorkerPool(workerPoolID)
 					if err != nil {
 						fmt.Println("Could not fetch workerPool " + workerPoolID)
+						workerInfo.Imageset = "unknown"
+						workerInfo.WorkerManagerLookupError = err.Error()
 					} else {
-						workerInfo.Imageset = GetImageset(workerPool)
-						workerInfo.TotalWorkers = int(workerPool.RunningCount) + int(workerPool.StoppedCount) +
-							int(workerPool.StoppingCount) + int(workerPool.RequestedCount)
-						workerInfo.TotalCapacity = int(workerPool.RunningCapacity) + int(workerPool.StoppedCapacity) +
-							int(workerPool.StoppingCapacity) + int(workerPool.RequestedCapacity)
+						enrichWorkerInfo(&workerInfo, workerPool)
 					}
 					filename := filepath.Join(outputDir, FilenameEscape(workerPoolID))
 					WriteFile(filename, append([]byte(workerInfo.String()), '\n'))

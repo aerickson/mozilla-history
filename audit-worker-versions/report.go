@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"net/url"
 	"os"
 	"path/filepath"
@@ -17,13 +18,14 @@ type count struct {
 }
 
 type reportSection struct {
-	Title       string
-	Description string
-	Count       int
-	Versions    []count
-	Images      []count
-	Filtered    []WorkerInfo
-	FullColumns bool
+	Title           string
+	Description     string
+	Count           int
+	Versions        []count
+	Images          []count
+	Filtered        []WorkerInfo
+	FullColumns     bool
+	HasLegacyTotals bool
 }
 
 func (w WorkerInfo) WorkerPoolURL() string {
@@ -34,6 +36,31 @@ func (w WorkerInfo) WorkerPoolURL() string {
 	return "https://firefox-ci-tc.services.mozilla.com/provisioners/" +
 		url.PathEscape(parts[0]) + "/worker-types/" + url.PathEscape(parts[1]) +
 		"?sortBy=Last%20Active&sortDirection=desc"
+}
+
+func formatConfiguredRange(minimum, maximum *int) string {
+	if minimum == nil || maximum == nil {
+		return "—"
+	}
+	if *minimum == *maximum {
+		return fmt.Sprintf("%d", *minimum)
+	}
+	return fmt.Sprintf("%d–%d", *minimum, *maximum)
+}
+
+func (w WorkerInfo) ConfiguredWorkerRange() string {
+	return formatConfiguredRange(w.ConfiguredMinWorkers, w.ConfiguredMaxWorkers)
+}
+
+func (w WorkerInfo) ConfiguredCapacityRange() string {
+	return formatConfiguredRange(w.ConfiguredMinCapacity, w.ConfiguredMaxCapacity)
+}
+
+func (w WorkerInfo) CapacityPerWorkerValue() string {
+	if w.CapacityPerWorker == nil {
+		return "—"
+	}
+	return fmt.Sprintf("%d", *w.CapacityPerWorker)
 }
 
 const readmeTpl = `
@@ -69,10 +96,15 @@ _Source: image references in each pool's live Worker Manager launch configuratio
 {{if .Count }}
 ### Worker pools
 
-| Worker Pool | Implementation | Version {{ if .FullColumns }}| Engine | Revision | OS | Arch | GO {{ end }}| Total Workers | Total Capacity |
-| --- | --- | --- {{ if .FullColumns }}| --- | --- | --- | --- | --- {{ end }}| ---: | ---: |
+_Configured capacity is the pool's autoscaling range in concurrent task slots. The configured worker range is derived from those bounds and the slots per worker, rounding up. An em dash means the configuration is unavailable or a worker count cannot be derived._
+{{ if .HasLegacyTotals }}
+_Configured values were not collected in this snapshot. Legacy totals included stopped worker records and are intentionally not displayed._
+{{ end }}
+
+| Worker Pool | Implementation | Version {{ if .FullColumns }}| Engine | Revision | OS | Arch | GO {{ end }}| Configured Workers | Configured Capacity | Slots per Worker |
+| --- | --- | --- {{ if .FullColumns }}| --- | --- | --- | --- | --- {{ end }}| ---: | ---: | ---: |
 {{ range .Filtered -}}
-| [**{{ .WorkerPoolID }}**]({{ .WorkerPoolURL }}) | {{ .Implementation }} | {{ or .Version .Details.error }} {{ if $.FullColumns }}| {{ or .Details.engine "-" }} | {{ or (slice .Details.revision 0 10) "-" }} | {{ or .Details.os "-" }} | {{ or .Details.arch "-" }} | {{ or .Details.go "-" }} {{ end }}| {{ .TotalWorkers }} | {{ .TotalCapacity }} |
+| [**{{ .WorkerPoolID }}**]({{ .WorkerPoolURL }}) | {{ .Implementation }} | {{ or .Version .Details.error }} {{ if $.FullColumns }}| {{ or .Details.engine "-" }} | {{ or (slice .Details.revision 0 10) "-" }} | {{ or .Details.os "-" }} | {{ or .Details.arch "-" }} | {{ or .Details.go "-" }} {{ end }}| {{ .ConfiguredWorkerRange }} | {{ .ConfiguredCapacityRange }} | {{ .CapacityPerWorkerValue }} |
 {{end}}
 {{- end -}}
 {{end}}
@@ -110,12 +142,14 @@ func generateReadmeSection(title, description string, workers []WorkerInfo, filt
 	filtered := make([]WorkerInfo, 0)
 	versions := make(map[string]int)
 	imagesets := make(map[string]int)
+	hasLegacyTotals := false
 
 	for _, worker := range workers {
 		if filter(worker) {
 			filtered = append(filtered, worker)
 			versions[worker.Version]++
 			imagesets[worker.Imageset]++
+			hasLegacyTotals = hasLegacyTotals || worker.LegacyTotalWorkers != nil || worker.LegacyTotalCapacity != nil
 		}
 	}
 
@@ -124,13 +158,14 @@ func generateReadmeSection(title, description string, workers []WorkerInfo, filt
 	})
 
 	return reportSection{
-		Title:       title,
-		Description: description,
-		Count:       len(filtered),
-		Versions:    sortedCounts(versions),
-		Images:      sortedCounts(imagesets),
-		Filtered:    filtered,
-		FullColumns: title == "Generic Worker",
+		Title:           title,
+		Description:     description,
+		Count:           len(filtered),
+		Versions:        sortedCounts(versions),
+		Images:          sortedCounts(imagesets),
+		Filtered:        filtered,
+		FullColumns:     title == "Generic Worker",
+		HasLegacyTotals: hasLegacyTotals,
 	}
 }
 
