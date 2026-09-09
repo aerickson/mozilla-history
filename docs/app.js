@@ -2,8 +2,14 @@
 let basePath = String(window.location.pathname)
 if (!basePath.includes('-history')) basePath = '/mozilla-history/'
 
-const localPreview = new URLSearchParams(window.location.search).has('local')
-const readmeUrl = localPreview
+const query = new URLSearchParams(window.location.search)
+const bundledReport = query.has('local') || (
+  !query.has('remote') && (
+    window.location.hostname.endsWith('.quick.mozilla.cloud') ||
+    window.location.pathname.includes('/docs/')
+  )
+)
+const readmeUrl = bundledReport
   ? new URL('../WorkerVersions/README.md', window.location.href)
   : `https://raw.githubusercontent.com/taskcluster${basePath}master/WorkerVersions/README.md`
 const historyUrl = new URL('history.json', window.location.href)
