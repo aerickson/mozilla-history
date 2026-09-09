@@ -53,6 +53,38 @@ type WorkerSnapshot struct {
 	Workers        []WorkerInfo `json:"workers"`
 }
 
+type taskGroupProgress struct {
+	Total    int
+	Terminal int
+	States   map[string]int
+}
+
+func (progress taskGroupProgress) complete() bool {
+	return progress.Total > 0 && progress.Terminal == progress.Total
+}
+
+func isTerminalTaskState(state string) bool {
+	switch state {
+	case "completed", "failed", "exception":
+		return true
+	default:
+		return false
+	}
+}
+
+func summarizeTaskGroup(tasks []tcqueue.TaskDefinitionAndStatus) taskGroupProgress {
+	progress := taskGroupProgress{States: map[string]int{}}
+	for _, task := range tasks {
+		state := task.Status.State
+		progress.Total++
+		progress.States[state]++
+		if isTerminalTaskState(state) {
+			progress.Terminal++
+		}
+	}
+	return progress
+}
+
 func (w *WorkerInfo) String() string {
 	revision := ""
 	engine := ""
@@ -222,6 +254,7 @@ func WriteFile(path string, content []byte) {
 
 // Call with no arguments -> New task group generated
 // Call with one argument (taskGroupID) -> Report generated for previously created task group
+// Call with "status taskGroupID" -> Task group progress reported
 //
 // Expected workflow for this tool is to:
 // 1. Run without arguments to generate probing tasks and get taskGroupId
@@ -245,6 +278,18 @@ func main() {
 	}
 
 	queue := tcqueue.NewFromEnv()
+	if len(os.Args) >= 2 && os.Args[1] == "status" {
+		if len(os.Args) != 3 {
+			log.Fatal("Usage: audit-worker-versions status TASK_GROUP_ID")
+		}
+		progress, err := taskGroupStatus(queue, os.Args[2])
+		fatalOnError(err)
+		printTaskGroupProgress(os.Args[2], progress)
+		if !progress.complete() {
+			os.Exit(3)
+		}
+		return
+	}
 
 	switch len(os.Args) {
 	case 1:
@@ -263,6 +308,47 @@ func main() {
 	default:
 		log.Fatalf("Expected zero or one program arguments, but have %v: %q", len(os.Args)-1, os.Args[1:])
 	}
+}
+
+func taskGroupStatus(queue *tcqueue.Queue, taskGroupID string) (taskGroupProgress, error) {
+	tasks := []tcqueue.TaskDefinitionAndStatus{}
+	continuationToken := ""
+	for {
+		response, err := queue.ListTaskGroup(taskGroupID, continuationToken, "")
+		if err != nil {
+			return taskGroupProgress{}, err
+		}
+		tasks = append(tasks, response.Tasks...)
+		continuationToken = response.ContinuationToken
+		if continuationToken == "" {
+			break
+		}
+	}
+	if len(tasks) == 0 {
+		return taskGroupProgress{}, fmt.Errorf("no tasks with taskGroupId %q", taskGroupID)
+	}
+	return summarizeTaskGroup(tasks), nil
+}
+
+func printTaskGroupProgress(taskGroupID string, progress taskGroupProgress) {
+	stateOrder := []string{"completed", "failed", "exception", "running", "pending", "unscheduled"}
+	states := make([]string, 0, len(progress.States))
+	knownStates := map[string]bool{}
+	for _, state := range stateOrder {
+		knownStates[state] = true
+		if count := progress.States[state]; count > 0 {
+			states = append(states, fmt.Sprintf("%s=%d", state, count))
+		}
+	}
+	extraStates := []string{}
+	for state, count := range progress.States {
+		if !knownStates[state] {
+			extraStates = append(extraStates, fmt.Sprintf("%s=%d", state, count))
+		}
+	}
+	sort.Strings(extraStates)
+	states = append(states, extraStates...)
+	fmt.Printf("Task group %s: %d/%d terminal (%s)\n", taskGroupID, progress.Terminal, progress.Total, strings.Join(states, ", "))
 }
 
 func createTasks(queue *tcqueue.Queue, taskGroupID string) {
