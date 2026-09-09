@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"html"
 	"net/url"
 	"os"
 	"path/filepath"
@@ -15,6 +16,7 @@ import (
 type count struct {
 	Key   string
 	Value int
+	Hover string
 }
 
 type reportSection struct {
@@ -96,7 +98,7 @@ _Source: image references in each pool's live Worker Manager launch configuratio
 | Image | Count |
 | :--- | ---: |
 {{ range .Images -}}
-| {{ .Key }} | {{ .Value }} |
+| {{ if .Hover }}<abbr title="{{ .Hover }}">{{ .Key }}</abbr>{{ else }}{{ .Key }}{{ end }} | {{ .Value }} |
 {{ end }}
 {{- end }}
 {{if .Count }}
@@ -242,12 +244,53 @@ func compactAzureImageReference(reference string) string {
 	return reference
 }
 
+func compactAzureImageSet(references []string) (string, bool) {
+	regions := make([]string, 0, len(references))
+	family := ""
+	for _, reference := range references {
+		parts := strings.Split(strings.Trim(reference, "/"), "/")
+		if len(parts) < 2 || !strings.EqualFold(parts[0], "subscriptions") ||
+			!strings.EqualFold(parts[len(parts)-2], "images") {
+			return "", false
+		}
+		nameParts := strings.Split(parts[len(parts)-1], "-")
+		if len(nameParts) < 4 || nameParts[0] != "imageset" {
+			return "", false
+		}
+		currentFamily := strings.Join(nameParts[3:], "-")
+		if family != "" && currentFamily != family {
+			return "", false
+		}
+		family = currentFamily
+		regions = append(regions, nameParts[2])
+	}
+	if len(regions) < 2 {
+		return "", false
+	}
+	sort.Strings(regions)
+	return fmt.Sprintf("Azure image set %s (%s)", family, strings.Join(regions, ", ")), true
+}
+
 func compactImageReferences(imageset string) string {
 	references := strings.Split(imageset, ",")
+	for i := range references {
+		references[i] = strings.TrimSpace(references[i])
+	}
+	if compact, ok := compactAzureImageSet(references); ok {
+		return compact
+	}
 	for i, reference := range references {
-		references[i] = compactAzureImageReference(strings.TrimSpace(reference))
+		references[i] = compactAzureImageReference(reference)
 	}
 	return strings.Join(references, ", ")
+}
+
+func imageHoverTitle(imageset string) string {
+	references := strings.Split(imageset, ",")
+	for i, reference := range references {
+		references[i] = html.EscapeString(strings.TrimSpace(reference))
+	}
+	return strings.Join(references, "&#10;")
 }
 
 func imageCountLabel(worker WorkerInfo) string {
@@ -272,13 +315,18 @@ func generateReadmeSection(title, description string, workers []WorkerInfo, filt
 	filtered := make([]WorkerInfo, 0)
 	versions := make(map[string]int)
 	imagesets := make(map[string]int)
+	imageHovers := make(map[string]string)
 	hasLegacyTotals := false
 
 	for _, worker := range workers {
 		if filter(worker) {
 			filtered = append(filtered, worker)
 			versions[worker.Version]++
-			imagesets[imageCountLabel(worker)]++
+			imageLabel := imageCountLabel(worker)
+			imagesets[imageLabel]++
+			if worker.ImageStatus == imageStatusKnown && imageLabel != worker.Imageset {
+				imageHovers[imageLabel] = worker.Imageset
+			}
 			hasLegacyTotals = hasLegacyTotals || worker.LegacyTotalWorkers != nil || worker.LegacyTotalCapacity != nil
 		}
 	}
@@ -287,12 +335,20 @@ func generateReadmeSection(title, description string, workers []WorkerInfo, filt
 		return strings.Compare(filtered[i].WorkerPoolID, filtered[j].WorkerPoolID) < 0
 	})
 
+	images := sortedCounts(imagesets)
+	for i := range images {
+		if hover := imageHovers[images[i].Key]; hover != "" {
+			images[i].Key = html.EscapeString(images[i].Key)
+			images[i].Hover = imageHoverTitle(hover)
+		}
+	}
+
 	return reportSection{
 		Title:           title,
 		Description:     description,
 		Count:           len(filtered),
 		Versions:        sortedVersionCounts(versions),
-		Images:          sortedCounts(imagesets),
+		Images:          images,
 		Filtered:        filtered,
 		FullColumns:     title == "Generic Worker",
 		HasLegacyTotals: hasLegacyTotals,

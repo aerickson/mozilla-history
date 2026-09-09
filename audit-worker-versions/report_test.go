@@ -134,6 +134,41 @@ func TestCompactImageReferencesPreservesConfiguredSet(t *testing.T) {
 	}
 }
 
+func TestCompactImageReferencesSummarizesRegionalAzureSet(t *testing.T) {
+	input := strings.Join([]string{
+		"/subscriptions/sub/resourceGroups/rg/providers/Microsoft.Compute/images/imageset-abcdefghijklmnopqrst-westus2-fuzzing",
+		"/subscriptions/sub/resourceGroups/rg/providers/Microsoft.Compute/images/imageset-zyxwvutsrqponmlkjihg-eastus-fuzzing",
+	}, ",")
+	want := "Azure image set fuzzing (eastus, westus2)"
+	if got := compactImageReferences(input); got != want {
+		t.Fatalf("compactImageReferences() = %q, want %q", got, want)
+	}
+}
+
+func TestImageHoverTitleSeparatesImageSetWithLineBreaks(t *testing.T) {
+	if got := imageHoverTitle("/azure/one,/azure/two"); got != "/azure/one&#10;/azure/two" {
+		t.Fatalf("imageHoverTitle() = %q, want encoded line break", got)
+	}
+}
+
+func TestRenderReadmeShowsFullAzureImageOnHover(t *testing.T) {
+	fullImage := "/subscriptions/sub/resourceGroups/rg/providers/Microsoft.Compute/galleries/win2022/images/win2022/versions/1.0.0"
+	workers := []WorkerInfo{
+		{Implementation: "generic-worker", Imageset: fullImage, ImageStatus: imageStatusKnown, Details: map[string]string{"revision": "1234567890"}},
+		{Implementation: "generic-worker", Imageset: "projects/example/global/images/linux", ImageStatus: imageStatusKnown, Details: map[string]string{"revision": "1234567890"}},
+	}
+
+	got := renderReadme(WorkerSnapshot{Workers: workers})
+
+	want := `<abbr title="` + fullImage + `">Azure gallery win2022@1.0.0</abbr>`
+	if !strings.Contains(got, want) {
+		t.Fatalf("rendered README does not contain Azure hover label %q", want)
+	}
+	if strings.Contains(got, `<abbr title="projects/example`) {
+		t.Fatal("non-Azure image unexpectedly received a hover label")
+	}
+}
+
 func TestRenderReadmeExplainsIncompleteProbesInline(t *testing.T) {
 	workers := []WorkerInfo{
 		{WorkerPoolID: "example/no-artifact", Details: map[string]string{"error": "No artifacts found"}, hasNoArtifacts: true},
