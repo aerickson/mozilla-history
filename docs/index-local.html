@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local Worker Version Report</title>
+</head>
+<body>
+  <p>Opening the worker version report with local data&hellip;</p>
+  <script>
+    window.location.replace(`./?local=1${window.location.hash}`)
+  </script>
+  <noscript>
+    <a href="./?local=1">Open the local worker version report</a>
+  </noscript>
+</body>
+</html>

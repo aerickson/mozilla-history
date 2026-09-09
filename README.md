@@ -59,6 +59,16 @@ go run ./audit-worker-versions render \
 
 Omit the output path to print the generated Markdown to standard output.
 
+To preview the generated report in the website, serve the repository root:
+
+```sh
+python3 -m http.server 8000
+```
+
+Then open <http://localhost:8000/docs/index-local.html>. The local preview uses
+`WorkerVersions/README.md` and `docs/history.json` from the checkout. The
+published page continues to load the current report from GitHub.
+
 ## Automating the Process
 
 You can automate this reporting process by setting up a cron job to execute `run-report.sh` at regular intervals.

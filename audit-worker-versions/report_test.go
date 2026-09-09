@@ -31,11 +31,34 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 	got := renderReadme(workers)
 	for _, want := range []string{
 		"### Count by version",
+		"### Worker pools",
 		"[**example/pool**](https://firefox-ci-tc.services.mozilla.com/provisioners/example/worker-types/pool?sortBy=Last%20Active&sortDirection=desc)",
 	} {
 		if !strings.Contains(got, want) {
 			t.Errorf("rendered README does not contain %q", want)
 		}
+	}
+}
+
+func TestRenderReadmeExplainsIncompleteProbesInline(t *testing.T) {
+	workers := []WorkerInfo{
+		{WorkerPoolID: "example/no-artifact", Details: map[string]string{"error": "No artifacts found"}, hasNoArtifacts: true},
+		{WorkerPoolID: "example/pending", Details: map[string]string{"error": "Version not determined; task not (yet) claimed"}, isUnknown: true},
+	}
+
+	got := renderReadme(workers)
+	for _, want := range []string{
+		"## No artifacts found\n",
+		"did not publish `public/logs/live_backing.log`",
+		"## Version not determined\n",
+		"did not claim the probe task within two hours",
+	} {
+		if !strings.Contains(got, want) {
+			t.Errorf("rendered README does not contain %q", want)
+		}
+	}
+	if strings.Contains(got, "[^1]") || strings.Contains(got, "[^2]") {
+		t.Error("rendered README contains obsolete footnote markers")
 	}
 }
 
