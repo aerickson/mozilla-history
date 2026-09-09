@@ -1,20 +1,17 @@
 package main
 
 import (
-	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
 	"log"
 	"net/http"
-	"net/url"
 	"os"
 	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
 	"sync"
-	"text/template"
 	"time"
 
 	"github.com/taskcluster/httpbackoff/v3"
@@ -39,16 +36,6 @@ type WorkerInfo struct {
 	Imageset       string
 	TotalWorkers   int
 	TotalCapacity  int
-}
-
-func (w WorkerInfo) WorkerPoolURL() string {
-	parts := strings.SplitN(w.WorkerPoolID, "/", 2)
-	if len(parts) != 2 {
-		return ""
-	}
-	return "https://firefox-ci-tc.services.mozilla.com/provisioners/" +
-		url.PathEscape(parts[0]) + "/worker-types/" + url.PathEscape(parts[1]) +
-		"?sortBy=Last%20Active&sortDirection=desc"
 }
 
 func (w *WorkerInfo) String() string {
@@ -131,59 +118,6 @@ func GetImageset(wp *tcworkermanager.WorkerPoolFullDefinition) string {
 		return "unknown"
 	}
 	return sortedImages
-}
-
-var (
-	// Templates for README file
-	readmeTpl string = `
-{{- define "row" -}}
-## {{ .Title }}
-
-Total: ` + "`" + `{{ .Count }}` + "`" + `
-{{ if gt (len .Versions) 1 }}
-### Count by version
-
-| Version | Count |
-| :--- | ---: |
-{{ range .Versions -}}
-| {{ .Key }} | {{ .Value }} |
-{{ end }}
-{{- end }}
-{{ if gt (len .Images) 1 }}
-### Count by image
-
-| Version | Count |
-| :--- | ---: |
-{{ range .Images -}}
-| {{ .Key }} | {{ .Value }} |
-{{ end }}
-{{- end }}
-{{if .Count }}
-| Worker Pool | Implementation | Version {{ if .FullColumns }}| Engine | Revision | OS | Arch | GO {{ end }}| Total Workers | Total Capacity |
-| --- | --- | --- {{ if .FullColumns }}| --- | --- | --- | --- | --- {{ end }}| ---: | ---: |
-{{ range .Filtered -}}
-| [**{{ .WorkerPoolID }}**]({{ .WorkerPoolURL }}) | {{ .Implementation }} | {{ or .Version .Details.error }} {{ if $.FullColumns }}| {{ or .Details.engine "-" }} | {{ or (slice .Details.revision 0 10) "-" }} | {{ or .Details.os "-" }} | {{ or .Details.arch "-" }} | {{ or .Details.go "-" }} {{ end }}| {{ .TotalWorkers }} | {{ .TotalCapacity }} |
-{{end}}
-{{- end -}}
-{{end}}
-
-# Worker Pool Versions
-
-{{ range . }}
-{{ template "row" . }}
-{{ end }}
-
-[^1]: Those are the pools whose tasks were claimed and resolved by a worker as expected, but the worker did not publish either artifact ` + "`public/logs/live_backing.log` nor `public/logs/chain_of_trust.log`" + `, which is the source used to identify the worker implementation.
-
-[^2]: Probing task remains pending after two hours. Those are the pools that were not able to start any worker to claim the task within two hours.
-`
-)
-
-func renderTemplate(data interface{}) string {
-	t := template.Must(template.New("").Parse(readmeTpl))
-	var content bytes.Buffer
-	t.Execute(&content, data)
-	return content.String()
 }
 
 var (
@@ -393,95 +327,6 @@ func inspect(queue *tcqueue.Queue, taskIDs []string) {
 	writeReadme(workers)
 	fmt.Println("Writing workers.json")
 	writeSnapshot(workers)
-}
-
-func generateReadmeSection(title string, workers []WorkerInfo, filter func(WorkerInfo) bool) map[string]interface{} {
-	filtered := make([]WorkerInfo, 0)
-	versions := make(map[string]int)
-	imagesets := make(map[string]int)
-
-	for _, w := range workers {
-		if filter(w) {
-			filtered = append(filtered, w)
-			versions[w.Version]++
-			imagesets[w.Imageset]++
-		}
-	}
-
-	sort.Slice(filtered, func(i, j int) bool {
-		return strings.Compare(filtered[i].WorkerPoolID, filtered[j].WorkerPoolID) < 0
-	})
-
-	type kv struct {
-		Key   string
-		Value int
-	}
-	var sortedVersions []kv
-	for k, v := range versions {
-		sortedVersions = append(sortedVersions, kv{k, v})
-	}
-	sort.Slice(sortedVersions, func(i, j int) bool {
-		return strings.Compare(sortedVersions[i].Key, sortedVersions[j].Key) < 0
-	})
-
-	var images []kv
-	for k, v := range imagesets {
-		images = append(images, kv{k, v})
-	}
-	sort.Slice(images, func(i, j int) bool {
-		return strings.Compare(images[i].Key, images[j].Key) < 0
-	})
-
-	return map[string]interface{}{
-		"FullColumns": title == "Generic Worker",
-		"Filtered":    filtered,
-		"Count":       len(filtered),
-		"Versions":    sortedVersions,
-		"Images":      images,
-		"Title":       title,
-	}
-}
-
-func writeReadme(workers []WorkerInfo) {
-	filename := filepath.Join(outputDir, "README.md")
-	WriteFile(filename, []byte(renderReadme(workers)))
-}
-
-func renderReadme(workers []WorkerInfo) string {
-	sections := [5]map[string]interface{}{
-		generateReadmeSection("Generic Worker", workers, func(w WorkerInfo) bool { return w.Implementation == "generic-worker" }),
-		generateReadmeSection("Docker Worker", workers, func(w WorkerInfo) bool { return w.Implementation == "docker-worker" }),
-		generateReadmeSection("Script Worker", workers, func(w WorkerInfo) bool { return strings.Contains(w.Implementation, "Scriptworker") }),
-		generateReadmeSection("No artifacts found [^1]", workers, func(w WorkerInfo) bool { return w.hasNoArtifacts }),
-		generateReadmeSection("Version not determined [^2]", workers, func(w WorkerInfo) bool { return w.isUnknown }),
-	}
-
-	return renderTemplate(sections)
-}
-
-func readSnapshot(filename string) ([]WorkerInfo, error) {
-	contents, err := os.ReadFile(filename)
-	if err != nil {
-		return nil, err
-	}
-
-	workers := []WorkerInfo{}
-	if err := json.Unmarshal(contents, &workers); err != nil {
-		return nil, err
-	}
-
-	// These flags are internal rendering state and are not serialized in the
-	// snapshot. Restore them from the persisted error value for offline renders.
-	for i := range workers {
-		switch workers[i].Details["error"] {
-		case "No artifacts found":
-			workers[i].hasNoArtifacts = true
-		case "Version not determined; task not (yet) claimed":
-			workers[i].isUnknown = true
-		}
-	}
-
-	return workers, nil
 }
 
 func writeSnapshot(workers []WorkerInfo) {
