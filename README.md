@@ -98,12 +98,13 @@ Omit the output path to print the generated Markdown to standard output.
 To preview the generated report in the website, serve the repository root:
 
 ```sh
-python3 -m http.server 8000
+./run_local.sh
 ```
 
 Then open <http://localhost:8000/docs/index-local.html>. The local preview uses
 `WorkerVersions/README.md` and `docs/history.json` from the checkout. The
-published page continues to load the current report from GitHub.
+published page continues to load the current report from GitHub. Pass a port as
+the first argument to override the default, for example `./run_local.sh 8080`.
 
 ## Production Automation
 
