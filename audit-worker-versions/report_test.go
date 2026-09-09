@@ -17,11 +17,16 @@ func TestWorkerPoolURL(t *testing.T) {
 
 func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 	workers := []WorkerInfo{{
-		WorkerPoolID:   "example/pool",
-		Implementation: "generic-worker",
-		Version:        "1.2.3",
-		Imageset:       "image-one",
-		Details:        map[string]string{"revision": "1234567890"},
+		WorkerPoolID:          "example/pool",
+		Implementation:        "generic-worker",
+		Version:               "1.2.3",
+		Imageset:              "image-one",
+		Details:               map[string]string{"revision": "1234567890"},
+		ConfiguredMinCapacity: intPointer(1),
+		ConfiguredMaxCapacity: intPointer(16),
+		CapacityPerWorker:     intPointer(8),
+		ConfiguredMinWorkers:  intPointer(1),
+		ConfiguredMaxWorkers:  intPointer(2),
 	}, {
 		WorkerPoolID:   "example/other-pool",
 		Implementation: "generic-worker",
@@ -39,6 +44,9 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 		"expected to fail with a malformed-payload exception",
 		"live Worker Manager launch configuration",
 		"### Worker pools",
+		"Configured Workers | Configured Capacity | Slots per Worker",
+		"pool's autoscaling range in concurrent task slots",
+		"| 1–2 | 1–16 | 8 |",
 		"[**example/pool**](https://firefox-ci-tc.services.mozilla.com/provisioners/example/worker-types/pool?sortBy=Last%20Active&sortDirection=desc)",
 	} {
 		if !strings.Contains(got, want) {
@@ -72,7 +80,7 @@ func TestRenderReadmeExplainsIncompleteProbesInline(t *testing.T) {
 func TestReadSnapshotRestoresRenderingState(t *testing.T) {
 	filename := filepath.Join(t.TempDir(), "workers.json")
 	data := `[
-		{"WorkerPoolID":"one/pool","Details":{"error":"No artifacts found"}},
+		{"WorkerPoolID":"one/pool","Details":{"error":"No artifacts found"},"TotalWorkers":42,"TotalCapacity":84},
 		{"WorkerPoolID":"two/pool","Details":{"error":"Version not determined; task not (yet) claimed"}}
 	]`
 	if err := os.WriteFile(filename, []byte(data), 0644); err != nil {
@@ -85,6 +93,10 @@ func TestReadSnapshotRestoresRenderingState(t *testing.T) {
 	}
 	if !workers[0].hasNoArtifacts {
 		t.Error("no-artifacts state was not restored")
+	}
+	if workers[0].LegacyTotalWorkers == nil || *workers[0].LegacyTotalWorkers != 42 ||
+		workers[0].LegacyTotalCapacity == nil || *workers[0].LegacyTotalCapacity != 84 {
+		t.Error("legacy totals were not recognized")
 	}
 	if !workers[1].isUnknown {
 		t.Error("unknown-version state was not restored")
