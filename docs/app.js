@@ -1,3 +1,5 @@
+import { decorateSortableTables } from './table-sort.mjs'
+
 // This works for both the Mozilla and community history GitHub Pages sites.
 let basePath = String(window.location.pathname)
 if (!basePath.includes('-history')) basePath = '/mozilla-history/'
@@ -171,7 +173,7 @@ function buildTableOfContents() {
 async function init() {
   await Promise.all([loadReadme(), loadHistory()])
   buildTableOfContents()
-  document.querySelectorAll('table').forEach(table => table.classList.add('sortable'))
+  decorateSortableTables()
 }
 
 init()
