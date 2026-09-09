@@ -46,6 +46,13 @@ type WorkerInfo struct {
 	LegacyTotalCapacity *int `json:"TotalCapacity,omitempty"`
 }
 
+type WorkerSnapshot struct {
+	GeneratedAt    time.Time    `json:"generatedAt"`
+	ProbeStartedAt time.Time    `json:"probeStartedAt"`
+	TaskGroupID    string       `json:"taskGroupId"`
+	Workers        []WorkerInfo `json:"workers"`
+}
+
 func (w *WorkerInfo) String() string {
 	revision := ""
 	engine := ""
@@ -226,9 +233,9 @@ func main() {
 		if len(os.Args) < 3 || len(os.Args) > 4 {
 			log.Fatal("Usage: audit-worker-versions render INPUT_JSON [OUTPUT_MARKDOWN]")
 		}
-		workers, err := readSnapshot(os.Args[2])
+		snapshot, err := readSnapshot(os.Args[2])
 		fatalOnError(err)
-		contents := renderReadme(workers)
+		contents := renderReadme(snapshot)
 		if len(os.Args) == 4 {
 			WriteFile(os.Args[3], []byte(contents))
 		} else {
@@ -252,7 +259,7 @@ func main() {
 		if len(taskIDs) == 0 {
 			log.Fatalf("No tasks with taskGroupId %q", taskGroupID)
 		}
-		inspect(queue, taskIDs)
+		inspect(queue, taskGroupID, taskIDs)
 	default:
 		log.Fatalf("Expected zero or one program arguments, but have %v: %q", len(os.Args)-1, os.Args[1:])
 	}
@@ -345,8 +352,10 @@ func createTasks(queue *tcqueue.Queue, taskGroupID string) {
 	log.Printf("Task group sealed at: %v", tg.Sealed)
 }
 
-func inspect(queue *tcqueue.Queue, taskIDs []string) {
+func inspect(queue *tcqueue.Queue, taskGroupID string, taskIDs []string) {
 	EmptyDirectory(outputDir)
+	probeTask, err := queue.Task(taskIDs[0])
+	fatalOnError(err)
 	workermanager := tcworkermanager.NewFromEnv()
 	wp := workerpool.New(50)
 	workers := make([]WorkerInfo, 0)
@@ -382,20 +391,27 @@ func inspect(queue *tcqueue.Queue, taskIDs []string) {
 		workers = append(workers, result.(WorkerInfo))
 	})
 
+	snapshot := WorkerSnapshot{
+		GeneratedAt:    time.Now().UTC(),
+		ProbeStartedAt: time.Time(probeTask.Created).UTC(),
+		TaskGroupID:    taskGroupID,
+		Workers:        workers,
+	}
+
 	fmt.Printf("\nWriting README.md\n")
-	writeReadme(workers)
+	writeReadme(snapshot)
 	fmt.Println("Writing workers.json")
-	writeSnapshot(workers)
+	writeSnapshot(snapshot)
 }
 
-func writeSnapshot(workers []WorkerInfo) {
+func writeSnapshot(snapshot WorkerSnapshot) {
 	filename := filepath.Join(outputDir, "workers.json")
 
-	sort.Slice(workers, func(i, j int) bool {
-		return strings.Compare(workers[i].WorkerPoolID, workers[j].WorkerPoolID) <= 0
+	sort.Slice(snapshot.Workers, func(i, j int) bool {
+		return strings.Compare(snapshot.Workers[i].WorkerPoolID, snapshot.Workers[j].WorkerPoolID) <= 0
 	})
 
-	contents, err := json.MarshalIndent(workers, "", " ")
+	contents, err := json.MarshalIndent(snapshot, "", " ")
 	if err != nil {
 		log.Fatalf("Error:\n%v", err)
 	}

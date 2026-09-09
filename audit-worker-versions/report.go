@@ -28,6 +28,12 @@ type reportSection struct {
 	HasLegacyTotals bool
 }
 
+type reportData struct {
+	GeneratedAt    string
+	ProbeStartedAt string
+	Sections       [5]reportSection
+}
+
 func (w WorkerInfo) WorkerPoolURL() string {
 	parts := strings.SplitN(w.WorkerPoolID, "/", 2)
 	if len(parts) != 2 {
@@ -113,7 +119,11 @@ _Configured values were not collected in this snapshot. Legacy totals included s
 
 This report shows the latest detailed inventory of Firefox CI worker pools alongside historical trends from earlier snapshots. Worker implementation and version are inferred from the failure log produced when each pool is given an intentionally malformed probe task; image and capacity metadata come from Worker Manager. Summary counts represent worker pools, not individual workers or tasks.
 
-{{ range . }}
+{{ if .ProbeStartedAt }}Probe run started: **{{ .ProbeStartedAt }}**{{ if .GeneratedAt }} · Results collected: **{{ .GeneratedAt }}**{{ end }}
+{{ else if .GeneratedAt }}Results collected: **{{ .GeneratedAt }}**
+{{ end }}
+
+{{ range .Sections }}
 {{ template "row" . }}
 {{ end }}
 `
@@ -224,12 +234,13 @@ func generateReadmeSection(title, description string, workers []WorkerInfo, filt
 	}
 }
 
-func writeReadme(workers []WorkerInfo) {
+func writeReadme(snapshot WorkerSnapshot) {
 	filename := filepath.Join(outputDir, "README.md")
-	WriteFile(filename, []byte(renderReadme(workers)))
+	WriteFile(filename, []byte(renderReadme(snapshot)))
 }
 
-func renderReadme(workers []WorkerInfo) string {
+func renderReadme(snapshot WorkerSnapshot) string {
+	workers := snapshot.Workers
 	sections := [5]reportSection{
 		generateReadmeSection("Generic Worker", "", workers, func(w WorkerInfo) bool { return w.Implementation == "generic-worker" }),
 		generateReadmeSection("Docker Worker", "", workers, func(w WorkerInfo) bool { return w.Implementation == "docker-worker" }),
@@ -238,30 +249,43 @@ func renderReadme(workers []WorkerInfo) string {
 		generateReadmeSection("Version not determined", "These pools did not claim the probe task within two hours, so their worker implementation and version could not be determined.", workers, func(w WorkerInfo) bool { return w.isUnknown }),
 	}
 
-	return renderTemplate(sections)
-}
-
-func readSnapshot(filename string) ([]WorkerInfo, error) {
-	contents, err := os.ReadFile(filename)
-	if err != nil {
-		return nil, err
+	const timestampFormat = "2006-01-02 15:04 UTC"
+	data := reportData{Sections: sections}
+	if !snapshot.GeneratedAt.IsZero() {
+		data.GeneratedAt = snapshot.GeneratedAt.UTC().Format(timestampFormat)
+	}
+	if !snapshot.ProbeStartedAt.IsZero() {
+		data.ProbeStartedAt = snapshot.ProbeStartedAt.UTC().Format(timestampFormat)
 	}
 
-	workers := []WorkerInfo{}
-	if err := json.Unmarshal(contents, &workers); err != nil {
-		return nil, err
+	return renderTemplate(data)
+}
+
+func readSnapshot(filename string) (WorkerSnapshot, error) {
+	contents, err := os.ReadFile(filename)
+	if err != nil {
+		return WorkerSnapshot{}, err
+	}
+
+	var snapshot WorkerSnapshot
+	if strings.HasPrefix(strings.TrimSpace(string(contents)), "[") {
+		if err := json.Unmarshal(contents, &snapshot.Workers); err != nil {
+			return WorkerSnapshot{}, err
+		}
+	} else if err := json.Unmarshal(contents, &snapshot); err != nil {
+		return WorkerSnapshot{}, err
 	}
 
 	// These flags are internal rendering state and are not serialized in the
 	// snapshot. Restore them from the persisted error value for offline renders.
-	for i := range workers {
-		switch workers[i].Details["error"] {
+	for i := range snapshot.Workers {
+		switch snapshot.Workers[i].Details["error"] {
 		case "No artifacts found":
-			workers[i].hasNoArtifacts = true
+			snapshot.Workers[i].hasNoArtifacts = true
 		case "Version not determined; task not (yet) claimed":
-			workers[i].isUnknown = true
+			snapshot.Workers[i].isUnknown = true
 		}
 	}
 
-	return workers, nil
+	return snapshot, nil
 }

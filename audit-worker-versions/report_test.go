@@ -5,6 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 	"testing"
+	"time"
 )
 
 func TestWorkerPoolURL(t *testing.T) {
@@ -53,9 +54,14 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 		Details:        map[string]string{"revision": "1234567890"},
 	}}
 
-	got := renderReadme(workers)
+	got := renderReadme(WorkerSnapshot{
+		GeneratedAt:    time.Date(2026, time.September, 9, 15, 29, 53, 0, time.UTC),
+		ProbeStartedAt: time.Date(2026, time.September, 9, 7, 58, 29, 0, time.UTC),
+		Workers:        workers,
+	})
 	for _, want := range []string{
 		"This report shows the latest detailed inventory of Firefox CI worker pools alongside historical trends from earlier snapshots.",
+		"Probe run started: **2026-09-09 07:58 UTC** · Results collected: **2026-09-09 15:29 UTC**",
 		"Total worker pools: `2`",
 		"### Count by version",
 		"intentionally malformed probe task",
@@ -79,7 +85,7 @@ func TestRenderReadmeExplainsIncompleteProbesInline(t *testing.T) {
 		{WorkerPoolID: "example/pending", Details: map[string]string{"error": "Version not determined; task not (yet) claimed"}, isUnknown: true},
 	}
 
-	got := renderReadme(workers)
+	got := renderReadme(WorkerSnapshot{Workers: workers})
 	for _, want := range []string{
 		"## No artifacts found\n",
 		"did not publish `public/logs/live_backing.log`",
@@ -105,10 +111,11 @@ func TestReadSnapshotRestoresRenderingState(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	workers, err := readSnapshot(filename)
+	snapshot, err := readSnapshot(filename)
 	if err != nil {
 		t.Fatal(err)
 	}
+	workers := snapshot.Workers
 	if !workers[0].hasNoArtifacts {
 		t.Error("no-artifacts state was not restored")
 	}
@@ -118,5 +125,35 @@ func TestReadSnapshotRestoresRenderingState(t *testing.T) {
 	}
 	if !workers[1].isUnknown {
 		t.Error("unknown-version state was not restored")
+	}
+}
+
+func TestReadSnapshotReadsMetadata(t *testing.T) {
+	filename := filepath.Join(t.TempDir(), "workers.json")
+	data := `{
+		"generatedAt":"2026-09-09T15:29:53Z",
+		"probeStartedAt":"2026-09-09T07:58:29.422Z",
+		"taskGroupId":"AnhEjBL2SYuUedNBvjgsWA",
+		"workers":[{"WorkerPoolID":"one/pool","Details":{}}]
+	}`
+	if err := os.WriteFile(filename, []byte(data), 0644); err != nil {
+		t.Fatal(err)
+	}
+
+	snapshot, err := readSnapshot(filename)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got := snapshot.GeneratedAt.Format(time.RFC3339); got != "2026-09-09T15:29:53Z" {
+		t.Errorf("generated time = %q", got)
+	}
+	if got := snapshot.ProbeStartedAt.Format(time.RFC3339Nano); got != "2026-09-09T07:58:29.422Z" {
+		t.Errorf("probe start time = %q", got)
+	}
+	if snapshot.TaskGroupID != "AnhEjBL2SYuUedNBvjgsWA" {
+		t.Errorf("task group ID = %q", snapshot.TaskGroupID)
+	}
+	if len(snapshot.Workers) != 1 || snapshot.Workers[0].WorkerPoolID != "one/pool" {
+		t.Errorf("workers = %#v", snapshot.Workers)
 	}
 }
