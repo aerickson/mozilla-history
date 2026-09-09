@@ -34,6 +34,8 @@ type WorkerInfo struct {
 	hasNoArtifacts           bool
 	isUnknown                bool
 	Imageset                 string
+	ImageStatus              string `json:",omitempty"`
+	ProviderID               string `json:",omitempty"`
 	ConfiguredMinCapacity    *int   `json:",omitempty"`
 	ConfiguredMaxCapacity    *int   `json:",omitempty"`
 	CapacityPerWorker        *int   `json:",omitempty"`
@@ -44,6 +46,20 @@ type WorkerInfo struct {
 	// fields were collected. New snapshots leave these fields unset.
 	LegacyTotalWorkers  *int `json:"TotalWorkers,omitempty"`
 	LegacyTotalCapacity *int `json:"TotalCapacity,omitempty"`
+}
+
+const (
+	imageStatusKnown         = "known"
+	imageStatusNotApplicable = "not-applicable"
+	imageStatusNotDetermined = "not-determined"
+	imageStatusUnavailable   = "unavailable"
+	standaloneProviderID     = "standalone"
+	standaloneWorkerState    = "standalone"
+)
+
+type workerManagerClient interface {
+	WorkerPool(workerPoolID string) (*tcworkermanager.WorkerPoolFullDefinition, error)
+	ListWorkers(provisionerID, workerType, continuationToken, limit, quarantined, workerState string) (*tcworkermanager.ListWorkersResponse, error)
 }
 
 type WorkerSnapshot struct {
@@ -130,6 +146,13 @@ type workerPoolLaunchConfig struct {
 			Id string `json:"id"`
 		} `json:"imageReference"`
 	} `json:"storageProfile"`
+	ArmDeployment struct {
+		Parameters struct {
+			ImageID struct {
+				Value string `json:"value"`
+			} `json:"imageId"`
+		} `json:"parameters"`
+	} `json:"armDeployment"`
 
 	// Older Worker Manager configurations stored this directly on the
 	// launch config. Newer configurations nest it under workerManager.
@@ -165,6 +188,7 @@ func getImageset(providerID string, cfg workerPoolConfig) string {
 			imagesMap[disk.InitializeParams.SourceImage] = struct{}{}
 		}
 		imagesMap[launchCfg.StorageProfile.ImageReference.Id] = struct{}{}
+		imagesMap[launchCfg.ArmDeployment.Parameters.ImageID.Value] = struct{}{}
 	}
 	// remove empty image name ""
 	delete(imagesMap, "")
@@ -185,14 +209,20 @@ func ceilDivide(value, divisor int) int {
 }
 
 func enrichWorkerInfo(workerInfo *WorkerInfo, wp *tcworkermanager.WorkerPoolFullDefinition) {
+	workerInfo.ProviderID = wp.ProviderID
 	cfg, err := parseWorkerPoolConfig(wp)
 	if err != nil {
 		workerInfo.Imageset = "unknown"
+		workerInfo.ImageStatus = imageStatusUnavailable
 		workerInfo.WorkerManagerLookupError = "Could not parse Worker Manager configuration: " + err.Error()
 		return
 	}
 
 	workerInfo.Imageset = getImageset(wp.ProviderID, cfg)
+	workerInfo.ImageStatus = imageStatusKnown
+	if workerInfo.Imageset == "unknown" {
+		workerInfo.ImageStatus = imageStatusNotDetermined
+	}
 	workerInfo.ConfiguredMinCapacity = cfg.MinCapacity
 	workerInfo.ConfiguredMaxCapacity = cfg.MaxCapacity
 
@@ -217,6 +247,55 @@ func enrichWorkerInfo(workerInfo *WorkerInfo, wp *tcworkermanager.WorkerPoolFull
 		workerInfo.CapacityPerWorker = &capacityPerWorker
 		workerInfo.ConfiguredMinWorkers = &minWorkers
 		workerInfo.ConfiguredMaxWorkers = &maxWorkers
+	}
+}
+
+func workerPoolIsStandalone(workermanager workerManagerClient, workerPoolID string) (bool, error) {
+	parts := strings.SplitN(workerPoolID, "/", 2)
+	if len(parts) != 2 {
+		return false, fmt.Errorf("invalid worker pool ID %q", workerPoolID)
+	}
+
+	foundStandaloneWorker := false
+	continuationToken := ""
+	for {
+		workers, err := workermanager.ListWorkers(parts[0], parts[1], continuationToken, "", "", "")
+		if err != nil {
+			return false, err
+		}
+		for _, worker := range workers.Workers {
+			if worker.State == standaloneWorkerState {
+				foundStandaloneWorker = true
+			}
+		}
+		continuationToken = workers.ContinuationToken
+		if continuationToken == "" {
+			break
+		}
+	}
+	return foundStandaloneWorker, nil
+}
+
+func lookupAndEnrichWorkerInfo(workerInfo *WorkerInfo, workermanager workerManagerClient) {
+	workerPool, lookupErr := workermanager.WorkerPool(workerInfo.WorkerPoolID)
+	if lookupErr == nil {
+		enrichWorkerInfo(workerInfo, workerPool)
+		return
+	}
+
+	standalone, standaloneErr := workerPoolIsStandalone(workermanager, workerInfo.WorkerPoolID)
+	if standaloneErr == nil && standalone {
+		workerInfo.ProviderID = standaloneProviderID
+		workerInfo.Imageset = "unknown"
+		workerInfo.ImageStatus = imageStatusNotApplicable
+		return
+	}
+
+	workerInfo.Imageset = "unknown"
+	workerInfo.ImageStatus = imageStatusUnavailable
+	workerInfo.WorkerManagerLookupError = lookupErr.Error()
+	if standaloneErr != nil {
+		workerInfo.WorkerManagerLookupError += "; could not check for standalone workers: " + standaloneErr.Error()
 	}
 }
 
@@ -456,14 +535,7 @@ func inspect(queue *tcqueue.Queue, taskGroupID string, taskIDs []string) {
 						panic(err)
 					}
 					workerPoolID, workerInfo := show(queue, statusResponse)
-					workerPool, err := workermanager.WorkerPool(workerPoolID)
-					if err != nil {
-						fmt.Println("Could not fetch workerPool " + workerPoolID)
-						workerInfo.Imageset = "unknown"
-						workerInfo.WorkerManagerLookupError = err.Error()
-					} else {
-						enrichWorkerInfo(&workerInfo, workerPool)
-					}
+					lookupAndEnrichWorkerInfo(&workerInfo, workermanager)
 					filename := filepath.Join(outputDir, FilenameEscape(workerPoolID))
 					WriteFile(filename, append([]byte(workerInfo.String()), '\n'))
 					fmt.Printf("%-70s %s\n", workerPoolID+":", &workerInfo)

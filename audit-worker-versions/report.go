@@ -91,9 +91,9 @@ _Source: version information parsed from the log artifact produced when each wor
 {{ if gt (len .Images) 1 }}
 ### Count by image
 
-_Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images; unknown means no supported image reference was found._
+_Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images. Standalone pools do not have a Worker Manager-managed image._
 
-| Version | Count |
+| Image | Count |
 | :--- | ---: |
 {{ range .Images -}}
 | {{ .Key }} | {{ .Value }} |
@@ -203,6 +203,71 @@ func sortedVersionCounts(values map[string]int) []count {
 	return counts
 }
 
+func compactAzureImageReference(reference string) string {
+	parts := strings.Split(strings.Trim(reference, "/"), "/")
+	if len(parts) < 6 || !strings.EqualFold(parts[0], "subscriptions") {
+		return reference
+	}
+
+	providerIsAzureCompute := false
+	for i := 0; i+1 < len(parts); i++ {
+		if strings.EqualFold(parts[i], "providers") && strings.EqualFold(parts[i+1], "Microsoft.Compute") {
+			providerIsAzureCompute = true
+			break
+		}
+	}
+	if !providerIsAzureCompute {
+		return reference
+	}
+
+	for i := 0; i+5 < len(parts); i++ {
+		if strings.EqualFold(parts[i], "galleries") &&
+			strings.EqualFold(parts[i+2], "images") &&
+			strings.EqualFold(parts[i+4], "versions") {
+			gallery := parts[i+1]
+			image := parts[i+3]
+			version := parts[i+5]
+			if gallery == image {
+				return fmt.Sprintf("Azure gallery %s@%s", image, version)
+			}
+			return fmt.Sprintf("Azure gallery %s/%s@%s", gallery, image, version)
+		}
+	}
+
+	for i := 0; i+1 < len(parts); i++ {
+		if strings.EqualFold(parts[i], "images") {
+			return "Azure image " + parts[i+1]
+		}
+	}
+	return reference
+}
+
+func compactImageReferences(imageset string) string {
+	references := strings.Split(imageset, ",")
+	for i, reference := range references {
+		references[i] = compactAzureImageReference(strings.TrimSpace(reference))
+	}
+	return strings.Join(references, ", ")
+}
+
+func imageCountLabel(worker WorkerInfo) string {
+	switch worker.ImageStatus {
+	case imageStatusNotApplicable:
+		return "Not applicable (standalone)"
+	case imageStatusUnavailable:
+		return "Configuration unavailable"
+	case imageStatusNotDetermined:
+		return "Image not determined"
+	}
+	if worker.WorkerManagerLookupError != "" {
+		return "Configuration unavailable"
+	}
+	if worker.Imageset == "" || worker.Imageset == "unknown" {
+		return "Image not determined"
+	}
+	return compactImageReferences(worker.Imageset)
+}
+
 func generateReadmeSection(title, description string, workers []WorkerInfo, filter func(WorkerInfo) bool) reportSection {
 	filtered := make([]WorkerInfo, 0)
 	versions := make(map[string]int)
@@ -213,7 +278,7 @@ func generateReadmeSection(title, description string, workers []WorkerInfo, filt
 		if filter(worker) {
 			filtered = append(filtered, worker)
 			versions[worker.Version]++
-			imagesets[worker.Imageset]++
+			imagesets[imageCountLabel(worker)]++
 			hasLegacyTotals = hasLegacyTotals || worker.LegacyTotalWorkers != nil || worker.LegacyTotalCapacity != nil
 		}
 	}
