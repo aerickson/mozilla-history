@@ -32,6 +32,7 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 
 	got := renderReadme(workers)
 	for _, want := range []string{
+		"Total worker pools: `2`",
 		"### Count by version",
 		"intentionally malformed probe task",
 		"expected to fail with a malformed-payload exception",
