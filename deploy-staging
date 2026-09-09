@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cd -- "$(dirname -- "$0")"
+
+production_url=$(quick url)
+production_host=${production_url#*://}
+production_host=${production_host%%/*}
+
+case "$production_host" in
+  *.quick.mozilla.cloud)
+    production_name=${production_host%.quick.mozilla.cloud}
+    ;;
+  *)
+    echo "Could not derive a site name from Quick URL: $production_url" >&2
+    exit 1
+    ;;
+esac
+
+staging_name="${production_name}-staging"
+if [[ ${#staging_name} -gt 63 ]]; then
+  echo "Derived staging site name is longer than Quick's 63-character limit: $staging_name" >&2
+  exit 1
+fi
+
+echo "Deploying staging site: https://${staging_name}.quick.mozilla.cloud/"
+quick deploy . "$staging_name"
