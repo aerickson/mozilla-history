@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -38,6 +39,16 @@ type WorkerInfo struct {
 	Imageset       string
 	TotalWorkers   int
 	TotalCapacity  int
+}
+
+func (w WorkerInfo) WorkerPoolURL() string {
+	parts := strings.SplitN(w.WorkerPoolID, "/", 2)
+	if len(parts) != 2 {
+		return ""
+	}
+	return "https://firefox-ci-tc.services.mozilla.com/provisioners/" +
+		url.PathEscape(parts[0]) + "/worker-types/" + url.PathEscape(parts[1]) +
+		"?sortBy=Last%20Active&sortDirection=desc"
 }
 
 func (w *WorkerInfo) String() string {
@@ -130,7 +141,7 @@ var (
 
 Total: ` + "`" + `{{ .Count }}` + "`" + `
 {{ if gt (len .Versions) 1 }}
-Count by version:
+### Count by version
 
 | Version | Count |
 | :--- | ---: |
@@ -139,7 +150,7 @@ Count by version:
 {{ end }}
 {{- end }}
 {{ if gt (len .Images) 1 }}
-Count by image:
+### Count by image
 
 | Version | Count |
 | :--- | ---: |
@@ -151,7 +162,7 @@ Count by image:
 | Worker Pool | Implementation | Version {{ if .FullColumns }}| Engine | Revision | OS | Arch | GO {{ end }}| Total Workers | Total Capacity |
 | --- | --- | --- {{ if .FullColumns }}| --- | --- | --- | --- | --- {{ end }}| ---: | ---: |
 {{ range .Filtered -}}
-| **{{ .WorkerPoolID }}** | {{ .Implementation }} | {{ or .Version .Details.error }} {{ if $.FullColumns }}| {{ or .Details.engine "-" }} | {{ or (slice .Details.revision 0 10) "-" }} | {{ or .Details.os "-" }} | {{ or .Details.arch "-" }} | {{ or .Details.go "-" }} {{ end }}| {{ .TotalWorkers }} | {{ .TotalCapacity }} |
+| [**{{ .WorkerPoolID }}**]({{ .WorkerPoolURL }}) | {{ .Implementation }} | {{ or .Version .Details.error }} {{ if $.FullColumns }}| {{ or .Details.engine "-" }} | {{ or (slice .Details.revision 0 10) "-" }} | {{ or .Details.os "-" }} | {{ or .Details.arch "-" }} | {{ or .Details.go "-" }} {{ end }}| {{ .TotalWorkers }} | {{ .TotalCapacity }} |
 {{end}}
 {{- end -}}
 {{end}}
