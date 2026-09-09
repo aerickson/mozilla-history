@@ -54,14 +54,14 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 		Details:        map[string]string{"revision": "1234567890"},
 	}}
 
-	got := renderReadme(WorkerSnapshot{
+	got := renderReadmeAt(WorkerSnapshot{
 		GeneratedAt:    time.Date(2026, time.September, 9, 15, 29, 53, 0, time.UTC),
 		ProbeStartedAt: time.Date(2026, time.September, 9, 7, 58, 29, 0, time.UTC),
 		Workers:        workers,
-	})
+	}, time.Date(2026, time.September, 10, 1, 2, 3, 0, time.UTC))
 	for _, want := range []string{
 		"This report shows the latest detailed inventory of Firefox CI worker pools alongside historical trends from earlier snapshots.",
-		"Probe run started: **2026-09-09 07:58 UTC** · Results collected: **2026-09-09 15:29 UTC**",
+		"Probe run started: **2026-09-09 07:58 UTC** · Results collected: **2026-09-09 15:29 UTC** · Report generated: **2026-09-10 01:02 UTC**",
 		"Total worker pools: `2`",
 		"### Count by version",
 		"intentionally malformed probe task",
