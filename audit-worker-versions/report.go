@@ -43,7 +43,7 @@ const readmeTpl = `
 {{ .Description }}
 {{ end }}
 
-Total: ` + "`" + `{{ .Count }}` + "`" + `
+Total worker pools: ` + "`" + `{{ .Count }}` + "`" + `
 {{ if gt (len .Versions) 1 }}
 ### Count by version
 

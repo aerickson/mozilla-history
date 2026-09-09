@@ -21,7 +21,7 @@ async function loadReadme() {
 function renderHistoryTables(data) {
   const dates = Object.keys(data).sort((a, b) => b.localeCompare(a))
 
-  const tableByDate = (title, property) => {
+  const tableByDate = (title, property, description = '') => {
     let columns = []
     dates.forEach(date => {
       const values = data[date][property]
@@ -31,7 +31,7 @@ function renderHistoryTables(data) {
     })
     columns = columns.sort((a, b) => a.localeCompare(b))
 
-    let table = `<h3>${title}</h3>`
+    let table = `<h3>${title}</h3>${description}`
     table += `<table><thead><tr><th>Date</th>${columns.map(key => `<th>${key || 'unknown'}</th>`).join('')}</thead><tbody>`
     dates.forEach(date => {
       table += `<tr><td>${date}</td>
@@ -43,7 +43,11 @@ function renderHistoryTables(data) {
   }
 
   let html = '<h2>History</h2>'
-  html += tableByDate('Worker implementations', 'implementations')
+  html += tableByDate(
+    'Worker implementations',
+    'implementations',
+    '<p class="info">Worker implementation is inferred from distinctive content in the log artifact produced by the intentionally malformed probe task. <strong>Docker Worker identifies the legacy docker-worker implementation; it does not indicate that a generic-worker pool is configured to accept docker-worker-style payloads.</strong></p>',
+  )
   html += tableByDate('Worker versions', 'versions')
   document.getElementById('history-content').innerHTML = html
 }
