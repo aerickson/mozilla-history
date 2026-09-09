@@ -9,6 +9,8 @@ Total: `428`
 
 Count by version:
 
+_Source: version information parsed from the log artifact produced when each worker claims an intentionally malformed probe task. The task is expected to fail with a malformed-payload exception; known worker implementations and versions are identified from their distinct log output._
+
 | Version | Count |
 | :--- | ---: |
 | 100.0.1 | 4 |
@@ -30,6 +32,8 @@ Count by version:
 
 
 Count by image:
+
+_Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images; unknown means no supported image reference was found._
 
 | Version | Count |
 | :--- | ---: |
@@ -490,6 +494,8 @@ Total: `2`
 
 Count by version:
 
+_Source: version information parsed from the log artifact produced when each worker claims an intentionally malformed probe task. The task is expected to fail with a malformed-payload exception; known worker implementations and versions are identified from their distinct log output._
+
 | Version | Count |
 | :--- | ---: |
 | 38.0.5 | 1 |
@@ -497,6 +503,8 @@ Count by version:
 
 
 Count by image:
+
+_Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images; unknown means no supported image reference was found._
 
 | Version | Count |
 | :--- | ---: |
@@ -570,6 +578,8 @@ Total: `3`
 
 Count by image:
 
+_Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images; unknown means no supported image reference was found._
+
 | Version | Count |
 | :--- | ---: |
 | projects/taskcluster-imaging/global/images/generic-2204-wayland-vm-gcp-googlecompute-2023-09-22t17-39-37z | 1 |
@@ -589,6 +599,8 @@ Total: `18`
 
 
 Count by image:
+
+_Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images; unknown means no supported image reference was found._
 
 | Version | Count |
 | :--- | ---: |

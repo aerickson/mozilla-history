@@ -20,17 +20,22 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 		WorkerPoolID:   "example/pool",
 		Implementation: "generic-worker",
 		Version:        "1.2.3",
+		Imageset:       "image-one",
 		Details:        map[string]string{"revision": "1234567890"},
 	}, {
 		WorkerPoolID:   "example/other-pool",
 		Implementation: "generic-worker",
 		Version:        "2.0.0",
+		Imageset:       "image-two",
 		Details:        map[string]string{"revision": "1234567890"},
 	}}
 
 	got := renderReadme(workers)
 	for _, want := range []string{
 		"### Count by version",
+		"intentionally malformed probe task",
+		"expected to fail with a malformed-payload exception",
+		"live Worker Manager launch configuration",
 		"### Worker pools",
 		"[**example/pool**](https://firefox-ci-tc.services.mozilla.com/provisioners/example/worker-types/pool?sortBy=Last%20Active&sortDirection=desc)",
 	} {
