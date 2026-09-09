@@ -181,7 +181,7 @@ var (
 )
 
 var (
-  outputDir = "WorkerVersions"
+	outputDir = "WorkerVersions"
 )
 
 func FilenameEscape(raw string) (escaped string) {
@@ -195,7 +195,6 @@ func EmptyDirectory(dir string) {
 	}
 }
 
-
 func WriteFile(path string, content []byte) {
 	err := os.MkdirAll(filepath.Dir(path), 0755)
 	if err != nil {
@@ -204,7 +203,7 @@ func WriteFile(path string, content []byte) {
 
 	err = os.WriteFile(path, content, 0644)
 	if err != nil {
-	  log.Fatalf("Error:\n%v", err)
+		log.Fatalf("Error:\n%v", err)
 	}
 }
 
@@ -217,6 +216,20 @@ func WriteFile(path string, content []byte) {
 //
 // Files are written to the WorkerVersions directory
 func main() {
+	if len(os.Args) >= 2 && os.Args[1] == "render" {
+		if len(os.Args) < 3 || len(os.Args) > 4 {
+			log.Fatal("Usage: audit-worker-versions render INPUT_JSON [OUTPUT_MARKDOWN]")
+		}
+		workers, err := readSnapshot(os.Args[2])
+		fatalOnError(err)
+		contents := renderReadme(workers)
+		if len(os.Args) == 4 {
+			WriteFile(os.Args[3], []byte(contents))
+		} else {
+			fmt.Print(contents)
+		}
+		return
+	}
 
 	queue := tcqueue.NewFromEnv()
 
@@ -404,6 +417,9 @@ func generateReadmeSection(title string, workers []WorkerInfo, filter func(Worke
 	for k, v := range imagesets {
 		images = append(images, kv{k, v})
 	}
+	sort.Slice(images, func(i, j int) bool {
+		return strings.Compare(images[i].Key, images[j].Key) < 0
+	})
 
 	return map[string]interface{}{
 		"FullColumns": title == "Generic Worker",
@@ -417,7 +433,10 @@ func generateReadmeSection(title string, workers []WorkerInfo, filter func(Worke
 
 func writeReadme(workers []WorkerInfo) {
 	filename := filepath.Join(outputDir, "README.md")
+	WriteFile(filename, []byte(renderReadme(workers)))
+}
 
+func renderReadme(workers []WorkerInfo) string {
 	sections := [5]map[string]interface{}{
 		generateReadmeSection("Generic Worker", workers, func(w WorkerInfo) bool { return w.Implementation == "generic-worker" }),
 		generateReadmeSection("Docker Worker", workers, func(w WorkerInfo) bool { return w.Implementation == "docker-worker" }),
@@ -426,8 +445,32 @@ func writeReadme(workers []WorkerInfo) {
 		generateReadmeSection("Version not determined [^2]", workers, func(w WorkerInfo) bool { return w.isUnknown }),
 	}
 
-	contents := renderTemplate(sections)
-	WriteFile(filename, []byte(contents))
+	return renderTemplate(sections)
+}
+
+func readSnapshot(filename string) ([]WorkerInfo, error) {
+	contents, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	workers := []WorkerInfo{}
+	if err := json.Unmarshal(contents, &workers); err != nil {
+		return nil, err
+	}
+
+	// These flags are internal rendering state and are not serialized in the
+	// snapshot. Restore them from the persisted error value for offline renders.
+	for i := range workers {
+		switch workers[i].Details["error"] {
+		case "No artifacts found":
+			workers[i].hasNoArtifacts = true
+		case "Version not determined; task not (yet) claimed":
+			workers[i].isUnknown = true
+		}
+	}
+
+	return workers, nil
 }
 
 func writeSnapshot(workers []WorkerInfo) {
