@@ -79,6 +79,8 @@ _Source: image references in each pool's live Worker Manager launch configuratio
 
 # Worker Pool Versions
 
+This report shows the latest detailed inventory of Firefox CI worker pools alongside historical trends from earlier snapshots. Worker implementation and version are inferred from the failure log produced when each pool is given an intentionally malformed probe task; image and capacity metadata come from Worker Manager. Summary counts represent worker pools, not individual workers or tasks.
+
 {{ range . }}
 {{ template "row" . }}
 {{ end }}
