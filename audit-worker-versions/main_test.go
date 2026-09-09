@@ -5,6 +5,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/taskcluster/taskcluster/v48/clients/client-go/tcqueue"
 	"github.com/taskcluster/taskcluster/v48/clients/client-go/tcworkermanager"
 )
 
@@ -96,5 +97,39 @@ func TestEnrichWorkerInfoDoesNotDeriveWorkersForMixedCapacities(t *testing.T) {
 	}
 	if worker.CapacityPerWorker != nil || worker.ConfiguredMinWorkers != nil || worker.ConfiguredMaxWorkers != nil {
 		t.Fatal("worker counts were derived for heterogeneous launch capacities")
+	}
+}
+
+func TestSummarizeTaskGroup(t *testing.T) {
+	tasks := []tcqueue.TaskDefinitionAndStatus{
+		{Status: tcqueue.TaskStatusStructure{State: "completed"}},
+		{Status: tcqueue.TaskStatusStructure{State: "failed"}},
+		{Status: tcqueue.TaskStatusStructure{State: "exception"}},
+		{Status: tcqueue.TaskStatusStructure{State: "running"}},
+		{Status: tcqueue.TaskStatusStructure{State: "pending"}},
+	}
+
+	progress := summarizeTaskGroup(tasks)
+
+	if progress.Total != 5 || progress.Terminal != 3 {
+		t.Fatalf("progress = %#v, want 3 of 5 terminal", progress)
+	}
+	if progress.complete() {
+		t.Fatal("incomplete task group was reported complete")
+	}
+}
+
+func TestTaskGroupComplete(t *testing.T) {
+	progress := summarizeTaskGroup([]tcqueue.TaskDefinitionAndStatus{
+		{Status: tcqueue.TaskStatusStructure{State: "completed"}},
+		{Status: tcqueue.TaskStatusStructure{State: "failed"}},
+		{Status: tcqueue.TaskStatusStructure{State: "exception"}},
+	})
+
+	if !progress.complete() {
+		t.Fatalf("progress = %#v, want complete", progress)
+	}
+	if (taskGroupProgress{}).complete() {
+		t.Fatal("empty task group was reported complete")
 	}
 }
