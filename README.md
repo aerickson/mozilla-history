@@ -46,6 +46,19 @@ mozilla-history
 This will populate subdirectories `Clients`, `Hooks`, `Roles` and `WorkerPools`
 of the current directory.
 
+## Rendering an Existing Worker Snapshot
+
+The worker-version report can be regenerated from a saved snapshot without
+Taskcluster credentials or probe tasks:
+
+```sh
+go run ./audit-worker-versions render \
+  WorkerVersions/workers.json \
+  WorkerVersions/README.md
+```
+
+Omit the output path to print the generated Markdown to standard output.
+
 ## Automating the Process
 
 You can automate this reporting process by setting up a cron job to execute `run-report.sh` at regular intervals.
