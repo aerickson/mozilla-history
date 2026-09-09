@@ -1,9 +1,8 @@
-
-
 # Worker Pool Versions
 
 
 ## Generic Worker
+
 
 Total: `397`
 
@@ -48,6 +47,8 @@ Total: `397`
 | projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-gui-googlecompute-2025-01-13t22-33-40z | 2 |
 | unknown | 117 |
 
+
+### Worker pools
 
 | Worker Pool | Implementation | Version | Engine | Revision | OS | Arch | GO | Total Workers | Total Capacity |
 | --- | --- | --- | --- | --- | --- | --- | --- | ---: | ---: |
@@ -452,6 +453,7 @@ Total: `397`
 
 ## Docker Worker
 
+
 Total: `157`
 
 ### Count by version
@@ -472,6 +474,8 @@ Total: `157`
 | projects/taskcluster-imaging/global/images/docker-firefoxci-gcp-lt-googlecompute-2023-04-13t21-30-28z | 1 |
 | projects/taskcluster-imaging/global/images/docker-worker-gcp-u14-04-2025-06-16 | 19 |
 
+
+### Worker pools
 
 | Worker Pool | Implementation | Version | Total Workers | Total Capacity |
 | --- | --- | --- | ---: | ---: |
@@ -636,9 +640,12 @@ Total: `157`
 
 ## Script Worker
 
+
 Total: `38`
 
 
+
+### Worker pools
 
 | Worker Pool | Implementation | Version | Total Workers | Total Capacity |
 | --- | --- | --- | ---: | ---: |
@@ -682,7 +689,10 @@ Total: `38`
 | [**scriptworker-prov-v1/mozillavpn-signing-mac14m2**](https://firefox-ci-tc.services.mozilla.com/provisioners/scriptworker-prov-v1/worker-types/mozillavpn-signing-mac14m2?sortBy=Last%20Active&sortDirection=desc) | Scriptworker Chain of Trust | <no value> | 0 | 0 |
 
 
-## No artifacts found [^1]
+## No artifacts found
+
+These pools claimed and resolved the probe task, but did not publish `public/logs/live_backing.log` or `public/logs/chain_of_trust.log`, which are used to identify the worker implementation.
+
 
 Total: `4`
 
@@ -695,6 +705,8 @@ Total: `4`
 | projects/taskcluster-imaging/global/images/generic-2204-wayland-vm-gcp-googlecompute-2023-09-22t17-39-37z | 2 |
 
 
+### Worker pools
+
 | Worker Pool | Implementation | Version | Total Workers | Total Capacity |
 | --- | --- | --- | ---: | ---: |
 | [**built-in/fail**](https://firefox-ci-tc.services.mozilla.com/provisioners/built-in/worker-types/fail?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0 | 0 |
@@ -703,7 +715,10 @@ Total: `4`
 | [**gecko-t/t-linux-vm-2204-wayland-snap**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-t/worker-types/t-linux-vm-2204-wayland-snap?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 2 | 2 |
 
 
-## Version not determined [^2]
+## Version not determined
+
+These pools did not claim the probe task within two hours, so their worker implementation and version could not be determined.
+
 
 Total: `14`
 
@@ -716,6 +731,8 @@ Total: `14`
 | projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-googlecompute-alpha | 1 |
 | unknown | 7 |
 
+
+### Worker pools
 
 | Worker Pool | Implementation | Version | Total Workers | Total Capacity |
 | --- | --- | --- | ---: | ---: |
@@ -733,9 +750,3 @@ Total: `14`
 | [**releng-hardware/gecko-t-osx-1400-r8**](https://firefox-ci-tc.services.mozilla.com/provisioners/releng-hardware/worker-types/gecko-t-osx-1400-r8?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task not (yet) claimed | 0 | 0 |
 | [**releng-hardware/gecko-t-osx-1500-m4**](https://firefox-ci-tc.services.mozilla.com/provisioners/releng-hardware/worker-types/gecko-t-osx-1500-m4?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task not (yet) claimed | 0 | 0 |
 | [**releng-hardware/nss-3-b-osx-1015**](https://firefox-ci-tc.services.mozilla.com/provisioners/releng-hardware/worker-types/nss-3-b-osx-1015?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task not (yet) claimed | 0 | 0 |
-
-
-
-[^1]: Those are the pools whose tasks were claimed and resolved by a worker as expected, but the worker did not publish either artifact `public/logs/live_backing.log` nor `public/logs/chain_of_trust.log`, which is the source used to identify the worker implementation.
-
-[^2]: Probing task remains pending after two hours. Those are the pools that were not able to start any worker to claim the task within two hours.

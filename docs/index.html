@@ -35,6 +35,9 @@
       position: fixed;
       right: 15px;
       top: 5px;
+      max-height: calc(100vh - 40px);
+      max-width: 300px;
+      overflow-y: auto;
       background: #fff;
       padding: 15px 25px;
       border: 1px solid #eee;
@@ -79,27 +82,22 @@
 
   <div class="markdown-body">
     <main>
-      <div id="toc" class="toc">
-        <legend>TOC</legend>
-        <ul>
-          <li><a href="#generic-worker">Generic Worker</a></li>
-          <li><a href="#docker-worker">Docker Worker</a></li>
-          <li><a href="#script-worker">Script Worker</a></li>
-          <li><a href="#no-artifacts-found-1">No artifacts</a></li>
-          <li><a href="#version-not-determined-2">Version not determined</a></li>
-          <li><a href="#history">History</a></li>
-          <li><a href="#graphs">Graphs</a></li>
-        </ul>
-      </div>
+      <nav id="toc" class="toc" aria-label="Table of contents">
+        <strong>Contents</strong>
+        <ul id="toc-list"></ul>
+      </nav>
       <p class="info"><strong>Disclaimer:</strong> Values below represent <strong>worker pools</strong>.<br />
         They do not contain number of unique imagesets used for those pools, or how many tasks are being executed by those
         worker pools.</p>
       <div class="content" id="content"></div>
-      <div class="history" id="history"></div>
-      <div class="graphs" id="graphs">
+      <div class="history" id="history-content"></div>
+      <div class="graphs" id="graphs-content">
+        <h2>Graphs</h2>
         <p class="info"><strong>Disclaimer:</strong> Those values represent number of worker pools, and not number of
           workers. This also doesn't include total number of tasks run on those worker pools.</p>
+        <h3>Worker implementations</h3>
         <div id="graph-implementations"></div>
+        <h3>Worker versions</h3>
         <div id="graph-versions"></div>
       </div>
     </main>
@@ -111,100 +109,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/gh/tofsjonas/sortable/sortable.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
-  <script type="module">
-    // This should work for both https://taskcluster.github.io/community-history/ and https://taskcluster.github.io/mozilla-history/
-    let basePath = String(window.location.pathname)
-    if (!basePath.includes('-history')) basePath = '/mozilla-history/'
-    const readmeUrl = `https://raw.githubusercontent.com/taskcluster${basePath}master/WorkerVersions/README.md`
-    const historyUrl = `${window.location.pathname}history.json`
-
-    async function loadReadme() {
-      const res = await (await fetch(readmeUrl)).text()
-      showdown.setFlavor('github');
-      document.getElementById('content').innerHTML = (new showdown.Converter({
-        ghCompatibleHeaderId: true,
-        tables: true,
-      })).makeHtml(res)
-    }
-    function renderHistoryTables(data) {
-      const dates = Object.keys(data).sort((a, b) => b.localeCompare(a)) // dates in reverse order
-
-      const tableByDate = (field, prop) => {
-        let columns = []
-        dates.forEach(date => {
-          const dict = data[date][prop]
-          Object.keys(dict).forEach(k => {
-            if (!columns.includes(k)) columns.push(k)
-          })
-        })
-        columns = columns.sort((a, b) => a.localeCompare(b))
-
-        let table = `<table><thead><tr><th>Date</th>${columns.map(k => `<th>${k || 'unknown'}</th>`).join('')}</thead><tbody>`
-        dates.forEach(date => {
-          table += `<tr><td>${date}</td>
-            ${columns.map(c => data[date][prop][c] || '-').map(v => `<td>${v}</td>`).join('')}
-          </tr>`
-        })
-        table += '</tbody></table>'
-        return table
-      }
-
-      let html = '<h2 id="history">History</h2>'
-      html += tableByDate('Implementations', 'implementations')
-      html += tableByDate('Versions', 'versions')
-
-      document.getElementById('history').innerHTML = html
-    }
-    function renderGraphs(data) {
-      const dates = Object.keys(data).sort()
-      const implementationTraces = [
-        ['Generic worker', 'generic-worker'],
-        ['Docker worker', 'docker-worker'],
-        ['Unknown', '']
-      ].map(([name, implementation]) => ({
-        x: dates,
-        y: dates.map(date => data[date].implementations[implementation] || 0),
-        name,
-        type: 'line',
-      }))
-
-      // get unique versions
-      const allVersions = [... new Set(dates.map(date => Object.keys(data[date].versions)).flat())].sort()
-      const versionTraces = allVersions.map((version) => ({
-        x: dates,
-        y: dates.map(date => data[date].versions[version] || 0),
-        name: version,
-        type: 'line',
-      }))
-
-      const layout = {
-        barmode: 'group',
-      }
-      Plotly.newPlot('graph-implementations', implementationTraces, {
-        ...layout,
-        title: 'Worker Implementations',
-      })
-      Plotly.newPlot('graph-versions', versionTraces, {
-        ...layout,
-        title: 'Worker Versions',
-      })
-    }
-    async function loadHistory() {
-      const res = await (await fetch(historyUrl)).json()
-      renderHistoryTables(res)
-      renderGraphs(res)
-    }
-
-    async function init() {
-      await loadReadme()
-      await loadHistory()
-
-      // make tables sortable
-      document.querySelectorAll('table').forEach(table => table.classList.add('sortable'));
-    }
-
-    init()
-  </script>
+  <script type="module" src="app.js"></script>
 </body>
 
 </html>

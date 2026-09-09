@@ -1,0 +1,171 @@
+package main
+
+import (
+	"bytes"
+	"encoding/json"
+	"net/url"
+	"os"
+	"path/filepath"
+	"sort"
+	"strings"
+	"text/template"
+)
+
+type count struct {
+	Key   string
+	Value int
+}
+
+type reportSection struct {
+	Title       string
+	Description string
+	Count       int
+	Versions    []count
+	Images      []count
+	Filtered    []WorkerInfo
+	FullColumns bool
+}
+
+func (w WorkerInfo) WorkerPoolURL() string {
+	parts := strings.SplitN(w.WorkerPoolID, "/", 2)
+	if len(parts) != 2 {
+		return ""
+	}
+	return "https://firefox-ci-tc.services.mozilla.com/provisioners/" +
+		url.PathEscape(parts[0]) + "/worker-types/" + url.PathEscape(parts[1]) +
+		"?sortBy=Last%20Active&sortDirection=desc"
+}
+
+const readmeTpl = `
+{{- define "row" -}}
+## {{ .Title }}
+{{ if .Description }}
+{{ .Description }}
+{{ end }}
+
+Total: ` + "`" + `{{ .Count }}` + "`" + `
+{{ if gt (len .Versions) 1 }}
+### Count by version
+
+| Version | Count |
+| :--- | ---: |
+{{ range .Versions -}}
+| {{ .Key }} | {{ .Value }} |
+{{ end }}
+{{- end }}
+{{ if gt (len .Images) 1 }}
+### Count by image
+
+| Version | Count |
+| :--- | ---: |
+{{ range .Images -}}
+| {{ .Key }} | {{ .Value }} |
+{{ end }}
+{{- end }}
+{{if .Count }}
+### Worker pools
+
+| Worker Pool | Implementation | Version {{ if .FullColumns }}| Engine | Revision | OS | Arch | GO {{ end }}| Total Workers | Total Capacity |
+| --- | --- | --- {{ if .FullColumns }}| --- | --- | --- | --- | --- {{ end }}| ---: | ---: |
+{{ range .Filtered -}}
+| [**{{ .WorkerPoolID }}**]({{ .WorkerPoolURL }}) | {{ .Implementation }} | {{ or .Version .Details.error }} {{ if $.FullColumns }}| {{ or .Details.engine "-" }} | {{ or (slice .Details.revision 0 10) "-" }} | {{ or .Details.os "-" }} | {{ or .Details.arch "-" }} | {{ or .Details.go "-" }} {{ end }}| {{ .TotalWorkers }} | {{ .TotalCapacity }} |
+{{end}}
+{{- end -}}
+{{end}}
+
+# Worker Pool Versions
+
+{{ range . }}
+{{ template "row" . }}
+{{ end }}
+`
+
+func renderTemplate(data interface{}) string {
+	t := template.Must(template.New("").Parse(readmeTpl))
+	var content bytes.Buffer
+	if err := t.Execute(&content, data); err != nil {
+		panic(err)
+	}
+	return strings.TrimSpace(content.String()) + "\n"
+}
+
+func sortedCounts(values map[string]int) []count {
+	counts := make([]count, 0, len(values))
+	for key, value := range values {
+		counts = append(counts, count{Key: key, Value: value})
+	}
+	sort.Slice(counts, func(i, j int) bool {
+		return strings.Compare(counts[i].Key, counts[j].Key) < 0
+	})
+	return counts
+}
+
+func generateReadmeSection(title, description string, workers []WorkerInfo, filter func(WorkerInfo) bool) reportSection {
+	filtered := make([]WorkerInfo, 0)
+	versions := make(map[string]int)
+	imagesets := make(map[string]int)
+
+	for _, worker := range workers {
+		if filter(worker) {
+			filtered = append(filtered, worker)
+			versions[worker.Version]++
+			imagesets[worker.Imageset]++
+		}
+	}
+
+	sort.Slice(filtered, func(i, j int) bool {
+		return strings.Compare(filtered[i].WorkerPoolID, filtered[j].WorkerPoolID) < 0
+	})
+
+	return reportSection{
+		Title:       title,
+		Description: description,
+		Count:       len(filtered),
+		Versions:    sortedCounts(versions),
+		Images:      sortedCounts(imagesets),
+		Filtered:    filtered,
+		FullColumns: title == "Generic Worker",
+	}
+}
+
+func writeReadme(workers []WorkerInfo) {
+	filename := filepath.Join(outputDir, "README.md")
+	WriteFile(filename, []byte(renderReadme(workers)))
+}
+
+func renderReadme(workers []WorkerInfo) string {
+	sections := [5]reportSection{
+		generateReadmeSection("Generic Worker", "", workers, func(w WorkerInfo) bool { return w.Implementation == "generic-worker" }),
+		generateReadmeSection("Docker Worker", "", workers, func(w WorkerInfo) bool { return w.Implementation == "docker-worker" }),
+		generateReadmeSection("Script Worker", "", workers, func(w WorkerInfo) bool { return strings.Contains(w.Implementation, "Scriptworker") }),
+		generateReadmeSection("No artifacts found", "These pools claimed and resolved the probe task, but did not publish `public/logs/live_backing.log` or `public/logs/chain_of_trust.log`, which are used to identify the worker implementation.", workers, func(w WorkerInfo) bool { return w.hasNoArtifacts }),
+		generateReadmeSection("Version not determined", "These pools did not claim the probe task within two hours, so their worker implementation and version could not be determined.", workers, func(w WorkerInfo) bool { return w.isUnknown }),
+	}
+
+	return renderTemplate(sections)
+}
+
+func readSnapshot(filename string) ([]WorkerInfo, error) {
+	contents, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	workers := []WorkerInfo{}
+	if err := json.Unmarshal(contents, &workers); err != nil {
+		return nil, err
+	}
+
+	// These flags are internal rendering state and are not serialized in the
+	// snapshot. Restore them from the persisted error value for offline renders.
+	for i := range workers {
+		switch workers[i].Details["error"] {
+		case "No artifacts found":
+			workers[i].hasNoArtifacts = true
+		case "Version not determined; task not (yet) claimed":
+			workers[i].isUnknown = true
+		}
+	}
+
+	return workers, nil
+}
