@@ -77,15 +77,23 @@ function renderGraphs(data) {
     dates.map(date => data[date].versions[version] || 0),
   ))
 
-  const layout = { hovermode: 'closest' }
-  Plotly.newPlot('graph-implementations', implementationTraces, {
-    ...layout,
-    title: 'Worker Implementations',
+  const layout = (title, legendTitle) => ({
+    hovermode: 'closest',
+    title,
+    legend: { title: { text: legendTitle } },
+    xaxis: { title: { text: 'Snapshot date' } },
+    yaxis: { title: { text: 'Worker pools' }, rangemode: 'tozero' },
   })
-  Plotly.newPlot('graph-versions', versionTraces, {
-    ...layout,
-    title: 'Worker Versions',
-  })
+  Plotly.newPlot(
+    'graph-implementations',
+    implementationTraces,
+    layout('Worker pools by implementation', 'Implementation'),
+  )
+  Plotly.newPlot(
+    'graph-versions',
+    versionTraces,
+    layout('Worker pools by version', 'Version'),
+  )
 }
 
 async function loadHistory() {
