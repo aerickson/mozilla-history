@@ -4,7 +4,7 @@
 ## Generic Worker
 
 
-Total: `397`
+Total worker pools: `397`
 
 ### Count by version
 
@@ -458,7 +458,7 @@ _Source: image references in each pool's live Worker Manager launch configuratio
 ## Docker Worker
 
 
-Total: `157`
+Total worker pools: `157`
 
 ### Count by version
 
@@ -649,7 +649,7 @@ _Source: image references in each pool's live Worker Manager launch configuratio
 ## Script Worker
 
 
-Total: `38`
+Total worker pools: `38`
 
 
 
@@ -702,7 +702,7 @@ Total: `38`
 These pools claimed and resolved the probe task, but did not publish `public/logs/live_backing.log` or `public/logs/chain_of_trust.log`, which are used to identify the worker implementation.
 
 
-Total: `4`
+Total worker pools: `4`
 
 
 ### Count by image
@@ -730,7 +730,7 @@ _Source: image references in each pool's live Worker Manager launch configuratio
 These pools did not claim the probe task within two hours, so their worker implementation and version could not be determined.
 
 
-Total: `14`
+Total worker pools: `14`
 
 
 ### Count by image
