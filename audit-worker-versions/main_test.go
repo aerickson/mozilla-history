@@ -2,12 +2,34 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"strings"
 	"testing"
 
 	"github.com/taskcluster/taskcluster/v48/clients/client-go/tcqueue"
 	"github.com/taskcluster/taskcluster/v48/clients/client-go/tcworkermanager"
 )
+
+type fakeWorkerManager struct {
+	workerPool      *tcworkermanager.WorkerPoolFullDefinition
+	workerPoolError error
+	workerPages     []*tcworkermanager.ListWorkersResponse
+	workerError     error
+	listCalls       int
+}
+
+func (manager *fakeWorkerManager) WorkerPool(string) (*tcworkermanager.WorkerPoolFullDefinition, error) {
+	return manager.workerPool, manager.workerPoolError
+}
+
+func (manager *fakeWorkerManager) ListWorkers(string, string, string, string, string, string) (*tcworkermanager.ListWorkersResponse, error) {
+	if manager.workerError != nil {
+		return nil, manager.workerError
+	}
+	page := manager.workerPages[manager.listCalls]
+	manager.listCalls++
+	return page, nil
+}
 
 func intPointer(value int) *int {
 	return &value
@@ -131,5 +153,88 @@ func TestTaskGroupComplete(t *testing.T) {
 	}
 	if (taskGroupProgress{}).complete() {
 		t.Fatal("empty task group was reported complete")
+	}
+}
+
+func TestGetImagesetReadsAzureArmDeployment(t *testing.T) {
+	pool := tcworkermanager.WorkerPoolFullDefinition{
+		ProviderID: "azure2",
+		Config: json.RawMessage(`{
+			"launchConfigs": [
+				{"armDeployment":{"parameters":{"imageId":{"value":"azure/image/10"}}}},
+				{"armDeployment":{"parameters":{"imageId":{"value":"azure/image/2"}}}}
+			]
+		}`),
+	}
+	worker := WorkerInfo{}
+
+	enrichWorkerInfo(&worker, &pool)
+
+	if worker.Imageset != "azure/image/10,azure/image/2" {
+		t.Fatalf("Imageset = %q, want Azure image IDs", worker.Imageset)
+	}
+	if worker.ImageStatus != imageStatusKnown || worker.ProviderID != "azure2" {
+		t.Fatalf("worker metadata = %#v, want known azure2 image", worker)
+	}
+}
+
+func TestLookupRecognizesPaginatedStandaloneWorkers(t *testing.T) {
+	manager := &fakeWorkerManager{
+		workerPoolError: errors.New("worker pool not found"),
+		workerPages: []*tcworkermanager.ListWorkersResponse{
+			{ContinuationToken: "next", Workers: []tcworkermanager.Worker{{ProviderID: "none", State: standaloneWorkerState}}},
+			{Workers: []tcworkermanager.Worker{{ProviderID: "none", State: "running"}}},
+		},
+	}
+	worker := WorkerInfo{WorkerPoolID: "releng-hardware/example"}
+
+	lookupAndEnrichWorkerInfo(&worker, manager)
+
+	if worker.ProviderID != standaloneProviderID || worker.ImageStatus != imageStatusNotApplicable {
+		t.Fatalf("worker metadata = %#v, want standalone/not-applicable", worker)
+	}
+	if worker.WorkerManagerLookupError != "" {
+		t.Fatalf("standalone worker retained lookup error %q", worker.WorkerManagerLookupError)
+	}
+	if manager.listCalls != 2 {
+		t.Fatalf("ListWorkers calls = %d, want 2", manager.listCalls)
+	}
+}
+
+func TestLookupRetainsUnexpectedFailure(t *testing.T) {
+	manager := &fakeWorkerManager{
+		workerPoolError: errors.New("worker pool unavailable"),
+		workerError:     errors.New("worker list unavailable"),
+	}
+	worker := WorkerInfo{WorkerPoolID: "example/pool"}
+
+	lookupAndEnrichWorkerInfo(&worker, manager)
+
+	if worker.ImageStatus != imageStatusUnavailable {
+		t.Fatalf("ImageStatus = %q, want unavailable", worker.ImageStatus)
+	}
+	for _, want := range []string{"worker pool unavailable", "worker list unavailable"} {
+		if !strings.Contains(worker.WorkerManagerLookupError, want) {
+			t.Errorf("lookup error %q does not contain %q", worker.WorkerManagerLookupError, want)
+		}
+	}
+}
+
+func TestLookupWithoutStandaloneSignalRemainsUnavailable(t *testing.T) {
+	manager := &fakeWorkerManager{
+		workerPoolError: errors.New("worker pool not found"),
+		workerPages: []*tcworkermanager.ListWorkersResponse{
+			{Workers: []tcworkermanager.Worker{{ProviderID: "none", State: "running"}}},
+		},
+	}
+	worker := WorkerInfo{WorkerPoolID: "example/pool"}
+
+	lookupAndEnrichWorkerInfo(&worker, manager)
+
+	if worker.ProviderID == standaloneProviderID {
+		t.Fatal("worker without standalone state was classified as standalone")
+	}
+	if worker.ImageStatus != imageStatusUnavailable || worker.WorkerManagerLookupError == "" {
+		t.Fatalf("worker metadata = %#v, want unavailable with lookup error", worker)
 	}
 }

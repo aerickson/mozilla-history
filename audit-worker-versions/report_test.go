@@ -79,6 +79,61 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 	}
 }
 
+func TestRenderReadmeDistinguishesImageStatuses(t *testing.T) {
+	details := map[string]string{"revision": "1234567890"}
+	workers := []WorkerInfo{
+		{Implementation: "generic-worker", Imageset: "unknown", ImageStatus: imageStatusNotApplicable, Details: details},
+		{Implementation: "generic-worker", Imageset: "unknown", ImageStatus: imageStatusUnavailable, Details: details},
+		{Implementation: "generic-worker", Imageset: "unknown", ImageStatus: imageStatusNotDetermined, Details: details},
+		{Implementation: "generic-worker", Imageset: "azure/image", ImageStatus: imageStatusKnown, Details: details},
+	}
+
+	got := renderReadme(WorkerSnapshot{Workers: workers})
+
+	for _, want := range []string{
+		"| Image | Count |",
+		"| Not applicable (standalone) | 1 |",
+		"| Configuration unavailable | 1 |",
+		"| Image not determined | 1 |",
+		"| azure/image | 1 |",
+	} {
+		if !strings.Contains(got, want) {
+			t.Errorf("rendered README does not contain %q", want)
+		}
+	}
+}
+
+func TestCompactAzureImageReferences(t *testing.T) {
+	tests := map[string]string{
+		"gallery with redundant image name": "/subscriptions/sub/resourceGroups/rg/providers/Microsoft.Compute/galleries/win2022/images/win2022/versions/1.0.0",
+		"gallery with distinct image name":  "/subscriptions/sub/resourceGroups/rg/providers/Microsoft.Compute/galleries/gallery/images/image/versions/2.0",
+		"managed image":                     "/subscriptions/sub/resourceGroups/rg/providers/Microsoft.Compute/images/imageset-worker-eastus",
+		"non-Azure image":                   "projects/example/global/images/worker-image",
+	}
+	want := map[string]string{
+		"gallery with redundant image name": "Azure gallery win2022@1.0.0",
+		"gallery with distinct image name":  "Azure gallery gallery/image@2.0",
+		"managed image":                     "Azure image imageset-worker-eastus",
+		"non-Azure image":                   "projects/example/global/images/worker-image",
+	}
+
+	for name, input := range tests {
+		t.Run(name, func(t *testing.T) {
+			if got := compactAzureImageReference(input); got != want[name] {
+				t.Fatalf("compactAzureImageReference() = %q, want %q", got, want[name])
+			}
+		})
+	}
+}
+
+func TestCompactImageReferencesPreservesConfiguredSet(t *testing.T) {
+	input := "/subscriptions/sub/resourceGroups/rg/providers/Microsoft.Compute/images/one,/subscriptions/sub/resourceGroups/rg/providers/Microsoft.Compute/images/two"
+	want := "Azure image one, Azure image two"
+	if got := compactImageReferences(input); got != want {
+		t.Fatalf("compactImageReferences() = %q, want %q", got, want)
+	}
+}
+
 func TestRenderReadmeExplainsIncompleteProbesInline(t *testing.T) {
 	workers := []WorkerInfo{
 		{WorkerPoolID: "example/no-artifact", Details: map[string]string{"error": "No artifacts found"}, hasNoArtifacts: true},
