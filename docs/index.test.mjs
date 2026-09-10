@@ -76,9 +76,10 @@ test('the table of contents control is accessible and persistent', () => {
 })
 
 test('table of contents targets receive accessible permalinks', () => {
+  assert.match(html, /'#content h1'/)
   assert.match(html, /className = 'heading-permalink'/)
   assert.match(html, /permalink\.href = `#\$\{id\}`/)
   assert.match(html, /permalink\.setAttribute\('aria-label', `Link to \$\{label\}`\)/)
   assert.match(html, /permalink\.title = `Permalink to \$\{label\}`/)
-  assert.match(html, /link\.textContent = label/)
+  assert.match(html, /link\.textContent = heading\.tagName === 'H1' \? 'Overview' : label/)
 })

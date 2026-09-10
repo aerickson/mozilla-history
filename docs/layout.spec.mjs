@@ -81,6 +81,13 @@ test('report headings expose stable, accessible permalinks', async ({ page }, te
   await page.setViewportSize({ width: 1440, height: 900 })
   await loadReport(page)
 
+  const overviewHeading = page.locator('#content h1')
+  const overviewLink = page.locator('#toc-list > li').first().locator(':scope > a')
+  await expect(overviewHeading).toHaveAttribute('id', 'worker-pool-versions')
+  await expect(overviewHeading.locator(':scope > .heading-permalink')).toHaveCount(0)
+  await expect(overviewLink).toHaveText('Overview')
+  await expect(overviewLink).toHaveAttribute('href', '#worker-pool-versions')
+
   const heading = page.locator('#content h2').first()
   const label = (await heading.evaluate(element => element.childNodes[0].textContent)).trim()
   const id = await heading.getAttribute('id')
@@ -90,7 +97,7 @@ test('report headings expose stable, accessible permalinks', async ({ page }, te
   await expect(permalink).toHaveAttribute('href', `#${id}`)
   await expect(permalink).toHaveAttribute('aria-label', `Link to ${label}`)
   await expect(permalink).toHaveAttribute('title', `Permalink to ${label}`)
-  await expect(page.locator('#toc-list > li').first().locator(':scope > a')).toHaveText(label)
+  await expect(page.locator('#toc-list > li').nth(1).locator(':scope > a')).toHaveText(label)
 
   await expect(permalink).toHaveCSS('opacity', '0.35')
   await heading.hover()

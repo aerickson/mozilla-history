@@ -617,6 +617,7 @@
 
     function buildTableOfContents() {
       const headings = document.querySelectorAll([
+        '#content h1',
         '#content h2',
         '#content h3',
         '#history-content h2',
@@ -647,19 +648,26 @@
         usedIds.add(id)
         heading.id = id
 
-        const permalink = document.createElement('a')
-        permalink.className = 'heading-permalink'
-        permalink.href = `#${id}`
-        permalink.textContent = '#'
-        permalink.setAttribute('aria-label', `Link to ${label}`)
-        permalink.title = `Permalink to ${label}`
-        heading.appendChild(permalink)
+        if (heading.tagName !== 'H1') {
+          const permalink = document.createElement('a')
+          permalink.className = 'heading-permalink'
+          permalink.href = `#${id}`
+          permalink.textContent = '#'
+          permalink.setAttribute('aria-label', `Link to ${label}`)
+          permalink.title = `Permalink to ${label}`
+          heading.appendChild(permalink)
+        }
 
         const item = document.createElement('li')
         const link = document.createElement('a')
         link.href = `#${id}`
-        link.textContent = label
+        link.textContent = heading.tagName === 'H1' ? 'Overview' : label
         item.appendChild(link)
+
+        if (heading.tagName === 'H1') {
+          toc.appendChild(item)
+          return
+        }
 
         if (heading.tagName === 'H2') {
           sectionId = id
