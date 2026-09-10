@@ -2,7 +2,11 @@
 
 # Worker Pool Versions
 
-This report shows the latest detailed inventory of Firefox CI worker pools alongside historical trends from earlier snapshots. Worker implementation and version are inferred from the failure log produced when each pool is given an intentionally malformed probe task; image and capacity metadata come from Worker Manager. Summary counts represent worker pools, not individual workers or tasks.
+This report shows the latest detailed inventory of Firefox CI worker pools alongside historical trends from earlier snapshots.
+
+- **Implementation and version** are inferred from the failure log produced when each pool receives an intentionally malformed probe task.
+- **Image and capacity metadata** come from Worker Manager.
+- **Summary values** are counts of worker pools, not individual workers or tasks.
 
 
 ## Generic Worker
