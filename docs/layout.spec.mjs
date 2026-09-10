@@ -100,6 +100,25 @@ test('report headings expose stable, accessible permalinks', async ({ page }, te
   await expect(page).toHaveURL(new RegExp(`#${id}$`))
 })
 
+test('version summary tables default to descending natural order', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await loadReport(page)
+
+  const headings = page.locator('#content h3[id$="-worker-pools-by-version"]')
+  await expect(headings).toHaveCount(2)
+
+  for (let index = 0; index < await headings.count(); index += 1) {
+    const versions = await headings.nth(index)
+      .locator('xpath=following-sibling::table[1]')
+      .locator('tbody td:first-child')
+      .allTextContents()
+    const expected = [...versions].sort((left, right) =>
+      right.localeCompare(left, undefined, { numeric: true }),
+    )
+    expect(versions).toEqual(expected)
+  }
+})
+
 test('wide tables retain page scrolling and sticky cells', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 1280, height: 800 })
   await loadReport(page)

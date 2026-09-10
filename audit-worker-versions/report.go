@@ -208,7 +208,7 @@ func naturalLess(left, right string) bool {
 func sortedVersionCounts(values map[string]int) []count {
 	counts := sortedCounts(values)
 	sort.Slice(counts, func(i, j int) bool {
-		return naturalLess(counts[i].Key, counts[j].Key)
+		return naturalLess(counts[j].Key, counts[i].Key)
 	})
 	return counts
 }
