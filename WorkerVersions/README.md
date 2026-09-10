@@ -617,7 +617,7 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 
 ## Unknown implementation
 
-These pools claimed and resolved the probe task, but did not publish a recognized worker log artifact. Their worker implementation and version could therefore not be identified.
+These pools did not publish a worker log artifact, so their worker implementation and version could not be identified. Some resolved with the expected malformed-payload exception; others expired without being claimed.
 
 
 Total pools with unknown implementation: `19`
