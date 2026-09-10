@@ -6,11 +6,13 @@ This report shows the latest detailed inventory of Firefox CI worker pools along
 - **Image and capacity metadata** come from Worker Manager.
 - **Summary values** are counts of worker pools, not individual workers or tasks.
 
-Probe run started: **2026-09-09 07:58 UTC** ([Taskcluster task group](https://firefox-ci-tc.services.mozilla.com/tasks/groups/AnhEjBL2SYuUedNBvjgsWA)) · Results collected: **2026-09-10 01:09 UTC** · Report generated: **2026-09-10 22:34 UTC**
+Probe run started: **2026-09-09 07:58 UTC** ([Taskcluster task group](https://firefox-ci-tc.services.mozilla.com/tasks/groups/AnhEjBL2SYuUedNBvjgsWA)) · Results collected: **2026-09-10 01:09 UTC** · Report generated: **2026-09-10 22:42 UTC**
 
 
 
 ## Generic Worker
+
+These pools use generic-worker to run tasks directly on the worker’s operating system. [Documentation](https://docs.taskcluster.net/docs/reference/workers/generic-worker) · [Source](https://github.com/taskcluster/taskcluster/tree/main/workers/generic-worker).
 
 
 Total generic-worker pools: `430`
@@ -524,6 +526,8 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 
 
 ## Docker Worker
+
+These pools use docker-worker to run tasks inside Docker containers. Docker-worker is fully deprecated, and its source repository has been removed.
 
 
 Total docker-worker pools: `2`
