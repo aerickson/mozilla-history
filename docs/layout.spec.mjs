@@ -3,10 +3,10 @@ import { expect, test } from '@playwright/test'
 async function loadReport(page) {
   await page.goto('/docs/index.html?local')
   await expect(page.locator('#content h1')).toBeVisible({ timeout: 30_000 })
-  await expect(page.locator('#toc-list li').first()).toBeVisible()
+  await expect(page.locator('#toc-list li').first()).toBeAttached()
 }
 
-test('wide sidebar collapses, persists, and never overlaps content', async ({ page }, testInfo) => {
+test('wide navigation is compact, collapses, and persists', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 1440, height: 900 })
   await loadReport(page)
 
@@ -17,12 +17,30 @@ test('wide sidebar collapses, persists, and never overlaps content', async ({ pa
   const expandedContent = await content.boundingBox()
 
   expect(expandedToc.x + expandedToc.width).toBeLessThanOrEqual(expandedContent.x)
+  expect(expandedContent.x).toBeLessThan(330)
+  expect(await page.locator('#toc-list a').evaluateAll(links =>
+    links.every(link => getComputedStyle(link).whiteSpace === 'nowrap')
+  )).toBe(true)
+  const toggleBox = await toggle.boundingBox()
+  expect(toggleBox.width).toBeGreaterThanOrEqual(32)
+  expect(toggleBox.height).toBeGreaterThanOrEqual(32)
+  expect(toggleBox.y).toBeCloseTo(31, 0)
+  await expect(toggle).toHaveAttribute('title', 'Collapse table of contents')
+  await expect(toggle).toHaveAttribute('aria-label', 'Collapse table of contents')
   await page.screenshot({ path: testInfo.outputPath('wide-expanded.png') })
 
   await toggle.click()
   await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+  await expect(toggle).toHaveAttribute('title', 'Expand table of contents')
   await expect(page.locator('#toc-list')).toBeHidden()
+  const collapsedToc = await toc.boundingBox()
   const collapsedContent = await content.boundingBox()
+  expect(collapsedToc.width).toBeLessThanOrEqual(32)
+  expect(collapsedToc.x).toBe(20)
+  expect(await page.locator('#report-layout').evaluate(element =>
+    Number.parseFloat(getComputedStyle(element).columnGap)
+  )).toBe(16)
+  expect(collapsedToc.y).toBeCloseTo(31, 0)
   expect(collapsedContent.x).toBeLessThan(expandedContent.x)
   await page.screenshot({ path: testInfo.outputPath('wide-collapsed.png') })
 
@@ -31,18 +49,32 @@ test('wide sidebar collapses, persists, and never overlaps content', async ({ pa
   await expect(page.locator('#toc-list')).toBeHidden()
 })
 
-test('narrow sidebar stays in flow above the report', async ({ page }, testInfo) => {
+test('narrow navigation defaults collapsed and expands in flow', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 720, height: 900 })
   await loadReport(page)
 
   const toc = page.locator('#toc')
   const content = page.locator('.content-column')
+  const toggle = page.locator('#toc-toggle')
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+  await expect(page.locator('#toc-list')).toBeHidden()
+  expect((await toc.boundingBox()).width).toBeLessThanOrEqual(32)
+  await page.screenshot({ path: testInfo.outputPath('narrow-collapsed.png') })
+
+  await toggle.click()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true')
   const tocBox = await toc.boundingBox()
   const contentBox = await content.boundingBox()
 
   expect(await toc.evaluate(element => getComputedStyle(element).position)).toBe('static')
   expect(tocBox.y + tocBox.height).toBeLessThanOrEqual(contentBox.y)
-  await page.screenshot({ path: testInfo.outputPath('narrow.png') })
+  await page.screenshot({ path: testInfo.outputPath('narrow-expanded.png') })
+
+  await page.reload()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+  const reloadedTocBox = await toc.boundingBox()
+  const reloadedContentBox = await content.boundingBox()
+  expect(reloadedTocBox.y + reloadedTocBox.height).toBeLessThanOrEqual(reloadedContentBox.y)
 })
 
 test('wide tables retain page scrolling and sticky cells', async ({ page }, testInfo) => {
