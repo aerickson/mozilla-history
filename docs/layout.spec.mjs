@@ -97,7 +97,14 @@ test('report headings expose stable, accessible permalinks', async ({ page }, te
   await expect(permalink).toHaveAttribute('href', `#${id}`)
   await expect(permalink).toHaveAttribute('aria-label', `Link to ${label}`)
   await expect(permalink).toHaveAttribute('title', `Permalink to ${label}`)
-  await expect(page.locator('#toc-list > li').nth(1).locator(':scope > a')).toHaveText(label)
+  const sectionItem = page.locator('#toc-list > li').nth(1)
+  await expect(sectionItem.locator(':scope > a')).toHaveText(label)
+  await expect(sectionItem.locator(':scope > ul > li > a')).toHaveText([
+    'By version',
+    'By image',
+    'Pool details',
+  ])
+  await expect(page.locator('#content h3').first()).toContainText('Worker pools by version')
 
   await expect(permalink).toHaveCSS('opacity', '0.35')
   await heading.hover()
