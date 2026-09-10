@@ -394,7 +394,7 @@ func renderReadme(snapshot WorkerSnapshot) string {
 func renderReadmeAt(snapshot WorkerSnapshot, reportGeneratedAt time.Time) string {
 	workers := snapshot.Workers
 	sections := [5]reportSection{
-		generateReadmeSection("Generic Worker", "These pools use generic-worker to run tasks directly on the worker’s operating system. [Documentation](https://docs.taskcluster.net/docs/reference/workers/generic-worker) · [Source](https://github.com/taskcluster/taskcluster/tree/main/workers/generic-worker).", workers, func(w WorkerInfo) bool { return w.Implementation == "generic-worker" }),
+		generateReadmeSection("Generic Worker", "These pools use generic-worker to execute tasks. Recent versions also support docker-worker payloads and Docker container execution through d2g. [Documentation](https://docs.taskcluster.net/docs/reference/workers/generic-worker) · [Source](https://github.com/taskcluster/taskcluster/tree/main/workers/generic-worker).", workers, func(w WorkerInfo) bool { return w.Implementation == "generic-worker" }),
 		generateReadmeSection("Docker Worker", "These pools use docker-worker to run tasks inside Docker containers. Docker-worker is fully deprecated, and its source repository has been removed.", workers, func(w WorkerInfo) bool { return w.Implementation == "docker-worker" }),
 		generateReadmeSection("Script Worker", "", workers, func(w WorkerInfo) bool { return strings.Contains(w.Implementation, "Scriptworker") }),
 		generateReadmeSection("Unknown implementation", "These pools claimed and resolved the probe task, but did not publish a worker log artifact. Their worker implementation and version could therefore not be identified.", workers, func(w WorkerInfo) bool { return w.hasNoArtifacts }),
