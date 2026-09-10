@@ -6,7 +6,7 @@ This report shows the latest detailed inventory of Firefox CI worker pools along
 - **Image and capacity metadata** come from Worker Manager.
 - **Summary values** are counts of worker pools, not individual workers or tasks.
 
-Probe run started: **2026-09-09 07:58 UTC** · Results collected: **2026-09-10 01:09 UTC** · Report generated: **2026-09-10 05:31 UTC**
+Probe run started: **2026-09-09 07:58 UTC** · Results collected: **2026-09-10 01:09 UTC** · Report generated: **2026-09-10 21:42 UTC**
 
 
 
@@ -617,10 +617,41 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 
 ## Unknown implementation
 
-These pools did not publish a worker log artifact, so their worker implementation and version could not be identified. Some resolved with the expected malformed-payload exception; others expired without being claimed.
+These pools claimed and resolved the probe task, but did not publish a worker log artifact. Their worker implementation and version could therefore not be identified.
 
 
-Total pools with unknown implementation: `19`
+Total pools with unknown implementation: `4`
+
+
+### Worker pools by image
+
+_Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images. Standalone pools do not have a Worker Manager-managed image._
+
+| Image | Worker pools |
+| :--- | ---: |
+| Not applicable (standalone) | 2 |
+| projects/taskcluster-imaging/global/images/generic-2204-wayland-vm-gcp-googlecompute-2023-09-22t17-39-37z | 2 |
+
+
+### Worker pools
+
+_Configured capacity is the pool's autoscaling range in concurrent task slots. The configured worker range is derived from those bounds and the slots per worker, rounding up. An em dash means the configuration is unavailable or a worker count cannot be derived._
+
+
+| Worker Pool | Implementation | Version | Configured Workers | Configured Capacity | Slots per Worker |
+| --- | --- | --- | ---: | ---: | ---: |
+| [**built-in/fail**](https://firefox-ci-tc.services.mozilla.com/provisioners/built-in/worker-types/fail?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | — | — | — |
+| [**built-in/succeed**](https://firefox-ci-tc.services.mozilla.com/provisioners/built-in/worker-types/succeed?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | — | — | — |
+| [**gecko-t/t-linux-vm-2204-wayland**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-t/worker-types/t-linux-vm-2204-wayland?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–500 | 0–500 | 1 |
+| [**gecko-t/t-linux-vm-2204-wayland-snap**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-t/worker-types/t-linux-vm-2204-wayland-snap?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–500 | 0–500 | 1 |
+
+
+## Unresponsive worker pools
+
+These pools did not claim the probe task, so their worker implementation and version could not be determined.
+
+
+Total unresponsive worker pools: `15`
 
 
 ### Worker pools by image
@@ -631,9 +662,8 @@ _Source: image references in each pool's live Worker Manager launch configuratio
 | :--- | ---: |
 | <abbr title="/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win11_64_25h2/images/win11_64_25h2/versions/1.0.7">Azure gallery win11_64_25h2@1.0.7</abbr> | 1 |
 | <abbr title="/subscriptions/108d46d5-fe9b-4850-9a7d-8c914aa6c1f0/resourceGroups/rg-packer-worker-images/providers/Microsoft.Compute/galleries/win2025_64_24h2_alpha/images/win2025_64_24h2_alpha/versions/1.0.0">Azure gallery win2025_64_24h2_alpha@1.0.0</abbr> | 3 |
-| Not applicable (standalone) | 3 |
+| Not applicable (standalone) | 1 |
 | ami-02619e55246806e8d | 1 |
-| projects/taskcluster-imaging/global/images/generic-2204-wayland-vm-gcp-googlecompute-2023-09-22t17-39-37z | 2 |
 | projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-arm64-mqscbutmsbawtytlroxk | 1 |
 | projects/taskcluster-imaging/global/images/generic-worker-ubuntu-24-04-qioehfdraiiishpuvgvl | 7 |
 | projects/taskcluster-imaging/global/images/gw-fxci-gcp-l1-2404-amd64-googlecompute-alpha | 1 |
@@ -646,30 +676,18 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 
 | Worker Pool | Implementation | Version | Configured Workers | Configured Capacity | Slots per Worker |
 | --- | --- | --- | ---: | ---: | ---: |
-| [**built-in/fail**](https://firefox-ci-tc.services.mozilla.com/provisioners/built-in/worker-types/fail?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | — | — | — |
-| [**built-in/succeed**](https://firefox-ci-tc.services.mozilla.com/provisioners/built-in/worker-types/succeed?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | — | — | — |
-| [**gecko-1/b-win2025-alpha**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-1/worker-types/b-win2025-alpha?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–10 | 0–10 | 1 |
-| [**gecko-t/t-linux-2404-relsre**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-t/worker-types/t-linux-2404-relsre?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–10 | 0–10 | 1 |
-| [**gecko-t/t-linux-vm-2204-wayland**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-t/worker-types/t-linux-vm-2204-wayland?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–500 | 0–500 | 1 |
-| [**gecko-t/t-linux-vm-2204-wayland-snap**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-t/worker-types/t-linux-vm-2204-wayland-snap?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–500 | 0–500 | 1 |
-| [**gecko-t/win11-64-25h2**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-t/worker-types/win11-64-25h2?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–1200 | 0–1200 | 1 |
-| [**mozillavpn-1/b-win2025-alpha**](https://firefox-ci-tc.services.mozilla.com/provisioners/mozillavpn-1/worker-types/b-win2025-alpha?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–25 | 0–25 | 1 |
-| [**nss-1/b-win2025-alpha**](https://firefox-ci-tc.services.mozilla.com/provisioners/nss-1/worker-types/b-win2025-alpha?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–25 | 0–25 | 1 |
-| [**proj-fuzzing/bugmon-monitor**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/bugmon-monitor?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–5 | 0–5 | 1 |
-| [**proj-fuzzing/bugmon-pernosco-staging**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/bugmon-pernosco-staging?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–5 | 0–5 | 1 |
-| [**proj-fuzzing/bugmon-processor**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/bugmon-processor?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–20 | 0–20 | 1 |
-| [**proj-fuzzing/ci**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/ci?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–20 | 0–20 | 1 |
-| [**proj-fuzzing/ci-arm64**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/ci-arm64?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–10 | 0–10 | 1 |
-| [**proj-fuzzing/decision**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/decision?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–5 | 0–5 | 1 |
-| [**proj-fuzzing/grizzly-reduce-worker**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/grizzly-reduce-worker?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–20 | 0–20 | 1 |
-| [**proj-fuzzing/grizzly-reduce-worker-android**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/grizzly-reduce-worker-android?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–10 | 0–10 | 1 |
-| [**proj-fuzzing/nss-corpus-update-worker**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/nss-corpus-update-worker?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–5 | 0–5 | 1 |
-| [**releng-hardware/win11-64-24h2-hw-ref**](https://firefox-ci-tc.services.mozilla.com/provisioners/releng-hardware/worker-types/win11-64-24h2-hw-ref?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | — | — | — |
-
-
-## Unresponsive worker pools
-
-These pools did not claim the probe task within two hours, so their worker implementation and version could not be determined.
-
-
-Total unresponsive worker pools: `0`
+| [**gecko-1/b-win2025-alpha**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-1/worker-types/b-win2025-alpha?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–10 | 0–10 | 1 |
+| [**gecko-t/t-linux-2404-relsre**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-t/worker-types/t-linux-2404-relsre?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–10 | 0–10 | 1 |
+| [**gecko-t/win11-64-25h2**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-t/worker-types/win11-64-25h2?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–1200 | 0–1200 | 1 |
+| [**mozillavpn-1/b-win2025-alpha**](https://firefox-ci-tc.services.mozilla.com/provisioners/mozillavpn-1/worker-types/b-win2025-alpha?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–25 | 0–25 | 1 |
+| [**nss-1/b-win2025-alpha**](https://firefox-ci-tc.services.mozilla.com/provisioners/nss-1/worker-types/b-win2025-alpha?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–25 | 0–25 | 1 |
+| [**proj-fuzzing/bugmon-monitor**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/bugmon-monitor?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–5 | 0–5 | 1 |
+| [**proj-fuzzing/bugmon-pernosco-staging**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/bugmon-pernosco-staging?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–5 | 0–5 | 1 |
+| [**proj-fuzzing/bugmon-processor**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/bugmon-processor?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–20 | 0–20 | 1 |
+| [**proj-fuzzing/ci**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/ci?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–20 | 0–20 | 1 |
+| [**proj-fuzzing/ci-arm64**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/ci-arm64?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–10 | 0–10 | 1 |
+| [**proj-fuzzing/decision**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/decision?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–5 | 0–5 | 1 |
+| [**proj-fuzzing/grizzly-reduce-worker**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/grizzly-reduce-worker?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–20 | 0–20 | 1 |
+| [**proj-fuzzing/grizzly-reduce-worker-android**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/grizzly-reduce-worker-android?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–10 | 0–10 | 1 |
+| [**proj-fuzzing/nss-corpus-update-worker**](https://firefox-ci-tc.services.mozilla.com/provisioners/proj-fuzzing/worker-types/nss-corpus-update-worker?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | 0–5 | 0–5 | 1 |
+| [**releng-hardware/win11-64-24h2-hw-ref**](https://firefox-ci-tc.services.mozilla.com/provisioners/releng-hardware/worker-types/win11-64-24h2-hw-ref?sortBy=Last%20Active&sortDirection=desc) |  | Version not determined; task was not claimed | — | — | — |
