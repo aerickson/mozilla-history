@@ -82,22 +82,22 @@ const readmeTpl = `
 
 Total worker pools: ` + "`" + `{{ .Count }}` + "`" + `
 {{ if gt (len .Versions) 1 }}
-### Count by version
+### Worker pools by version
 
 _Source: version information parsed from the log artifact produced when each worker claims an intentionally malformed probe task. The task is expected to fail with a malformed-payload exception; known worker implementations and versions are identified from their distinct log output._
 
-| Version | Count |
+| Version | Worker pools |
 | :--- | ---: |
 {{ range .Versions -}}
 | {{ .Key }} | {{ .Value }} |
 {{ end }}
 {{- end }}
 {{ if gt (len .Images) 1 }}
-### Count by image
+### Worker pools by image
 
 _Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images. Standalone pools do not have a Worker Manager-managed image._
 
-| Image | Count |
+| Image | Worker pools |
 | :--- | ---: |
 {{ range .Images -}}
 | {{ if .Hover }}<abbr title="{{ .Hover }}">{{ .Key }}</abbr>{{ else }}{{ .Key }}{{ end }} | {{ .Value }} |

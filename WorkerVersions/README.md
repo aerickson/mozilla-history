@@ -11,11 +11,11 @@ Probe run started: **2026-09-09 07:58 UTC** · Results collected: **2026-09-09 1
 
 Total worker pools: `430`
 
-### Count by version
+### Worker pools by version
 
 _Source: version information parsed from the log artifact produced when each worker claims an intentionally malformed probe task. The task is expected to fail with a malformed-payload exception; known worker implementations and versions are identified from their distinct log output._
 
-| Version | Count |
+| Version | Worker pools |
 | :--- | ---: |
 | 36.0.0 | 3 |
 | 45.0.0 | 1 |
@@ -36,11 +36,11 @@ _Source: version information parsed from the log artifact produced when each wor
 | 108.0.0 | 332 |
 
 
-### Count by image
+### Worker pools by image
 
 _Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images; unknown means no supported image reference was found._
 
-| Version | Count |
+| Image | Worker pools |
 | :--- | ---: |
 | projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-2026-09-03 | 60 |
 | projects/fxci-production-level3-workers/global/images/gw-fxci-gcp-l3-2404-amd64-headless-googlecompute-alpha | 1 |
@@ -504,21 +504,21 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 
 Total worker pools: `2`
 
-### Count by version
+### Worker pools by version
 
 _Source: version information parsed from the log artifact produced when each worker claims an intentionally malformed probe task. The task is expected to fail with a malformed-payload exception; known worker implementations and versions are identified from their distinct log output._
 
-| Version | Count |
+| Version | Worker pools |
 | :--- | ---: |
 | 38.0.5 | 1 |
 | 44.23.4 | 1 |
 
 
-### Count by image
+### Worker pools by image
 
 _Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images; unknown means no supported image reference was found._
 
-| Version | Count |
+| Image | Worker pools |
 | :--- | ---: |
 | ami-03e4f8db63254ce7e,ami-0a6e926238859761c,ami-0b5dd0bbb670ec80e | 1 |
 | projects/taskcluster-imaging/global/images/docker-firefoxci-gcp-l1-googlecompute-2025-06-13t18-31-38z | 1 |
@@ -599,11 +599,11 @@ These pools claimed and resolved the probe task, but did not publish a recognize
 Total worker pools: `19`
 
 
-### Count by image
+### Worker pools by image
 
 _Source: image references in each pool's live Worker Manager launch configuration at report time. A value may represent multiple configured images; unknown means no supported image reference was found._
 
-| Version | Count |
+| Image | Worker pools |
 | :--- | ---: |
 | ami-02619e55246806e8d | 1 |
 | projects/taskcluster-imaging/global/images/generic-2204-wayland-vm-gcp-googlecompute-2023-09-22t17-39-37z | 2 |
