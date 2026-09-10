@@ -34,35 +34,94 @@
       margin: 20px 40px;
     }
 
-    .content-column {
-      margin-right: 250px;
+    .report-layout {
+      display: grid;
+      grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
     }
 
-    @media screen and (max-width: 1400px) {
-      .content-column {
-        margin-right: 0;
-      }
+    .content-column {
+      min-width: 0;
+    }
 
-      .toc {
-        position: static;
-        max-height: none;
-        max-width: none;
-        margin-bottom: 20px;
-      }
+    /* Keep prose comfortable to read without imposing that limit on tables,
+       charts, or the controls around them. */
+    .content-column p,
+    .content-column blockquote,
+    .content-column > div > ul,
+    .content-column > div > ol {
+      max-width: 80ch;
     }
 
     .toc {
-      position: fixed;
-      right: 15px;
-      top: 5px;
+      position: sticky;
+      top: 20px;
       max-height: calc(100vh - 40px);
-      max-width: 300px;
       overflow-y: auto;
+      box-sizing: border-box;
       background: #fff;
-      padding: 15px 25px;
-      border: 1px solid #eee;
-      /* above the sticky table headers/columns from table-utils.js */
-      z-index: 10;
+      padding: 15px;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+    }
+
+    .toc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .toc-toggle {
+      flex: none;
+      padding: 3px 8px;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      background: #f6f8fa;
+      color: #24292f;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .toc-toggle:hover {
+      background: #eef1f4;
+    }
+
+    .toc-toggle:focus-visible {
+      outline: 2px solid #0969da;
+      outline-offset: 2px;
+    }
+
+    .report-layout.toc-collapsed {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .report-layout.toc-collapsed .toc {
+      padding: 8px;
+      overflow: visible;
+    }
+
+    .report-layout.toc-collapsed .toc-title {
+      display: none;
+    }
+
+    @media screen and (max-width: 900px) {
+      main {
+        margin: 16px;
+      }
+
+      .report-layout,
+      .report-layout.toc-collapsed {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+      }
+
+      .report-layout .toc {
+        position: static;
+        max-height: none;
+        overflow: visible;
+      }
     }
 
     .toc ul {
@@ -217,9 +276,13 @@
 <body>
 
   <div class="markdown-body">
-    <main>
+    <main id="report-layout" class="report-layout">
       <nav id="toc" class="toc" aria-label="Table of contents">
-        <strong>Contents</strong>
+        <div class="toc-header">
+          <strong class="toc-title">Contents</strong>
+          <button id="toc-toggle" class="toc-toggle" type="button" aria-expanded="true"
+            aria-controls="toc-list">Hide</button>
+        </div>
         <ul id="toc-list"></ul>
       </nav>
       <div class="content-column">
@@ -274,6 +337,7 @@
     // Versions charted individually; the rest are summed into one trace.
     const CHARTED_VERSIONS = 10
     const HEAT_STEPS = 5
+    const TOC_STORAGE_KEY = 'mozilla-history:toc-collapsed'
     const RANGES = [
       { id: '1y', label: 'Last year', days: 365 },
       { id: '3y', label: 'Last 3 years', days: 3 * 365 },
@@ -372,6 +436,43 @@
         .trim()
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-|-$/g, '')
+    }
+
+    function storedTocPreference() {
+      try {
+        return window.localStorage.getItem(TOC_STORAGE_KEY) === 'true'
+      } catch (error) {
+        return false
+      }
+    }
+
+    function setTocCollapsed(collapsed, persist = true) {
+      const layout = document.getElementById('report-layout')
+      const toggle = document.getElementById('toc-toggle')
+      const list = document.getElementById('toc-list')
+
+      layout.classList.toggle('toc-collapsed', collapsed)
+      list.hidden = collapsed
+      toggle.setAttribute('aria-expanded', String(!collapsed))
+      toggle.textContent = collapsed ? 'Contents' : 'Hide'
+      toggle.setAttribute('aria-label', collapsed
+        ? 'Show table of contents'
+        : 'Hide table of contents')
+
+      if (!persist) return
+      try {
+        window.localStorage.setItem(TOC_STORAGE_KEY, String(collapsed))
+      } catch (error) {
+        // Storage can be unavailable in privacy modes; the control still works.
+      }
+    }
+
+    function initTableOfContents() {
+      const toggle = document.getElementById('toc-toggle')
+      setTocCollapsed(storedTocPreference(), false)
+      toggle.addEventListener('click', () => {
+        setTocCollapsed(toggle.getAttribute('aria-expanded') === 'true')
+      })
     }
 
     function buildTableOfContents() {
@@ -640,6 +741,7 @@
       buildTableOfContents()
     }
 
+    initTableOfContents()
     init()
   </script>
 </body>

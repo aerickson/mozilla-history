@@ -48,3 +48,23 @@ test('the merged page retains report and upstream table enhancements', () => {
   assert.match(html, /function buildTableOfContents\(\)/)
   assert.doesNotMatch(html, /\.\/app\.js/)
 })
+
+test('the table of contents uses a collapsible, non-overlay layout', () => {
+  assert.match(html, /id="report-layout" class="report-layout"/)
+  assert.match(html, /grid-template-columns: minmax\(14rem, 18rem\) minmax\(0, 1fr\)/)
+  assert.match(html, /\.toc \{[\s\S]*?position: sticky/)
+  assert.doesNotMatch(html, /\.toc \{[\s\S]*?position: fixed/)
+  assert.match(html, /@media screen and \(max-width: 900px\)[\s\S]*?grid-template-columns: minmax\(0, 1fr\)/)
+  assert.match(html, /\.content-column p,[\s\S]*?max-width: 80ch/)
+  assert.match(html, /table\.tu-sticky \{[\s\S]*?width: max-content[\s\S]*?overflow: visible/)
+})
+
+test('the table of contents control is accessible and persistent', () => {
+  assert.match(html, /<button id="toc-toggle"[\s\S]*?aria-expanded="true"[\s\S]*?aria-controls="toc-list"/)
+  assert.match(html, /const TOC_STORAGE_KEY = 'mozilla-history:toc-collapsed'/)
+  assert.match(html, /window\.localStorage\.getItem\(TOC_STORAGE_KEY\)/)
+  assert.match(html, /window\.localStorage\.setItem\(TOC_STORAGE_KEY, String\(collapsed\)\)/)
+  assert.match(html, /list\.hidden = collapsed/)
+  assert.match(html, /toggle\.setAttribute\('aria-expanded', String\(!collapsed\)\)/)
+  assert.match(html, /initTableOfContents\(\)\s*\n\s*init\(\)/)
+})
