@@ -55,6 +55,7 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 	}}
 
 	got := renderReadmeAt(WorkerSnapshot{
+		TaskGroupID:    "AnhEjBL2SYuUedNBvjgsWA",
 		GeneratedAt:    time.Date(2026, time.September, 9, 15, 29, 53, 0, time.UTC),
 		ProbeStartedAt: time.Date(2026, time.September, 9, 7, 58, 29, 0, time.UTC),
 		Workers:        workers,
@@ -64,7 +65,7 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 		"- **Implementation and version** are inferred from the failure log produced when each pool receives an intentionally malformed probe task.",
 		"- **Image and capacity metadata** come from Worker Manager.",
 		"- **Summary values** are counts of worker pools, not individual workers or tasks.",
-		"Probe run started: **2026-09-09 07:58 UTC** · Results collected: **2026-09-09 15:29 UTC** · Report generated: **2026-09-10 01:02 UTC**",
+		"Probe run started: **2026-09-09 07:58 UTC** ([Taskcluster task group](https://firefox-ci-tc.services.mozilla.com/tasks/groups/AnhEjBL2SYuUedNBvjgsWA)) · Results collected: **2026-09-09 15:29 UTC** · Report generated: **2026-09-10 01:02 UTC**",
 		"Total generic-worker pools: `2`",
 		"Total docker-worker pools: `0`",
 		"Total scriptworker pools: `0`",
@@ -84,6 +85,16 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 		if !strings.Contains(got, want) {
 			t.Errorf("rendered README does not contain %q", want)
 		}
+	}
+}
+
+func TestRenderReadmeWithoutTaskGroup(t *testing.T) {
+	got := renderReadmeAt(WorkerSnapshot{
+		ProbeStartedAt: time.Date(2026, time.September, 9, 7, 58, 29, 0, time.UTC),
+	}, time.Date(2026, time.September, 10, 1, 2, 3, 0, time.UTC))
+	want := "Probe run started: **2026-09-09 07:58 UTC** · Report generated: **2026-09-10 01:02 UTC**"
+	if !strings.Contains(got, want) || strings.Contains(got, "Taskcluster task group") {
+		t.Fatal("report without a task group should retain its timing line without a link")
 	}
 }
 

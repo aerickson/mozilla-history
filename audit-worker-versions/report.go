@@ -35,6 +35,7 @@ type reportSection struct {
 type reportData struct {
 	GeneratedAt       string
 	ProbeStartedAt    string
+	TaskGroupURL      string
 	ReportGeneratedAt string
 	Sections          [5]reportSection
 }
@@ -128,7 +129,7 @@ This report shows the latest detailed inventory of Firefox CI worker pools along
 - **Image and capacity metadata** come from Worker Manager.
 - **Summary values** are counts of worker pools, not individual workers or tasks.
 
-{{ if .ProbeStartedAt }}Probe run started: **{{ .ProbeStartedAt }}**{{ if .GeneratedAt }} · Results collected: **{{ .GeneratedAt }}**{{ end }}{{ if .ReportGeneratedAt }} · Report generated: **{{ .ReportGeneratedAt }}**{{ end }}
+{{ if .ProbeStartedAt }}Probe run started: **{{ .ProbeStartedAt }}**{{ if .TaskGroupURL }} ([Taskcluster task group]({{ .TaskGroupURL }})){{ end }}{{ if .GeneratedAt }} · Results collected: **{{ .GeneratedAt }}**{{ end }}{{ if .ReportGeneratedAt }} · Report generated: **{{ .ReportGeneratedAt }}**{{ end }}
 {{ else if .GeneratedAt }}Results collected: **{{ .GeneratedAt }}**{{ if .ReportGeneratedAt }} · Report generated: **{{ .ReportGeneratedAt }}**{{ end }}
 {{ else if .ReportGeneratedAt }}Report generated: **{{ .ReportGeneratedAt }}**
 {{ end }}
@@ -402,6 +403,9 @@ func renderReadmeAt(snapshot WorkerSnapshot, reportGeneratedAt time.Time) string
 
 	const timestampFormat = "2006-01-02 15:04 UTC"
 	data := reportData{Sections: sections}
+	if snapshot.TaskGroupID != "" {
+		data.TaskGroupURL = "https://firefox-ci-tc.services.mozilla.com/tasks/groups/" + url.PathEscape(snapshot.TaskGroupID)
+	}
 	if !snapshot.GeneratedAt.IsZero() {
 		data.GeneratedAt = snapshot.GeneratedAt.UTC().Format(timestampFormat)
 	}
