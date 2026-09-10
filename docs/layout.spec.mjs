@@ -77,6 +77,29 @@ test('narrow navigation defaults collapsed and expands in flow', async ({ page }
   expect(reloadedTocBox.y + reloadedTocBox.height).toBeLessThanOrEqual(reloadedContentBox.y)
 })
 
+test('report headings expose stable, accessible permalinks', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await loadReport(page)
+
+  const heading = page.locator('#content h2').first()
+  const label = (await heading.evaluate(element => element.childNodes[0].textContent)).trim()
+  const id = await heading.getAttribute('id')
+  const permalink = heading.locator(':scope > .heading-permalink')
+
+  expect(label).toBe('Generic Worker')
+  await expect(permalink).toHaveAttribute('href', `#${id}`)
+  await expect(permalink).toHaveAttribute('aria-label', `Link to ${label}`)
+  await expect(permalink).toHaveAttribute('title', `Permalink to ${label}`)
+  await expect(page.locator('#toc-list > li').first().locator(':scope > a')).toHaveText(label)
+
+  await expect(permalink).toHaveCSS('opacity', '0.35')
+  await heading.hover()
+  await expect(permalink).toHaveCSS('opacity', '1')
+  await page.screenshot({ path: testInfo.outputPath('heading-permalink.png') })
+  await permalink.click()
+  await expect(page).toHaveURL(new RegExp(`#${id}$`))
+})
+
 test('wide tables retain page scrolling and sticky cells', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 1280, height: 800 })
   await loadReport(page)

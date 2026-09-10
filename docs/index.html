@@ -215,6 +215,38 @@
       }
     }
 
+    .heading-permalink {
+      margin-left: 0.35em;
+      color: #57606a;
+      font-size: 0.75em;
+      font-weight: 400;
+      opacity: 0.35;
+      text-decoration: none;
+    }
+
+    h2:hover > .heading-permalink,
+    h3:hover > .heading-permalink,
+    .heading-permalink:hover,
+    .heading-permalink:focus-visible {
+      opacity: 1;
+    }
+
+    .heading-permalink:hover {
+      color: #0969da;
+      text-decoration: none;
+    }
+
+    .heading-permalink:focus-visible {
+      outline: 2px solid #0969da;
+      outline-offset: 2px;
+    }
+
+    @media (hover: none) {
+      .heading-permalink {
+        opacity: 0.65;
+      }
+    }
+
     .row {
       display: flex;
       gap: 10px;
@@ -585,7 +617,9 @@
 
       toc.replaceChildren()
       headings.forEach(heading => {
-        const baseId = slugify(heading.textContent)
+        heading.querySelector(':scope > .heading-permalink')?.remove()
+        const label = heading.textContent.trim()
+        const baseId = slugify(label)
         const candidateId = heading.tagName === 'H3' && sectionId
           ? `${sectionId}-${baseId}`
           : baseId
@@ -598,10 +632,18 @@
         usedIds.add(id)
         heading.id = id
 
+        const permalink = document.createElement('a')
+        permalink.className = 'heading-permalink'
+        permalink.href = `#${id}`
+        permalink.textContent = '#'
+        permalink.setAttribute('aria-label', `Link to ${label}`)
+        permalink.title = `Permalink to ${label}`
+        heading.appendChild(permalink)
+
         const item = document.createElement('li')
         const link = document.createElement('a')
         link.href = `#${id}`
-        link.textContent = heading.textContent
+        link.textContent = label
         item.appendChild(link)
 
         if (heading.tagName === 'H2') {

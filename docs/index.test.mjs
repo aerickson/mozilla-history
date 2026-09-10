@@ -74,3 +74,11 @@ test('the table of contents control is accessible and persistent', () => {
   assert.match(html, /toggle\.setAttribute\('aria-expanded', String\(!collapsed\)\)/)
   assert.match(html, /initTableOfContents\(\)\s*\n\s*init\(\)/)
 })
+
+test('table of contents targets receive accessible permalinks', () => {
+  assert.match(html, /className = 'heading-permalink'/)
+  assert.match(html, /permalink\.href = `#\$\{id\}`/)
+  assert.match(html, /permalink\.setAttribute\('aria-label', `Link to \$\{label\}`\)/)
+  assert.match(html, /permalink\.title = `Permalink to \$\{label\}`/)
+  assert.match(html, /link\.textContent = label/)
+})
