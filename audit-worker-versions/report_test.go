@@ -63,7 +63,8 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 		"This report shows the latest detailed inventory of Firefox CI worker pools alongside historical trends from earlier snapshots.",
 		"Probe run started: **2026-09-09 07:58 UTC** · Results collected: **2026-09-09 15:29 UTC** · Report generated: **2026-09-10 01:02 UTC**",
 		"Total worker pools: `2`",
-		"### Count by version",
+		"### Worker pools by version",
+		"### Worker pools by image",
 		"intentionally malformed probe task",
 		"expected to fail with a malformed-payload exception",
 		"live Worker Manager launch configuration",
@@ -91,7 +92,7 @@ func TestRenderReadmeDistinguishesImageStatuses(t *testing.T) {
 	got := renderReadme(WorkerSnapshot{Workers: workers})
 
 	for _, want := range []string{
-		"| Image | Count |",
+		"| Image | Worker pools |",
 		"| Not applicable (standalone) | 1 |",
 		"| Configuration unavailable | 1 |",
 		"| Image not determined | 1 |",
