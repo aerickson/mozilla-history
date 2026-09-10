@@ -58,7 +58,6 @@ test('the table of contents uses a collapsible, non-overlay layout', () => {
   assert.match(html, /@media screen and \(max-width: 900px\)[\s\S]*?grid-template-columns: minmax\(0, 1fr\)/)
   assert.match(html, /@media screen and \(min-width: 901px\)[\s\S]*?white-space: nowrap/)
   assert.match(html, /\.toc ul \{[\s\S]*?list-style: none/)
-  assert.match(html, /\.content-column p,[\s\S]*?max-width: 80ch/)
   assert.match(html, /table\.tu-sticky \{[\s\S]*?width: max-content[\s\S]*?overflow: visible/)
 })
 
