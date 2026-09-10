@@ -69,7 +69,7 @@ func TestRenderReadmeIncludesLinksAndSubheadings(t *testing.T) {
 		"Total docker-worker pools: `0`",
 		"Total scriptworker pools: `0`",
 		"Total pools with unknown implementation: `0`",
-		"Total pools with undetermined version: `0`",
+		"Total unresponsive worker pools: `0`",
 		"### Worker pools by version",
 		"### Worker pools by image",
 		"intentionally malformed probe task",
@@ -185,9 +185,9 @@ func TestRenderReadmeExplainsIncompleteProbesInline(t *testing.T) {
 
 	got := renderReadme(WorkerSnapshot{Workers: workers})
 	for _, want := range []string{
-		"## Worker implementation unknown\n",
+		"## Unknown implementation\n",
 		"did not publish a recognized worker log artifact",
-		"## Version not determined\n",
+		"## Unresponsive worker pools\n",
 		"did not claim the probe task within two hours",
 	} {
 		if !strings.Contains(got, want) {
