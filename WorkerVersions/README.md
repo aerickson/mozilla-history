@@ -591,9 +591,9 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 | [**scriptworker-prov-v1/mozillavpn-signing-mac14m2**](https://firefox-ci-tc.services.mozilla.com/provisioners/scriptworker-prov-v1/worker-types/mozillavpn-signing-mac14m2?sortBy=Last%20Active&sortDirection=desc) | Scriptworker | <no value> | — | — | — |
 
 
-## No artifacts found
+## Worker implementation unknown
 
-These pools claimed and resolved the probe task, but did not publish `public/logs/live_backing.log` or `public/logs/chain_of_trust.log`, which are used to identify the worker implementation.
+These pools claimed and resolved the probe task, but did not publish a recognized worker log artifact. Their worker implementation and version could therefore not be identified.
 
 
 Total worker pools: `19`
