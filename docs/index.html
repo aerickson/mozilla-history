@@ -62,10 +62,21 @@
       align-items: flex-start;
       justify-content: space-between;
       gap: 8px;
+      padding-bottom: 8px;
     }
 
     .toc-title {
       padding-top: 16px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .toc-title::after {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      border-bottom: 2px solid #d0d7de;
+      content: "";
     }
 
     .toc-toggle {
@@ -128,6 +139,10 @@
 
     .report-layout.toc-collapsed .toc-title {
       display: none;
+    }
+
+    .report-layout.toc-collapsed .toc-header {
+      padding-bottom: 0;
     }
 
     .report-layout.toc-collapsed .content-column {
