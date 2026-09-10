@@ -615,6 +615,16 @@
       })
     }
 
+    function tableOfContentsLabel(heading, label) {
+      if (heading.tagName === 'H1') return 'Overview'
+      if (heading.tagName !== 'H3') return label
+      if (label === 'Worker pools') return 'Pool details'
+      if (label.startsWith('Worker pools by ')) {
+        return `By ${label.slice('Worker pools by '.length)}`
+      }
+      return label
+    }
+
     function buildTableOfContents() {
       const headings = document.querySelectorAll([
         '#content h1',
@@ -661,7 +671,7 @@
         const item = document.createElement('li')
         const link = document.createElement('a')
         link.href = `#${id}`
-        link.textContent = heading.tagName === 'H1' ? 'Overview' : label
+        link.textContent = tableOfContentsLabel(heading, label)
         item.appendChild(link)
 
         if (heading.tagName === 'H1') {
