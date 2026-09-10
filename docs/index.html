@@ -99,8 +99,8 @@
 
     .source {
       margin: 0 0 10px;
-      color: #656d76;
-      font-size: 14px;
+      color: inherit;
+      font-size: inherit;
     }
 
     .source span + span::before {
@@ -224,13 +224,9 @@
         <a href="./migration.html">Migration timeline &rarr;</a>
       </nav>
       <div class="content-column">
-        <p class="source" id="source"></p>
-      <p class="info">Looking for the big picture? The <a href="./migration.html">docker-worker &rarr;
-        generic-worker migration timeline</a> animates the fleet balance and the version rollout month by
-        month.</p>
-        <p class="info"><strong>Disclaimer:</strong> Values below represent <strong>worker pools</strong>.<br />
-          They do not contain number of unique imagesets used for those pools, or how many tasks are being executed by those
-          worker pools.</p>
+        <p class="info">Looking for the big picture? The <a href="./migration.html">docker-worker &rarr;
+          generic-worker migration timeline</a> animates the fleet balance and the version rollout month by
+          month.</p>
         <div class="content" id="content"></div>
         <div class="history" id="history-content"></div>
         <div class="graphs" id="graphs-content">
@@ -268,9 +264,11 @@
         loopbackHost || window.location.hostname.endsWith('.quick.mozilla.cloud')
       )
     )
-    const readmeUrl = bundledReport
-      ? new URL('../WorkerVersions/README.md', baseUrl)
-      : new URL(`https://raw.githubusercontent.com/taskcluster/${repo}/master/WorkerVersions/README.md`)
+    const reportBaseUrl = bundledReport
+      ? new URL('../WorkerVersions/', baseUrl)
+      : new URL(`https://raw.githubusercontent.com/taskcluster/${repo}/master/WorkerVersions/`)
+    const readmeUrl = new URL('README.md', reportBaseUrl)
+    const workersUrl = new URL('workers.json', reportBaseUrl)
     const historyUrl = new URL('history.json', baseUrl)
     const plotlyUrl = 'https://cdn.plot.ly/plotly-2.18.0.min.js'
 
@@ -301,7 +299,9 @@
     }
 
     async function fetchOk(url) {
-      const res = await fetch(url)
+      // These reports are replaced at stable URLs. Always revalidate so a
+      // newly deployed page cannot be paired with a stale cached snapshot.
+      const res = await fetch(url, { cache: 'no-cache' })
       if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`)
       return res
     }
@@ -327,17 +327,38 @@
 
     function renderSource() {
       const repoUrl = `https://github.com/taskcluster/${repo}`
-      document.getElementById('source').innerHTML =
-        `<span>Source: <a href="${repoUrl}">taskcluster/${repo}</a></span>` +
-        `<span>Report: <a href="${readmeUrl}">WorkerVersions/README.md</a></span>` +
-        `<span>Raw data: <a href="${historyUrl}">history.json</a></span>` +
-        `<span id="source-updated"></span>`
+      const context = document.createElement('div')
+      context.className = 'report-context'
+      context.innerHTML = `<p class="source" id="source">` +
+        `<span>Source code: <a href="${repoUrl}">GitHub</a></span>` +
+        `<span>Downloads: <a href="${readmeUrl}">Current worker-pool report (Markdown)</a> · ` +
+        `<a href="${workersUrl}">Current worker-pool data (JSON)</a> · ` +
+        `<a href="${historyUrl}">Historical worker-pool data (JSON)</a></span></p>`
+
+      const content = document.getElementById('content')
+      const reportTiming = [...content.querySelectorAll('p')]
+        .find(paragraph => paragraph.textContent.startsWith('Probe run started:'))
+      const coverage = document.createElement(reportTiming ? 'span' : 'p')
+      coverage.id = 'history-coverage'
+      if (reportTiming) reportTiming.append(coverage)
+      else {
+        coverage.className = 'source'
+        context.prepend(coverage)
+      }
+
+      const firstSection = content.querySelector('h2')
+      if (firstSection) firstSection.before(context)
+      else content.append(context)
     }
 
     function renderSourceUpdated(data) {
       const dates = Object.keys(data).sort()
-      document.getElementById('source-updated').textContent =
-        `${dates.length} weekly snapshots, ${dates[0]} to ${dates[dates.length - 1]}`
+      const coverage = document.getElementById('history-coverage')
+      if (!coverage) return
+      const summary = `${dates.length} snapshots from ${dates[0]} to ${dates[dates.length - 1]}`
+      coverage.textContent = coverage.tagName === 'SPAN'
+        ? ` (includes ${summary})`
+        : `History: ${summary}.`
     }
 
     async function loadReadme() {
@@ -598,13 +619,12 @@
     }
 
     async function init() {
-      renderSource()
-
       // Each stage renders into its own container, so one failure must not
       // take the rest of the page with it.
       const stages = [
         ['the worker pool report', document.getElementById('content'), async () => {
           await loadReadme()
+          renderSource()
           enhance(document.getElementById('content'))
         }],
         ['the history data', document.getElementById('history-content'), async () => {
