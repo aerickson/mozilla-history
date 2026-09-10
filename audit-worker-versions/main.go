@@ -696,11 +696,8 @@ func show(queue *tcqueue.Queue, t *tcqueue.TaskStatusResponse) (workerPoolID str
 	if workerInfo.Details == nil {
 		workerInfo.Details = map[string]string{}
 	}
-	if t.Status.State == "pending" {
-		// We schedule task with deadline for 3h and running report generation anywhere before that time
-		// In case some pools were not able to claim task within 3h we would consider this pool to have unknown workers
-		// which could probably tell that something is wrong with configuration of this pool
-		workerInfo.Details["error"] = "Version not determined; task not (yet) claimed"
+	if !taskWasClaimed(t.Status.Runs) {
+		workerInfo.Details["error"] = "Version not determined; task was not claimed"
 		workerInfo.isUnknown = true
 		return
 	}
@@ -800,6 +797,15 @@ func show(queue *tcqueue.Queue, t *tcqueue.TaskStatusResponse) (workerPoolID str
 		workerInfo.isUnknown = true
 	}
 	return
+}
+
+func taskWasClaimed(runs []tcqueue.RunInformation) bool {
+	for _, run := range runs {
+		if run.WorkerID != "" || run.WorkerGroup != "" || !time.Time(run.Started).IsZero() {
+			return true
+		}
+	}
+	return false
 }
 
 func taskIDsForTaskGroup(queue *tcqueue.Queue, taskGroupID string) []string {

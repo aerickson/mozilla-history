@@ -156,6 +156,62 @@ func TestTaskGroupComplete(t *testing.T) {
 	}
 }
 
+func TestTaskWasClaimed(t *testing.T) {
+	tests := []struct {
+		name string
+		runs []tcqueue.RunInformation
+		want bool
+	}{
+		{name: "no runs"},
+		{
+			name: "pending run",
+			runs: []tcqueue.RunInformation{{State: "pending"}},
+		},
+		{
+			name: "expired without claim",
+			runs: []tcqueue.RunInformation{{State: "exception", ReasonResolved: "deadline-exceeded"}},
+		},
+		{
+			name: "claimed malformed payload",
+			runs: []tcqueue.RunInformation{{State: "exception", ReasonResolved: "malformed-payload", WorkerGroup: "us-west1-b", WorkerID: "worker-1"}},
+			want: true,
+		},
+		{
+			name: "deadline exceeded after claim",
+			runs: []tcqueue.RunInformation{{State: "exception", ReasonResolved: "deadline-exceeded", WorkerID: "worker-1"}},
+			want: true,
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			if got := taskWasClaimed(test.runs); got != test.want {
+				t.Fatalf("taskWasClaimed() = %v, want %v", got, test.want)
+			}
+		})
+	}
+}
+
+func TestShowClassifiesDeadlineExceededWithoutClaimAsUnresponsive(t *testing.T) {
+	status := &tcqueue.TaskStatusResponse{Status: tcqueue.TaskStatusStructure{
+		ProvisionerID: "example",
+		WorkerType:    "pool",
+		State:         "exception",
+		Runs: []tcqueue.RunInformation{{
+			State:          "exception",
+			ReasonResolved: "deadline-exceeded",
+		}},
+	}}
+
+	_, worker := show(nil, status)
+	if !worker.isUnknown || worker.hasNoArtifacts {
+		t.Fatalf("worker classification = %#v, want unresponsive", worker)
+	}
+	if got := worker.Details["error"]; got != "Version not determined; task was not claimed" {
+		t.Fatalf("error = %q, want task-was-not-claimed result", got)
+	}
+}
+
 func TestGetImagesetReadsAzureArmDeployment(t *testing.T) {
 	pool := tcworkermanager.WorkerPoolFullDefinition{
 		ProviderID: "azure2",

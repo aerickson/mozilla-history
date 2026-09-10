@@ -186,10 +186,10 @@ func TestRenderReadmeExplainsIncompleteProbesInline(t *testing.T) {
 	got := renderReadme(WorkerSnapshot{Workers: workers})
 	for _, want := range []string{
 		"## Unknown implementation\n",
+		"claimed and resolved the probe task",
 		"did not publish a worker log artifact",
-		"others expired without being claimed",
 		"## Unresponsive worker pools\n",
-		"did not claim the probe task within two hours",
+		"did not claim the probe task",
 	} {
 		if !strings.Contains(got, want) {
 			t.Errorf("rendered README does not contain %q", want)
@@ -204,7 +204,8 @@ func TestReadSnapshotRestoresRenderingState(t *testing.T) {
 	filename := filepath.Join(t.TempDir(), "workers.json")
 	data := `[
 		{"WorkerPoolID":"one/pool","Details":{"error":"No artifacts found"},"TotalWorkers":42,"TotalCapacity":84},
-		{"WorkerPoolID":"two/pool","Details":{"error":"Version not determined; task not (yet) claimed"}}
+		{"WorkerPoolID":"two/pool","Details":{"error":"Version not determined; task not (yet) claimed"}},
+		{"WorkerPoolID":"three/pool","Details":{"error":"Version not determined; task was not claimed"}}
 	]`
 	if err := os.WriteFile(filename, []byte(data), 0644); err != nil {
 		t.Fatal(err)
@@ -222,8 +223,8 @@ func TestReadSnapshotRestoresRenderingState(t *testing.T) {
 		workers[0].LegacyTotalCapacity == nil || *workers[0].LegacyTotalCapacity != 84 {
 		t.Error("legacy totals were not recognized")
 	}
-	if !workers[1].isUnknown {
-		t.Error("unknown-version state was not restored")
+	if !workers[1].isUnknown || !workers[2].isUnknown {
+		t.Error("old and current unclaimed states were not restored")
 	}
 }
 
