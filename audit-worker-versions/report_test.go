@@ -186,7 +186,8 @@ func TestRenderReadmeExplainsIncompleteProbesInline(t *testing.T) {
 	got := renderReadme(WorkerSnapshot{Workers: workers})
 	for _, want := range []string{
 		"## Unknown implementation\n",
-		"did not publish a recognized worker log artifact",
+		"did not publish a worker log artifact",
+		"others expired without being claimed",
 		"## Unresponsive worker pools\n",
 		"did not claim the probe task within two hours",
 	} {
