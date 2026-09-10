@@ -13,7 +13,7 @@ Probe run started: **2026-09-09 07:58 UTC** · Results collected: **2026-09-10 0
 ## Generic Worker
 
 
-Total worker pools: `430`
+Total generic-worker pools: `430`
 
 ### Worker pools by version
 
@@ -526,7 +526,7 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 ## Docker Worker
 
 
-Total worker pools: `2`
+Total docker-worker pools: `2`
 
 ### Worker pools by version
 
@@ -562,7 +562,7 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 ## Script Worker
 
 
-Total worker pools: `40`
+Total scriptworker pools: `40`
 
 
 
@@ -620,7 +620,7 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 These pools claimed and resolved the probe task, but did not publish a recognized worker log artifact. Their worker implementation and version could therefore not be identified.
 
 
-Total worker pools: `19`
+Total pools with unknown implementation: `19`
 
 
 ### Worker pools by image
@@ -672,4 +672,4 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 These pools did not claim the probe task within two hours, so their worker implementation and version could not be determined.
 
 
-Total worker pools: `0`
+Total pools with undetermined version: `0`
