@@ -6,7 +6,7 @@ This report shows the latest detailed inventory of Firefox CI worker pools along
 - **Image and capacity metadata** come from Worker Manager.
 - **Summary values** are counts of worker pools, not individual workers or tasks.
 
-Probe run started: **2026-09-09 07:58 UTC** · Results collected: **2026-09-10 01:09 UTC** · Report generated: **2026-09-10 21:42 UTC**
+Probe run started: **2026-09-09 07:58 UTC** ([Taskcluster task group](https://firefox-ci-tc.services.mozilla.com/tasks/groups/AnhEjBL2SYuUedNBvjgsWA)) · Results collected: **2026-09-10 01:09 UTC** · Report generated: **2026-09-10 22:34 UTC**
 
 
 
