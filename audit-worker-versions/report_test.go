@@ -16,7 +16,7 @@ func TestWorkerPoolURL(t *testing.T) {
 	}
 }
 
-func TestSortedVersionCountsUsesNaturalOrder(t *testing.T) {
+func TestSortedVersionCountsUsesDescendingNaturalOrder(t *testing.T) {
 	versions := map[string]int{
 		"100.0.1": 1,
 		"108.0.0": 1,
@@ -24,7 +24,7 @@ func TestSortedVersionCountsUsesNaturalOrder(t *testing.T) {
 		"9.2.0":   1,
 		"99.2.0":  1,
 	}
-	want := []string{"9.2.0", "9.10.0", "99.2.0", "100.0.1", "108.0.0"}
+	want := []string{"108.0.0", "100.0.1", "99.2.0", "9.10.0", "9.2.0"}
 
 	got := sortedVersionCounts(versions)
 	for i := range want {
