@@ -22,6 +22,7 @@ type count struct {
 
 type reportSection struct {
 	Title           string
+	TotalLabel      string
 	Description     string
 	Count           int
 	Versions        []count
@@ -80,7 +81,7 @@ const readmeTpl = `
 {{ .Description }}
 {{ end }}
 
-Total worker pools: ` + "`" + `{{ .Count }}` + "`" + `
+Total {{ .TotalLabel }}: ` + "`" + `{{ .Count }}` + "`" + `
 {{ if gt (len .Versions) 1 }}
 ### Worker pools by version
 
@@ -352,6 +353,7 @@ func generateReadmeSection(title, description string, workers []WorkerInfo, filt
 
 	return reportSection{
 		Title:           title,
+		TotalLabel:      sectionTotalLabel(title),
 		Description:     description,
 		Count:           len(filtered),
 		Versions:        sortedVersionCounts(versions),
@@ -359,6 +361,23 @@ func generateReadmeSection(title, description string, workers []WorkerInfo, filt
 		Filtered:        filtered,
 		FullColumns:     title == "Generic Worker",
 		HasLegacyTotals: hasLegacyTotals,
+	}
+}
+
+func sectionTotalLabel(title string) string {
+	switch title {
+	case "Generic Worker":
+		return "generic-worker pools"
+	case "Docker Worker":
+		return "docker-worker pools"
+	case "Script Worker":
+		return "scriptworker pools"
+	case "Worker implementation unknown":
+		return "pools with unknown implementation"
+	case "Version not determined":
+		return "pools with undetermined version"
+	default:
+		return "worker pools"
 	}
 }
 
