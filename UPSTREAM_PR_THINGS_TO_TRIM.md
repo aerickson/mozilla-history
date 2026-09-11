@@ -5,11 +5,12 @@ Proposed scope cleanup for `20260908-aje_work-rebased-r2` before merging into
 
 ## Organize Quick as optional contributor tooling
 
-- [ ] Move `deploy-quick-prod` and `deploy-quick-staging` out of the repository
+- [ ] Move `deploy-quick` and `deploy-quick-staging` out of the repository
   root into `scripts/quick/`.
-- [ ] Rename `deploy-quick-prod` to `deploy-preview`; "prod" incorrectly suggests
-  that it publishes the upstream production site. Give the staging helper a
-  similarly clear preview-oriented name.
+- [x] Rename `deploy-quick-prod` to `deploy-quick`; "prod" incorrectly suggests
+  that it publishes the upstream production site. Keep `deploy-quick-staging`.
+- [x] Require interactive approval before either helper deploys, with `--confirm`
+  to explicitly approve noninteractive use. Show the target URL in the prompt.
 - [ ] Make both helpers resolve the repository root from their script location
   so they deploy the full site and work from any current directory.
 - [ ] Add `scripts/quick/README.md` documenting Quick setup, preview site naming,
