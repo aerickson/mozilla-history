@@ -7,13 +7,18 @@ publishing workflows.
 ## Setup
 
 Install and configure Mozilla's Quick CLI for your account before using these
-helpers. The `quick` command must be available on your `PATH`. To check the
-default preview destination, run `quick url` from the repository root.
+helpers. The `quick` command must be available on your `PATH`.
 
-Quick resolves the default site name from the checkout and your configuration.
-Use a personal or team preview namespace when configuring Quick. The staging
-helper appends `-staging` to that resolved site name; it rejects names longer
-than Quick's 63-character limit.
+Site names are explicit and independent of the checkout directory or Quick's
+inferred name:
+
+- `<username>-mozilla-history`
+- `<username>-mozilla-history-staging`
+
+The username defaults to `id -un` (your local OS account). Set
+`QUICK_PREVIEW_USER` to override it, for example
+`QUICK_PREVIEW_USER=aerickson scripts/quick/deploy-quick`. Names are lowercased,
+non-alphanumeric runs become hyphens, and names over 63 characters are rejected.
 
 ## Usage
 
@@ -24,9 +29,13 @@ scripts/quick/deploy-quick
 scripts/quick/deploy-quick-staging
 ```
 
-Both helpers resolve the repository root from their own location and deploy
-the entire checkout, so you can also invoke them by absolute path from another
-directory. The root landing page redirects to the report in `docs/`.
+Both helpers resolve the repository root from their own location, so they work
+when invoked by absolute path from another directory. They package the static
+files from `docs/` at the site root alongside `WorkerVersions/README.md` and
+`WorkerVersions/workers.json` in a temporary directory. The report opens directly
+at the preview URL and loads the packaged snapshot; no root redirect is needed.
+Only the packaged landing page gets the Quick SDK script. The temporary package
+is removed when deployment finishes or fails, and the checkout is not modified.
 
 In an interactive terminal, each helper displays the target URL and asks for
 approval, defaulting to No. For explicitly approved automation, use:

@@ -12,7 +12,7 @@ Proposed scope cleanup for `20260908-aje_work-rebased-r2` before merging into
 - [x] Require interactive approval before either helper deploys, with `--confirm`
   to explicitly approve noninteractive use. Show the target URL in the prompt.
 - [x] Make both helpers resolve the repository root from their script location
-  so they deploy the full site and work from any current directory.
+  so they package the report site and work from any current directory.
 - [x] Add `scripts/quick/README.md` documenting Quick setup, preview site naming,
   and usage. Explain that this is optional contributor tooling, separate from
   upstream production publishing.
@@ -22,8 +22,10 @@ Proposed scope cleanup for `20260908-aje_work-rebased-r2` before merging into
   navigation styling and is unrelated to the report improvements.
 - [x] Preserve the existing Pages layout by publishing the contents of `docs/`
   at the site root. Pages no longer depends on the root `index.html` redirect.
-- [ ] Move the Quick landing page out of the repository root and package it in
-  a temporary deployment directory from the Quick helpers.
+- [x] Remove the root redirect. Quick helpers package `docs/` at the site root
+  with the current worker snapshot in a temporary deployment directory.
+- [x] Use explicit `<username>-mozilla-history` preview names, with `-staging`
+  for staging, rather than deriving names from the deployment directory.
 
 ## Separate production automation from report improvements
 
