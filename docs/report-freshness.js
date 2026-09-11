@@ -1,5 +1,4 @@
-// Temporary UI review threshold; change to 10 * 24 after approval (mozilla-history-s64).
-export const STALE_PROBE_HOURS = 2
+export const STALE_PROBE_HOURS = 10 * 24
 
 export function staleProbeAge(timingText, now = Date.now()) {
   const match = /^Probe run started: (\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}) UTC/.exec(timingText)

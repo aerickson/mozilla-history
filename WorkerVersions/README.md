@@ -7,7 +7,7 @@ This report shows the latest detailed inventory of Firefox CI worker pools along
 - **Summary values** are counts of worker pools, not individual workers or tasks.
 
 
-Probe run started: **2026-09-09 07:58 UTC** ([Taskcluster task group](https://firefox-ci-tc.services.mozilla.com/tasks/groups/AnhEjBL2SYuUedNBvjgsWA)) · Results collected: **2026-09-10 01:09 UTC** · Report generated: **2026-09-11 02:32 UTC** ([cbc640836](https://github.com/aerickson/mozilla-history/commit/cbc64083686170eca64c120193b2c6b3939b5dbf))
+Probe run started: **2026-09-09 07:58 UTC** ([Taskcluster task group](https://firefox-ci-tc.services.mozilla.com/tasks/groups/AnhEjBL2SYuUedNBvjgsWA)) · Results collected: **2026-09-10 01:09 UTC** · Report generated: **2026-09-11 02:47 UTC** ([4110134ea](https://github.com/aerickson/mozilla-history/commit/4110134ea2b177c4db2442f79b6769437eec8c83))
 
 
 
