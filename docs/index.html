@@ -536,7 +536,15 @@
         .find(paragraph => paragraph.textContent.startsWith('Probe run started:'))
       const coverage = document.createElement(reportTiming ? 'span' : 'p')
       coverage.id = 'history-coverage'
-      if (reportTiming) reportTiming.append(coverage)
+      if (reportTiming) {
+        const trailingText = reportTiming.lastChild
+        const hasRevision = /\([a-f0-9]{9,40}(?:-dirty)?\)\s*$/.test(reportTiming.textContent)
+        if (hasRevision && trailingText?.nodeType === Node.TEXT_NODE) {
+          const closingParen = trailingText.splitText(trailingText.textContent.lastIndexOf(')'))
+          reportTiming.insertBefore(coverage, closingParen)
+          coverage.dataset.withRevision = 'true'
+        } else reportTiming.append(coverage)
+      }
       else {
         coverage.className = 'source'
         context.prepend(coverage)
@@ -553,7 +561,7 @@
       if (!coverage) return
       const summary = `${dates.length} snapshots from ${dates[0]} to ${dates[dates.length - 1]}`
       coverage.textContent = coverage.tagName === 'SPAN'
-        ? ` (includes ${summary})`
+        ? coverage.dataset.withRevision === 'true' ? `, ${summary}` : ` (${summary})`
         : `History: ${summary}.`
     }
 
