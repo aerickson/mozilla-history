@@ -7,7 +7,7 @@ This report shows the latest detailed inventory of Firefox CI worker pools along
 - **Summary values** are counts of worker pools, not individual workers or tasks.
 
 
-Probe run started: **2026-09-09 07:58 UTC** ([Taskcluster task group](https://firefox-ci-tc.services.mozilla.com/tasks/groups/AnhEjBL2SYuUedNBvjgsWA)) · Results collected: **2026-09-10 01:09 UTC** · Report generated: **2026-09-11 02:13 UTC** ([116989cd3](https://github.com/aerickson/mozilla-history/commit/116989cd3a1bffb483961b0ee330ee6615f1fc92))
+Probe run started: **2026-09-09 07:58 UTC** ([Taskcluster task group](https://firefox-ci-tc.services.mozilla.com/tasks/groups/AnhEjBL2SYuUedNBvjgsWA)) · Results collected: **2026-09-10 01:09 UTC** · Report generated: **2026-09-11 02:32 UTC** ([cbc640836](https://github.com/aerickson/mozilla-history/commit/cbc64083686170eca64c120193b2c6b3939b5dbf))
 
 
 
@@ -651,7 +651,7 @@ _Configured capacity is the pool's autoscaling range in concurrent task slots. T
 | [**gecko-t/t-linux-vm-2204-wayland-snap**](https://firefox-ci-tc.services.mozilla.com/provisioners/gecko-t/worker-types/t-linux-vm-2204-wayland-snap?sortBy=Last%20Active&sortDirection=desc) |  | No artifacts found | 0–500 | 0–500 | 1 |
 
 
-## Unresponsive worker pools
+## Unresponsive
 
 These pools did not claim the probe task, so their worker implementation and version could not be determined.
 
