@@ -13,6 +13,8 @@ publishing workflows.
   `<username>-mozilla-history-staging.quick.mozilla.cloud` site for trying changes.
 - `deploy-common.sh` contains the shared naming, confirmation, packaging, and
   cleanup logic. It is sourced by the two helpers, not run directly.
+- `quick-head.html` supplies the Quick SDK and navigation styling injected into
+  each packaged HTML page, keeping Quick integration out of upstream page sources.
 
 Use these previews to share and review report changes behind Mozilla SSO.
 Neither helper collects new data, creates probes, or publishes GitHub Pages.
@@ -47,7 +49,7 @@ when invoked by absolute path from another directory. They package the static
 files from `docs/` at the site root alongside `WorkerVersions/README.md` and
 `WorkerVersions/workers.json` in a temporary directory. The report opens directly
 at the preview URL and loads the packaged snapshot; no root redirect is needed.
-Only the packaged landing page gets the Quick SDK script. The temporary package
+Only packaged pages get the Quick SDK script and navigation styling. The temporary package
 is removed when deployment finishes or fails, and the checkout is not modified.
 
 In an interactive terminal, each helper displays the target URL and asks for

@@ -16,9 +16,9 @@ Proposed scope cleanup for `20260908-aje_work-rebased-r2` before merging into
 - [x] Add `scripts/quick/README.md` documenting Quick setup, preview site naming,
   and usage. Explain that this is optional contributor tooling, separate from
   upstream production publishing.
-- [ ] Remove Quick-specific `/quick.js` loading and `#__quick_nav` styling from
+- [x] Remove Quick-specific `/quick.js` loading and `#__quick_nav` styling from
   upstream-facing pages. Preserve useful local preview and redirect behavior.
-- [ ] Revert the branch's change to `docs/worker-metrics.html`; it only adds Quick
+- [x] Revert the branch's change to `docs/worker-metrics.html`; it only adds Quick
   navigation styling and is unrelated to the report improvements.
 - [x] Preserve the existing Pages layout by publishing the contents of `docs/`
   at the site root. Pages no longer depends on the root `index.html` redirect.

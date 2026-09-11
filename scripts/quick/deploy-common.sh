@@ -35,8 +35,14 @@ deploy_preview() (
   cp "$repo_dir"/docs/*.html "$repo_dir"/docs/*.js "$repo_dir/docs/history.json" "$site_dir/"
   mkdir "$site_dir/WorkerVersions"
   cp "$repo_dir/WorkerVersions/README.md" "$repo_dir/WorkerVersions/workers.json" "$site_dir/WorkerVersions/"
-  # Only the Quick package loads the Quick SDK; the source page also serves Pages.
-  sed 's|</head>|<script src="/quick.js"></script></head>|' "$repo_dir/docs/index.html" > "$site_dir/index.html"
+  # Add Quick integration only to packaged pages, leaving source HTML unchanged.
+  for page in "$repo_dir"/docs/*.html; do
+    awk '
+      NR == FNR { fragment = fragment $0 "\n"; next }
+      /<\/head>/ { printf "%s", fragment }
+      { print }
+    ' "$repo_dir/scripts/quick/quick-head.html" "$page" > "$site_dir/$(basename "$page")"
+  done
   echo "Deploying preview: $deployment_url"
   quick deploy "$site_dir" "$site_name"
 )
