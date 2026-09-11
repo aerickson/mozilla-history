@@ -148,11 +148,14 @@ retire it after a successful publishing run in the team repository.
 ### Testing GitHub Pages on a fork
 
 Set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**.
-Run **Publish report to GitHub Pages** on the desired branch to deploy its saved
-snapshot; this does not require Taskcluster secrets or create probes. The site
-includes its own `WorkerVersions` files, so a fork preview displays fork data.
-The deployment URL appears on the Actions environment. The page redirects to
-`/docs/` within the Pages site.
+Run **Publish report to GitHub Pages** on the desired branch to deploy its
+`docs/` site; this does not require Taskcluster secrets or create probes.
+The deployment URL appears on the Actions environment. `docs/index.html` is
+the landing page, and `migration.html` remains alongside it at the site root.
+There is no redirect through `/docs/`. The published report retains its existing
+behavior of loading current worker data from upstream GitHub; history comes
+from the deployed checkout's `docs/history.json`. Use the local or Quick preview
+to view the checkout's own worker snapshot.
 
 Set repository variable `PUBLISH_REPORT_PAGES=true` to deploy Pages automatically
 after a successful non-dry report run. The report workflow calls the Pages

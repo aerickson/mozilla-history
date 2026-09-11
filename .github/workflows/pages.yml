@@ -24,12 +24,10 @@ jobs:
         with:
           # Called after reports pushes new commits; resolve the branch again.
           ref: ${{ github.ref_name }}
-      - name: Prepare static site with this checkout's reports
+      - name: Prepare docs site
         run: |
-          mkdir -p "$RUNNER_TEMP/site/docs"
-          cp index.html "$RUNNER_TEMP/site/"
-          cp docs/*.html docs/*.js docs/history.json "$RUNNER_TEMP/site/docs/"
-          cp -R WorkerVersions "$RUNNER_TEMP/site/"
+          mkdir -p "$RUNNER_TEMP/site"
+          cp docs/*.html docs/*.js docs/history.json "$RUNNER_TEMP/site/"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

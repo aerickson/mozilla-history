@@ -20,9 +20,10 @@ Proposed scope cleanup for `20260908-aje_work-rebased-r2` before merging into
   upstream-facing pages. Preserve useful local preview and redirect behavior.
 - [ ] Revert the branch's change to `docs/worker-metrics.html`; it only adds Quick
   navigation styling and is unrelated to the report improvements.
-- [ ] Review the root `index.html` together with the Pages workflow. Its redirect
-  is needed by that proposed deployment layout; removing the entire file without
-  adjusting the workflow would break the landing page.
+- [x] Preserve the existing Pages layout by publishing the contents of `docs/`
+  at the site root. Pages no longer depends on the root `index.html` redirect.
+- [ ] Move the Quick landing page out of the repository root and package it in
+  a temporary deployment directory from the Quick helpers.
 
 ## Separate production automation from report improvements
 
@@ -55,12 +56,11 @@ regression coverage; it does not belong in the separate publishing PR.
 - [ ] Add `/audit-worker-versions/audit-worker-versions` to `.gitignore`. The
   branch removed the previous broad ignore rule, leaving the executable produced
   by a build inside the auditor directory unignored.
-- [ ] Reconcile the Docker Worker paragraph's migration link with the eventual
-  Pages layout. It currently targets
-  `https://taskcluster.github.io/mozilla-history/migration.html`, while the new
-  Pages workflow places that page under `/mozilla-history/docs/migration.html`.
-  Update the report template and generated report consistently if the layout
-  changes; local and fork previews should also have a sensible destination.
+- [x] Keep the Docker Worker paragraph's public migration link compatible with
+  Pages. Publishing `docs/` at the site root preserves
+  `https://taskcluster.github.io/mozilla-history/migration.html`.
+- [ ] Consider making the Docker Worker timeline link use the preview's own
+  migration page when viewing a local or fork preview.
 
 ## Keep in the core report PR
 
