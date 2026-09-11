@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    name: Go, Python, and JavaScript tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@v6
+        with:
+          go-version: stable
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Go tests
+        run: go test ./...
+      - name: Python tests
+        run: python3 -m unittest test_fetch_and_generate.py
+      - name: JavaScript tests
+        working-directory: docs
+        run: npm test
+
+  browser-tests:
+    name: Firefox layout tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: docs/package-lock.json
+      - name: Install test dependencies
+        working-directory: docs
+        run: npm ci
+      - name: Install Firefox and system dependencies
+        working-directory: docs
+        run: npx playwright install --with-deps firefox
+      - name: Run layout tests
+        working-directory: docs
+        run: npm run test:browser
+      - name: Upload failure screenshots and traces
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: firefox-layout-results
+          path: docs/test-results/
+          if-no-files-found: ignore
+          retention-days: 7
