@@ -820,8 +820,8 @@
         `<h3>Versions</h3>` +
         historyTable(history, dates, 'versions') +
         `<h3>Worker Migration</h3>
-        <p>See the shift from docker-worker to generic-worker and version rollouts month by month.</p>
-        <p><a href="./migration.html">View migration timeline &rarr;</a></p>`
+        <p>The <a href="./migration.html">worker migration timeline</a> shows the transition from
+          docker-worker to generic-worker and generic-worker version adoption over time.</p>`
 
       document.getElementById('history-range').addEventListener('change', event => {
         rangeId = event.target.value
