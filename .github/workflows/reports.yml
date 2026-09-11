@@ -19,8 +19,8 @@ concurrency:
 
 jobs:
   reports:
-    # Scheduled runs are production-only. Manual runs remain available in forks.
-    if: github.event_name == 'workflow_dispatch' || github.repository == 'taskcluster/mozilla-history'
+    # Every repository must opt in to scheduling. Manual runs are always available.
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && vars.ENABLE_SCHEDULED_REPORTS == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 150
     permissions:

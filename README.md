@@ -110,12 +110,15 @@ the first argument to override the default, for example `./run_local.sh 8080`.
 
 ### GitHub Actions (NAS replacement)
 
-`.github/workflows/reports.yml` runs on Mondays at 07:23 UTC in
-`taskcluster/mozilla-history`, or manually through **Actions → Mozilla history
+`.github/workflows/reports.yml` runs on Mondays at 07:23 UTC when enabled,
+or manually through **Actions → Mozilla history
 reports → Run workflow**. Install it on the default branch to enable dispatch
-and scheduling. Scheduled report jobs run only in `taskcluster/mozilla-history`;
-they are skipped in forks. Manual runs remain available in forks, including
-publishing when dry_run is disabled. No scheduling variable is required.
+and scheduling. Both production and forks skip scheduled report jobs unless the
+repository variable `ENABLE_SCHEDULED_REPORTS` is set to `true`. Add it under
+**Settings → Secrets and variables → Actions → Variables → New repository
+variable** to enable weekly runs. Set it to `false` or remove it to disable
+scheduled report jobs. Manual runs remain available regardless of this setting,
+including publishing when dry_run is disabled.
 
 Configure repository Actions secrets `TASKCLUSTER_CLIENT_ID` and
 `TASKCLUSTER_ACCESS_TOKEN` with a dedicated Taskcluster client approved by the
