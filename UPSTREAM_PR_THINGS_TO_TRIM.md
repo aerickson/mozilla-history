@@ -49,9 +49,12 @@ regression coverage; it does not belong in the separate publishing PR.
   commit if reviewers want to see the rendered result in this PR.
 - [ ] Regenerate provenance in the upstream checkout; the current report links
   its source revision to the fork that generated it.
-- [ ] Retain upstream's latest raw worker snapshot. The rebase discarded the
-  superseded September 10 snapshot and preserved upstream's September 11 data;
-  there is no older raw worker-data dump to include from this branch.
+- [ ] Remove the restored preview snapshot before opening the upstream PR.
+  `WorkerVersions/workers.json` currently contains our September 10 collection
+  from pre-rebase commit `30e47c8d6`, restored to preview probe metadata and
+  configured capacity fields. Its probe timestamps remain authentic. Restore
+  the latest upstream snapshot and omit or regenerate `WorkerVersions/README.md`
+  as agreed with reviewers; do not merge this older data over upstream's run.
 
 ## Fix integration details before merging
 
