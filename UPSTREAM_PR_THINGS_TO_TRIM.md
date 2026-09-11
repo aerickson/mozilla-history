@@ -29,11 +29,6 @@ Proposed scope cleanup for `20260908-aje_work-rebased-r2` before merging into
 
 ## Separate production automation from report improvements
 
-- [ ] Keep snapshot packaging with the relative-data frontend change. Pages now
-  needs `WorkerVersions/README.md` and `workers.json` bundled alongside `docs/`
-  assets, with the page's `worker-report-base` set to `./WorkerVersions/`.
-  Bare branch-based publication of `docs/` alone is no longer sufficient; do not
-  split out the packaging prerequisite while merging the frontend change.
 - [ ] Move `.github/workflows/reports.yml`, `.github/workflows/pages.yml`, and
   their production automation documentation in `README.md` to a separate PR.
 - [ ] Review Taskcluster credentials and scopes, publishing permissions, the

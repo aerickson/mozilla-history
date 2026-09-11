@@ -36,7 +36,7 @@ deploy_preview() (
   mkdir "$site_dir/WorkerVersions"
   cp "$repo_dir/WorkerVersions/README.md" "$repo_dir/WorkerVersions/workers.json" "$site_dir/WorkerVersions/"
   # Only the Quick package loads the Quick SDK; the source page also serves Pages.
-  sed -e 's|content="../WorkerVersions/"|content="./WorkerVersions/"|' -e 's|</head>|<script src="/quick.js"></script></head>|' "$repo_dir/docs/index.html" > "$site_dir/index.html"
+  sed 's|</head>|<script src="/quick.js"></script></head>|' "$repo_dir/docs/index.html" > "$site_dir/index.html"
   echo "Deploying preview: $deployment_url"
   quick deploy "$site_dir" "$site_name"
 )

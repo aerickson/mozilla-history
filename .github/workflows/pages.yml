@@ -28,9 +28,6 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/site"
           cp docs/*.html docs/*.js docs/history.json "$RUNNER_TEMP/site/"
-          mkdir -p "$RUNNER_TEMP/site/WorkerVersions"
-          cp WorkerVersions/README.md WorkerVersions/workers.json "$RUNNER_TEMP/site/WorkerVersions/"
-          sed 's|content="../WorkerVersions/"|content="./WorkerVersions/"|' docs/index.html > "$RUNNER_TEMP/site/index.html"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
