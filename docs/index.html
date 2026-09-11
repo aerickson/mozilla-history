@@ -469,7 +469,8 @@
     const loopbackHost = ['127.0.0.1', 'localhost', '[::1]'].includes(window.location.hostname)
     const bundledReport = query.has('local') || (
       !query.has('remote') && (
-        loopbackHost || window.location.hostname.endsWith('.quick.mozilla.cloud')
+        loopbackHost || window.location.hostname.endsWith('.quick.mozilla.cloud') ||
+        (window.location.hostname.endsWith('.github.io') && baseUrl.pathname.endsWith('/docs/'))
       )
     )
     const reportBaseUrl = bundledReport
