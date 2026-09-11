@@ -58,9 +58,9 @@ regression coverage; it does not belong in the separate publishing PR.
 
 ## Fix integration details before merging
 
-- [ ] Add `/audit-worker-versions/audit-worker-versions` to `.gitignore`. The
-  branch removed the previous broad ignore rule, leaving the executable produced
-  by a build inside the auditor directory unignored.
+- [x] Add `/audit-worker-versions/audit-worker-versions` to `.gitignore`.
+  No binary at that path was tracked, present locally, or found in history
+  reachable from the local refs when checked; no removal was needed.
 - [x] Keep the Docker Worker paragraph's public migration link compatible with
   Pages. Publishing `docs/` at the site root preserves
   `https://taskcluster.github.io/mozilla-history/migration.html`.
