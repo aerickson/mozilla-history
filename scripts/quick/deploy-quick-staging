@@ -18,7 +18,7 @@ if [[ $# -gt 1 ]]; then
   exit 2
 fi
 
-cd -- "$(dirname -- "$0")"
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.."
 
 production_url=$(quick url)
 production_host=${production_url#*://}

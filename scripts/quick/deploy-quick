@@ -18,7 +18,7 @@ if [[ $# -gt 1 ]]; then
   exit 2
 fi
 
-cd -- "$(dirname -- "$0")"
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.."
 deployment_url=$(quick url)
 if [[ "$confirmed" != true ]]; then
   if [[ ! -t 0 ]]; then
