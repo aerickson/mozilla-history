@@ -1,6 +1,24 @@
 import { expect, test } from '@playwright/test'
+import { execFileSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
+
+let renderedReport
+test.beforeAll(() => {
+  // Exercise the current renderer without committing generated report changes.
+  renderedReport = execFileSync('go', [
+    'run', './audit-worker-versions', 'render', 'WorkerVersions/workers.json',
+  ], {
+    cwd: fileURLToPath(new URL('..', import.meta.url)),
+    encoding: 'utf8',
+    maxBuffer: 10 * 1024 * 1024,
+  })
+})
 
 async function loadReport(page) {
+  await page.route('**/WorkerVersions/README.md', route => route.fulfill({
+    contentType: 'text/plain; charset=utf-8',
+    body: renderedReport,
+  }))
   await page.goto('/docs/index.html?local')
   await expect(page.locator('#content h1')).toBeVisible({ timeout: 30_000 })
   await expect(page.locator('#toc-list li').first()).toBeAttached()
