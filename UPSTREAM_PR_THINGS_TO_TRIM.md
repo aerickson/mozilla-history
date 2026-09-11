@@ -3,10 +3,18 @@
 Proposed scope cleanup for `20260908-aje_work-rebased-r2` before merging into
 `taskcluster/mozilla-history`. These are recommendations, not completed changes.
 
-## Remove or separate Quick preview infrastructure
+## Organize Quick as optional contributor tooling
 
-- [ ] Exclude `deploy-quick-prod` and `deploy-quick-staging` unless upstream wants
-  to maintain Quick deployments.
+- [ ] Move `deploy-quick-prod` and `deploy-quick-staging` out of the repository
+  root into `scripts/quick/`.
+- [ ] Rename `deploy-quick-prod` to `deploy-preview`; "prod" incorrectly suggests
+  that it publishes the upstream production site. Give the staging helper a
+  similarly clear preview-oriented name.
+- [ ] Make both helpers resolve the repository root from their script location
+  so they deploy the full site and work from any current directory.
+- [ ] Add `scripts/quick/README.md` documenting Quick setup, preview site naming,
+  and usage. Explain that this is optional contributor tooling, separate from
+  upstream production publishing.
 - [ ] Remove Quick-specific `/quick.js` loading and `#__quick_nav` styling from
   upstream-facing pages. Preserve useful local preview and redirect behavior.
 - [ ] Revert the branch's change to `docs/worker-metrics.html`; it only adds Quick
@@ -27,6 +35,8 @@ Proposed scope cleanup for `20260908-aje_work-rebased-r2` before merging into
 Keep `.github/workflows/ci.yml` in the report PR. It runs Go, Python, JavaScript,
 and Firefox layout tests on pull requests and pushes to `master`, with read-only
 repository permissions and no Taskcluster credentials or deployment steps.
+It validates the reporting and UI changes under review and provides ongoing
+regression coverage; it does not belong in the separate publishing PR.
 
 ## Handle the generated report separately
 
@@ -58,7 +68,8 @@ repository permissions and no Taskcluster credentials or deployment steps.
 - Report layout, accessible navigation and permalinks, sorting, freshness
   notices, and History's Worker Migration subsection.
 - History generation support for both legacy arrays and the new snapshot format.
-- Local refresh and preview tooling, excluding Quick-specific deployment pieces.
+- Local refresh and preview tooling, including optional Quick helpers organized
+  under `scripts/quick/` and documented separately from production publishing.
 - Unit tests, Firefox layout tests, and the new CI workflow.
 
 This list records a scope and integration review, not a complete correctness
