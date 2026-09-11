@@ -12,12 +12,11 @@ test('the report page has one syntactically valid inline module', () => {
   assert.doesNotThrow(() => new Function(sourceWithoutImports))
 })
 
-test('Quick and local previews use the bundled report', () => {
-  assert.match(html, /query\.has\('local'\)/)
-  assert.match(html, /'127\.0\.0\.1', 'localhost', '\[::1\]'/)
-  assert.match(html, /loopbackHost \|\| window\.location\.hostname/)
-  assert.match(html, /hostname\.endsWith\('\.quick\.mozilla\.cloud'\)/)
-  assert.match(html, /new URL\('\.\.\/WorkerVersions\/', baseUrl\)/)
+test('reports use a relative snapshot path without hostname or query overrides', () => {
+  assert.match(html, /<meta name="worker-report-base" content="\.\.\/WorkerVersions\/">/)
+  assert.match(html, /document\.querySelector\('meta\[name="worker-report-base"\]'\)\.content, baseUrl/)
+  assert.doesNotMatch(html, /raw\.githubusercontent\.com/)
+  assert.doesNotMatch(html, /query\.has\('(local|remote)'\)/)
 })
 
 test('report metadata is inserted at the end of the report introduction', () => {

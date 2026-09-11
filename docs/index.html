@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <meta name="worker-report-base" content="../WorkerVersions/">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -465,17 +466,10 @@
     // local previews use /docs/, so fall back to mozilla-history there.
     const pathRepo = baseUrl.pathname.split('/').filter(Boolean)[0] || ''
     const repo = pathRepo.endsWith('-history') ? pathRepo : 'mozilla-history'
-    const query = new URLSearchParams(window.location.search)
-    const loopbackHost = ['127.0.0.1', 'localhost', '[::1]'].includes(window.location.hostname)
-    const bundledReport = query.has('local') || (
-      !query.has('remote') && (
-        loopbackHost || window.location.hostname.endsWith('.quick.mozilla.cloud') ||
-        (window.location.hostname.endsWith('.github.io') && baseUrl.pathname.endsWith('/docs/'))
-      )
+    // Packaging sets this relative path for the deployed directory layout.
+    const reportBaseUrl = new URL(
+      document.querySelector('meta[name="worker-report-base"]').content, baseUrl,
     )
-    const reportBaseUrl = bundledReport
-      ? new URL('../WorkerVersions/', baseUrl)
-      : new URL(`https://raw.githubusercontent.com/taskcluster/${repo}/master/WorkerVersions/`)
     const readmeUrl = new URL('README.md', reportBaseUrl)
     const workersUrl = new URL('workers.json', reportBaseUrl)
     const historyUrl = new URL('history.json', baseUrl)

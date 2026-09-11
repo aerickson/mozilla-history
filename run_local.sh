@@ -12,5 +12,5 @@ case "$port" in
     ;;
 esac
 
-echo "Serving the local report at http://localhost:${port}/docs/index-local.html"
+echo "Serving the local report at http://localhost:${port}/docs/"
 exec python3 -m http.server "$port" --directory "$repo_dir"

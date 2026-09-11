@@ -101,9 +101,8 @@ To preview the generated report in the website, serve the repository root:
 ./run_local.sh
 ```
 
-Then open <http://localhost:8000/docs/index-local.html>. The local preview uses
-`WorkerVersions/README.md` and `docs/history.json` from the checkout. The
-published page continues to load the current report from GitHub. Pass a port as
+Then open <http://localhost:8000/docs/>. The local preview uses
+`WorkerVersions/README.md` and `docs/history.json` from the checkout. Published sites bundle their own report and worker snapshot. Pass a port as
 the first argument to override the default, for example `./run_local.sh 8080`.
 
 ## Production Automation
@@ -152,10 +151,15 @@ Run **Publish report to GitHub Pages** on the desired branch to deploy its
 `docs/` site; this does not require Taskcluster secrets or create probes.
 The deployment URL appears on the Actions environment. `docs/index.html` is
 the landing page, and `migration.html` remains alongside it at the site root.
-There is no redirect through `/docs/`. The published report retains its existing
-behavior of loading current worker data from upstream GitHub; history comes
-from the deployed checkout's `docs/history.json`. Use the local or Quick preview
-to view the checkout's own worker snapshot.
+There is no redirect through `/docs/`. The deployment includes this checkout's
+worker report and snapshot in `WorkerVersions/` alongside the page and history.
+All report data loads through relative URLs, so forks display their own data.
+The local checkout uses the same page with a relative path to `../WorkerVersions/`;
+packaging adjusts that path to `./WorkerVersions/`. Neither `?local` nor `?remote`
+is needed or changes the data source anymore.
+
+This bundled layout requires the packaging workflow. Publishing the bare `docs/`
+directory through branch-based Pages does not include `WorkerVersions/`.
 
 Set repository variable `PUBLISH_REPORT_PAGES=true` to deploy Pages automatically
 after a successful non-dry report run. The report workflow calls the Pages
