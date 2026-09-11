@@ -28,7 +28,9 @@
       "secrets:get:project/relman/code-review/runtime-production",
       "index:insert-task:project.relman.production.code-review.*",
       "notify:email:*",
-      "docker-worker:cache:code-review-production-checkout"
+      "docker-worker:cache:code-review-production-checkout",
+      "queue:seal-task-group:gecko-level-1/*",
+      "queue:cancel-task-group:gecko-level-1/*"
     ],
     "created": {
       "$fromNow": "0 seconds"

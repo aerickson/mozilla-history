@@ -32,6 +32,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": false,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -73,7 +74,7 @@
         },
         "workerManager": {
           "initialWeight": 1,
-          "launchConfigId": "lc-225951b2b19d518be0ca",
+          "launchConfigId": "lc-fb7e58bfb8ee0b7b768a",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-nss-3-win11-a64-25h2-builder"
@@ -101,6 +102,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": false,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -142,7 +144,7 @@
         },
         "workerManager": {
           "initialWeight": 0.8,
-          "launchConfigId": "lc-fcd7ad7d95feac377a0c",
+          "launchConfigId": "lc-b028292a4b1ae3e0b32d",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-nss-3-win11-a64-25h2-builder"
@@ -170,6 +172,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": false,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -211,7 +214,7 @@
         },
         "workerManager": {
           "initialWeight": 0.9,
-          "launchConfigId": "lc-20631b3f2551b81911c3",
+          "launchConfigId": "lc-f834f03dcc89b51e0427",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-nss-3-win11-a64-25h2-builder"
@@ -239,6 +242,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": false,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -280,7 +284,7 @@
         },
         "workerManager": {
           "initialWeight": 0.9,
-          "launchConfigId": "lc-802d2dfdc683a9a363bc",
+          "launchConfigId": "lc-d2e6170d6572722db85b",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-nss-3-win11-a64-25h2-builder"
@@ -291,7 +295,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\n",
   "emailOnError": true,
-  "lastModified": "2026-09-03T17:31:58.329Z",
+  "lastModified": "2026-09-08T14:14:30.321Z",
   "owner": "relops-azure-provisioning@mozilla.com",
   "providerId": "azure_trusted",
   "requestedCapacity": 0,

@@ -31,6 +31,7 @@
               "disableReboots": true,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": true,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -72,7 +73,7 @@
         },
         "workerManager": {
           "initialWeight": 1,
-          "launchConfigId": "lc-f2b6c078e56b39a03831",
+          "launchConfigId": "lc-20ea5d4e204e5fa56bfa",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-1-b-win2022-headless"
@@ -99,6 +100,7 @@
               "disableReboots": true,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": true,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -140,7 +142,7 @@
         },
         "workerManager": {
           "initialWeight": 0.9,
-          "launchConfigId": "lc-64e00bfc2447aabdbb28",
+          "launchConfigId": "lc-bb717a6aeb7e52503b78",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-1-b-win2022-headless"
@@ -167,6 +169,7 @@
               "disableReboots": true,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": true,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -208,7 +211,7 @@
         },
         "workerManager": {
           "initialWeight": 0.8,
-          "launchConfigId": "lc-9148eba6cf3dd5d99d71",
+          "launchConfigId": "lc-90f33d40af6d935c176a",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-1-b-win2022-headless"
@@ -235,6 +238,7 @@
               "disableReboots": true,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": true,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -276,7 +280,7 @@
         },
         "workerManager": {
           "initialWeight": 0.9,
-          "launchConfigId": "lc-c4ab3f1d91c622ed2f78",
+          "launchConfigId": "lc-9b817d2e964779904aa1",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-1-b-win2022-headless"
@@ -287,7 +291,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\n",
   "emailOnError": true,
-  "lastModified": "2026-09-03T17:31:57.902Z",
+  "lastModified": "2026-09-08T14:14:32.739Z",
   "owner": "relops-azure-provisioning@mozilla.com",
   "providerId": "azure2",
   "requestedCapacity": 0,

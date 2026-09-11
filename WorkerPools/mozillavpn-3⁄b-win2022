@@ -30,6 +30,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": false,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -71,7 +72,7 @@
         },
         "workerManager": {
           "initialWeight": 1,
-          "launchConfigId": "lc-d98efd86216c5b9b7461",
+          "launchConfigId": "lc-7d2283f3f3e5ddfc557b",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-mozillavpn-3-b-win2022"
@@ -97,6 +98,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": false,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -138,7 +140,7 @@
         },
         "workerManager": {
           "initialWeight": 0.9,
-          "launchConfigId": "lc-caa29880a880c6378b38",
+          "launchConfigId": "lc-483501d642154fc65d37",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-mozillavpn-3-b-win2022"
@@ -164,6 +166,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": false,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -205,7 +208,7 @@
         },
         "workerManager": {
           "initialWeight": 0.8,
-          "launchConfigId": "lc-6991b470c4f6c909d1d1",
+          "launchConfigId": "lc-4e18023d08b8a2115c82",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-mozillavpn-3-b-win2022"
@@ -231,6 +234,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": false,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -272,7 +276,7 @@
         },
         "workerManager": {
           "initialWeight": 0.9,
-          "launchConfigId": "lc-9632d70a324a021d4770",
+          "launchConfigId": "lc-30a3fc4f809eb57193b4",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-mozillavpn-3-b-win2022"
@@ -283,7 +287,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\n",
   "emailOnError": true,
-  "lastModified": "2026-09-03T17:32:00.262Z",
+  "lastModified": "2026-09-08T14:14:31.254Z",
   "owner": "relops-azure-provisioning@mozilla.com",
   "providerId": "azure_trusted",
   "requestedCapacity": 0,

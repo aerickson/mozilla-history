@@ -27,6 +27,7 @@
     "notify:email:*",
     "purge-cache:all-purge-requests",
     "purge-cache:purge-requests:*",
+    "queue:cancel-task-group:gecko-level-1/*",
     "queue:claimed-count:*",
     "queue:create-task:highest:code-review/bot",
     "queue:create-task:project:none",
@@ -46,6 +47,7 @@
     "queue:route:index.project.relman.production.code-review.*",
     "queue:route:notify.email.*",
     "queue:scheduler-id:relman",
+    "queue:seal-task-group:gecko-level-1/*",
     "queue:status:*",
     "secrets:get:project/relman/code-review/runtime-production",
     "secrets:list-secrets",
@@ -57,7 +59,7 @@
     "worker-manager:list-worker-pools",
     "worker-manager:list-workers:*"
   ],
-  "lastModified": "2026-05-05T18:24:44.877Z",
+  "lastModified": "2026-09-10T16:09:23.838Z",
   "roleId": "hook-id:project-relman/code-review-production",
   "scopes": [
     "assume:anonymous",
@@ -66,11 +68,13 @@
     "hooks:trigger-hook:project-releng/services-production-*",
     "index:insert-task:project.relman.production.code-review.*",
     "notify:email:*",
+    "queue:cancel-task-group:gecko-level-1/*",
     "queue:create-task:highest:code-review/bot",
     "queue:route:index.project.releng.services.project.production.static_analysis_bot.*",
     "queue:route:index.project.relman.production.code-review.*",
     "queue:route:notify.email.*",
     "queue:scheduler-id:relman",
+    "queue:seal-task-group:gecko-level-1/*",
     "secrets:get:project/relman/code-review/runtime-production"
   ]
 }

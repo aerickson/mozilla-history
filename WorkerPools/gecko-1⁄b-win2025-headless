@@ -33,6 +33,7 @@
               "disableReboots": true,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 150,
+              "enableInteractive": true,
               "livelogExecutable": "C:\\generic-worker\\livelog.exe",
               "numberOfTasksToRun": 0,
               "workerTypeMetaData": {
@@ -83,7 +84,7 @@
         },
         "workerManager": {
           "initialWeight": 1,
-          "launchConfigId": "lc-25a12b3a5328d0a3af9c",
+          "launchConfigId": "lc-6717a3cc4282ff3a3daf",
           "capacityPerInstance": 1
         },
         "armDeploymentResourceGroup": "rg-tc-gecko-1-b-win2025-headless"
@@ -94,7 +95,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\n",
   "emailOnError": true,
-  "lastModified": "2026-08-19T22:53:03.246Z",
+  "lastModified": "2026-09-08T14:14:31.625Z",
   "owner": "relops-azure-provisioning@mozilla.com",
   "providerId": "azure2",
   "requestedCapacity": 0,

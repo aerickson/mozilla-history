@@ -1,0 +1,18 @@
+{
+  "created": "2026-09-10T14:24:14.734Z",
+  "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nScopes in this role are defined in [fxci-config/grants.d](https://github.com/mozilla-releng/fxci-config/blob/main/grants.d).",
+  "expandedScopes": [
+    "assume:worker-type:proj-taskcluster/*",
+    "auth:sentry:generic-worker",
+    "auth:websocktunnel-token:firefoxcitc/*",
+    "queue:claim-work:proj-taskcluster/*",
+    "queue:worker-id:*",
+    "secrets:get:worker-pool:proj-taskcluster/*",
+    "secrets:get:worker-type:proj-taskcluster/*"
+  ],
+  "lastModified": "2026-09-10T14:24:14.734Z",
+  "roleId": "worker-type:proj-taskcluster/*",
+  "scopes": [
+    "auth:sentry:generic-worker"
+  ]
+}

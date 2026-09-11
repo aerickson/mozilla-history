@@ -38,6 +38,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 300,
+              "enableInteractive": false,
               "livelogExecutable": "/usr/local/bin/livelog",
               "numberOfTasksToRun": 0,
               "taskclusterProxyPort": 80,
@@ -49,7 +50,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-7ac7fd09d1cbcf90bc81",
+          "launchConfigId": "lc-1149f13073ca35f2b941",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Ampere Altra",
@@ -92,6 +93,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 300,
+              "enableInteractive": false,
               "livelogExecutable": "/usr/local/bin/livelog",
               "numberOfTasksToRun": 0,
               "taskclusterProxyPort": 80,
@@ -103,7 +105,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-eba471261b1e1f8fe4e2",
+          "launchConfigId": "lc-ca754caf8863cb7f1ccd",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Ampere Altra",
@@ -146,6 +148,7 @@
               "disableReboots": false,
               "cleanUpTaskDirs": true,
               "idleTimeoutSecs": 300,
+              "enableInteractive": false,
               "livelogExecutable": "/usr/local/bin/livelog",
               "numberOfTasksToRun": 0,
               "taskclusterProxyPort": 80,
@@ -157,7 +160,7 @@
           }
         },
         "workerManager": {
-          "launchConfigId": "lc-f61bb8f9149954f6a4c3",
+          "launchConfigId": "lc-12c8ce579ee82a1fb68e",
           "capacityPerInstance": 1
         },
         "minCpuPlatform": "Ampere Altra",
@@ -177,7 +180,7 @@
   "currentCapacity": 0,
   "description": "*DO NOT EDIT* - This resource is configured automatically by [ci-admin](https://github.com/mozilla-releng/fxci-config).\n\nLinux ARM64 VM for Firefox automation.",
   "emailOnError": true,
-  "lastModified": "2025-08-14T14:05:07.656Z",
+  "lastModified": "2026-09-08T14:14:32.566Z",
   "owner": "release+tc-workers@mozilla.com",
   "providerId": "fxci-level3-gcp",
   "requestedCapacity": 0,
