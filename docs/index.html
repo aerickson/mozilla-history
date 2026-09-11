@@ -586,6 +586,10 @@
         ghCompatibleHeaderId: true,
         tables: true,
       })).makeHtml(text)
+      // Markdown needs an absolute link on GitHub; the website has its own timeline.
+      document.querySelectorAll(
+        '#content a[href="https://taskcluster.github.io/mozilla-history/migration.html"]',
+      ).forEach(link => { link.href = new URL('./migration.html', baseUrl).href })
     }
 
     function slugify(value) {

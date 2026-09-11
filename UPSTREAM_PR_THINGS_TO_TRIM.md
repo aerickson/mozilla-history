@@ -64,8 +64,8 @@ regression coverage; it does not belong in the separate publishing PR.
 - [x] Keep the Docker Worker paragraph's public migration link compatible with
   Pages. Publishing `docs/` at the site root preserves
   `https://taskcluster.github.io/mozilla-history/migration.html`.
-- [ ] Consider making the Docker Worker timeline link use the preview's own
-  migration page when viewing a local or fork preview.
+- [x] Make the Docker Worker timeline link use the website's own migration page
+  when rendering the report, while retaining the absolute public URL in Markdown.
 
 ## Keep in the core report PR
 
