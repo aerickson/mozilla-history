@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firefox-CI &mdash; docker-worker to generic-worker migration</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --surface-1: #fcfcfb;
+      --plane: #f9f9f7;
+      --text-primary: #0b0b0b;
+      --text-secondary: #52514e;
+      --text-muted: #898781;
+      --grid: #e1e0d9;
+      --axis: #c3c2b7;
+      --border: rgba(11, 11, 11, 0.10);
+      --series-1: #2a78d6;
+      /* generic-worker */
+      --series-2: #eb6834;
+      /* docker-worker */
+      --series-3: #1baf7a;
+      /* Scriptworker */
+      --de-emphasis: #c3c2b7;
+      /* not determined */
+      --good: #0ca30c;
+      --critical: #d03b3b;
+      /* sequential ramp, near-zero -> dominant */
+      --heat-1: #cde2fb;
+      --heat-2: #9ec5f4;
+      --heat-3: #6da7ec;
+      --heat-4: #3987e5;
+      --heat-5: #256abf;
+      --heat-6: #104281;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:where(:not([data-theme="light"])) {
+        color-scheme: dark;
+        --surface-1: #1a1a19;
+        --plane: #0d0d0d;
+        --text-primary: #ffffff;
+        --text-secondary: #c3c2b7;
+        --text-muted: #898781;
+        --grid: #2c2c2a;
+        --axis: #383835;
+        --border: rgba(255, 255, 255, 0.10);
+        --series-1: #3987e5;
+        --series-2: #d95926;
+        --series-3: #199e70;
+        --de-emphasis: #4a4a46;
+        /* the ramp is re-stepped for the dark surface: more is still further
+           from the surface, which means lighter here */
+        --heat-1: #184f95;
+        --heat-2: #256abf;
+        --heat-3: #3987e5;
+        --heat-4: #6da7ec;
+        --heat-5: #9ec5f4;
+        --heat-6: #cde2fb;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--plane);
+      color: var(--text-primary);
+      font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin: 0 0 4px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 0 0 2px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--series-1);
+    }
+
+    .source,
+    .note,
+    .sub {
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .source span+span::before {
+      content: " · ";
+    }
+
+    .note {
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .card {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin-top: 18px;
+    }
+
+    /* One filter row, above everything it scopes. */
+    .controls {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 16px;
+      margin-top: 16px;
+    }
+
+    .controls button,
+    .controls select {
+      font: inherit;
+      color: inherit;
+      background: var(--plane);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 12px;
+      cursor: pointer;
+    }
+
+    #play {
+      min-width: 96px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .controls input[type=range] {
+      flex: 1 1 260px;
+      min-width: 200px;
+      accent-color: var(--series-1);
+    }
+
+    .month-badge {
+      font-size: 17px;
+      font-weight: 600;
+      min-width: 116px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Hero + stat tiles */
+    .kpis {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      align-items: flex-end;
+    }
+
+    .hero-value {
+      font-size: 58px;
+      font-weight: 650;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .tile {
+      min-width: 128px;
+    }
+
+    .tile .label,
+    .hero .label {
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .tile .value {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    .delta {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .delta .dir {
+      font-weight: 600;
+    }
+
+    .delta.good .dir {
+      color: var(--good);
+    }
+
+    .delta.bad .dir {
+      color: var(--critical);
+    }
+
+    /* Balance bar: 100% stacked, 2px surface gaps doing the separating. */
+    .balance {
+      display: flex;
+      gap: 2px;
+      height: 34px;
+      margin-top: 18px;
+    }
+
+    .balance div {
+      border-radius: 2px;
+      transition: width .38s ease;
+      overflow: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .legend span {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .legend i {
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .legend i.line {
+      height: 3px;
+      border-radius: 2px;
+    }
+
+    /* Below ~760px the axis labels would shrink past readable, so the charts
+       scroll sideways instead of scaling down. */
+    .chart {
+      overflow-x: auto;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      min-width: 720px;
+      height: auto;
+      overflow: visible;
+    }
+
+    svg text {
+      fill: var(--text-muted);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tick line {
+      stroke: var(--grid);
+      stroke-width: 1;
+    }
+
+    .axis line {
+      stroke: var(--axis);
+      stroke-width: 1;
+    }
+
+    .col-group {
+      cursor: pointer;
+    }
+
+    .col-group:focus {
+      outline: none;
+    }
+
+    .col-hit {
+      fill: transparent;
+    }
+
+    .col-group:hover .col-hit,
+    .col-group:focus .col-hit {
+      fill: var(--grid);
+      opacity: .55;
+    }
+
+    .future {
+      opacity: .18;
+    }
+
+    .playhead {
+      stroke: var(--text-primary);
+      stroke-width: 2;
+      opacity: .45;
+    }
+
+    .month-label-now {
+      fill: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* Version bar race */
+    .race {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 8px 12px;
+      align-items: center;
+      margin-top: 6px;
+    }
+
+    .race .name {
+      text-align: right;
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+      color: var(--text-secondary);
+      transition: opacity .2s ease;
+    }
+
+    .race .track {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 20px;
+    }
+
+    .race .bar {
+      height: 16px;
+      border-radius: 0 4px 4px 0;
+      background: var(--de-emphasis);
+      transition: width .38s ease, background-color .38s ease;
+    }
+
+    .race .bar.lead {
+      background: var(--series-1);
+    }
+
+    .race .num {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Table view */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    th,
+    td {
+      text-align: right;
+      padding: 4px 10px;
+      border-bottom: 1px solid var(--grid);
+      white-space: nowrap;
+    }
+
+    th:first-child,
+    td:first-child {
+      text-align: left;
+    }
+
+    thead th {
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    tbody tr.now td {
+      background: var(--grid);
+    }
+
+    #tooltip {
+      position: fixed;
+      z-index: 20;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .12s ease;
+      background: var(--surface-1);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .16);
+      padding: 8px 11px;
+      font-size: 13px;
+      max-width: 290px;
+    }
+
+    #tooltip .tt-title {
+      color: var(--text-secondary);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    #tooltip .tt-row {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    #tooltip .tt-row i {
+      width: 12px;
+      height: 3px;
+      border-radius: 2px;
+      flex: none;
+    }
+
+    #tooltip .tt-row b {
+      font-variant-numeric: tabular-nums;
+    }
+
+    #tooltip .tt-row span {
+      color: var(--text-secondary);
+    }
+
+    .error {
+      padding: 12px 16px;
+      border: 1px solid var(--critical);
+      border-left-width: 4px;
+      border-radius: 6px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .balance div,
+      .race .bar,
+      .race .name {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="viz-root">
+    <main>
+      <h1>docker-worker &rarr; generic-worker</h1>
+      <p class="sub">How the Firefox-CI worker pool fleet changed, month by month.</p>
+      <p class="source" id="source"></p>
+
+      <div class="controls">
+        <button id="play" type="button" aria-label="Play the timeline">&#9654;&nbsp; Play</button>
+        <span class="month-badge" id="month-badge">&nbsp;</span>
+        <input type="range" id="scrubber" min="0" max="0" value="0" step="1" aria-label="Month">
+        <label>Speed
+          <select id="speed" aria-label="Playback speed">
+            <option value="1">1&times;</option>
+            <option value="2">2&times;</option>
+            <option value="0.5">0.5&times;</option>
+          </select>
+        </label>
+        <button id="table-toggle" type="button" aria-expanded="false">Show data table</button>
+      </div>
+
+      <div id="app">
+        <section class="card">
+          <h2>The balance</h2>
+          <p class="sub" id="balance-sub">&nbsp;</p>
+          <div class="kpis" style="margin-top:14px">
+            <div class="hero">
+              <div class="label">docker-worker pools left</div>
+              <div class="hero-value" id="hero-value">&ndash;</div>
+              <div class="delta" id="hero-delta">&nbsp;</div>
+            </div>
+            <div class="tile">
+              <div class="label">generic-worker pools</div>
+              <div class="value" id="tile-gw">&ndash;</div>
+              <div class="delta" id="tile-gw-delta">&nbsp;</div>
+            </div>
+            <div class="tile">
+              <div class="label">generic-worker share</div>
+              <div class="value" id="tile-share">&ndash;</div>
+              <div class="delta" id="tile-share-delta">&nbsp;</div>
+            </div>
+            <div class="tile">
+              <div class="label">pools audited</div>
+              <div class="value" id="tile-total">&ndash;</div>
+              <div class="delta">&nbsp;</div>
+            </div>
+          </div>
+          <div class="balance" id="balance"></div>
+          <div class="legend" id="legend-impl"></div>
+        </section>
+
+        <section class="card">
+          <h2>Worker pools by implementation</h2>
+          <p class="sub">One column per month; months after the playhead are dimmed as the timeline runs.</p>
+          <div class="chart" id="chart-impl"></div>
+          <div class="legend" id="legend-impl-2"></div>
+        </section>
+
+        <section class="card">
+          <h2>generic-worker rollout</h2>
+          <p class="sub">Share of generic-worker pools on each major version, newest at the top. Each release
+            rolls out as a dark band; the pale tail below it is what never got upgraded.</p>
+          <div class="chart" id="chart-rollout"></div>
+          <div class="legend" id="legend-heat"></div>
+        </section>
+
+        <section class="card">
+          <h2>Top generic-worker versions in <span id="race-month">&ndash;</span></h2>
+          <p class="sub">Exact versions, most-deployed first. The month's leading version is highlighted.</p>
+          <div class="race" id="race"></div>
+        </section>
+
+        <section class="card" id="table-card" hidden>
+          <h2>Monthly data</h2>
+          <p class="sub">Every value in the charts above, as numbers.</p>
+          <div id="table" style="overflow-x:auto;margin-top:10px"></div>
+        </section>
+      </div>
+
+      <p class="note" id="disclaimer"></p>
+      <p class="note"><a href="./index.html">&larr; Back to the worker versions report</a></p>
+    </main>
+  </div>
+  <div id="tooltip" role="status" aria-live="polite"></div>
+
+  <script type="module">
+    const baseUrl = new URL('.', window.location.href)
+    const repo = baseUrl.pathname.split('/').filter(Boolean)[0] || 'mozilla-history'
+    const historyUrl = new URL('history.json', baseUrl)
+
+    const IMPLS = [
+      { key: 'generic-worker', label: 'generic-worker', color: 'var(--series-1)' },
+      { key: 'docker-worker', label: 'docker-worker', color: 'var(--series-2)' },
+      { key: 'Scriptworker', label: 'Scriptworker', color: 'var(--series-3)' },
+      { key: 'unknown', label: 'not determined', color: 'var(--de-emphasis)' },
+    ]
+    // Shares below the first stop leave the cell empty, so "a single straggler
+    // pool" does not read the same as "a live release".
+    const HEAT_STOPS = [0.005, 0.02, 0.05, 0.10, 0.25, 0.50]
+    const RACE_ROWS = 8
+    // Major versions under this peak share are folded into one bottom row.
+    const MAJOR_MIN_PEAK = 0.02
+    const STEP_MS = 520
+
+    const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const monthLabel = m => `${MONTH_NAMES[+m.slice(5, 7) - 1]} ${m.slice(0, 4)}`
+    const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
+    const pct = x => `${Math.round(x * 100)}%`
+
+    // The audit has renamed implementations over the years and reports missing
+    // data as an empty string; fold both so a series does not split in two.
+    function normalizeImpl(name) {
+      if (!name) return 'unknown'
+      if (/^scriptworker/i.test(name)) return 'Scriptworker'
+      return name
+    }
+
+    function majorOf(version) {
+      const m = /^(\d+)\./.exec(String(version).trim())
+      return m ? +m[1] : null
+    }
+
+    function addMonth(m) {
+      const y = +m.slice(0, 4), n = +m.slice(5, 7)
+      return n === 12 ? `${y + 1}-01` : `${y}-${String(n + 1).padStart(2, '0')}`
+    }
+
+    // One point per calendar month, taken from that month's last snapshot. The
+    // audit has skipped whole months, so gaps carry the previous month forward
+    // rather than leaving holes in the timeline.
+    function toMonthly(history) {
+      const latest = new Map()
+      for (const date of Object.keys(history).sort()) latest.set(date.slice(0, 7), date)
+
+      const months = [...latest.keys()].sort()
+      const series = []
+      for (let m = months[0]; m <= months[months.length - 1]; m = addMonth(m)) {
+        const date = latest.get(m)
+        if (!date) {
+          const prev = series[series.length - 1]
+          series.push({ ...prev, month: m, carried: true })
+          continue
+        }
+        const snapshot = history[date]
+        const impl = {}
+        for (const [name, count] of Object.entries(snapshot.implementations)) {
+          const key = normalizeImpl(name)
+          impl[key] = (impl[key] || 0) + count
+        }
+        const versions = {}
+        for (const [name, byVersion] of Object.entries(snapshot.versionsByImplementation || {})) {
+          if (normalizeImpl(name) !== 'generic-worker') continue
+          for (const [version, count] of Object.entries(byVersion)) {
+            if (!majorOf(version)) continue
+            versions[version] = (versions[version] || 0) + count
+          }
+        }
+        const majors = {}
+        for (const [version, count] of Object.entries(versions)) {
+          const major = majorOf(version)
+          majors[major] = (majors[major] || 0) + count
+        }
+        series.push({
+          month: m, date, carried: false, impl, versions, majors,
+          total: Object.values(impl).reduce((a, b) => a + b, 0),
+          gwTotal: Object.values(versions).reduce((a, b) => a + b, 0),
+        })
+      }
+      return series
+    }
+
+    /* ---------- tooltip ---------- */
+
+    const tooltip = document.getElementById('tooltip')
+
+    function showTooltip(event, title, rows) {
+      tooltip.replaceChildren()
+      const head = document.createElement('div')
+      head.className = 'tt-title'
+      head.textContent = title
+      tooltip.append(head)
+      for (const row of rows) {
+        const line = document.createElement('div')
+        line.className = 'tt-row'
+        if (row.color) {
+          const key = document.createElement('i')
+          key.style.background = row.color
+          line.append(key)
+        }
+        const value = document.createElement('b')
+        value.textContent = row.value
+        const name = document.createElement('span')
+        name.textContent = row.label
+        line.append(value, name)
+        tooltip.append(line)
+      }
+      const box = (event.target.ownerSVGElement || event.target).getBoundingClientRect
+        ? event.target.getBoundingClientRect()
+        : null
+      const x = event.clientX ?? (box ? box.left + box.width / 2 : 0)
+      const y = event.clientY ?? (box ? box.top : 0)
+      tooltip.style.opacity = '1'
+      const width = tooltip.offsetWidth, height = tooltip.offsetHeight
+      tooltip.style.left = `${Math.min(Math.max(8, x + 14), window.innerWidth - width - 8)}px`
+      tooltip.style.top = `${Math.max(8, y - height - 12)}px`
+    }
+
+    const hideTooltip = () => { tooltip.style.opacity = '0' }
+
+    /* ---------- state ---------- */
+
+    let monthly = []
+    let index = 0
+    let playing = false
+    let timer = null
+    let majorRows = []
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    const at = i => monthly[Math.max(0, Math.min(monthly.length - 1, i))]
+
+    /* ---------- static chart: pools by implementation ---------- */
+
+    const W = 960, H = 400, PAD = { l: 46, r: 14, t: 14, b: 40 }
+    const plotW = W - PAD.l - PAD.r, plotH = H - PAD.t - PAD.b
+
+    function band() { return plotW / monthly.length }
+    function colX(i) { return PAD.l + band() * i }
+
+    function niceTicks(max) {
+      const step = max > 800 ? 200 : max > 400 ? 100 : max > 150 ? 50 : 20
+      const ticks = []
+      // one tick past the peak, so the tallest column stays inside the plot
+      for (let v = 0; v <= max + step; v += step) ticks.push(v)
+      return ticks
+    }
+
+    function renderImplChart() {
+      const max = Math.max(...monthly.map(m => m.total))
+      const ticks = niceTicks(max)
+      const top = ticks[ticks.length - 1]
+      const y = v => PAD.t + plotH - (v / top) * plotH
+      const barW = Math.min(24, band() - 4)
+      const dx = (band() - barW) / 2
+
+      const grid = ticks.map(v =>
+        `<g class="tick"><line x1="${PAD.l}" x2="${W - PAD.r}" y1="${y(v)}" y2="${y(v)}"/>` +
+        `<text x="${PAD.l - 8}" y="${y(v) + 4}" text-anchor="end" font-size="11">${v}</text></g>`).join('')
+
+      const columns = monthly.map((point, i) => {
+        const x = colX(i) + dx
+        let cursor = 0
+        const pieces = []
+        const stack = IMPLS.filter(s => (point.impl[s.key] || 0) > 0)
+        stack.forEach((series, n) => {
+          const count = point.impl[series.key]
+          const isTop = n === stack.length - 1
+          const y1 = y(cursor + count), y0 = y(cursor)
+          // 2px surface gap between segments, and a 4px rounded data-end on the
+          // topmost one; the baseline end stays square.
+          const height = Math.max(1, y0 - y1 - (isTop ? 0 : 2))
+          const r = isTop ? Math.min(4, height / 2, barW / 2) : 0
+          const d = isTop
+            ? `M${x} ${y1 + height} V${y1 + r} a${r} ${r} 0 0 1 ${r} ${-r} h${barW - 2 * r} a${r} ${r} 0 0 1 ${r} ${r} V${y1 + height} Z`
+            : `M${x} ${y1 + height} V${y1} h${barW} v${height} Z`
+          pieces.push(`<path d="${d}" fill="${series.color}"/>`)
+          cursor += count
+        })
+        const label = point.month.endsWith('-01') || point.month.endsWith('-07')
+          ? `<text class="month-tick" data-i="${i}" x="${colX(i) + band() / 2}" y="${H - PAD.b + 16}" text-anchor="middle" font-size="10" transform="rotate(-40 ${colX(i) + band() / 2} ${H - PAD.b + 16})">${esc(monthLabel(point.month))}</text>`
+          : ''
+        return `<g class="col-group" data-i="${i}" tabindex="0" role="button" ` +
+          `aria-label="${esc(monthLabel(point.month))}: ${point.total} pools">` +
+          `<rect class="col-hit" x="${colX(i)}" y="${PAD.t}" width="${band()}" height="${plotH}"/>` +
+          pieces.join('') + `</g>${label}`
+      }).join('')
+
+      document.getElementById('chart-impl').innerHTML =
+        `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Worker pools by implementation, monthly">` +
+        grid +
+        `<g id="impl-cols">${columns}</g>` +
+        `<g class="axis"><line x1="${PAD.l}" x2="${W - PAD.r}" y1="${y(0)}" y2="${y(0)}"/></g>` +
+        `<line id="impl-playhead" class="playhead" x1="0" x2="0" y1="${PAD.t - 6}" y2="${y(0)}"/>` +
+        `</svg>`
+
+      wireColumns(document.getElementById('chart-impl'), (point) => ({
+        title: monthLabel(point.month) + (point.carried ? ' (no snapshot, carried forward)' : ''),
+        rows: IMPLS.filter(s => point.impl[s.key]).map(s => ({
+          color: s.color, value: String(point.impl[s.key]), label: s.label,
+        })).concat([{ value: String(point.total), label: 'pools total' }]),
+      }))
+    }
+
+    /* ---------- static chart: rollout heatmap ---------- */
+
+    function rolloutRows() {
+      const peak = new Map()
+      for (const point of monthly) {
+        if (!point.gwTotal) continue
+        for (const [major, count] of Object.entries(point.majors)) {
+          const share = count / point.gwTotal
+          if (share > (peak.get(+major) || 0)) peak.set(+major, share)
+        }
+      }
+      const kept = [...peak.entries()].filter(([, share]) => share >= MAJOR_MIN_PEAK)
+        .map(([major]) => major).sort((a, b) => b - a)
+      const folded = [...peak.keys()].filter(major => !kept.includes(major)).sort((a, b) => b - a)
+      return { kept, folded }
+    }
+
+    function heatStep(share) {
+      if (!(share > 0)) return 0
+      let step = 0
+      for (const stop of HEAT_STOPS) if (share >= stop) step++
+      return Math.max(1, step)
+    }
+
+    function renderRolloutChart() {
+      const { kept, folded } = rolloutRows()
+      majorRows = kept
+      const rows = kept.map(major => ({ key: major, label: String(major), majors: [major] }))
+      if (folded.length) rows.push({ key: 'older', label: `older (${folded.length})`, majors: folded })
+
+      const cellH = 15, gutter = 58, top = 10, bottom = 42
+      const height = top + rows.length * cellH + bottom
+      const w = band() - 2
+
+      const share = (point, row) => point.gwTotal
+        ? row.majors.reduce((sum, major) => sum + (point.majors[major] || 0), 0) / point.gwTotal
+        : 0
+      const count = (point, row) =>
+        row.majors.reduce((sum, major) => sum + (point.majors[major] || 0), 0)
+
+      const body = rows.map((row, r) => {
+        const y = top + r * cellH
+        const cells = monthly.map((point, i) => {
+          const step = heatStep(share(point, row))
+          if (!step) return ''
+          return `<rect x="${colX(i) + 1}" y="${y + 1}" width="${w}" height="${cellH - 2}" rx="2" fill="var(--heat-${step})"/>`
+        }).join('')
+        return `<g><text x="${gutter - 10}" y="${y + cellH - 4}" text-anchor="end" font-size="11">${esc(row.label)}</text>${cells}</g>`
+      }).join('')
+
+      const hits = monthly.map((point, i) =>
+        `<g class="col-group" data-i="${i}" tabindex="0" role="button" ` +
+        `aria-label="${esc(monthLabel(point.month))} version mix">` +
+        `<rect class="col-hit" x="${colX(i)}" y="${top}" width="${band()}" height="${rows.length * cellH}"/></g>`).join('')
+
+      const labels = monthly.map((point, i) => (point.month.endsWith('-01') || point.month.endsWith('-07'))
+        ? `<text class="month-tick" data-i="${i}" x="${colX(i) + band() / 2}" y="${top + rows.length * cellH + 16}" text-anchor="middle" font-size="10" transform="rotate(-40 ${colX(i) + band() / 2} ${top + rows.length * cellH + 16})">${esc(monthLabel(point.month))}</text>`
+        : '').join('')
+
+      document.getElementById('chart-rollout').innerHTML =
+        `<svg viewBox="0 0 ${W} ${height}" role="img" aria-label="generic-worker major version share by month">` +
+        `<text x="${gutter - 10}" y="${top - 1}" text-anchor="end" font-size="10">major</text>` +
+        body + hits + labels +
+        `<line id="rollout-playhead" class="playhead" x1="0" x2="0" y1="${top - 4}" y2="${top + rows.length * cellH + 4}"/>` +
+        `</svg>`
+
+      wireColumns(document.getElementById('chart-rollout'), (point) => {
+        const present = rows
+          .map(row => ({ row, n: count(point, row) }))
+          .filter(entry => entry.n > 0)
+          .sort((a, b) => b.n - a.n)
+          .slice(0, 6)
+        return {
+          title: `${monthLabel(point.month)} · ${point.gwTotal} generic-worker pools`,
+          rows: present.map(({ row, n }) => ({
+            color: `var(--heat-${heatStep(share(point, row))})`,
+            value: `${n} (${pct(n / point.gwTotal)})`,
+            label: row.majors.length > 1 ? row.label : `v${row.label}.x`,
+          })),
+        }
+      })
+
+      document.getElementById('legend-heat').innerHTML =
+        `<span>share of generic-worker pools</span>` +
+        HEAT_STOPS.map((stop, n) =>
+          `<span><i style="background:var(--heat-${n + 1})"></i>&ge; ${+(stop * 100).toFixed(1)}%</span>`).join('')
+    }
+
+    // Hover, focus and click all address a month column; clicking scrubs there.
+    function wireColumns(root, describe) {
+      root.querySelectorAll('.col-group').forEach(group => {
+        const point = monthly[+group.dataset.i]
+        const show = event => {
+          const { title, rows } = describe(point)
+          showTooltip(event, title, rows)
+        }
+        group.addEventListener('pointermove', show)
+        group.addEventListener('pointerleave', hideTooltip)
+        group.addEventListener('focus', show)
+        group.addEventListener('blur', hideTooltip)
+        group.addEventListener('click', () => setIndex(+group.dataset.i, { pause: true }))
+        group.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault()
+            setIndex(+group.dataset.i, { pause: true })
+          }
+        })
+      })
+    }
+
+    /* ---------- per-month rendering ---------- */
+
+    function renderBalance(point) {
+      const bar = document.getElementById('balance')
+      if (!bar.children.length) {
+        for (const series of IMPLS) {
+          const segment = document.createElement('div')
+          segment.style.background = series.color
+          segment.dataset.key = series.key
+          segment.tabIndex = 0
+          segment.setAttribute('role', 'img')
+          const describe = event => showTooltip(event,
+            `${monthLabel(at(index).month)} · ${series.label}`,
+            [{
+              color: series.color,
+              value: `${at(index).impl[series.key] || 0} (${pct((at(index).impl[series.key] || 0) / at(index).total)})`,
+              label: 'worker pools',
+            }])
+          segment.addEventListener('pointermove', describe)
+          segment.addEventListener('pointerleave', hideTooltip)
+          segment.addEventListener('focus', describe)
+          segment.addEventListener('blur', hideTooltip)
+          bar.append(segment)
+        }
+      }
+      for (const segment of bar.children) {
+        const count = point.impl[segment.dataset.key] || 0
+        const share = count / point.total
+        segment.style.width = `${share * 100}%`
+        segment.setAttribute('aria-label',
+          `${segment.dataset.key}: ${count} pools, ${pct(share)}`)
+        // A label only goes inside the segment when it demonstrably fits.
+        segment.textContent = share >= 0.12 ? pct(share) : ''
+        segment.style.color = segment.dataset.key === 'unknown' ? 'var(--text-primary)' : '#ffffff'
+      }
+    }
+
+    function setDelta(el, current, previous, monthText, { upIsGood }) {
+      // a non-breaking space, so the tile keeps its height when there is no
+      // year-ago month to compare against
+      if (previous === null || previous === undefined) { el.textContent = '\u00a0'; return }
+      const diff = current - previous
+      const good = diff === 0 ? null : (diff > 0) === upIsGood
+      el.className = 'delta' + (good === null ? '' : good ? ' good' : ' bad')
+      el.replaceChildren()
+      const dir = document.createElement('span')
+      dir.className = 'dir'
+      dir.textContent = diff === 0 ? '±0' : `${diff > 0 ? '▲' : '▼'} ${Math.abs(diff)}`
+      const rest = document.createElement('span')
+      rest.textContent = ` vs ${monthText}`
+      el.append(dir, rest)
+    }
+
+    function renderRace(point) {
+      const race = document.getElementById('race')
+      if (!race.children.length) {
+        for (let r = 0; r < RACE_ROWS; r++) {
+          const name = document.createElement('div')
+          name.className = 'name'
+          const track = document.createElement('div')
+          track.className = 'track'
+          const bar = document.createElement('div')
+          bar.className = 'bar'
+          const num = document.createElement('div')
+          num.className = 'num'
+          track.append(bar, num)
+          race.append(name, track)
+        }
+      }
+      const ranked = Object.entries(point.versions || {}).sort((a, b) => b[1] - a[1])
+      const max = ranked.length ? ranked[0][1] : 1
+      for (let r = 0; r < RACE_ROWS; r++) {
+        const name = race.children[r * 2]
+        const track = race.children[r * 2 + 1]
+        const [version, count] = ranked[r] || [null, 0]
+        name.textContent = version || ''
+        name.style.opacity = version ? '1' : '0'
+        track.firstChild.style.width = version ? `${(count / max) * 100}%` : '0%'
+        track.firstChild.classList.toggle('lead', r === 0 && !!version)
+        track.lastChild.textContent = version ? `${count}` : ''
+      }
+      document.getElementById('race-month').textContent = monthLabel(point.month)
+    }
+
+    function renderTable() {
+      const head = `<thead><tr><th>Month</th>` +
+        IMPLS.map(s => `<th>${esc(s.label)}</th>`).join('') +
+        `<th>total</th><th>gw share</th><th>top version</th><th>on it</th></tr></thead>`
+      const body = monthly.map((point, i) => {
+        const ranked = Object.entries(point.versions || {}).sort((a, b) => b[1] - a[1])
+        const [version, count] = ranked[0] || ['–', 0]
+        return `<tr data-i="${i}"><td>${esc(monthLabel(point.month))}${point.carried ? ' *' : ''}</td>` +
+          IMPLS.map(s => `<td>${point.impl[s.key] || 0}</td>`).join('') +
+          `<td>${point.total}</td><td>${pct((point.impl['generic-worker'] || 0) / point.total)}</td>` +
+          `<td>${esc(version)}</td><td>${count || '–'}</td></tr>`
+      }).join('')
+      document.getElementById('table').innerHTML =
+        `<table>${head}<tbody>${body}</tbody></table>` +
+        `<p class="note">* no audit ran that month; the previous month is carried forward.</p>`
+    }
+
+    function renderMonth() {
+      const point = at(index)
+      const yearAgo = index >= 12 ? monthly[index - 12] : null
+
+      document.getElementById('month-badge').textContent = monthLabel(point.month)
+      document.getElementById('scrubber').value = String(index)
+      document.getElementById('balance-sub').textContent =
+        point.carried
+          ? `${monthLabel(point.month)} — no audit ran; showing ${monthLabel(monthly[index - 1] ? monthly[index - 1].month : point.month)}`
+          : `Snapshot of ${point.date}`
+
+      const docker = point.impl['docker-worker'] || 0
+      const generic = point.impl['generic-worker'] || 0
+      document.getElementById('hero-value').textContent = docker
+      document.getElementById('tile-gw').textContent = generic
+      document.getElementById('tile-share').textContent = pct(generic / point.total)
+      document.getElementById('tile-total').textContent = point.total
+
+      const agoText = yearAgo ? monthLabel(yearAgo.month) : ''
+      setDelta(document.getElementById('hero-delta'), docker,
+        yearAgo ? (yearAgo.impl['docker-worker'] || 0) : null, agoText, { upIsGood: false })
+      setDelta(document.getElementById('tile-gw-delta'), generic,
+        yearAgo ? (yearAgo.impl['generic-worker'] || 0) : null, agoText, { upIsGood: true })
+      setDelta(document.getElementById('tile-share-delta'), Math.round(100 * generic / point.total),
+        yearAgo ? Math.round(100 * (yearAgo.impl['generic-worker'] || 0) / yearAgo.total) : null,
+        agoText, { upIsGood: true })
+
+      renderBalance(point)
+      renderRace(point)
+
+      // Playheads and the dimming of months the timeline has not reached yet.
+      const x = colX(index) + band() / 2
+      for (const id of ['impl-playhead', 'rollout-playhead']) {
+        const line = document.getElementById(id)
+        if (line) { line.setAttribute('x1', x); line.setAttribute('x2', x) }
+      }
+      document.querySelectorAll('#chart-impl g[data-i], #chart-rollout g[data-i]').forEach(g => {
+        g.classList.toggle('future', +g.dataset.i > index)
+      })
+      document.querySelectorAll('.month-tick').forEach(t => {
+        t.classList.toggle('month-label-now', +t.dataset.i === index)
+      })
+      document.querySelectorAll('#table tbody tr').forEach(tr => {
+        tr.classList.toggle('now', +tr.dataset.i === index)
+      })
+    }
+
+    /* ---------- playback ---------- */
+
+    function setIndex(next, { pause = false } = {}) {
+      index = Math.max(0, Math.min(monthly.length - 1, next))
+      if (pause) stop()
+      renderMonth()
+    }
+
+    function tick() {
+      if (index >= monthly.length - 1) { stop(); return }
+      setIndex(index + 1)
+    }
+
+    function start() {
+      if (index >= monthly.length - 1) index = 0
+      playing = true
+      document.getElementById('play').innerHTML = '&#10074;&#10074;&nbsp; Pause'
+      clearInterval(timer)
+      timer = setInterval(tick, STEP_MS / +document.getElementById('speed').value)
+      renderMonth()
+    }
+
+    function stop() {
+      playing = false
+      clearInterval(timer)
+      timer = null
+      document.getElementById('play').innerHTML = '&#9654;&nbsp; Play'
+    }
+
+    /* ---------- boot ---------- */
+
+    function renderLegends() {
+      const html = IMPLS.map(s =>
+        `<span><i style="background:${s.color}"></i>${esc(s.label)}</span>`).join('')
+      document.getElementById('legend-impl').innerHTML = html
+      document.getElementById('legend-impl-2').innerHTML = html
+    }
+
+    function renderSource(history) {
+      const repoUrl = `https://github.com/taskcluster/${repo}`
+      const dates = Object.keys(history).sort()
+      document.getElementById('source').innerHTML =
+        `<span>Source: <a href="${repoUrl}">taskcluster/${esc(repo)}</a></span>` +
+        `<span>Raw data: <a href="${esc(historyUrl.href)}">history.json</a></span>` +
+        `<span>${dates.length} audits, ${esc(dates[0])} to ${esc(dates[dates.length - 1])}</span>`
+      document.getElementById('disclaimer').textContent =
+        'Every number here counts worker pools, not workers, instances or tasks — a pool that runs ' +
+        'one task a week weighs the same as one that runs a million. Months are the last audit of ' +
+        'that month; months with no audit carry the previous one forward.'
+    }
+
+    async function init() {
+      let history
+      try {
+        const response = await fetch(historyUrl)
+        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`)
+        history = await response.json()
+      } catch (error) {
+        document.getElementById('app').innerHTML =
+          `<p class="error"><strong>Could not load history.json.</strong> ${esc(error.message)}</p>`
+        return
+      }
+
+      monthly = toMonthly(history)
+      index = monthly.length - 1
+      renderSource(history)
+      renderLegends()
+      renderImplChart()
+      renderRolloutChart()
+      renderTable()
+
+      const scrubber = document.getElementById('scrubber')
+      scrubber.max = String(monthly.length - 1)
+      scrubber.addEventListener('input', () => setIndex(+scrubber.value, { pause: true }))
+      document.getElementById('play').addEventListener('click', () => playing ? stop() : start())
+      document.getElementById('speed').addEventListener('change', () => { if (playing) start() })
+      document.getElementById('table-toggle').addEventListener('click', event => {
+        const card = document.getElementById('table-card')
+        card.hidden = !card.hidden
+        event.target.textContent = card.hidden ? 'Show data table' : 'Hide data table'
+        event.target.setAttribute('aria-expanded', String(!card.hidden))
+      })
+      document.addEventListener('keydown', event => {
+        if (event.target.matches('input, select, button')) return
+        if (event.key === 'ArrowRight') setIndex(index + 1, { pause: true })
+        if (event.key === 'ArrowLeft') setIndex(index - 1, { pause: true })
+      })
+
+      renderMonth()
+      // Autoplay tells the story on arrival — but never for readers who asked
+      // for less motion, and only from the start of the timeline.
+      if (!reduceMotion) { index = 0; start() }
+    }
+
+    init()
+  </script>
+</body>
+
+</html>

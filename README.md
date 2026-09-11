@@ -63,4 +63,8 @@ You can automate this reporting process by setting up a cron job to execute `run
    - Hooks definitions in `Hooks/`
    - Roles definitions in `Roles/`
    - WorkerPool definitions in `WorkerPool/`
-5. `build-docs-history.sh` generates a static page containing the version history
+5. `build-docs-history.sh` collects every past revision of `WorkerVersions/workers.json` into
+   `docs/history.json`, which feeds the two GitHub Pages views:
+   - `docs/index.html` &mdash; the current report plus the full history tables and graphs
+   - `docs/migration.html` &mdash; an animated month-by-month timeline of the docker-worker to
+     generic-worker migration and of the generic-worker version rollout

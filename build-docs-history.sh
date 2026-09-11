@@ -15,13 +15,21 @@
 		const implementations = {}
 		const versions = {}
 		const imagesets = {}
+		// versions keyed by implementation, because the version numbers of
+		// docker-worker and generic-worker share a numeric range and are
+		// indistinguishable once merged into a single bucket
+		const versionsByImplementation = {}
 		const inc = (dict, key) => dict[key] = (dict[key] || 0) + 1
 		data.forEach(worker => {
 			inc(implementations, worker.Implementation)
 			inc(versions, worker.Version)
 			inc(imagesets, worker.Imageset)
+			if (!versionsByImplementation[worker.Implementation]) {
+				versionsByImplementation[worker.Implementation] = {}
+			}
+			inc(versionsByImplementation[worker.Implementation], worker.Version)
 		})
-		return { implementations, versions, imagesets }
+		return { implementations, versions, imagesets, versionsByImplementation }
 	}
 
 	const out = {}
