@@ -274,7 +274,7 @@ func TestRenderReadmeExplainsIncompleteProbesInline(t *testing.T) {
 		"## Unknown implementation\n",
 		"claimed and resolved the probe task",
 		"did not publish a worker log artifact",
-		"## Unresponsive worker pools\n",
+		"## Unresponsive\n",
 		"did not claim the probe task",
 	} {
 		if !strings.Contains(got, want) {
