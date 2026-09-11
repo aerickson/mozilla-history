@@ -113,8 +113,9 @@ the first argument to override the default, for example `./run_local.sh 8080`.
 `.github/workflows/reports.yml` runs on Mondays at 07:23 UTC in
 `taskcluster/mozilla-history`, or manually through **Actions → Mozilla history
 reports → Run workflow**. Install it on the default branch to enable dispatch
-and scheduling. Fork schedules require the repository variable
-`ENABLE_SCHEDULED_REPORTS=true`; leave this unset while testing the fork.
+and scheduling. Scheduled report jobs run only in `taskcluster/mozilla-history`;
+they are skipped in forks. Manual runs remain available in forks, including
+publishing when dry_run is disabled. No scheduling variable is required.
 
 Configure repository Actions secrets `TASKCLUSTER_CLIENT_ID` and
 `TASKCLUSTER_ACCESS_TOKEN` with a dedicated Taskcluster client approved by the

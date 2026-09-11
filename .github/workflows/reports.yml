@@ -19,8 +19,8 @@ concurrency:
 
 jobs:
   reports:
-    # Forks must explicitly opt in to scheduling. Manual dry runs work on branches.
-    if: github.event_name == 'workflow_dispatch' || github.repository == 'taskcluster/mozilla-history' || vars.ENABLE_SCHEDULED_REPORTS == 'true'
+    # Scheduled runs are production-only. Manual runs remain available in forks.
+    if: github.event_name == 'workflow_dispatch' || github.repository == 'taskcluster/mozilla-history'
     runs-on: ubuntu-latest
     timeout-minutes: 150
     permissions:
