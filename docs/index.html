@@ -284,6 +284,18 @@
       width: 70%;
     }
 
+    .stale-probe-notice {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      padding: 0.75rem 1rem;
+      margin: 0.75rem 0 1rem;
+      background: #fff8e6;
+      border: 1px solid #e6cb83;
+      border-radius: 6px;
+      color: #684b10;
+    }
+
     .source {
       margin: 0 0 10px;
       color: inherit;
@@ -445,6 +457,7 @@
   <script type="module">
     import { decorateSortableTables } from './table-sort.js'
     import { enhanceTables } from './table-utils.js'
+    import { staleProbeAge } from './report-freshness.js'
 
     // Resolve against the directory, so both /<repo>/ and /<repo>/index.html work.
     const baseUrl = new URL('.', window.location.href)
@@ -521,6 +534,18 @@
       })
     }
 
+    function renderStaleProbeNotice(reportTiming) {
+      document.getElementById('stale-probe-notice')?.remove()
+      const age = staleProbeAge(reportTiming.textContent)
+      if (!age) return
+      const notice = document.createElement('p')
+      notice.id = 'stale-probe-notice'
+      notice.className = 'stale-probe-notice'
+      notice.setAttribute('role', 'status')
+      notice.innerHTML = `<span aria-hidden="true">⚠</span><span>Latest probe started <strong>${age}</strong>. Worker information may be out of date.</span>`
+      reportTiming.after(notice)
+    }
+
     function renderSource() {
       const repoUrl = `https://github.com/taskcluster/${repo}`
       const context = document.createElement('div')
@@ -537,6 +562,7 @@
       const coverage = document.createElement(reportTiming ? 'span' : 'p')
       coverage.id = 'history-coverage'
       if (reportTiming) {
+        renderStaleProbeNotice(reportTiming)
         const trailingText = reportTiming.lastChild
         const hasRevision = /\([a-f0-9]{9,40}(?:-dirty)?\)\s*$/.test(reportTiming.textContent)
         if (hasRevision && trailingText?.nodeType === Node.TEXT_NODE) {
