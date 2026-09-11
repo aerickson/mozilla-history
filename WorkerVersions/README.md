@@ -505,7 +505,7 @@ _Configured values were not collected in this snapshot. Legacy totals included s
 
 ## Docker Worker
 
-These pools use docker-worker to run tasks inside Docker containers. Docker-worker is fully deprecated, and its source repository has been removed.
+These pools use docker-worker to run tasks inside Docker containers. Docker-worker is fully deprecated, and its source repository has been removed. See the [worker migration timeline](https://taskcluster.github.io/mozilla-history/migration.html) for the transition to generic-worker.
 
 
 Total docker-worker pools: `2`

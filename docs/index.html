@@ -432,12 +432,8 @@
           </button>
         </div>
         <ul id="toc-list"></ul>
-        <a href="./migration.html">Migration timeline &rarr;</a>
       </nav>
       <div class="content-column">
-        <p class="info">Looking for the big picture? The <a href="./migration.html">docker-worker &rarr;
-          generic-worker migration timeline</a> animates the fleet balance and the version rollout month by
-          month.</p>
         <div class="content" id="content"></div>
         <div class="history" id="history-content"></div>
         <div class="graphs" id="graphs-content">
@@ -822,7 +818,10 @@
         `<h3>Implementations</h3>` +
         historyTable(history, dates, 'implementations') +
         `<h3>Versions</h3>` +
-        historyTable(history, dates, 'versions')
+        historyTable(history, dates, 'versions') +
+        `<h3>Worker Migration</h3>
+        <p>See the shift from docker-worker to generic-worker and version rollouts month by month.</p>
+        <p><a href="./migration.html">View migration timeline &rarr;</a></p>`
 
       document.getElementById('history-range').addEventListener('change', event => {
         rangeId = event.target.value
