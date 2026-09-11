@@ -7,6 +7,7 @@ import (
 	"html"
 	"net/url"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -37,6 +38,8 @@ type reportData struct {
 	ProbeStartedAt    string
 	TaskGroupURL      string
 	ReportGeneratedAt string
+	Revision          string
+	RevisionURL       string
 	Sections          [5]reportSection
 }
 
@@ -129,9 +132,10 @@ This report shows the latest detailed inventory of Firefox CI worker pools along
 - **Image and capacity metadata** come from Worker Manager.
 - **Summary values** are counts of worker pools, not individual workers or tasks.
 
-{{ if .ProbeStartedAt }}Probe run started: **{{ .ProbeStartedAt }}**{{ if .TaskGroupURL }} ([Taskcluster task group]({{ .TaskGroupURL }})){{ end }}{{ if .GeneratedAt }} · Results collected: **{{ .GeneratedAt }}**{{ end }}{{ if .ReportGeneratedAt }} · Report generated: **{{ .ReportGeneratedAt }}**{{ end }}
-{{ else if .GeneratedAt }}Results collected: **{{ .GeneratedAt }}**{{ if .ReportGeneratedAt }} · Report generated: **{{ .ReportGeneratedAt }}**{{ end }}
-{{ else if .ReportGeneratedAt }}Report generated: **{{ .ReportGeneratedAt }}**
+{{ define "generation" }}Report generated: **{{ .ReportGeneratedAt }}**{{ if .Revision }} ({{ if .RevisionURL }}[{{ .Revision }}]({{ .RevisionURL }}){{ else }}{{ .Revision }}{{ end }}){{ end }}{{ end }}
+{{ if .ProbeStartedAt }}Probe run started: **{{ .ProbeStartedAt }}**{{ if .TaskGroupURL }} ([Taskcluster task group]({{ .TaskGroupURL }})){{ end }}{{ if .GeneratedAt }} · Results collected: **{{ .GeneratedAt }}**{{ end }}{{ if .ReportGeneratedAt }} · {{ template "generation" . }}{{ end }}
+{{ else if .GeneratedAt }}Results collected: **{{ .GeneratedAt }}**{{ if .ReportGeneratedAt }} · {{ template "generation" . }}{{ end }}
+{{ else if .ReportGeneratedAt }}{{ template "generation" . }}
 {{ end }}
 
 {{ range .Sections }}
@@ -391,6 +395,39 @@ func renderReadme(snapshot WorkerSnapshot) string {
 	return renderReadmeAt(snapshot, time.Now())
 }
 
+// Read provenance before writing generated artifacts. Use origin so fork-only
+// commits link to the repository that actually contains them.
+func reportRevision(dir string) (revision, revisionURL string) {
+	git := func(args ...string) (string, error) {
+		cmd := exec.Command("git", args...)
+		cmd.Dir = dir
+		out, err := cmd.Output()
+		return strings.TrimSpace(string(out)), err
+	}
+	sha, err := git("rev-parse", "--verify", "HEAD")
+	if err != nil || len(sha) < 9 {
+		return "", ""
+	}
+	status, err := git("status", "--porcelain", "--untracked-files=all", "--", ":/", ":(top,exclude)WorkerVersions/**", ":(top,exclude).beads/**", ":(top,exclude)docs/history.json")
+	if err != nil {
+		return "", "" // Do not claim a clean revision if status is unavailable.
+	}
+	revision = sha[:9]
+	if status != "" {
+		revision += "-dirty"
+	}
+	remote, err := git("remote", "get-url", "origin")
+	if err == nil {
+		remote = strings.TrimSuffix(remote, ".git")
+		remote = strings.Replace(remote, "git@github.com:", "https://github.com/", 1)
+		remote = strings.Replace(remote, "ssh://git@github.com/", "https://github.com/", 1)
+		if strings.HasPrefix(remote, "https://github.com/") {
+			revisionURL = strings.TrimRight(remote, "/") + "/commit/" + sha
+		}
+	}
+	return revision, revisionURL
+}
+
 func renderReadmeAt(snapshot WorkerSnapshot, reportGeneratedAt time.Time) string {
 	workers := snapshot.Workers
 	sections := [5]reportSection{
@@ -403,6 +440,7 @@ func renderReadmeAt(snapshot WorkerSnapshot, reportGeneratedAt time.Time) string
 
 	const timestampFormat = "2006-01-02 15:04 UTC"
 	data := reportData{Sections: sections}
+	data.Revision, data.RevisionURL = reportRevision(".")
 	if snapshot.TaskGroupID != "" {
 		data.TaskGroupURL = "https://firefox-ci-tc.services.mozilla.com/tasks/groups/" + url.PathEscape(snapshot.TaskGroupID)
 	}
