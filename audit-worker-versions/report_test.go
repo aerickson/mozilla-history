@@ -2,11 +2,86 @@ package main
 
 import (
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 	"testing"
 	"time"
 )
+
+func TestReportRevision(t *testing.T) {
+	dir := t.TempDir()
+	git := func(args ...string) string {
+		t.Helper()
+		cmd := exec.Command("git", args...)
+		cmd.Dir = dir
+		out, err := cmd.CombinedOutput()
+		if err != nil {
+			t.Fatalf("git %v: %v: %s", args, err, out)
+		}
+		return strings.TrimSpace(string(out))
+	}
+	write := func(name, content string) {
+		t.Helper()
+		path := filepath.Join(dir, name)
+		if err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(path, []byte(content), 0644); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if revision, link := reportRevision(dir); revision != "" || link != "" {
+		t.Fatal("expected no revision outside a Git repository")
+	}
+	git("init")
+	git("config", "user.name", "Report test")
+	git("config", "user.email", "report@example.com")
+	git("config", "commit.gpgsign", "false")
+	git("remote", "add", "origin", "git@github.com:example/reports.git")
+	write("source.go", "original")
+	write("WorkerVersions/README.md", "original report")
+	git("add", ".")
+	git("commit", "-m", "initial")
+	sha := git("rev-parse", "HEAD")
+	check := func(suffix string) {
+		t.Helper()
+		revision, link := reportRevision(dir)
+		if revision != sha[:9]+suffix || link != "https://github.com/example/reports/commit/"+sha {
+			t.Fatalf("reportRevision() = (%q, %q)", revision, link)
+		}
+	}
+	check("")
+	write("WorkerVersions/README.md", "regenerated")
+	write("WorkerVersions/workers.json", "{}")
+	write(".beads/issues.jsonl", "{}")
+	write("docs/history.json", "{}")
+	check("")
+	write("source.go", "modified")
+	check("-dirty")
+	git("add", "source.go")
+	check("-dirty")
+	git("restore", "--staged", "source.go")
+	git("restore", "source.go")
+	write("new-source.go", "new")
+	check("-dirty")
+}
+
+func TestRenderRevisionBesideGenerationTime(t *testing.T) {
+	for _, revision := range []string{"697b57411", "697b57411-dirty"} {
+		for _, timings := range [][2]string{{"probe", "collected"}, {"", "collected"}, {"", ""}} {
+			got := renderTemplate(reportData{
+				ProbeStartedAt: timings[0], GeneratedAt: timings[1],
+				ReportGeneratedAt: "2026-09-10 22:34 UTC",
+				Revision:          revision, RevisionURL: "https://github.com/example/reports/commit/697b57411",
+			})
+			want := "Report generated: **2026-09-10 22:34 UTC** ([" + revision + "](https://github.com/example/reports/commit/697b57411))"
+			if !strings.Contains(got, want) {
+				t.Fatalf("missing generation provenance %q", want)
+			}
+		}
+	}
+}
 
 func TestWorkerPoolURL(t *testing.T) {
 	worker := WorkerInfo{WorkerPoolID: "releng-hardware/gecko-t-win7-32-hw"}
