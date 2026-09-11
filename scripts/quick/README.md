@@ -1,8 +1,21 @@
 # Optional Quick previews
 
-These helpers deploy this checkout to Mozilla Quick for contributor previews.
+These helpers deploy this checkout to [Mozilla Quick](https://quick.mozilla.cloud/)
+for contributor previews. Visit Quick's home page for access to the platform.
 They are separate from upstream's production reporting and GitHub Pages
 publishing workflows.
+
+## Scripts
+
+- `deploy-quick` publishes a personal preview of the report and the checkout's
+  saved worker data to `<username>-mozilla-history.quick.mozilla.cloud`.
+- `deploy-quick-staging` publishes the same content to a separate
+  `<username>-mozilla-history-staging.quick.mozilla.cloud` site for trying changes.
+- `deploy-common.sh` contains the shared naming, confirmation, packaging, and
+  cleanup logic. It is sourced by the two helpers, not run directly.
+
+Use these previews to share and review report changes behind Mozilla SSO.
+Neither helper collects new data, creates probes, or publishes GitHub Pages.
 
 ## Setup
 
